@@ -1,0 +1,55 @@
+﻿
+body { background-color: white; text-align: center; }
+
+/* divPage is for the blue shell for most apps */
+.divPage { background-color: #0178B9; padding: 20px; margin: auto; color: white; overflow: auto; margin-top: 80px; }
+
+  .divPage h1, .divPage h2, .divPage h3 { color: inherit; }
+
+.body { margin: auto; text-align: center; }
+
+.logo { max-width: 400px; max-height: 200px; margin: 20px 0 20px; }
+
+.exit { cursor: pointer; width: 30px; float: right; }
+
+.excel { cursor: pointer; float: right; margin: 10px 10px 0 0; }
+
+.chart { cursor: pointer; float: right; margin: 10px 10px 0 0; }
+
+.labDate { display: block; padding-top: 10px; text-align: center; font-size: 1.04em; color: white; }
+
+.panAlert {
+  color:white;
+  position: absolute;
+  top: 20px;
+  left: 20%;
+  right: 20%;
+  height: 110px;
+  border: 1px solid #cccccc;
+  padding: 30px;
+  background-color: #0178B9;
+  text-align: center;
+  box-shadow: 0px 0px 50px black;
+}
+
+.labAlert { font-size: larger; text-align: center; font-weight: bold; font-style: italic; }
+
+#divExit { position: absolute; bottom: 5px; width: 90%; text-align: center; font-style: italic; }
+
+.commands { opacity: 0.65; padding: 0 10px; margin: 5px; border: none; }
+
+.icons { width: 35px; padding: 0; }
+
+input[type="text"], input[type="password"] { height: 25px; }
+
+.button, .button100, .button150, .button200 { color: #0178B9; border-color: gray; border-top-color: inherit; border-left-color: inherit; border-width: 1px 2px 2px 0px; background-color: white; height: 33px; font-weight: bold; }
+
+.button100 { width: 100px; }
+
+.button150 { width: 150px; }
+
+.button200 { width: 200px; }
+
+.gvLearners tr:hover td,
+.gvLearner tr:hover td,
+.gvAssess tr:hover td { background-color: white; color: #0178B9; color: black; }

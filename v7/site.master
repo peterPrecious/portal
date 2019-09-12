@@ -1,0 +1,49 @@
+﻿<%@ Master
+  Language="C#"
+  AutoEventWireup="true"
+  CodeBehind="site.master.cs"
+  Inherits="portal.MasterPage" %>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head runat="server">
+
+  <title><%: Page.Title %></title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="https://vubiz.com/vubizApps/styles/favicon.ico" />
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="/portal/scripts/$urls.min.js"></script>
+
+  <script src="/portal/scripts/v7.min.js"></script>
+  <link href="/portal/styles/css/styles.min.css" rel="stylesheet" />
+  <link href="/portal/styles/css/siteMaster.min.css" rel="stylesheet" />
+
+  <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+
+</head>
+
+<body>
+  <form id="frmMaster" runat="server" autocomplete="off">
+    <div class="site">
+
+      <asp:Panel CssClass="header" ID="panHeader" runat="server" Visible="false">
+        <asp:ImageButton ID="butHome" CssClass="butHome" ImageUrl="~/styles/icons/home.png" runat="server" OnClick="butHome_Click" />
+        <asp:Label ID="headerTitle" CssClass="headerTitle" runat="server"></asp:Label>
+      </asp:Panel>
+
+      <div class="container body-content">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+      </div>
+
+      <div class="footer">
+        <asp:HyperLink Target="_blank" ID="butPageName" CssClass="pageName" runat="server"></asp:HyperLink>
+      </div>
+
+    </div>
+  </form>
+</body>
+
+</html>

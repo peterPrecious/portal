@@ -1,0 +1,23 @@
+﻿.gvLearners,
+.gvAssess,
+.gvLearners { margin-bottom: 50px; }
+
+
+  .gvLearners th,
+  .gvLearners th a,
+  .gvLearners td,
+  .gvAssess th,
+  .gvAssess th a,
+  .gvAssess td { height: 30px; padding: 2px; color: white; }
+
+  .gvLearners tr:last-child td * { margin: 5px; border: none; }
+
+.gvLearner { margin-top: 40px; border: none; }
+  .gvLearner td { border-bottom: none; font-size: larger; padding: 20px; }
+
+.gvAssess th:nth-child(3),
+.gvAssess td:nth-child(3) { text-align: left; }
+
+.miniEditorShell { background-color: white; border: 1px solid black; position: absolute; top: 80px; left: 50px; width: 250px; height: 500px; padding: 10px; }
+
+.miniEditor { height: 100%; border: none; }

@@ -1,0 +1,462 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="assignPurchasedContent" xml:space="preserve">
+    <value>Assignation de contenu acheté</value>
+  </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="content_1" xml:space="preserve">
+    <value>Cela vous permet d’assigner les programmes que vous avez acheté à vos apprenants. Sélectionnez ci-dessous les apprenants à qui vous souhaitez assigner le contenu ou sélectionnez tous les apprenants (cliquez en haut à gauche).</value>
+  </data>
+  <data name="custId" xml:space="preserve">
+    <value>Id de client</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Supprimer</value>
+  </data>
+  <data name="details" xml:space="preserve">
+    <value>Détails</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Modifier</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Courriel</value>
+  </data>
+  <data name="firstName" xml:space="preserve">
+    <value>Prénom</value>
+  </data>
+  <data name="firstVisit" xml:space="preserve">
+    <value>Première visite</value>
+  </data>
+  <data name="langEnglish" xml:space="preserve">
+    <value>Anglais</value>
+  </data>
+  <data name="langFrench" xml:space="preserve">
+    <value>Français</value>
+  </data>
+  <data name="lastName" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="lastVisit" xml:space="preserve">
+    <value>Dernière visite</value>
+  </data>
+  <data name="learners" xml:space="preserve">
+    <value>Apprenants</value>
+  </data>
+  <data name="learners_2" xml:space="preserve">
+    <value>Cliquez sur détails de  &lt;span class="code"&gt; Select &lt;/span&gt;  pour l’apprenant.</value>
+  </data>
+  <data name="membId" xml:space="preserve">
+    <value>Nom d’utilisateur</value>
+  </data>
+  <data name="memo" xml:space="preserve">
+    <value>Mémo</value>
+  </data>
+  <data name="menuActivityReport" xml:space="preserve">
+    <value>Rapport d’activité</value>
+  </data>
+  <data name="menuAssessmentReport" xml:space="preserve">
+    <value>Rapport d’évaluation</value>
+  </data>
+  <data name="menuAssignPurchasedContent" xml:space="preserve">
+    <value>Assignation de contenu acheté</value>
+  </data>
+  <data name="menuCompletionCSV" xml:space="preserve">
+    <value>Achèvement (CSV)</value>
+  </data>
+  <data name="menuCompletionReport" xml:space="preserve">
+    <value>Rapport de fin de</value>
+  </data>
+  <data name="menuFacilitatorServices" xml:space="preserve">
+    <value>Services de facilitateur</value>
+  </data>
+  <data name="menuHome" xml:space="preserve">
+    <value>Accueil</value>
+  </data>
+  <data name="menuInCompletionCSV" xml:space="preserve">
+    <value>Inachevé (CSV)</value>
+  </data>
+  <data name="menuSignOut" xml:space="preserve">
+    <value>se déconnecter</value>
+  </data>
+  <data name="menuMyProfile" xml:space="preserve">
+    <value>Mon profil</value>
+  </data>
+  <data name="menuReports" xml:space="preserve">
+    <value>Rapports</value>
+  </data>
+  <data name="new_" xml:space="preserve">
+    <value>Ajouter</value>
+  </data>
+  <data name="noVisits" xml:space="preserve">
+    <value>Aucune visite</value>
+  </data>
+  <data name="organization" xml:space="preserve">
+    <value>Organisation</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Rechercher</value>
+  </data>
+  <data name="searchValue" xml:space="preserve">
+    <value>valeur de la recherche</value>
+  </data>
+  <data name="signIn" xml:space="preserve">
+    <value>Se connecter</value>
+  </data>
+  <data name="uniqueId" xml:space="preserve">
+    <value>Nom d’utilisateur</value>
+  </data>
+  <data name="labWelcome" xml:space="preserve">
+    <value>Bonjour {0}. Bienvenue sur le portail de l’apprentissage.</value>
+  </data>
+  <data name="content_2" xml:space="preserve">
+    <value>Puis sélectionnez les programmes que vous voulez attribué à ces apprenants ou sélectionnez tous les programmes (cliquez en haut à gauche).</value>
+  </data>
+  <data name="content_3" xml:space="preserve">
+    <value>Puis cliquez sur  &lt;span class="code"&gt; Assign &lt;/span&gt;  et les programmes apparaîtra dans la learner(s) programmes  &lt;span style="font-weight: bold;"&gt; après &lt;/span&gt;  champ.</value>
+  </data>
+  <data name="content_4" xml:space="preserve">
+    <value>Le comte de programme qui figurera dans les champs assignés après et disponible.</value>
+  </data>
+  <data name="content_5" xml:space="preserve">
+    <value>Cliquez sur  &lt;span class="code"&gt; Restart &lt;/span&gt;  de défaire ce que vous avez fait, vous permettant de démarrer plus.&amp; nbsp ; Lorsque vos missions semblent bonnes, puis cliquez sur  &lt;span class="code"&gt; commettre&lt;/span&gt;.</value>
+  </data>
+  <data name="content_6" xml:space="preserve">
+    <value> &lt;span style="font-style:italic;"&gt; Remarque : une fois que le contenu est affecté et commis il ne peut pas ne pas avoir de ! &lt;/span&gt; </value>
+  </data>
+  <data name="content_7" xml:space="preserve">
+    <value>Sélectionnez d’abord le Learner(s) qui sera assigné programmes</value>
+  </data>
+  <data name="content_8" xml:space="preserve">
+    <value>Ensuite sélectionnez les programmes que vous souhaitez attribuer à la Learner(s) ci-dessus.</value>
+  </data>
+  <data name="assign" xml:space="preserve">
+    <value>Affecter</value>
+  </data>
+  <data name="assignedAfter" xml:space="preserve">
+    <value>Après une</value>
+  </data>
+  <data name="assignedBefore" xml:space="preserve">
+    <value>Affecté avant</value>
+  </data>
+  <data name="availableAfter" xml:space="preserve">
+    <value>Disponible après</value>
+  </data>
+  <data name="availableBefore" xml:space="preserve">
+    <value>Disponible avant</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>Fermer</value>
+  </data>
+  <data name="commit" xml:space="preserve">
+    <value>Engager</value>
+  </data>
+  <data name="content_10" xml:space="preserve">
+    <value>Remarque : une fois que le contenu est affecté et engagé, il ne peut pas être non attribué !</value>
+  </data>
+  <data name="content_9" xml:space="preserve">
+    <value>Puis cliquez sur attribuer et l’ou les programmes seront déplacé vers le Learner(s).  &lt;br &gt;   &lt;/br&gt; , Vous aurez alors l’occasion de commettre l’ou les affectations ou redémarrer.</value>
+  </data>
+  <data name="restart" xml:space="preserve">
+    <value>Redémarrer</value>
+  </data>
+  <data name="programsAfter" xml:space="preserve">
+    <value>Programmes après</value>
+  </data>
+  <data name="programsBefore" xml:space="preserve">
+    <value>Programmes avant</value>
+  </data>
+  <data name="programId" xml:space="preserve">
+    <value>Id de programme</value>
+  </data>
+  <data name="programTitle" xml:space="preserve">
+    <value>Titre du programme</value>
+  </data>
+  <data name="purchased" xml:space="preserve">
+    <value>Acheté</value>
+  </data>
+  <data name="menuAbout" xml:space="preserve">
+    <value>À propos de</value>
+  </data>
+  <data name="about_1" xml:space="preserve">
+    <value>Ce service est où vous pouvez gérer vos apprenants et le contenu qu’ils examineront. Il fournit également une série de rapports pour surveiller les activités de l’apprenant.</value>
+  </data>
+  <data name="about_2" xml:space="preserve">
+    <value>Vous devez être un facilitateur ou un gestionnaire (c’est à dire pas un apprenant) pour accéder à ce service. Utilisez vos informations d’identification (et sélectionnez votre langue) puis Next. Lorsque vous avez terminé, n’oubliez pas de déconnexion en haut à gauche lorsque vous avez terminé pour sécuriser vos données et préserver les ressources.</value>
+  </data>
+  <data name="about_3" xml:space="preserve">
+    <value>Services sont fournis pour l’animateur en anglais et en Français. Si vous utilisez un Browser Microsoft (IE ou Edge) et que votre langue de préférence en Français, le service qui viendra chercher. Sinon, il sera par défaut en anglais sauf indication contraire.  Gestionnaire est offert seulement en anglais.</value>
+  </data>
+  <data name="about_4" xml:space="preserve">
+    <value>Animateurs font le gros du travail pour chaque compte. En général, ils gèrent les apprenants et leur performance. Alors que les animateurs peuvent avoir accès au contenu, ils ne sont pas considérés comme apprenants. Chaque compte est également configuré avec un gestionnaire qui peut ajouter un facilitateur au compte plus de faire quelques autres routines de site.</value>
+  </data>
+  <data name="about_5" xml:space="preserve">
+    <value>Rapports viennent dans une variété de saveurs. Peu en ligne des « rapports » comme celui que vous lisez, est un rapport de « info » et aura un fond bleu. Principaux rapports en ligne où vous gérez l’information auront un fond blanc.  La plupart rapportent clé fournissent des versions CSV ou Excel.</value>
+  </data>
+  <data name="access" xml:space="preserve">
+    <value>Accès</value>
+  </data>
+  <data name="introduction" xml:space="preserve">
+    <value>Introduction</value>
+  </data>
+  <data name="signOut" xml:space="preserve">
+    <value>se déconnecter</value>
+  </data>
+  <data name="about_0" xml:space="preserve">
+    <value>Sur ce Service</value>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>Langue</value>
+  </data>
+  <data name="levels" xml:space="preserve">
+    <value>Niveaux</value>
+  </data>
+  <data name="reports" xml:space="preserve">
+    <value>Rapports</value>
+  </data>
+  <data name="sessionVariables" xml:space="preserve">
+    <value>Voici les valeurs internes au cours de la Session.</value>
+  </data>
+  <data name="credentialError" xml:space="preserve">
+    <value>Ces informations d’identification ne sont pas au dossier ! Cliquez sur redémarrer.</value>
+  </data>
+  <data name="profiles" xml:space="preserve">
+    <value>Profils</value>
+  </data>
+  <data name="parameter" xml:space="preserve">
+    <value>Paramètre</value>
+  </data>
+  <data name="profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="profiles_1" xml:space="preserve">
+    <value>Cliquez sur l’en-tête de profil de tri ou de recherche de profil...</value>
+  </data>
+  <data name="value" xml:space="preserve">
+    <value>Valeur</value>
+  </data>
+  <data name="labManage" xml:space="preserve">
+    <value>Les éléments de menu de coin supérieur permet de gérer le système.</value>
+  </data>
+  <data name="menuLearnersExcel" xml:space="preserve">
+    <value>Exporter des apprenants</value>
+  </data>
+  <data name="membPwd" xml:space="preserve">
+    <value>mot de passe</value>
+  </data>
+  <data name="menuChangeLanguage" xml:space="preserve">
+    <value>Changer la langue</value>
+  </data>
+  <data name="menuDocumentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="addLearner" xml:space="preserve">
+    <value>Ajouter apprenant</value>
+  </data>
+  <data name="menuLearner" xml:space="preserve">
+    <value>Ajouter un appauvrissement</value>
+  </data>
+  <data name="learner" xml:space="preserve">
+    <value>Ajouter un apprenant</value>
+  </data>
+  <data name="menuAlias" xml:space="preserve">
+    <value>Profil alias</value>
+  </data>
+  <data name="active" xml:space="preserve">
+    <value>Actif</value>
+  </data>
+  <data name="sql" xml:space="preserve">
+    <value>Oups.  Nous ne pourrions pas effectuer cette activité.</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>mot de passe</value>
+  </data>
+  <data name="programs" xml:space="preserve">
+    <value>Programmes</value>
+  </data>
+  <data name="changeLanguage" xml:space="preserve">
+    <value>Changer la langue</value>
+  </data>
+  <data name="signInLevel" xml:space="preserve">
+    <value>Ce portail est uniquement disponible aux animateurs et/ou aux gestionnaires.</value>
+  </data>
+  <data name="labContent" xml:space="preserve">
+    <value>Charme de {0} ci-dessous permet d’accéder au contenu.</value>
+  </data>
+  <data name="level" xml:space="preserve">
+    <value>Niveau</value>
+  </data>
+  <data name="about_6" xml:space="preserve">
+    <value>Compte des caractéristiques et rapports apparaissent sur les éléments de menu en haut à gauche. Les caractéristiques opérationnelles de vos prestations apparaissent en haut à droite. Notez que ce service ne fonctionnera pas sur les petits écrans comme un téléphone, étant donné que les formulaires en ligne grands etc. sont un élément clé des livrables.</value>
+  </data>
+  <data name="setup" xml:space="preserve">
+    <value>Paramétrage</value>
+  </data>
+  <data name="about_01" xml:space="preserve">
+    <value>Sélectionnez la catégorie à gauche</value>
+  </data>
+  <data name="noLearners_1" xml:space="preserve">
+    <value>l’apprenant a été récupérée.</value>
+  </data>
+  <data name="noLearners_2" xml:space="preserve">
+    <value>apprenants ont été récupérées. Pour une liste complète des apprenants utiliser l’app d’apprenants qui exporte les apprenants vers Excel.</value>
+  </data>
+  <data name="noLearners_200" xml:space="preserve">
+    <value>apprenants ont été extraites selon les critères de recherche. Pour une liste complète des apprenants utiliser l’app d’apprenants qui exporte les apprenants vers Excel.</value>
+  </data>
+  <data name="next" xml:space="preserve">
+    <value>Suivant</value>
+  </data>
+  <data name="menuEmailAlerts" xml:space="preserve">
+    <value>Alertes email</value>
+  </data>
+  <data name="receiveAlerts" xml:space="preserve">
+    <value>Recevoir des alertes</value>
+  </data>
+  <data name="resendAlerts" xml:space="preserve">
+    <value>Renvoyer les alertes</value>
+  </data>
+  <data name="alertsResent" xml:space="preserve">
+    <value>Alertes e-mail vont être renvoyés sur le prochain cycle !</value>
+  </data>
+  <data name="alertsResend" xml:space="preserve">
+    <value>Renvoyer les alertes Email</value>
+  </data>
+  <data name="errorPage" xml:space="preserve">
+    <value>La ressource accédée n’est pas disponible. Redémarrage requis.</value>
+  </data>
+  <data name="errorHouston" xml:space="preserve">
+    <value>Houston, nous avons un problème...</value>
+  </data>
+  <data name="menuProgramActivityDetails" xml:space="preserve">
+    <value>Détails de l’activité de programme (Excel)</value>
+  </data>
+  <data name="tile_About" xml:space="preserve">
+    <value>À propos de</value>
+  </data>
+  <data name="tile_Documentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="tile_AssignContent" xml:space="preserve">
+    <value>Assignation de contenu</value>
+  </data>
+  <data name="tile_BrowserReadinessTest" xml:space="preserve">
+    <value>Test de préparation de navigateur</value>
+  </data>
+  <data name="tile_ChangeLanguage" xml:space="preserve">
+    <value>Changer la langue</value>
+  </data>
+  <data name="tile_CompletionReport" xml:space="preserve">
+    <value>Rapport de fin de</value>
+  </data>
+  <data name="tile_EmailAlerts" xml:space="preserve">
+    <value>Alertes email</value>
+  </data>
+  <data name="tile_FacilitatorServices" xml:space="preserve">
+    <value>Services de facilitateur</value>
+  </data>
+  <data name="tile_MyProfile" xml:space="preserve">
+    <value>Mon profil</value>
+  </data>
+  <data name="tile_ProgramActivityDetails" xml:space="preserve">
+    <value>Détails de l’activité de programme</value>
+  </data>
+  <data name="tile_SignOut" xml:space="preserve">
+    <value>se déconnecter</value>
+  </data>
+  <data name="tile_ActivityReport" xml:space="preserve">
+    <value>Rapport d’activité</value>
+  </data>
+  <data name="tile_AssessmentReport" xml:space="preserve">
+    <value>Rapport d’évaluation</value>
+  </data>
+  <data name="browserTest" xml:space="preserve">
+    <value>Test de navigateur</value>
+  </data>
+  <data name="credentials" xml:space="preserve">
+    <value>Veuillez entrer vos informations d’identification.</value>
+  </data>
+  <data name="forgot" xml:space="preserve">
+    <value>Vous avez oublié ?</value>
+  </data>
+  <data name="learners_1a" xml:space="preserve">
+    <value>Cliquer sur les entêtes de colonne pour trier les apprenants, les</value>
+  </data>
+  <data name="learners_1b" xml:space="preserve">
+    <value>icône dessus pour ajouter un apprenant et le</value>
+  </data>
+  <data name="learners_1c" xml:space="preserve">
+    <value>icône à droite pour plus d’informations de l’apprenant. Vous pouvez affiner cette liste en cherchant n’importe quel domaine de n’importe quelle valeur.</value>
+  </data>
+  <data name="menuLearnersAddEdit" xml:space="preserve">
+    <value>Ajouter/modifier des apprenants</value>
+  </data>
+  <data name="tile_LearnersExport" xml:space="preserve">
+    <value>Apprenants (Export)</value>
+  </data>
+  <data name="tile_LearnersAddEdit" xml:space="preserve">
+    <value>Apprenants (ajouter/modifier)</value>
+  </data>
+  <data name="tile_Sessions" xml:space="preserve">
+    <value>Sessions</value>
+  </data>
+  <data name="tile_Store" xml:space="preserve">
+    <value>Magasin</value>
+  </data>
+  <data name="tile_MyContentV5" xml:space="preserve">
+    <value>Mon contenu (V5)</value>
+  </data>
+  <data name="tile_MyContentV8" xml:space="preserve">
+    <value>Mon contenu (V8)</value>
+  </data>
+  <data name="forgotCredentials" xml:space="preserve">
+    <value>Vous avez oublié les informations d’identification ?</value>
+  </data>
+  <data name="retrieve" xml:space="preserve">
+    <value>Récupérer</value>
+  </data>
+  <data name="forgot_1" xml:space="preserve">
+    <value>Entrez votre adresse de courriel unique où nous vous enverrons vos informations d’identification.</value>
+  </data>
+  <data name="tile_InCompletionReport" xml:space="preserve">
+    <value>Rapport inachevé</value>
+  </data>
+  <data name="pageTitleDefault" xml:space="preserve">
+    <value>Accueil administration</value>
+  </data>
+  <data name="sqlDuplicate" xml:space="preserve">
+    <value>Oups.  Il semble que nom d’utilisateur existe déjà.</value>
+  </data>
+  <data name="credentialPasswordError" xml:space="preserve">
+    <value>Ce mot de passe est incorrect !</value>
+  </data>
+  <data name="learners_1d" xml:space="preserve">
+    <value>[Cliquer sur le titre affiche/masque cette section.]</value>
+  </data>
+  <data name="register" xml:space="preserve">
+    <value>Cliquez pour vous inscrire !</value>
+  </data>
+  <data name="content_61" xml:space="preserve">
+    <value>Apprenants inactifs sont rendus seulement pour afficher les attributions antérieures possibles.</value>
+  </data>
+  <data name="tile_ProgramActivity(Overal)" xml:space="preserve">
+    <value>Activité de programme (Overal)</value>
+  </data>
+  <data name="managerAccess" xml:space="preserve">
+    <value>Access Manager</value>
+  </data>
+</root>

@@ -1,0 +1,9 @@
+﻿.divPage { width: 600px; }
+
+.tabSessions { margin: 20px auto; border-collapse: collapse; border: 10px solid #0178B9; }
+  .tabSessions th { padding: 2px 6px; color: white; }
+    .tabSessions th:first-child { text-align: right; }
+    .tabSessions th:last-child { text-align: left; }
+  .tabSessions td { padding: 2px 6px; color: white; vertical-align: top; }
+    .tabSessions td:first-child { text-align: right; }
+    .tabSessions td:last-child { text-align: left; }

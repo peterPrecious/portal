@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="portal.services.kendoUI" CodeBehind="kendoUI.svc.cs" %>

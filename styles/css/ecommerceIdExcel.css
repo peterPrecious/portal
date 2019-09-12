@@ -1,0 +1,20 @@
+﻿.tabContain { background-color: #0178B9; border: none; }
+
+.tabContain .tdParent { vertical-align: top; padding: 20px; }
+
+.tabContain tr td { border: none; }
+
+.tbDates { margin: auto; background-color: #0178B9; border: none; }
+
+  .tbDates th { text-align: right; }
+
+  .tbDates td, th { vertical-align: top; border: none; }
+
+  .tbDates .tdParent { padding: 10px; border: none; color: white; }
+
+  .tbDates .nextPrev { display: none; }
+
+  .tbDates * { border: none; }
+
+.drp { border: 1px solid black; }
+

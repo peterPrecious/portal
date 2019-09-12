@@ -1,0 +1,260 @@
+[
+  {
+    "outputFileName": "styles/css/alias.min.css",
+    "inputFiles": [
+      "styles/css/alias.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/content.min.css",
+    "inputFiles": [
+      "styles/css/content.css"
+    ]
+  },
+  {
+    "outputFileName": "scripts/$storage.min.js",
+    "inputFiles": [
+      "scripts/$storage.js"
+    ]
+  },
+  {
+    "outputFileName": "scripts/$urls.min.js",
+    "inputFiles": [
+      "scripts/$urls.js"
+    ]
+  },
+  {
+    "outputFileName": "scripts/$visible.min.js",
+    "inputFiles": [
+      "scripts/$visible.js"
+    ]
+  },
+  {
+    "outputFileName": "scripts/kendoUI.min.js",
+    "inputFiles": [
+      "scripts/kendoUI.js"
+    ]
+  },
+  {
+    "outputFileName": "scripts/v7.min.js",
+    "inputFiles": [
+      "scripts/v7.js"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/culture.min.css",
+    "inputFiles": [
+      "styles/css/culture.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/default.min.css",
+    "inputFiles": [
+      "styles/css/default.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/documentation.min.css",
+    "inputFiles": [
+      "styles/css/documentation.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/gridDetails.min.css",
+    "inputFiles": [
+      "styles/css/gridDetails.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/learners.min.css",
+    "inputFiles": [
+      "styles/css/learners.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/profile.min.css",
+    "inputFiles": [
+      "styles/css/profile.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/sessions.min.css",
+    "inputFiles": [
+      "styles/css/sessions.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/site.min.css",
+    "inputFiles": [
+      "styles/css/site.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/styles.min.css",
+    "inputFiles": [
+      "styles/css/styles.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/v7.min.css",
+    "inputFiles": [
+      "styles/css/v7.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/accountPassword.min.css",
+    "inputFiles": [
+      "styles/css/accountPassword.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/aliases.min.css",
+    "inputFiles": [
+      "styles/css/aliases.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/tiles.min.css",
+    "inputFiles": [
+      "styles/css/tiles.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/siteMaster.min.css",
+    "inputFiles": [
+      "styles/css/siteMaster.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/about.min.css",
+    "inputFiles": [
+      "styles/css/about.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/errors.min.css",
+    "inputFiles": [
+      "styles/css/errors.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/iFrame.min.css",
+    "inputFiles": [
+      "styles/css/iFrame.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/kendoUI.min.css",
+    "inputFiles": [
+      "styles/css/kendoUI.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/profiles.min.css",
+    "inputFiles": [
+      "styles/css/profiles.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/customerActivity.min.css",
+    "inputFiles": [
+      "styles/css/customerActivity.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/customerSalesDetails.min.css",
+    "inputFiles": [
+      "styles/css/customerSalesDetails.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/customerSalesSummary.min.css",
+    "inputFiles": [
+      "styles/css/customerSalesSummary.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/moduleUsage.min.css",
+    "inputFiles": [
+      "styles/css/moduleUsage.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/emailAlerts.min.css",
+    "inputFiles": [
+      "styles/css/emailAlerts.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/programActivityDetailsExcel.min.css",
+    "inputFiles": [
+      "styles/css/programActivityDetailsExcel.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/assessments.min.css",
+    "inputFiles": [
+      "styles/css/assessments.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/ecommerceDateExcel.min.css",
+    "inputFiles": [
+      "styles/css/ecommerceDateExcel.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/ecommerceIdExcel.min.css",
+    "inputFiles": [
+      "styles/css/ecommerceIdExcel.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/documentationIndex.min.css",
+    "inputFiles": [
+      "styles/css/documentationIndex.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/tileIcons.min.css",
+    "inputFiles": [
+      "styles/css/tileIcons.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/crossAccountProgramActivityExcel.min.css",
+    "inputFiles": [
+      "styles/css/crossAccountProgramActivityExcel.css"
+    ]
+  },
+  {
+    "outputFileName": "scripts/$visible.min.js",
+    "inputFiles": [
+      "scripts/$visible.js"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/passwordFinder.min.css",
+    "inputFiles": [
+      "styles/css/passwordFinder.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/customers.min.css",
+    "inputFiles": [
+      "styles/css/customers.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/programsPurchasedAndAssigned.min.css",
+    "inputFiles": [
+      "styles/css/programsPurchasedAndAssigned.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/programs.min.css",
+    "inputFiles": [
+      "styles/css/programs.css"
+    ]
+  }
+]

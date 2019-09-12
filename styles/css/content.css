@@ -1,0 +1,27 @@
+﻿.divPage { max-width: 95%; }
+
+.gvUsers th,
+.gvUsers th a { text-align: left; color: white; }
+  .gvUsers th:first-child, .gvUsers th:last-child { text-align: center; }
+
+.gvUsers td { text-align: left; }
+  .gvUsers td:first-child { text-align: center; }
+  .gvUsers td:nth-child(1) { width: 40px; }
+  .gvUsers td:nth-child(5) { min-width: 80px; }
+  .gvUsers td:last-child { width: 60px; text-align: center; }
+
+
+.gvProgs th,
+.gvProgs th a { text-align: center; color: white; }
+  .gvProgs th:nth-child(2) { text-align: center; }
+  .gvProgs th:nth-child(3) { text-align: left; }
+
+.gvProgs td { text-align: center; }
+  .gvProgs td:nth-child(1) { width: 40px; }
+  .gvProgs td:nth-child(2) { width: 85px; }
+  .gvProgs td:nth-child(3) { text-align: left; }
+  .gvProgs td:nth-child(4),
+  .gvProgs td:nth-child(5),
+  .gvProgs td:nth-child(6),
+  .gvProgs td:nth-child(7),
+  .gvProgs td:nth-child(8) { width: 60px; }
