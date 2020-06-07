@@ -4,7 +4,15 @@ namespace portal.v7
 {
   public partial class documentation : FormBase
   {
-    protected void Page_Load(object sender, EventArgs e) { }
+    private Sess se = new Sess();
+
+    protected void Page_Load(object sender, EventArgs e)
+    {
+      //se.localize();
+      //Page.Title = (se.lang == "en") ? "english" : "french";
+
+
+    }
 
     protected void exit_Click(object sender, System.Web.UI.ImageClickEventArgs e)
     {

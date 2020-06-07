@@ -344,7 +344,7 @@ namespace portal
 
           profileId = cmd.Parameters["@profileId"].Value.ToString();
           profileReturnUrl = cmd.Parameters["@profileReturnUrl"].Value.ToString();
-          profileColor = cmd.Parameters["@profileColor"].Value.ToString();
+          profileColor = cmd.Parameters["@profileColor"].Value.ToString(); // we no longer use color
           profileLogo = cmd.Parameters["@profileLogo"].Value.ToString();
 
         }

@@ -1,0 +1,12 @@
+﻿.divPage { width: 500px; }
+
+.body-content h1,
+.body-content h2 { color: inherit; margin-bottom: 20px; }
+
+.tabContain { background-color: #0178B9; border: none; }
+  .tabContain .tdParent { vertical-align: top; padding: 20px; }
+  .tabContain tr td { border: none; }
+
+.tbActvity { color: white; border: none; }
+  .tbActvity th { width: 35%; border:none; }
+    .tbActvity th a { color: white; }

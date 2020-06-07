@@ -34,6 +34,12 @@ namespace portal.v7
         membId.Text = "*************";
         Label membPwd = (Label)dvProfile.FindControl("membPwd");
         membPwd.Text = "*************";
+
+        lab2.Visible = true;
+      }
+      else {
+
+        lab2.Visible = false;
       }
 
     }

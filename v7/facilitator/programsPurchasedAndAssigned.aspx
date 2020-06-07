@@ -1,5 +1,5 @@
 ﻿<%@ Page
-  Title="Programs Purchased and Assigned"
+  Title="Programs Purchased And Assigned"
   Language="C#"
   AutoEventWireup="true"
   MasterPageFile="~/v7/site.master"
@@ -24,7 +24,6 @@
 <asp:Content ID="mainContent" ContentPlaceHolderID="MainContent" runat="server">
 
   <div class="divPage">
-
     <asp:ImageButton CssClass="exit" ImageUrl="~/styles/icons/vubiz/cancel.png" ID="exit" runat="server" OnClick="exit_Click" />
 
     <asp:Panel ID="panConfirmShell" CssClass="panConfirmShell" runat="server"  Height="200px">
@@ -58,15 +57,22 @@
       </span>
     </h1>
 
-    <div class="thisTitle">
-      <asp:Panel runat="server">
-<%--        <asp:Literal ID="litMembCount" runat="server" /> Active and Inactive Learners have had 
-        <asp:Literal ID="litProgCount" runat="server" /> Program(s) assigned to them. --%>
+
+    <%--     
+        <asp:Literal ID="litMembCount" runat="server" /> Active and Inactive Learners have had 
+        <asp:Literal ID="litProgCount" runat="server" /> Program(s) assigned to them.
+
         Click on any Program Id for the Program Title.
         Click on the Learners Icon to see which learners were assigned that Program Id.
+    --%>
 
-<%--        <asp:Label ID="labPlease" ForeColor="Yellow" runat="server">Please allow the system time to generate this report.</asp:Label>--%>
-        <asp:Label ID="labInactive" Visible="false" runat="server">Inactive Learners will have a line-through their Learner Id.</asp:Label>
+
+
+    <div class="thisTitle">
+      <asp:Panel runat="server">
+        <asp:Literal runat="server" Text="<%$  Resources:portal, progsPurch_2%>" />
+        <asp:Literal runat="server" Text="<%$  Resources:portal, progsPurch_3%>" />
+        <asp:Label ID="labInactive" Visible="false" Text="<%$  Resources:portal, progsPurch_5%>" runat="server" />
         <asp:Literal ID="litNone" runat="server" Visible="false">Because this Account does not contain any Purchased Programs, it cannot be generated.</asp:Literal>
       </asp:Panel>
     </div>
@@ -86,20 +92,20 @@
       PageSize="20"
       Visible="True">
       <Columns>
-        <asp:BoundField DataField="progId" HeaderText="Program Id" />
-        <asp:BoundField DataField="progPurchased" HeaderText="# Purchased" ReadOnly="True" />
-        <asp:BoundField DataField="progAssigned" HeaderText="# Assigned" />
-        <asp:TemplateField HeaderText="Learners">
+        <asp:BoundField DataField="progId" HeaderText="<%$  Resources:portal, programId%>" />
+        <asp:BoundField DataField="progPurchased" HeaderText="<%$  Resources:portal, purchased%>" ReadOnly="True" />
+        <asp:BoundField DataField="progAssigned" HeaderText="<%$  Resources:portal, assigned%>" />
+        <asp:TemplateField HeaderText="<%$  Resources:portal, learners%>">
           <ItemTemplate>
             <asp:ImageButton
               CssClass="icons info"
               ID="btnSelect"
-              ToolTip="Display Learners who where &#13;Assigned this Program."
+              ToolTip="<%$  Resources:portal, progsPurch_4%>"
               runat="server"
               CausesValidation="True"
               CommandName="Select"
               ImageUrl="~/styles/icons/vubiz/info.png"
-              Text="Learners" />
+              />
           </ItemTemplate>
         </asp:TemplateField>
       </Columns>
@@ -126,10 +132,10 @@
       PageSize="40"
       Visible="False">
       <Columns>
-        <asp:BoundField DataField="progId" HeaderText="Program Id" />
-        <asp:BoundField DataField="membId" HeaderText="Learner Id" HeaderStyle-HorizontalAlign="Left" ItemStyle-HorizontalAlign="left" />
-        <asp:BoundField DataField="membFirstName" HeaderText="First Name" HeaderStyle-HorizontalAlign="Left" ItemStyle-HorizontalAlign="Left" />
-        <asp:BoundField DataField="membLastName" HeaderText="Last Name" HeaderStyle-HorizontalAlign="Left" ItemStyle-HorizontalAlign="Left" />
+        <asp:BoundField DataField="progId" HeaderText="<%$  Resources:portal, programId%>" />
+        <asp:BoundField DataField="membId" HeaderText="<%$  Resources:portal, learners_1%>"  HeaderStyle-HorizontalAlign="Left" ItemStyle-HorizontalAlign="left" />
+        <asp:BoundField DataField="membFirstName" HeaderText="<%$  Resources:portal, firstName%>"  HeaderStyle-HorizontalAlign="Left" ItemStyle-HorizontalAlign="Left" />
+        <asp:BoundField DataField="membLastName" HeaderText="<%$  Resources:portal, lastName%>"  HeaderStyle-HorizontalAlign="Left" ItemStyle-HorizontalAlign="Left" />
       </Columns>
       <PagerSettings
         FirstPageImageUrl="~/styles/icons/grids/frst.png"
@@ -142,8 +148,8 @@
     </asp:GridView>
 
     <asp:Panel ID="panRestart" runat="server" CssClass="panButtons" Visible="true">
-      <asp:LinkButton CssClass="newButton panButton" OnClick="btnBack_Click" ID="btnBack" Text="Back" Visible="false" runat="server"></asp:LinkButton>
-      <asp:LinkButton CssClass="newButton panButton" OnClick="btnRestart_Click" ID="btnRestart" Text="Restart" Visible="false" runat="server"></asp:LinkButton>
+      <asp:LinkButton CssClass="newButton panButton" OnClick="btnBack_Click" ID="btnBack" Text="<%$  Resources:portal, back%>" Visible="false" runat="server"></asp:LinkButton>
+      <asp:LinkButton CssClass="newButton panButton" OnClick="btnRestart_Click" ID="btnRestart" Text="<%$  Resources:portal, restart%>" Visible="false" runat="server"></asp:LinkButton>
     </asp:Panel>
 
     <asp:SqlDataSource runat="server"

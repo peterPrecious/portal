@@ -18,7 +18,7 @@
     <h2 style="color: inherit;">These values are maintained during the session.</h2>
     <asp:Table CssClass="tabSessions" ID="tabSessions" runat="server">
       <asp:TableHeaderRow>
-        <asp:TableHeaderCell>Key</asp:TableHeaderCell>
+        <asp:TableHeaderCell>Key&nbsp;</asp:TableHeaderCell>
         <asp:TableHeaderCell>Value</asp:TableHeaderCell>
       </asp:TableHeaderRow>
     </asp:Table>

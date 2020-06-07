@@ -5,7 +5,7 @@ namespace portal.v7.manager
 {
   public partial class documentUpload : FormBase
   {
-    Sess se = new Sess();
+    private readonly Sess se = new Sess();
 
     protected void Page_Load(object sender, EventArgs e)
     {

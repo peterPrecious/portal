@@ -14,8 +14,8 @@ namespace portal.v7.manager
 
         int year = int.Parse(drpCalYear1.SelectedValue);
         int month = int.Parse(drpCalMonth1.SelectedValue);
-        Calendar1.TodaysDate = new DateTime(year, month, 1);
-        Calendar1.SelectedDate = Calendar1.TodaysDate;
+        Calendar.TodaysDate = new DateTime(year, month, 1);
+        Calendar.SelectedDate = Calendar.TodaysDate;
 
         populateMonthList2();
         populateYearList2();
@@ -94,12 +94,12 @@ namespace portal.v7.manager
       drpCalMonth2.Items.FindByValue(month.ToString()).Selected = true;
     }
 
-    protected void setCalendar1(object Sender, EventArgs e)
+    protected void setCalendar(object Sender, EventArgs e)
     {
       int year = int.Parse(drpCalYear1.SelectedValue);
       int month = int.Parse(drpCalMonth1.SelectedValue);
-      Calendar1.TodaysDate = new DateTime(year, month, 1);
-      Calendar1.SelectedDate = Calendar1.TodaysDate;
+      Calendar.TodaysDate = new DateTime(year, month, 1);
+      Calendar.SelectedDate = Calendar.TodaysDate;
       panError.Visible = false;
     }
 
@@ -114,8 +114,8 @@ namespace portal.v7.manager
 
     protected void imgExcel_Click(object sender, System.Web.UI.ImageClickEventArgs e)
     {
-      // ensure dates are kosher
-      if (Calendar2.SelectedDate < Calendar1.SelectedDate)
+      // ensure dates are kosher (this is also used by ecommerceExcel.cs)
+      if (Calendar2.SelectedDate < Calendar.SelectedDate)
       {
         panError.Visible = true;
       }
@@ -128,7 +128,9 @@ namespace portal.v7.manager
 
         ex.IntParms[0] = Convert.ToInt32(ddTop.SelectedValue);
         ex.StrParms[0] = Session["cust"].ToString();
-        ex.DatParms[0] = Calendar1.SelectedDate;
+        ex.StrParms[1] = null;
+        ex.StrParms[2] = null;
+        ex.DatParms[0] = Calendar.SelectedDate;
         ex.DatParms[1] = Calendar2.SelectedDate;
 
         ex.excelWriter();

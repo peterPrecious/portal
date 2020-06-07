@@ -256,5 +256,35 @@
     "inputFiles": [
       "styles/css/programs.css"
     ]
+  },
+  {
+    "outputFileName": "autoComplete.min.js",
+    "inputFiles": [
+      "autoComplete.js"
+    ]
+  },
+  {
+    "outputFileName": "autoComplete.min.html",
+    "inputFiles": [
+      "autoComplete.html"
+    ]
+  },
+  {
+    "outputFileName": "autoComplete.min.css",
+    "inputFiles": [
+      "autoComplete.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/childAccountExcel.min.css",
+    "inputFiles": [
+      "styles/css/childAccountExcel.css"
+    ]
+  },
+  {
+    "outputFileName": "styles/css/notice.min.css",
+    "inputFiles": [
+      "styles/css/notice.css"
+    ]
   }
 ]

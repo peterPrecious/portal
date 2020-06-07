@@ -87,6 +87,88 @@ namespace portal
       }
     }
 
+
+    // returns purchased items and assignment status (used in Default.asp for the Purchase Notice)
+    public void ecomPurchaseNotice(
+      string custId,
+      string membId,
+      out string _membProgram,
+      out string _ecomProgram,
+      out string _progTitle,
+      out string _ecomQuantity
+      )
+    {
+      _membProgram = _ecomProgram = _progTitle = _ecomQuantity = null;
+
+      using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
+      {
+        con.Open();
+        using (SqlCommand cmd = new SqlCommand())
+        {
+          cmd.Connection = con;
+          cmd.CommandText = "dbo.sp6purchaseNotice";
+          cmd.CommandType = CommandType.StoredProcedure;
+          cmd.Parameters.Add(new SqlParameter("@custId", custId));
+          cmd.Parameters.Add(new SqlParameter("@membId", membId));
+          SqlDataReader drd = cmd.ExecuteReader();
+          while (drd.Read())
+          {
+            _membProgram += "|" + drd["membPrograms"] as string;
+            _ecomProgram += "|" + drd["ecomPrograms"] as string;
+            _progTitle += "|" + drd["progTitle"] as string;
+            _ecomQuantity += "|" + drd["ecomQuantity"].ToString();
+          }
+          drd.Close();
+        }
+      }
+    }
+
+
+
+
+    // returns no of seats assigned for submitted purchased program (used in Default.asp for the Purchase Notice)
+    public void noPurchasedAssigned(
+      string custId,
+      string progId,
+      out string _noAssigned
+      )
+    {
+      _noAssigned = "0";
+
+      using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
+      {
+        con.Open();
+        using (SqlCommand cmd = new SqlCommand())
+        {
+          cmd.Connection = con;
+          cmd.CommandText = "dbo.[sp6noPurchasedAssigned]";
+          cmd.CommandType = CommandType.StoredProcedure;
+          cmd.Parameters.Add(new SqlParameter("@custId", custId));
+          cmd.Parameters.Add(new SqlParameter("@progId", progId));
+          SqlDataReader drd = cmd.ExecuteReader();
+          while (drd.Read())
+          {
+            _noAssigned = drd["noAssigned"].ToString();
+          }
+          drd.Close();
+        }
+      }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
 
 }

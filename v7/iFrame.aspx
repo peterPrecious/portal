@@ -1,13 +1,18 @@
 ﻿<%@ Page
-  Title=""
   Language="C#"
   MasterPageFile="~/v7/site.master"
   AutoEventWireup="true"
-  CodeBehind="iFrame.aspx.cs" Inherits="portal.v7.iFrame" %>
+  CodeBehind="iFrame.aspx.cs"
+  Inherits="portal.v7.iFrame" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
   <link href="/portal/styles/css/iFrame.min.css" rel="stylesheet" />
+  <script src="/portal/scripts/$urls.min.js"></script>
   <script>
+
+    // this picks up the title to put on the browser 
+    //var title = $.getUrlVar("title");
+    //if (title.length > 0) document.title = decodeURI(title);
 
     /* resize on load */
     $(function () {

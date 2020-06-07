@@ -185,6 +185,7 @@ namespace portal.v7.facilitator
           // update the member programs
           membNo = int.Parse(gvUsers.DataKeys[gvRow.RowIndex].Value.ToString());
           membPrograms = gvRow.Cells[4].Text;
+//          me.memberPrograms2(membNo, membPrograms);
           me.memberPrograms(membNo, membPrograms);
 
           // refresh grids

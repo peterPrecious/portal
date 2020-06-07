@@ -18,8 +18,10 @@
 
     <asp:ImageButton CssClass="exit" ImageUrl="~/styles/icons/vubiz/cancel.png" ID="exit" runat="server" OnClick="exit_Click" />
     <h1>Cross Account Program Activity (Excel)</h1>
-    <p class="c2">This generates Program Activity Analysis for all Active Accounts in the Customer Group <span><% =Session["cust"].ToString()%></span>.</p>
-    <h3>Note: this app is only available from this Parent Account (<% =Session["custId"].ToString()%>). It cannot be accessed from Child Accounts.</h3>
+    <p class="c2">This generates Program Activity Analysis for all Active Accounts in the Customer Group <span><% =Session["cust"].ToString()%></span>.
+    Note: this app is only available from this Parent Account (<% =Session["custId"].ToString()%>). It cannot be accessed from Child Accounts.<br /><br /></p>
+
+
     <table class="tabContain">
       <tr>
         <th>Program Id :</th>

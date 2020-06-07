@@ -1,5 +1,4 @@
 ﻿<%@ Page
-  Title="Learners"
   Language="C#"
   MasterPageFile="~/v7/site.master"
   AutoEventWireup="true"
@@ -41,7 +40,6 @@
         $(".resendAlerts").hide();
       }
     }
-
     $(function () {
       if ($("#MainContent_dvLearner_lab_membEmailAlert")[0] !== undefined) {
         if ($("#MainContent_dvLearner_lab_membEmailAlert")[0].checked) {
@@ -81,9 +79,45 @@
       });
     });
 
-    $(function () { // generates a yellow description in labError of panBottom
-      $(".membNo").on("click", function () { $(".labError").html('This is an Internal value used by Vubiz Support.') })
-      $(".membId").on("click", function () { $(".labError").html('A globally unique value for this learner. Once assigned it cannot be changed.') })
+    $(function () {
+
+      var lang = "<%=Session["lang"]%>";  // get language from C#
+
+      // generates a yellow description in labError of panBottom
+      if (lang !== "fr") {
+        $(".membId").on("click", function () { $(".labError").html("Username is a globally unique value for this learner (i.e. Email Address). Once assigned it cannot be changed.") })
+        $(".membPwd").on("click", function () { $(".labError").html("Password provides extra security. It can be modified at a later stage.") })
+        $(".membFirstName").on("click", function () { $(".labError").html("First Name is used in reports and certificates.") })
+        $(".membLastName").on("click", function () { $(".labError").html("Last Name is used in reports and certificates.") })
+        $(".membEmail").on("click", function () { $(".labError").html("Email is used when you wish certain documents to be forwarded to you.") })
+        $(".membOrganization").on("click", function () { $(".labError").html("Organization appears on certain reports.") })
+        $(".membMemo").on("click", function () { $(".labError").html("Memo is meant to maintain fields of value to your organization.") })
+        $(".membPrograms").on("click", function () { $(".labError").html("Programs are assigned in a different app and are listed here for convenience.") })
+        $(".membLevel").on("click", function () { $(".labError").html("The Level determines the features accessible to this person. Can be Learner or Facilitator.") })
+        $(".membManagerAccess").on("click", function () { $(".labError").html("Manager Access are special apps optionally available to a Manager.") })
+        $(".membReceiveAlerts").on("click", function () { $(".labError").html("Receive Alerts enables this person to receive Email Alerts.") })
+        $(".membResendAlerts").on("click", function () { $(".labError").html("Resend Alerts will resend any outstanding Email Alerts.") })
+        $(".membActive").on("click", function () { $(".labError").html("Active is a key field. If set 'off' then this individual will no longer have access to the system.") })
+        $(".membNo").on("click", function () { $(".labError").html('[Vubiz Internal] is a system value used by Vubiz Support for support purposes.') })
+      } else {
+        $(".membId").on("click", function () { $(".labError").html("Le nom d'utilisateur est une valeur unique à l'échelle mondiale pour cet apprenant (c.-à-d. adresse e-mail). Une fois assigné, il ne peut pas être changé.") })
+        $(".membPwd").on("click", function () { $(".labError").html("Mot de passe offre une sécurité supplémentaire. Il peut être modifié à un stade ultérieur.") })
+        $(".membFirstName").on("click", function () { $(".labError").html("Le prénom est utilisé dans les rapports et les certificats.") })
+        $(".membLastName").on("click", function () { $(".labError").html("Le nom de famille est utilisé dans les rapports et les certificats.") })
+        $(".membEmail").on("click", function () { $(".labError").html("L'e-mail est utilisé lorsque vous souhaitez que certains documents vous soient transmis.") })
+        $(".membOrganization").on("click", function () { $(".labError").html("L'organisation apparaît sur certains rapports.") })
+        $(".membMemo").on("click", function () { $(".labError").html("Memo est destiné à maintenir des champs de valeur pour votre organisation.") })
+        $(".membPrograms").on("click", function () { $(".labError").html("Les programmes sont attribués dans une application différente et sont répertoriés ici pour plus de commodité.") })
+        $(".membLevel").on("click", function () { $(".labError").html("Le niveau détermine les caractéristiques accessibles à cette personne. Peut être apprenant ou facilitateur.") })
+        $(".membManagerAccess").on("click", function () { $(".labError").html("Manager Access sont des applications spéciales disponibles en option pour un Manager.") })
+        $(".membReceiveAlerts").on("click", function () { $(".labError").html("Recevoir des alertes permet à cette personne de recevoir des alertes par e-mail.") })
+        $(".membResendAlerts").on("click", function () { $(".labError").html("Les alertes de réception permettent à cette personne de recevoir des alertes par e-mail.") })
+        $(".membActive").on("click", function () { $(".labError").html("L'activité est un domaine clé. S'il est mis hors tension, cette personne n'aura plus accès au système.") })
+        $(".membNo").on("click", function () { $(".labError").html('[Vubiz Internal] est une valeur système utilisée par Vubiz Support à des fins de support.') })
+      }
+
+
+
       // clears the labError
       $(".labError").on("click", function () { $(".labError").html('') })
     })
@@ -93,23 +127,29 @@
 <asp:Content ID="mainContent" ContentPlaceHolderID="MainContent" runat="server">
 
   <div class="divPage">
-
     <asp:ImageButton CssClass="exit" ImageUrl="~/styles/icons/vubiz/cancel.png" ID="exit" runat="server" OnClick="exit_Click" />
 
     <asp:Panel ID="panBoth" CssClass="panBoth" runat="server">
 
       <asp:Panel ID="panTop" CssClass="panTop" runat="server">
 
+        <%--          <span onclick="fadeIn()" class="hoverUnderline" title="<%$  Resources:portal, title%>">--%>
         <h1>
-          <span onclick="fadeIn()" class="hoverUnderline" title="Click to hide/show discription."><asp:Literal runat="server" Text="<%$  Resources:portal, learners%>" /></span>
+          <span onclick="fadeIn()" class="hoverUnderline">
+            <asp:Literal runat="server" Text="<%$  Resources:portal, title%>" />
+            <asp:Literal runat="server" Text="<%$  Resources:portal, learners%>" />
+          </span>
           <asp:ImageButton OnClick="dvLearner_ItemInit" CssClass="icons add" ImageUrl="~/styles/icons/vubiz/add.png" ToolTip="Add a Learner" runat="server" />
         </h1>
 
         <div class="thisTitle">
-          <asp:Literal ID="noLearners" runat="server" />A learner must have a name and email address to appear on this list.
+          <asp:Literal ID="noLearners" runat="server" />    <%--A learner must have a name and email address to appear on this list.--%>
           <asp:Literal runat="server" Text="<%$  Resources:portal, learners_1a%>" />
           <asp:Literal runat="server" Text="<%$  Resources:portal, learners_1b%>" />
           <asp:Literal runat="server" Text="<%$  Resources:portal, learners_1c%>" />
+                   
+
+
           <span style="color: yellow"><asp:Literal runat="server" Text="<%$  Resources:portal, learners_1d%>" /></span>
           <div style="margin: 30px; text-align: center;">
             <asp:TextBox ID="txtSearch" Text="" CssClass="alignCenter" placeholder="<%$  Resources:portal, searchValue%>" runat="server" />
@@ -130,11 +170,11 @@
           PageSize="20"
           RowStyle-HorizontalAlign="Left">
           <Columns>
-            <asp:BoundField DataField="membId" HeaderText="Username" SortExpression="membId" />
-            <asp:BoundField DataField="membFirstName" HeaderText="First Name" SortExpression="membFirstName" />
-            <asp:BoundField DataField="membLastName" HeaderText="Last Name" SortExpression="membLastName" />
-            <asp:BoundField DataField="membEmail" HeaderText="Email" SortExpression="membEmail" />
-            <asp:BoundField DataField="membLevel" HeaderText="Level" SortExpression="membLevel" />
+            <asp:BoundField DataField="membId" HeaderText="<%$  Resources:portal, username%>" SortExpression="membId" />
+            <asp:BoundField DataField="membFirstName" HeaderText="<%$  Resources:portal, firstName%>" SortExpression="membFirstName" />
+            <asp:BoundField DataField="membLastName" HeaderText="<%$  Resources:portal, lastName%>" SortExpression="membLastName" />
+            <asp:BoundField DataField="membEmail" HeaderText="<%$  Resources:portal, email%>" SortExpression="membEmail" />
+            <asp:BoundField DataField="membLevel" HeaderText="<%$  Resources:portal, level%>" SortExpression="membLevel" />
             <asp:TemplateField HeaderText="Details">
               <ItemTemplate>
                 <asp:ImageButton
@@ -164,8 +204,8 @@
           <EmptyDataRowStyle ForeColor="Yellow" Font-Size="Large" />
           <EmptyDataTemplate>
             <br />
-            There are currently no Learners in this Account.  Use the Add icon above to Add learners.<br />
-            <br />
+            <asp:Literal runat="server" Text="<%$ Resources:portal, learners_3%>" />
+            <br /><br />
           </EmptyDataTemplate>
         </asp:GridView>
 
@@ -174,8 +214,8 @@
       <asp:Panel ID="panBot" CssClass="panBot" runat="server" Visible="false">
 
         <h1>
-          <span onclick="fadeIn()" class="hoverUnderline" title="Add/Edit Learner">
-            <asp:Literal runat="server" Text="Add/Edit Learner" />
+          <span onclick="fadeIn()" class="hoverUnderline">
+            <asp:Label CssClass="resendAlerts" runat="server" Text="<%$  Resources:portal, learners_7%>"></asp:Label>
           </span>
           <asp:ImageButton
             OnClick="ListLearners_Click"
@@ -186,11 +226,12 @@
         </h1>
 
         <div class="thisTitle">
-          Note: <b>Username</b> must be globally unique (suggest email).
-          Fields up to and including Email are mandatory.
-          The <b>Programs</b> field is assigned elsewhere thus is read only. 
-          <asp:Label ID="labAlerts" CssClass="resendAlerts" runat="server" Text="If this learner did not receive their 'Welcome' email alert(s), for whatever reason, click the Email icon and the system will resend any outstanding Email Alerts."></asp:Label>
-          When done, click the icon at top to return to the Learner List.
+          <asp:Label CssClass="resendAlerts" runat="server" Text="<%$  Resources:portal, learners_6%>"></asp:Label>
+          <asp:Label CssClass="resendAlerts" runat="server" Text="<%$  Resources:portal, learners_4%>"></asp:Label>
+          <asp:Label CssClass="resendAlerts" runat="server" Text="<%$  Resources:portal, learners_5%>"></asp:Label>
+          <asp:Label CssClass="resendAlerts" runat="server" Text="<%$  Resources:portal, learners_9%>"></asp:Label>
+          <span style="color: yellow"><asp:Literal runat="server" Text="<%$  Resources:portal, learners_1d%>" /></span>
+
         </div>
 
         <asp:Label
@@ -216,10 +257,10 @@
           OnItemInserted="dvLearner_ItemInserted"
           OnItemUpdating="dvLearner_ItemUpdating"
           OnItemUpdated="dvLearner_ItemUpdated"
-          OnItemDeleted="dvLearner_ItemDeleted">
+          OnItemDeleted="dvLearner_ItemDeleted" OnPageIndexChanging="dvLearner_PageIndexChanging">
 
           <Fields>
-            <asp:TemplateField HeaderText="<%$ Resources:portal, uniqueId%>" HeaderStyle-Font-Bold="true" HeaderStyle-HorizontalAlign="Right">
+            <asp:TemplateField HeaderText="<%$ Resources:portal, uniqueId%>">
               <EditItemTemplate>
                 <asp:Label ID="lab_membId" runat="server" Text='<%# Bind("membId") %>' Enabled="false"></asp:Label>
               </EditItemTemplate>
@@ -243,7 +284,7 @@
               <ItemTemplate>
                 <asp:Label ID="membPwd" runat="server" Text='<%# Bind("membPwd") %>' Enabled="false"></asp:Label>
               </ItemTemplate>
-              <HeaderStyle Font-Bold="True" HorizontalAlign="Right" />
+              <HeaderStyle CssClass="tip membPwd" Font-Bold="True" HorizontalAlign="Right" />
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="<%$ Resources:portal, firstName%>">
@@ -256,7 +297,7 @@
               <ItemTemplate>
                 <asp:Label ID="lab_membFirstName" runat="server" Text='<%# Bind("membFirstName") %>' Enabled="false"></asp:Label>
               </ItemTemplate>
-              <HeaderStyle Font-Bold="True" HorizontalAlign="Right" />
+              <HeaderStyle CssClass="tip membFirstName" Font-Bold="True" HorizontalAlign="Right" />
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="<%$ Resources:portal, lastName%>">
@@ -269,7 +310,7 @@
               <ItemTemplate>
                 <asp:Label ID="lab_membLastName" runat="server" Text='<%# Bind("membLastName") %>' Enabled="false"></asp:Label>
               </ItemTemplate>
-              <HeaderStyle Font-Bold="True" HorizontalAlign="Right" />
+              <HeaderStyle CssClass="tip membLastName" Font-Bold="True" HorizontalAlign="Right" />
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="<%$ Resources:portal, email%>">
@@ -282,7 +323,7 @@
               <ItemTemplate>
                 <asp:Label ID="lab_membEmail" runat="server" Text='<%# Bind("membEmail") %>' Enabled="false"></asp:Label>
               </ItemTemplate>
-              <HeaderStyle Font-Bold="True" HorizontalAlign="Right" />
+              <HeaderStyle CssClass="tip membEmail" Font-Bold="True" HorizontalAlign="Right" />
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="<%$ Resources:portal, organization%>">
@@ -295,6 +336,7 @@
               <ItemTemplate>
                 <asp:Label ID="lab_membOrganization" runat="server" Text='<%# Bind("membOrganization") %>' Enabled="false"></asp:Label>
               </ItemTemplate>
+              <HeaderStyle CssClass="tip membOrganization" Font-Bold="True" HorizontalAlign="Right" />
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="<%$ Resources:portal, memo%>">
@@ -307,14 +349,14 @@
               <ItemTemplate>
                 <asp:Label ID="membMemo" runat="server" Text='<%# Bind("membMemo") %>' Enabled="false"></asp:Label>
               </ItemTemplate>
-              <HeaderStyle Font-Bold="True" HorizontalAlign="Right" />
+              <HeaderStyle CssClass="tip membMemo" Font-Bold="True" HorizontalAlign="Right" />
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="<%$ Resources:portal, programs%>">
               <ItemTemplate>
                 <asp:Label ID="membPrograms" runat="server" Text='<%# Bind("membPrograms") %>' Enabled="false"></asp:Label>
               </ItemTemplate>
-              <HeaderStyle Font-Bold="True" HorizontalAlign="Right" />
+              <HeaderStyle CssClass="tip membPrograms" Font-Bold="True" HorizontalAlign="Right" />
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="<%$ Resources:portal, level%>" HeaderStyle-Font-Bold="true" HeaderStyle-HorizontalAlign="Right">
@@ -328,7 +370,7 @@
                 </asp:DropDownList>
                 <asp:HiddenField ID="hidMembLevel" Value='<%# Bind("membLevel") %>' runat="server" />
                 <br />
-                The Level value should NOT be changed once updated since other values depend on its state.
+                <asp:Literal runat="server" Text="<%$ Resources:portal, learners_11%>" />
               </EditItemTemplate>
               <InsertItemTemplate>
                 <asp:DropDownList Height="23" ID="membLevel" SelectedValue='<%# Bind("membLevel") %>' CssClass="membLevel" runat="server">
@@ -345,14 +387,13 @@
                 <asp:Label ID="membLevel" runat="server" Text='<%# Bind("membLevelText") %>'></asp:Label>
                 <asp:HiddenField ID="hidMembLevel" Value='<%# Bind("membLevel") %>' runat="server" />
               </ItemTemplate>
-
+              <HeaderStyle CssClass="tip membLevel" Font-Bold="True" HorizontalAlign="Right" />
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="<%$ Resources:portal, managerAccess%>" HeaderStyle-Font-Bold="true" HeaderStyle-HorizontalAlign="Right">
               <ItemTemplate>
                 <asp:Label ID="membManagerAccess" runat="server" Text='<%# Eval("membManagerAccess") %>'></asp:Label>
               </ItemTemplate>
-
               <EditItemTemplate>
                 <asp:ListBox ID="membManagerAccess" SelectionMode="Multiple" CssClass="membManagerAccess" Rows="4" runat="server">
                   <asp:ListItem Value="0" Text="No Special Access"></asp:ListItem>
@@ -362,9 +403,9 @@
                 </asp:ListBox>
                 <asp:HiddenField ID="hidMembManagerAccess" Value='<%# Eval("membManagerAccess") %>' runat="server" />
                 <br />
-                Note: select/highlight either 'No Special Access' OR any combination of the other values. Use CTRL click to select/highlight multiple values.
+                <%-- Note: select/highlight either 'No Special Access' OR any combination of the other values. Use CTRL click to select/highlight multiple values.--%>
+                <asp:Literal runat="server" Text="<%$ Resources:portal, learners_10%>" />
               </EditItemTemplate>
-
               <InsertItemTemplate>
                 <asp:ListBox ID="membManagerAccess" SelectionMode="Multiple" CssClass="membManagerAccess" Rows="4" runat="server">
                   <asp:ListItem Value="0" Text="No Special Access"></asp:ListItem>
@@ -375,6 +416,7 @@
                 <asp:Label ID="labMembManagerAccess" runat="server"></asp:Label>
                 <asp:HiddenField ID="txtMembManagerAccess" runat="server" />
               </InsertItemTemplate>
+              <HeaderStyle CssClass="tip membManagerAccess" Font-Bold="True" HorizontalAlign="Right" />
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="<%$ Resources:portal, receiveAlerts %>">
@@ -387,18 +429,20 @@
               <ItemTemplate>
                 <asp:CheckBox ID="lab_membEmailAlert" runat="server" Checked='<%# Bind("membEmailAlert") %>' Enabled="false" />
               </ItemTemplate>
+              <HeaderStyle CssClass="tip membReceiveAlerts" Font-Bold="True" HorizontalAlign="Right" />
             </asp:TemplateField>
 
-            <asp:TemplateField Visible="true" HeaderText="Resend Alerts">
+            <asp:TemplateField Visible="true" HeaderText="<%$ Resources:portal, resendAlerts %>">
               <ItemStyle CssClass="resendAlerts" />
               <HeaderStyle CssClass="resendAlerts" />
               <ItemTemplate>
                 <asp:ImageButton ID="butResendEmailAlerts" CssClass="icons email" OnClick="butResendEmailAlerts_Click" ImageUrl="~/styles/icons/vubiz/emailSolo.png" runat="server" CausesValidation="false" Text="Resend" ToolTip="<%$ Resources:portal, alertsResend%>" />
                 &nbsp;&nbsp;&nbsp;<asp:Label ID="labResendEmailAlerts" runat="server" Visible="false" Text="<%$ Resources:portal, alertsResent%>"></asp:Label>
               </ItemTemplate>
+              <HeaderStyle CssClass="tip membResendAlerts" Font-Bold="True" HorizontalAlign="Right" />
             </asp:TemplateField>
 
-            <asp:TemplateField HeaderText="Active">
+            <asp:TemplateField HeaderText="<%$ Resources:portal, active %>">
               <EditItemTemplate>
                 <asp:CheckBox ID="membActive" runat="server" Checked='<%# Bind("membActive") %>' />
               </EditItemTemplate>
@@ -408,6 +452,7 @@
               <ItemTemplate>
                 <asp:CheckBox ID="membActive" runat="server" Checked='<%# Bind("membActive") %>' Enabled="false" />
               </ItemTemplate>
+              <HeaderStyle CssClass="tip membActive" Font-Bold="True" HorizontalAlign="Right" />
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="[ Vubiz Internal ]">

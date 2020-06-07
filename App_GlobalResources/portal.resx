@@ -117,188 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="assignPurchasedContent" xml:space="preserve">
-    <value>Assign Purchased Content</value>
+  <data name="about_0" xml:space="preserve">
+    <value>About this Service</value>
   </data>
-  <data name="cancel" xml:space="preserve">
-    <value>Cancel</value>
-  </data>
-  <data name="content_1" xml:space="preserve">
-    <value>This allows you to assign the programs you have purchased to your learners. Select individual learners below to whom you'd like to assign content or select all learners (click top left).</value>
-  </data>
-  <data name="custId" xml:space="preserve">
-    <value>Customer Id</value>
-  </data>
-  <data name="delete" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="details" xml:space="preserve">
-    <value>Details</value>
-  </data>
-  <data name="edit" xml:space="preserve">
-    <value>Edit</value>
-  </data>
-  <data name="email" xml:space="preserve">
-    <value>Email</value>
-  </data>
-  <data name="firstName" xml:space="preserve">
-    <value>First Name</value>
-  </data>
-  <data name="firstVisit" xml:space="preserve">
-    <value>First Visit</value>
-  </data>
-  <data name="langEnglish" xml:space="preserve">
-    <value>English</value>
-  </data>
-  <data name="langFrench" xml:space="preserve">
-    <value>French</value>
-  </data>
-  <data name="lastName" xml:space="preserve">
-    <value>Last Name</value>
-  </data>
-  <data name="lastVisit" xml:space="preserve">
-    <value>Last Visit</value>
-  </data>
-  <data name="learners" xml:space="preserve">
-    <value>Learners</value>
-  </data>
-  <data name="learners_2" xml:space="preserve">
-    <value>Click &lt;span class="code"&gt;Select&lt;/span&gt; for learner details.</value>
-  </data>
-  <data name="membId" xml:space="preserve">
-    <value>Username</value>
-  </data>
-  <data name="memo" xml:space="preserve">
-    <value>Memo</value>
-  </data>
-  <data name="menuActivityReport" xml:space="preserve">
-    <value>Activity Report</value>
-  </data>
-  <data name="menuAssessmentReport" xml:space="preserve">
-    <value>Assessment Report</value>
-  </data>
-  <data name="menuAssignPurchasedContent" xml:space="preserve">
-    <value>Assign Purchased Content</value>
-  </data>
-  <data name="menuCompletionCSV" xml:space="preserve">
-    <value>Completion (CSV)</value>
-  </data>
-  <data name="menuCompletionReport" xml:space="preserve">
-    <value>Completion Report</value>
-  </data>
-  <data name="menuFacilitatorServices" xml:space="preserve">
-    <value>Facilitator Services</value>
-  </data>
-  <data name="menuHome" xml:space="preserve">
-    <value>Home</value>
-  </data>
-  <data name="menuInCompletionCSV" xml:space="preserve">
-    <value>InCompletion (CSV)</value>
-  </data>
-  <data name="menuLearnersAddEdit" xml:space="preserve">
-    <value>Add/Edit Learners</value>
-  </data>
-  <data name="menuSignOut" xml:space="preserve">
-    <value>Sign Out</value>
-  </data>
-  <data name="menuMyProfile" xml:space="preserve">
-    <value>My Profile</value>
-  </data>
-  <data name="menuReports" xml:space="preserve">
-    <value>Reports</value>
-  </data>
-  <data name="new_" xml:space="preserve">
-    <value>New</value>
-  </data>
-  <data name="noVisits" xml:space="preserve">
-    <value>No Visits</value>
-  </data>
-  <data name="organization" xml:space="preserve">
-    <value>Organization</value>
-  </data>
-  <data name="search" xml:space="preserve">
-    <value>Search</value>
-  </data>
-  <data name="searchValue" xml:space="preserve">
-    <value>seach value</value>
-  </data>
-  <data name="signIn" xml:space="preserve">
-    <value>Sign In</value>
-  </data>
-  <data name="uniqueId" xml:space="preserve">
-    <value>Username</value>
-  </data>
-  <data name="labWelcome" xml:space="preserve">
-    <value>Hello {0}. Welcome to the learning portal.</value>
-  </data>
-  <data name="content_2" xml:space="preserve">
-    <value>Then select the programs you want assigned to these learners or select all programs (click top left).</value>
-  </data>
-  <data name="content_3" xml:space="preserve">
-    <value>Then click &lt;span class="code"&gt;Assign&lt;/span&gt; and the Programs will appear in the learner(s) &lt;span style="font-weight: bold;"&gt;Programs After&lt;/span&gt; field.</value>
-  </data>
-  <data name="content_4" xml:space="preserve">
-    <value>The program count will be reflected in the Assigned After and Available After fields.</value>
-  </data>
-  <data name="content_5" xml:space="preserve">
-    <value>Click &lt;span class="code"&gt;Restart&lt;/span&gt; to undo what you have done, enabling you to start over.&amp;nbsp; When your assignments look good, then click &lt;span class="code"&gt;Commit&lt;/span&gt;.</value>
-  </data>
-  <data name="content_6" xml:space="preserve">
-    <value>&lt;span style="font-style:italic;"&gt;Note: once content is assigned and committed it cannot be unassigned!&lt;/span&gt;</value>
-  </data>
-  <data name="content_7" xml:space="preserve">
-    <value>First select the Learner(s) that will be assigned Programs</value>
-  </data>
-  <data name="content_8" xml:space="preserve">
-    <value>Next select the Programs you wish to assign to the above Learner(s).</value>
-  </data>
-  <data name="assign" xml:space="preserve">
-    <value>Assign</value>
-  </data>
-  <data name="assignedAfter" xml:space="preserve">
-    <value>Assigned After</value>
-  </data>
-  <data name="assignedBefore" xml:space="preserve">
-    <value>Assigned Before</value>
-  </data>
-  <data name="availableAfter" xml:space="preserve">
-    <value>Available After</value>
-  </data>
-  <data name="availableBefore" xml:space="preserve">
-    <value>Available Before</value>
-  </data>
-  <data name="close" xml:space="preserve">
-    <value>Close</value>
-  </data>
-  <data name="commit" xml:space="preserve">
-    <value>Commit</value>
-  </data>
-  <data name="content_10" xml:space="preserve">
-    <value>NOTE: once content is assigned and committed, it cannot be unassigned!</value>
-  </data>
-  <data name="content_9" xml:space="preserve">
-    <value>Then click Assign and the Program(s) will be moved to the Learner(s).&lt;br /&gt;You will then have an opportunity to Commit the assignment(s) or Restart.</value>
-  </data>
-  <data name="restart" xml:space="preserve">
-    <value>Restart</value>
-  </data>
-  <data name="programsAfter" xml:space="preserve">
-    <value>Programs After</value>
-  </data>
-  <data name="programsBefore" xml:space="preserve">
-    <value>Programs Before</value>
-  </data>
-  <data name="programId" xml:space="preserve">
-    <value>Program Id</value>
-  </data>
-  <data name="programTitle" xml:space="preserve">
-    <value>Program Title</value>
-  </data>
-  <data name="purchased" xml:space="preserve">
-    <value>Purchased</value>
-  </data>
-  <data name="menuAbout" xml:space="preserve">
-    <value>About</value>
+  <data name="about_01" xml:space="preserve">
+    <value>Select the Category at Left</value>
   </data>
   <data name="about_1" xml:space="preserve">
     <value>This service is where you can manage your learners and the content they will review. It also provides a series of reports to monitor learner activities.</value>
@@ -315,128 +138,20 @@
   <data name="about_5" xml:space="preserve">
     <value>Reports come in a variety of flavours. Little online "reports" like this one that you are reading, is an "info" report and will have a blue background. Key online reports where you manage information will have a white background.  Most key report provide CSV and/or Excel versions.</value>
   </data>
+  <data name="about_6" xml:space="preserve">
+    <value>Account features and reports appear on the menu items at the top left. Operational features for your benefit appear on the top right. Note that this service will NOT run on small screens like a phone since large online forms etc are a key part of the deliverables.</value>
+  </data>
   <data name="access" xml:space="preserve">
     <value>Access</value>
-  </data>
-  <data name="introduction" xml:space="preserve">
-    <value>Introduction</value>
-  </data>
-  <data name="signOut" xml:space="preserve">
-    <value>Sign Out</value>
-  </data>
-  <data name="about_0" xml:space="preserve">
-    <value>About this Service</value>
-  </data>
-  <data name="language" xml:space="preserve">
-    <value>Language</value>
-  </data>
-  <data name="levels" xml:space="preserve">
-    <value>Levels</value>
-  </data>
-  <data name="reports" xml:space="preserve">
-    <value>Reports</value>
-  </data>
-  <data name="sessionVariables" xml:space="preserve">
-    <value>These are internal values maintained during the Session.</value>
-  </data>
-  <data name="credentialError" xml:space="preserve">
-    <value>Those Credentials are not on file! Click Restart.</value>
-  </data>
-  <data name="profiles" xml:space="preserve">
-    <value>Profiles</value>
-  </data>
-  <data name="parameter" xml:space="preserve">
-    <value>Parameter</value>
-  </data>
-  <data name="profile" xml:space="preserve">
-    <value>Profile</value>
-  </data>
-  <data name="profiles_1" xml:space="preserve">
-    <value>Click on the Profile header to sort or search for Profile ...</value>
-  </data>
-  <data name="value" xml:space="preserve">
-    <value>Value</value>
-  </data>
-  <data name="labManage" xml:space="preserve">
-    <value>Use the top corner menu items to manage the system.</value>
-  </data>
-  <data name="menuLearnersExcel" xml:space="preserve">
-    <value>Export Learners</value>
-  </data>
-  <data name="membPwd" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="menuChangeLanguage" xml:space="preserve">
-    <value>Change Language</value>
-  </data>
-  <data name="menuDocumentation" xml:space="preserve">
-    <value>Documentation</value>
-  </data>
-  <data name="addLearner" xml:space="preserve">
-    <value>Add Learner</value>
-  </data>
-  <data name="menuLearner" xml:space="preserve">
-    <value>Add a Leaner</value>
-  </data>
-  <data name="learner" xml:space="preserve">
-    <value>Add a Learner</value>
-  </data>
-  <data name="menuAlias" xml:space="preserve">
-    <value>Profile Aliases</value>
   </data>
   <data name="active" xml:space="preserve">
     <value>Active</value>
   </data>
-  <data name="sql" xml:space="preserve">
-    <value>Oops.  We could not perform that activity.</value>
+  <data name="active?" xml:space="preserve">
+    <value>Active?</value>
   </data>
-  <data name="password" xml:space="preserve">
-    <value>Password</value>
-  </data>
-  <data name="programs" xml:space="preserve">
-    <value>Programs</value>
-  </data>
-  <data name="changeLanguage" xml:space="preserve">
-    <value>Change Language</value>
-  </data>
-  <data name="signInLevel" xml:space="preserve">
-    <value>This Portal is only available to Facilitators and/or Managers.</value>
-  </data>
-  <data name="labContent" xml:space="preserve">
-    <value>Use {0} charm below to access the content.</value>
-  </data>
-  <data name="level" xml:space="preserve">
-    <value>Level</value>
-  </data>
-  <data name="about_6" xml:space="preserve">
-    <value>Account features and reports appear on the menu items at the top left. Operational features for your benefit appear on the top right. Note that this service will NOT run on small screens like a phone since large online forms etc are a key part of the deliverables.</value>
-  </data>
-  <data name="setup" xml:space="preserve">
-    <value>Setup</value>
-  </data>
-  <data name="about_01" xml:space="preserve">
-    <value>Select the Category at Left</value>
-  </data>
-  <data name="noLearners_1" xml:space="preserve">
-    <value>learner has been retrieved.</value>
-  </data>
-  <data name="noLearners_2" xml:space="preserve">
-    <value>learners have been retrieved. For a full list of learners use the Learners app that exports learners to Excel.</value>
-  </data>
-  <data name="noLearners_200" xml:space="preserve">
-    <value>learners have been retrieved based on the Search Criteria. For a full list of learners use the Learners app that exports learners to Excel.</value>
-  </data>
-  <data name="next" xml:space="preserve">
-    <value>Next</value>
-  </data>
-  <data name="menuEmailAlerts" xml:space="preserve">
-    <value>Email Alerts</value>
-  </data>
-  <data name="receiveAlerts" xml:space="preserve">
-    <value>Receive Alerts</value>
-  </data>
-  <data name="resendAlerts" xml:space="preserve">
-    <value>Resend Alerts</value>
+  <data name="addLearner" xml:space="preserve">
+    <value>Add Learner</value>
   </data>
   <data name="alertsResend" xml:space="preserve">
     <value>Resend Email Alerts</value>
@@ -444,68 +159,215 @@
   <data name="alertsResent" xml:space="preserve">
     <value>Email Alerts will be resent on the next cycle!</value>
   </data>
-  <data name="errorPage" xml:space="preserve">
-    <value>The resource being accessed is not available. Restart required.</value>
+  <data name="allPrograms" xml:space="preserve">
+    <value>All Programs</value>
   </data>
-  <data name="errorHouston" xml:space="preserve">
-    <value>Houston, we have a problem...</value>
+  <data name="assign" xml:space="preserve">
+    <value>Assign</value>
   </data>
-  <data name="menuProgramActivityDetails" xml:space="preserve">
-    <value>Program Activity Details (Excel)</value>
+  <data name="assigned" xml:space="preserve">
+    <value>Assigned</value>
   </data>
-  <data name="tile_About" xml:space="preserve">
-    <value>About</value>
+  <data name="assignedAfter" xml:space="preserve">
+    <value>Assigned After</value>
   </data>
-  <data name="tile_ActivityReport" xml:space="preserve">
-    <value>Activity Report</value>
+  <data name="assignedBefore" xml:space="preserve">
+    <value>Assigned Before</value>
   </data>
-  <data name="tile_AssessmentReport" xml:space="preserve">
-    <value>Assessment Report</value>
+  <data name="assignPurchasedContent" xml:space="preserve">
+    <value>Assign Purchased Content</value>
   </data>
-  <data name="tile_AssignContent" xml:space="preserve">
-    <value>Assign Content</value>
+  <data name="availableAfter" xml:space="preserve">
+    <value>Available After</value>
   </data>
-  <data name="tile_BrowserReadinessTest" xml:space="preserve">
-    <value>Browser Readiness Test</value>
+  <data name="availableBefore" xml:space="preserve">
+    <value>Available Before</value>
   </data>
-  <data name="tile_ChangeLanguage" xml:space="preserve">
-    <value>Change Language</value>
+  <data name="back" xml:space="preserve">
+    <value>Back</value>
   </data>
-  <data name="tile_CompletionReport" xml:space="preserve">
-    <value>Completion Report</value>
-  </data>
-  <data name="tile_Documentation" xml:space="preserve">
-    <value>Documentation</value>
-  </data>
-  <data name="tile_EmailAlerts" xml:space="preserve">
-    <value>Email Alerts</value>
-  </data>
-  <data name="tile_FacilitatorServices" xml:space="preserve">
-    <value>Facilitator Services</value>
-  </data>
-  <data name="tile_LearnersExport" xml:space="preserve">
-    <value>Learners (Export)</value>
-  </data>
-  <data name="tile_LearnersAddEdit" xml:space="preserve">
-    <value>Learners (Add/Edit)</value>
-  </data>
-  <data name="tile_MyProfile" xml:space="preserve">
-    <value>My Profile</value>
-  </data>
-  <data name="tile_ProgramActivityDetails" xml:space="preserve">
-    <value>Program Activity Details</value>
-  </data>
-  <data name="tile_SignOut" xml:space="preserve">
-    <value>Sign Out</value>
+  <data name="begin" xml:space="preserve">
+    <value>Begin</value>
   </data>
   <data name="browserTest" xml:space="preserve">
     <value>Browser Test</value>
   </data>
+  <data name="cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="changeLanguage" xml:space="preserve">
+    <value>Change Language</value>
+  </data>
+  <data name="close" xml:space="preserve">
+    <value>Close</value>
+  </data>
+  <data name="commit" xml:space="preserve">
+    <value>Commit</value>
+  </data>
+  <data name="completed?" xml:space="preserve">
+    <value>Completed?</value>
+  </data>
+  <data name="content_1" xml:space="preserve">
+    <value>This allows you to assign the programs you have purchased to your learners. Select individual learners below to whom you'd like to assign content or select all learners (click top left).</value>
+  </data>
+  <data name="content_10" xml:space="preserve">
+    <value>NOTE: once content is assigned and committed, it cannot be unassigned!</value>
+  </data>
+  <data name="content_2" xml:space="preserve">
+    <value>Then select the programs you want assigned to these learners or select all programs (click top left).</value>
+  </data>
+  <data name="content_3" xml:space="preserve">
+    <value>Then click &lt;span class="code"&gt;Assign&lt;/span&gt; and the Programs will appear in the learner(s) &lt;span style="font-weight: bold;"&gt;Programs After&lt;/span&gt; field.</value>
+  </data>
+  <data name="content_4" xml:space="preserve">
+    <value>The program count will be reflected in the Assigned After and Available After fields.</value>
+  </data>
+  <data name="content_5" xml:space="preserve">
+    <value>Click &lt;span class="code"&gt;Restart&lt;/span&gt; to undo what you have done, enabling you to start over.&amp;nbsp; When your assignments look good, then click &lt;span class="code"&gt;Commit&lt;/span&gt;.</value>
+  </data>
+  <data name="content_6" xml:space="preserve">
+    <value>&lt;span style="font-style:italic;"&gt;Note: once content is assigned and committed it cannot be unassigned!&lt;/span&gt;</value>
+  </data>
+  <data name="content_61" xml:space="preserve">
+    <value>Inactive Learners are only rendered to show possible previous assignments.</value>
+  </data>
+  <data name="content_7" xml:space="preserve">
+    <value>First select the Learner(s) that will be assigned Programs</value>
+  </data>
+  <data name="content_8" xml:space="preserve">
+    <value>Next select the Programs you wish to assign to the above Learner(s).</value>
+  </data>
+  <data name="content_9" xml:space="preserve">
+    <value>Then click Assign and the Program(s) will be moved to the Learner(s).&lt;br /&gt;You will then have an opportunity to Commit the assignment(s) or Restart.</value>
+  </data>
+  <data name="credentialError" xml:space="preserve">
+    <value>Those Credentials are not on file! Click Restart.</value>
+  </data>
+  <data name="credentialPasswordError" xml:space="preserve">
+    <value>That Password is incorrect!</value>
+  </data>
   <data name="credentials" xml:space="preserve">
     <value>Please enter your credentials.</value>
   </data>
+  <data name="custId" xml:space="preserve">
+    <value>Customer Id</value>
+  </data>
+  <data name="delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="documentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="emailAlerts_1" xml:space="preserve">
+    <value>Email Alert Service</value>
+  </data>
+  <data name="emailAlerts_2" xml:space="preserve">
+    <value>This service will email access instructions to any Learner when program(s) have been assigned by the account Facilitator. A Learner must have a valid email address in order to qualify for email alerts.&lt;br /&gt;If this service is enabled then each learner can further be configured to use the service or not; also you can resend email alerts by using Add/Edit Learners.</value>
+  </data>
+  <data name="emailAlerts_3" xml:space="preserve">
+    <value>Service Status is currently</value>
+  </data>
+  <data name="emailAlerts_4" xml:space="preserve">
+    <value>ENABLED</value>
+  </data>
+  <data name="emailAlerts_5" xml:space="preserve">
+    <value>DISABLED</value>
+  </data>
+  <data name="emailAlerts_6" xml:space="preserve">
+    <value>Enable email alerts</value>
+  </data>
+  <data name="emailAlerts_7" xml:space="preserve">
+    <value>Disable email alerts</value>
+  </data>
+  <data name="endDate" xml:space="preserve">
+    <value>End Date</value>
+  </data>
+  <data name="errorHouston" xml:space="preserve">
+    <value>Houston, we have a problem...</value>
+  </data>
+  <data name="errorPage" xml:space="preserve">
+    <value>The resource being accessed is not available. Restart required.</value>
+  </data>
+  <data name="firstName" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="firstVisit" xml:space="preserve">
+    <value>First Visit</value>
+  </data>
   <data name="forgot" xml:space="preserve">
     <value>Forgot?</value>
+  </data>
+  <data name="forgotCredentials" xml:space="preserve">
+    <value>Forgot Credentials?</value>
+  </data>
+  <data name="forgot_1" xml:space="preserve">
+    <value>Enter your unique email address where we will send your credentials.</value>
+  </data>
+  <data name="introduction" xml:space="preserve">
+    <value>Introduction</value>
+  </data>
+  <data name="labContent" xml:space="preserve">
+    <value>Use {0} charm below to access the content.</value>
+  </data>
+  <data name="labManage" xml:space="preserve">
+    <value>Use the top corner menu items to manage the system.</value>
+  </data>
+  <data name="labWelcome" xml:space="preserve">
+    <value>Hello {0}. Welcome to the learning portal.</value>
+  </data>
+  <data name="langEnglish" xml:space="preserve">
+    <value>English</value>
+  </data>
+  <data name="langFrench" xml:space="preserve">
+    <value>French</value>
+  </data>
+  <data name="language" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="lastAccessed" xml:space="preserve">
+    <value>Last Accessed</value>
+  </data>
+  <data name="lastName" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="lastVisit" xml:space="preserve">
+    <value>Last Visit</value>
+  </data>
+  <data name="learner" xml:space="preserve">
+    <value>Add a Learner</value>
+  </data>
+  <data name="learnerId" xml:space="preserve">
+    <value>Learner Id</value>
+  </data>
+  <data name="learners" xml:space="preserve">
+    <value>Learners</value>
+  </data>
+  <data name="learners_1" xml:space="preserve">
+    <value>Learner Id</value>
+  </data>
+  <data name="learners_10" xml:space="preserve">
+    <value>Note: select/highlight either 'No Special Access' OR any combination of the other values. Use CTRL click to select/highlight multiple values.</value>
+  </data>
+  <data name="learners_11" xml:space="preserve">
+    <value>The Level value should NOT be changed once updated since other values depend on its state.</value>
+  </data>
+  <data name="learners_12" xml:space="preserve">
+    <value>Export Learners to Excel</value>
+  </data>
+  <data name="learners_13" xml:space="preserve">
+    <value>There are</value>
+  </data>
+  <data name="learners_14" xml:space="preserve">
+    <value>learners available for Export.</value>
   </data>
   <data name="learners_1a" xml:space="preserve">
     <value>Click on the column headers to sort learners, the</value>
@@ -516,52 +378,448 @@
   <data name="learners_1c" xml:space="preserve">
     <value>icon at right for learner details. You can narrow this list by searching any field for any value.</value>
   </data>
-  <data name="tile_Sessions" xml:space="preserve">
-    <value>Sessions</value>
-  </data>
-  <data name="forgotCredentials" xml:space="preserve">
-    <value>Forgot Credentials?</value>
-  </data>
-  <data name="tile_MyContentV5" xml:space="preserve">
-    <value>My Content (V5)</value>
-  </data>
-  <data name="tile_Store" xml:space="preserve">
-    <value>Store</value>
-  </data>
-  <data name="tile_MyContentV8" xml:space="preserve">
-    <value>My Content (V8)</value>
-  </data>
-  <data name="forgot_1" xml:space="preserve">
-    <value>Enter your unique email address where we will send your credentials.</value>
-  </data>
-  <data name="retrieve" xml:space="preserve">
-    <value>Retrieve</value>
-  </data>
-  <data name="tile_InCompletionReport" xml:space="preserve">
-    <value>InCompletion Report</value>
-  </data>
-  <data name="pageTitleDefault" xml:space="preserve">
-    <value>Administration Home</value>
-  </data>
-  <data name="sqlDuplicate" xml:space="preserve">
-    <value>Oops.  It seems that Username already exists.</value>
-  </data>
-  <data name="credentialPasswordError" xml:space="preserve">
-    <value>That Password is incorrect!</value>
-  </data>
   <data name="learners_1d" xml:space="preserve">
     <value>[Clicking the title shows/hides this section.]</value>
+  </data>
+  <data name="learners_2" xml:space="preserve">
+    <value>Click &lt;span class="code"&gt;Select&lt;/span&gt; for learner details.</value>
+  </data>
+  <data name="learners_3" xml:space="preserve">
+    <value>There are currently no Learners in this Account. Use the Add icon above to Add learners.</value>
+  </data>
+  <data name="learners_4" xml:space="preserve">
+    <value>If this learner did not receive their 'Welcome' email alert(s), for whatever reason, click the Email icon and the system will resend any outstanding Email Alerts.</value>
+  </data>
+  <data name="learners_5" xml:space="preserve">
+    <value>When done, click the icon at top to return to the Learner List.</value>
+  </data>
+  <data name="learners_6" xml:space="preserve">
+    <value>Note: &lt;b&gt;Username&lt;/b&gt; must be globally unique (suggest email). Fields up to and including Email are mandatory. The &lt;b&gt;Programs&lt;/b&gt; field is assigned elsewhere thus is read only.</value>
+  </data>
+  <data name="learners_7" xml:space="preserve">
+    <value>Add/Edit Learner</value>
+  </data>
+  <data name="learners_8" xml:space="preserve">
+    <value>You are missing mandatory field(s):</value>
+  </data>
+  <data name="learners_9" xml:space="preserve">
+    <value>Note: clicking on the Field name (i.e. Username) will provide a description above.  Click on the description to remove it.</value>
+  </data>
+  <data name="level" xml:space="preserve">
+    <value>Level</value>
+  </data>
+  <data name="levels" xml:space="preserve">
+    <value>Levels</value>
+  </data>
+  <data name="managerAccess" xml:space="preserve">
+    <value>Manager Access</value>
+  </data>
+  <data name="memberNo" xml:space="preserve">
+    <value>Member No</value>
+  </data>
+  <data name="membId" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="membPwd" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="memo" xml:space="preserve">
+    <value>Memo</value>
+  </data>
+  <data name="menuAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="menuActivityReport" xml:space="preserve">
+    <value>Activity Report</value>
+  </data>
+  <data name="menuAlias" xml:space="preserve">
+    <value>Profile Aliases</value>
+  </data>
+  <data name="menuAssessmentReport" xml:space="preserve">
+    <value>Assessment Report</value>
+  </data>
+  <data name="menuAssignPurchasedContent" xml:space="preserve">
+    <value>Assign Purchased Content</value>
+  </data>
+  <data name="menuChangeLanguage" xml:space="preserve">
+    <value>Change Language</value>
+  </data>
+  <data name="menuCompletionCSV" xml:space="preserve">
+    <value>Completion (CSV)</value>
+  </data>
+  <data name="menuCompletionReport" xml:space="preserve">
+    <value>Completion Report</value>
+  </data>
+  <data name="menuDocumentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="menuEmailAlerts" xml:space="preserve">
+    <value>Email Alerts</value>
+  </data>
+  <data name="menuFacilitatorServices" xml:space="preserve">
+    <value>Facilitator Services</value>
+  </data>
+  <data name="menuHome" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="menuInCompletionCSV" xml:space="preserve">
+    <value>InCompletion (CSV)</value>
+  </data>
+  <data name="menuLearner" xml:space="preserve">
+    <value>Add a Leaner</value>
+  </data>
+  <data name="menuLearnersAddEdit" xml:space="preserve">
+    <value>Add/Edit Learners</value>
+  </data>
+  <data name="menuLearnersExcel" xml:space="preserve">
+    <value>Export Learners</value>
+  </data>
+  <data name="menuMyProfile" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="menuProgramActivityDetails" xml:space="preserve">
+    <value>Program Activity Details (Excel)</value>
+  </data>
+  <data name="menuReports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="menuSignOut" xml:space="preserve">
+    <value>Sign Out</value>
+  </data>
+  <data name="new_" xml:space="preserve">
+    <value>New</value>
+  </data>
+  <data name="next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="noLearners" xml:space="preserve">
+    <value>A learner must have a name and email address to appear on this list.</value>
+  </data>
+  <data name="noLearners_1" xml:space="preserve">
+    <value>learner has been retrieved.</value>
+  </data>
+  <data name="noLearners_2" xml:space="preserve">
+    <value>learners have been retrieved. For a full list of learners use the Learners app that exports learners to Excel.</value>
+  </data>
+  <data name="noLearners_200" xml:space="preserve">
+    <value>learners have been retrieved based on the Search Criteria. For a full list of learners use the Learners app that exports learners to Excel.</value>
+  </data>
+  <data name="noticeAssigned" xml:space="preserve">
+    <value>Assigned</value>
+  </data>
+  <data name="noticeN" xml:space="preserve">
+    <value>They will be assigned to a different learner profile.</value>
+  </data>
+  <data name="noticeNote" xml:space="preserve">
+    <value>Note: You can click on the Facilitator Services tile to Add Learners and Assign Content.</value>
+  </data>
+  <data name="noticeSubTitle" xml:space="preserve">
+    <value>We noticed that you have some purchases that are not assigned.</value>
+  </data>
+  <data name="noticeTitle" xml:space="preserve">
+    <value>Purchase Notice</value>
+  </data>
+  <data name="noticeY" xml:space="preserve">
+    <value>I would like to take these courses myself.</value>
+  </data>
+  <data name="noVisits" xml:space="preserve">
+    <value>Number of Visits</value>
+  </data>
+  <data name="optional" xml:space="preserve">
+    <value>optional</value>
+  </data>
+  <data name="organization" xml:space="preserve">
+    <value>Organization</value>
+  </data>
+  <data name="pageAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="pageActivityReport" xml:space="preserve">
+    <value>Rapport d'activité</value>
+  </data>
+  <data name="pageAssessmentReport" xml:space="preserve">
+    <value>Assessment Report</value>
+  </data>
+  <data name="pageAssessmentResponses(Details)" xml:space="preserve">
+    <value>Assessment Responses (Details)</value>
+  </data>
+  <data name="pageAssessmentResponses(Summary)" xml:space="preserve">
+    <value>Assessment Responses (Summary)</value>
+  </data>
+  <data name="pageAssessments" xml:space="preserve">
+    <value>Learner Assessments</value>
+  </data>
+  <data name="pageBrowserReadinessTest" xml:space="preserve">
+    <value>Browser Readiness Test</value>
+  </data>
+  <data name="pageCompletionReport" xml:space="preserve">
+    <value>Completion Report</value>
+  </data>
+  <data name="pageCustomerActivity" xml:space="preserve">
+    <value>Customer Activity</value>
+  </data>
+  <data name="pageCustomerSalesDetails" xml:space="preserve">
+    <value>Customer Sales Details</value>
+  </data>
+  <data name="pageCustomerSalesSummary" xml:space="preserve">
+    <value>Customer Sales Summary</value>
+  </data>
+  <data name="pageDefault" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="pageDocumentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="pageEmailAlerts" xml:space="preserve">
+    <value>Email Alerts</value>
+  </data>
+  <data name="pageInCompletionReport" xml:space="preserve">
+    <value>InCompletion Report</value>
+  </data>
+  <data name="pageLearners" xml:space="preserve">
+    <value>Learners</value>
+  </data>
+  <data name="pageLearnersExcel" xml:space="preserve">
+    <value>Learners (Export)</value>
+  </data>
+  <data name="pageModuleUsage" xml:space="preserve">
+    <value>Module Usage</value>
+  </data>
+  <data name="pageProfile" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="pageProgramActivityDetails" xml:space="preserve">
+    <value>Program Activity Details</value>
+  </data>
+  <data name="pageProgramActivityDetailsExcel" xml:space="preserve">
+    <value>Program Activity Details (Excel)</value>
+  </data>
+  <data name="pageProgramsAssignedExcel" xml:space="preserve">
+    <value>Programs Assigned (Excel)</value>
+  </data>
+  <data name="pageProgramsPurchasedAndAssigned" xml:space="preserve">
+    <value>Programs Purchased And Assigned</value>
+  </data>
+  <data name="pageSessions" xml:space="preserve">
+    <value>Sessions</value>
+  </data>
+  <data name="pageUploadLearners" xml:space="preserve">
+    <value>Upload Learners</value>
+  </data>
+  <data name="pageWelcome1" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="parameter" xml:space="preserve">
+    <value>Parameter</value>
+  </data>
+  <data name="password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="profiles" xml:space="preserve">
+    <value>Profiles</value>
+  </data>
+  <data name="profiles_1" xml:space="preserve">
+    <value>Click on the Profile header to sort or search for Profile ...</value>
+  </data>
+  <data name="profile_1" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="profile_2" xml:space="preserve">
+    <value>A few key values from my profile.</value>
+  </data>
+  <data name="profile_3" xml:space="preserve">
+    <value>[Note: the Username for Internals is not exposed.]</value>
+  </data>
+  <data name="progActivity_0" xml:space="preserve">
+    <value>Program Activity Details</value>
+  </data>
+  <data name="progActivity_1" xml:space="preserve">
+    <value>Program Activity Details (Excel)</value>
+  </data>
+  <data name="progActivity_2" xml:space="preserve">
+    <value>Select the Start and End Dates and optionally a Learner Id (leave empty for all Learners) then click on the Excel Icon at the bottom right. Dates default to the previous month.</value>
+  </data>
+  <data name="progAssigned_1" xml:space="preserve">
+    <value>Programs Assigned (Excel) for</value>
+  </data>
+  <data name="progAssigned_2" xml:space="preserve">
+    <value>Press the Begin button to generate the Excel which shows all the Learners that have been assigned the Program(s) selected below.</value>
+  </data>
+  <data name="programId" xml:space="preserve">
+    <value>Program Id</value>
+  </data>
+  <data name="programs" xml:space="preserve">
+    <value>Programs</value>
+  </data>
+  <data name="programsAfter" xml:space="preserve">
+    <value>Programs After</value>
+  </data>
+  <data name="programsBefore" xml:space="preserve">
+    <value>Programs Before</value>
+  </data>
+  <data name="programTitle" xml:space="preserve">
+    <value>Program Title</value>
+  </data>
+  <data name="progsPurch_1" xml:space="preserve">
+    <value>Programs Purchased and Assigned for</value>
+  </data>
+  <data name="progsPurch_2" xml:space="preserve">
+    <value>Click on any Program Id for the Program Title.</value>
+  </data>
+  <data name="progsPurch_3" xml:space="preserve">
+    <value>Click on the Learners Icon to see which learners were assigned that Program Id.</value>
+  </data>
+  <data name="progsPurch_4" xml:space="preserve">
+    <value>Display Learners who where assigned this Program.</value>
+  </data>
+  <data name="progsPurch_5" xml:space="preserve">
+    <value>Inactive Learners will have a line-through their learner Id.</value>
+  </data>
+  <data name="purchased" xml:space="preserve">
+    <value>Purchased</value>
+  </data>
+  <data name="receiveAlerts" xml:space="preserve">
+    <value>Receive Alerts</value>
   </data>
   <data name="register" xml:space="preserve">
     <value>Click to Register!</value>
   </data>
-  <data name="content_61" xml:space="preserve">
-    <value>Inactive Learners are only rendered to show possible previous assignments.</value>
+  <data name="reports" xml:space="preserve">
+    <value>Reports</value>
   </data>
-  <data name="tile_ProgramActivity(Overal)" xml:space="preserve">
-    <value>Program Activity (Overal)</value>
+  <data name="resendAlerts" xml:space="preserve">
+    <value>Resend Alerts</value>
   </data>
-  <data name="managerAccess" xml:space="preserve">
-    <value>Manager Access</value>
+  <data name="restart" xml:space="preserve">
+    <value>Restart</value>
+  </data>
+  <data name="retrieve" xml:space="preserve">
+    <value>Retrieve</value>
+  </data>
+  <data name="return" xml:space="preserve">
+    <value>Return</value>
+  </data>
+  <data name="search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="searchValue" xml:space="preserve">
+    <value>seach value</value>
+  </data>
+  <data name="sessionVariables" xml:space="preserve">
+    <value>These are internal values maintained during the Session.</value>
+  </data>
+  <data name="setup" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+  <data name="signIn" xml:space="preserve">
+    <value>Sign In</value>
+  </data>
+  <data name="signInLevel" xml:space="preserve">
+    <value>This Portal is only available to Facilitators and/or Managers.</value>
+  </data>
+  <data name="signOut" xml:space="preserve">
+    <value>Sign Out</value>
+  </data>
+  <data name="sql" xml:space="preserve">
+    <value>Oops.  We could not perform that activity.</value>
+  </data>
+  <data name="sqlDuplicate" xml:space="preserve">
+    <value>Oops.  It seems that Username already exists.</value>
+  </data>
+  <data name="strDate" xml:space="preserve">
+    <value>Start Date</value>
+  </data>
+  <data name="tileAbout" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="tileActivityReport" xml:space="preserve">
+    <value>Activity Report</value>
+  </data>
+  <data name="tileAssessmentReport" xml:space="preserve">
+    <value>Assessment Report</value>
+  </data>
+  <data name="tileAssessmentResponsesDetails" xml:space="preserve">
+    <value>Assessment Responses (Details)</value>
+  </data>
+  <data name="tileAssessmentResponsesSummary" xml:space="preserve">
+    <value>Assessment Responses (Summary)</value>
+  </data>
+  <data name="tileAssignContent" xml:space="preserve">
+    <value>Assign Content</value>
+  </data>
+  <data name="tileBrowserReadinessTest" xml:space="preserve">
+    <value>Browser Readiness Test</value>
+  </data>
+  <data name="tileCertificateReport" xml:space="preserve">
+    <value>Certificate Report</value>
+  </data>
+  <data name="tileCompletionReport" xml:space="preserve">
+    <value>Completion Report</value>
+  </data>
+  <data name="tileDocumentation" xml:space="preserve">
+    <value>Documentation</value>
+  </data>
+  <data name="tileEmailAlerts" xml:space="preserve">
+    <value>Email Alerts</value>
+  </data>
+  <data name="tileFacilitatorServices" xml:space="preserve">
+    <value>Facilitator Services</value>
+  </data>
+  <data name="tileInCompletionReport" xml:space="preserve">
+    <value>InCompletion Report</value>
+  </data>
+  <data name="tileLearnersAddEdit" xml:space="preserve">
+    <value>Learners (Add/Edit)</value>
+  </data>
+  <data name="tileLearnersExport" xml:space="preserve">
+    <value>Learners (Export)</value>
+  </data>
+  <data name="tileMyContentV5" xml:space="preserve">
+    <value>My Content (V5)</value>
+  </data>
+  <data name="tileMyContentV8" xml:space="preserve">
+    <value>My Content (V8)</value>
+  </data>
+  <data name="tileMyProfile" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+  <data name="tileProgramActivityDetails" xml:space="preserve">
+    <value>Program Activity Details</value>
+  </data>
+  <data name="tileProgramActivityOverall" xml:space="preserve">
+    <value>Program Activity Overall</value>
+  </data>
+  <data name="tileProgramsAssigned" xml:space="preserve">
+    <value>Programs Assigned</value>
+  </data>
+  <data name="tileProgramsPurchasedAndAssigned" xml:space="preserve">
+    <value>Programs Purchased and Assigned</value>
+  </data>
+  <data name="tileSessions" xml:space="preserve">
+    <value>Sessions</value>
+  </data>
+  <data name="tileSignOut" xml:space="preserve">
+    <value>Sign Out</value>
+  </data>
+  <data name="tileStore" xml:space="preserve">
+    <value>Store</value>
+  </data>
+  <data name="title" xml:space="preserve">
+    <value>Click to hide/show description</value>
+  </data>
+  <data name="type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="uniqueId" xml:space="preserve">
+    <value>Username</value>
+  </data>
+  <data name="uploadLearnersDownload" xml:space="preserve">
+    <value>Download Learners</value>
+  </data>
+  <data name="userName" xml:space="preserve">
+    <value>Username</value>
   </data>
 </root>

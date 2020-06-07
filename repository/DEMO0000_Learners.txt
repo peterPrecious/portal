@@ -1,0 +1,3 @@
+Learner ID	Password	First Name	Last Name	Email Address	Programs	Memo
+123456	Password1	Sam	Spade	sam@spade.com	P1234EN	
+123457	Password2	Sally	Spade	sally@spade.com		HO|Marketing

@@ -99,7 +99,7 @@
       <asp:Panel ID="panTop" CssClass="panTop" runat="server" DefaultButton="butSearch">
 
         <h1>
-          <span onclick="fadeIn()" class="hoverUnderline" title="Click to hide/show discription.">Profiles</span>
+          <span onclick="fadeIn()" class="hoverUnderline" title="<%$  Resources:portal, title%>">Profiles</span>
           <asp:ImageButton OnClick="dvProfileInit_Click" CssClass="icons add" ImageUrl="~/styles/icons/vubiz/add.png" ToolTip="Add a Profile" runat="server" />
         </h1>
 

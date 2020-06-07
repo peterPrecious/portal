@@ -20,8 +20,9 @@
     <asp:Panel ID="panTop" CssClass="panTop" runat="server" DefaultButton="butSearch">
 
       <h1>
-        <span onclick="fadeIn()" class="hoverUnderline" title="Click to hide/show discription.">
-          <asp:Literal runat="server" Text="Password Finder" />
+        <span onclick="fadeIn()" class="hoverUnderline">
+          <asp:Literal runat="server" Text="<%$  Resources:portal, title%>" />
+          <asp:Literal runat="server" Text="<%$  Resources:portal, learners%>" />
         </span>
       </h1>
 

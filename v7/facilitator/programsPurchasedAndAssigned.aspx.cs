@@ -133,11 +133,11 @@ namespace portal.v7.facilitator
       }
     }
 
-
     protected void populateTitle()
     {
-      // populate title
-      labHeader.Text = "Programs Purchased and Assigned for " + se.custId;
+//    labHeader.Text = "Programs Purchased and Assigned for " + se.custId;
+      labHeader.Text = GetGlobalResourceObject("portal", "progsPurch_1").ToString() + " " + se.custId;
+
       if (Session["membCount"] == null)
       {
         purchaseCounts(out int membCount, out int purchasedCount, out int assignedCount);
@@ -145,8 +145,6 @@ namespace portal.v7.facilitator
         Session["purchasedCount"] = purchasedCount;
         Session["assignedCount"] = assignedCount;
       }
-      //litMembCount.Text = Session["membCount"].ToString();
-      //litProgCount.Text = Session["purchasedCount"].ToString();
       if ((int)Session["membCount"] == 0 || (int)Session["purchasedCount"] == 0)
       {
         litNone.Visible = true;
@@ -159,13 +157,10 @@ namespace portal.v7.facilitator
 
     }
 
-
     protected void exit_Click(object sender, System.Web.UI.ImageClickEventArgs e)
     {
-      Response.Redirect("/portal/v7/default.aspx");
+      Response.Redirect("/portal/v7/default.aspx", false);
     }
-
-
 
   }
 }

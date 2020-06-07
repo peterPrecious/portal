@@ -1,0 +1,340 @@
+Learner Id	Password	First Name	Last Name	Email Address	Programs	Memo
+						
+000062652		Carole	Gaudess	Carole.Gaudes@rcmp-grc.gc.ca	P1233EN	
+000214991		Maximo	Lau	max.lau@rcmp-grc.gc.ca	P1176EN P1789EN	
+0151AMS		Anne-Marie	Simard	Anne-Marie.Simard@rcmp-grc.gc.ca	P1176EN P1789EN	
+100162190		Christina	Jeyakumar	Christina.Jeyakumar@rcmp-grc.gc.ca	P1176EN P1789EN	
+1234RC		Ron	Cabugao	ron.cabugao@rcmp-grc.gc.ca	P1789EN P3281EN	
+1553329		Andrew	Ho	Andrew.Ho@rcmp-grc.gc.ca	P1176EN	
+1MCKENOH		McKenny	Hackett	mckenney.hackett@rcmp-grc.gc.ca	P1789EN P3281EN	
+1WRH$HD		Rebecca	SKREBUTENAS	Rebecca.Skrebutenas@rcmp-grc.gc.ca	P1176EN P1789EN	
+2017LB		Lesley	Baldwin	Lesley.Baldwin@rcmp-grc.gc.ca	P1789EN	
+2017SSBL		Byron	Luo	Byron.Luo@rcmp-grc.gc.ca	P3281EN P1789EN	
+2ANICICH@		Christine	Dungey	christine.r.dungey@rcmp-grc.gc.ca	P1176EN P1272EN	
+2S2P4A4R		Tracy	CHERLET	tracy.cherlet@rcmp-grc.gc.ca	P1580EN	
+40CURTJANE		Janene	Curtis	janene.curtis@rcmp-grc.gc.ca	P1176EN P1272EN	
+416SNOOG		Hannah-Marie	HENDERSON	Hannah-Marie.Henderson@rcmp-grc.gc.ca	P1176EN P1789EN	
+449CCOHS		Frederike	Hanigan-Dauphin	Frederike.Hanigan-Dauphin@rcmp-grc.gc.ca	P1789EN P3281EN	
+47601		Bradley	Shardlow	brad.shardlow@rcmp-grc.gc.ca	P1176EN P1272EN	
+8342OU77E		Alliandra	Van Veen	alliandra.vanveen@rcmp-grc.gc.ca	P1402EN	
+8951103		Cathy	Deacon	cathy.deacon@rcmp-grc.gc.ca	P1233EN P1260EN	
+AAFALL77		Ashley	Arnold	ashley.arnold@rcmp-grc.gc.ca	P1789EN	
+ABROSS2000		Megan	Neufeld	megan.neufeld@rcmp-grc.gc.ca	P1176EN	
+ACPASSWORD08		Adam	Couturier	adam.couturier@rcmp-grc.gc.ca	P1406EN	
+AFIF123		Rami	Afif	Rami.Afif@rcmp-grc.gc.ca	P1789EN P3281EN	Lab
+AGPASSWORD10		Arjeta	Gusinjac	Arjeta.Gusinjac@rcmp-grc.gc.ca	P1789EN	
+AGPASSWORD11		Arjeta	Gusinjac	Arjeta.Gusinjac@rcmp-grc.gc.ca	P1176EN	
+AGPASSWORD16		Amanda	Glavas	Amanda.Glavas@rcmp-grc.gc.ca	P1406EN P1789EN P3281EN	
+AGPASSWORD5		Ana	Gargaun	Ana.Gargaun@rcmp-grc.gc.ca	P1176EN P1789EN P3281EN	
+AGSNOW221		Anjeet	Gosal	Anjeet.Gosal@rcmp-grc.gc.ca	P1789EN P3281EN	
+AKCKTQ		Patricia	O'SHEA	Patricia.O'Shea@rcmp-grc.gc.ca	P1176EN P1406EN P1789EN	
+ALEXANDRA		Ray	Duguay	ray.duguay@rcmp-grc.gc.ca	P2410EN P1233EN	
+AM2017		Angel	Moroz	Angel.Moroz@rcmp-grc.gc.ca	P1789EN	
+AM2017MAR		Angel	Moroz	Angel.Moroz@rcmp-grc.gc.ca	P1176EN	
+AMB2018		Arran	McBride	Arran.McBride@rcmp-grc.gc.ca	P3281EN P1789EN	
+APPLE		Mandeep	Kahlon	Mandeep.Kahlon@rcmp-grc.gc.ca	P1580EN	
+ARJJ2005		Jessica	Johnston	jessica.johnston@rcmp-grc.gc.ca	P1176EN P1789EN	
+ARPASSWORD7		Alfred	Rudas	Alfred.Rudas@rcmp-grc.gc.ca	P1406EN	
+AUGUST0425		Dianne	Meere	Dianne.Meere@rcmp-grc.gc.ca	P2121EN	
+AXEMEN79		George	BENT	George.Bent@rcmp-grc.gc.ca	P1406EN	
+BARB30		Barbara	Medeiros	barbara.medeiros@rcmp-grc.gc.ca	P1272EN	
+BCAS1234		Brittany	Casciano	Brittany.Casciano@rcmp-grc.gc.ca	P1789EN P3281EN P1406EN	
+BEYTAS123		Susan	Beytas	Susan.Beytas@rcmp-grc.gc.ca	P1789EN P3281EN	Lab
+BHAMBLIN66		Bruce	Hamblin	bruce.hamblin@rcmp-grc.gc.ca	P1176EN P1272EN	
+BINKY@11		Vivanne	Mageau	vivianne.mageau@rcmp-grc.gc.ca	P1176EN	
+BIOTECH		Leanne	BLAKE	leanne.blake@rcmp-grc.gc.ca	P1176EN P1789EN	
+BLACKRAT01		William (Bill)	SOPIRO	Bill.Sopiro@rcmp-grc.gc.ca	P1406EN	
+BLANK123		Katrin	Blank	Katrin.Blank@rcmp-grc.gc.ca	P1789EN P3281EN	Lab
+BOBBY49577		Robert	Kuehn	robert.kuehn@rcmp-grc.gc.ca	P1176EN P1272EN	
+BRENDAN		Brendan	OLYNIK	brendan.olynik@rcmp-grc.gc.ca	P1176EN P1789EN	
+BRIERE		Serge	Briere	Serge.Briere@rcmp-grc.gc.ca	P0196EN	
+BRITTC01		Brittney	Christopher	Brittney.Christopher@rcmp-grc.gc.ca	P1402EN	
+BROCHU		Melanie	Brochu	Melanie.Brochu@rcmp-grc.gc.ca	P0196EN	
+BROPHY123		Adam	Brophy-Couturier	Adam.Brophy-Couturier@rcmp-grc.gc.ca	P1789EN	
+BROWN123		Ana	Brown	ana.brown@rcmp-grc.gc.ca	P0196EN	
+BRYAN123		Bryan	Hui	Bryan.Hui@rcmp-grc.gc.ca	P3281EN P1789EN	
+BSCBIO22		Angela	Butler	Angela.Butler@rcmp-grc.gc.ca	P1254EN P2121EN	
+BUILDING3		Sonya	Bradley	Sonya.Bradley@rcmp-grc.gc.ca	P1216EN P2410EN P1176EN P1789EN	
+BUTTONS4		Jasmine	Robitaille	Jasmine.Robitaille@rcmp-grc.gc.ca	P1580EN P2121EN	
+CANADA01		Kalisa	CAMPBELL	Kalisa.Campbell@rcmp-grc.gc.ca	P1176EN P1789EN	
+CANADA123		Shilpi	Nandi	shilpi.nandi@rcmp-grc.gc.ca	P1789EN P3281EN	
+CAPILANO		Candace	CHANG	candace.chang@rcmp-grc.gc.ca	P1176EN P1789EN	
+CCOHS111		Marie-Helene	JULIEN	Marie-Helene.Julien@rcmp-grc.gc.ca	P1789EN P3281EN	
+CCOHS123		Caroline	Cheng	caroline.cheng@rcmp-grc.gc.ca	P1789EN P3281EN	
+CCOHS2018		Benny	Wong	Benny.Wong@rcmp-grc.gc.ca	P4564EN	
+CCOHS2018JS		Jason	Stanghetta	jason.stanghetta@rcmp-grc.gc.ca	P1789EN P3281EN	
+CCOHS241		Sylvain	Decoeur	Sylvain.Decoeur@rcmp-grc.gc.ca	P1789EN	
+CCOHS244		Nathalie	Maheux	Nathalie.Maheux@rcmp-grc.gc.ca	P1789EN	
+CCOHSAO2018		Aleksandra	Ostojic	Aleksandra.Ostojic@rcmp-grc.gc.ca	P3281EN P1789EN	
+CCOHSCD2018		Cinzia	Deiana	cinzia.deiana@rcmp-grc.gc.ca	P0195EN P3281EN P1789EN	
+CCOHSNM		Natasha	Mercier	natasha.mercier@rcmp-grc.gc.ca	P1789EN P3281EN	
+CCOHSPA$$W0RD		Maggie	Schmidt	Margaret.Schmidt@rcmp-grc.gc.ca	P1406EN	
+CCOHSTB		Thomas	Beaudry	thomas.beaudry@rcmp-grc.gc.ca	P1789EN	
+CCOHSTEMP		Lily	Huang	lily.a.huang@rcmp-grc.gc.ca	P3281EN	
+CHARLIE1		Jenni	Stevens	jenni.stevens@rcmp-grc.gc.ca	P1176EN P1789EN	
+CHARLIE123		Kimberly	SNIDER	Kimberly.Snider@rcmp-grc.gc.ca	P1176EN P1406EN P1789EN	
+CHEMX23		Boris	Demchenko	boris.demchenko.rcmp-grc.gc.ca	P1260EN	
+CHEN123		Zhaoyi	Chen	Zhaoyi.chen@rcmp-grc.gc.ca	P0196EN P1789EN P3281EN	
+CHEWIE2004		Kimberly	KENNY	Kimberly.Kenny@rcmp-grc.gc.ca	P1580EN	
+CHINCHAGA		Thomas	Watts	thomas.watts@rcmp-grc.gc.ca	P1176EN P1272EN	
+CHLOE2007		Marie-France	TOUGAS	Marie-France.Tougas@rcmp-grc.gc.ca	P1176EN P1789EN P1272EN P1406EN	
+CHRISTOPHER		Brittney Ann	CHRISTOPHER	Brittney.Christopher@rcmp-grc.gc.ca	P0196EN	
+CL2018		Cameron	Lyttle	cameron.lyttle@rcmp-grc.gc.ca	P3281EN	
+CM2018QA		Christine	McEachern	christine.mceachern@rcmp-grc.gc.ca	P3281EN	
+COFFEECUP2		Martha	Harding	martha.harding@rcmp-grc.gc.ca	P1406EN	
+CONNELL123		Emily	Connell	Emily.Connell@rcmp-grc.gc.ca	P1789EN P3281EN	LAB
+COOPER		Chris	Saunders	chris.saunders@rcmp-grc.gc.ca	P1176EN P1272EN	
+COPPER03		Kristin	Millar	kristin.millar@rcmp-grc.gc.ca	P1176EN P1789EN	
+COTE2018		Chelsea	Cote	chelsea.cote@rcmp-grc.gc.ca	P1406EN P1789EN	
+COURSE2013		Heather	Janssens	heather.janssens@rcmp-grc.gc.ca	P1580EN	
+CRITZ		Caitlin	RITZ	caitlin.ritz@rcmp-grc.gc.ca	P1176EN P1789EN	
+CRPASSWORD1		Caitlin	Ritz	caitlin.ritz@rcmp-grc.gc.ca	P1406EN	
+CSIJENN1		Jennifer	BARNES	jennifer.barnes@rcmp-grc.gc.ca	P1580EN P2121EN	
+CYANOACRYLATE		Neal	Fraser	neal.fraser@rcmp-grc.gc.ca	P1176EN P1272EN	
+DANGEROUS		Bonnita	Dunphy-Fortune	bonnita.dunphy-fortune@rcmp-grc.gc.ca	P1402EN	
+DASLAB		Allison	MacPhee	Allison.MacPhee@rcmp-grc.gc.ca	P1176EN P1789EN	
+DE10145616$		Dominique	Mielnik	Dominique.Mielnik@rcmp-grc.gc.ca	P1789EN P3281EN	
+DEPRES123		Vincent	Despres	Vincent.E.Depres@rcmp-grc.gc.ca	P0196EN P1789EN P3281EN	
+DGH7267		Daryn	Henderson	daryn.henderson@rcmp-grc.gc.ca	P1176EN P1272EN	
+DHANJI19		Hussein	Dhanji	hussein.dhanji@rcmp-grc.gc.ca	P1789EN P3281EN	
+DIAMANT2015		Yannick	GAUTHIER	Yannick.Gauthier@rcmp-grc.gc.ca	P1176EN P1789EN	
+DJB1234		Kathleen	Besuyen	kathy.besuyen@rcmp-grc.gc.ca	P1580EN	
+DKPASSWORD10		Daniel	Kolczynski	Daniel.Kolczynski@rcmp-grc.gc.ca	P1176EN	
+DONOVAN44		Chad	Salisbury	chad.salisbury@rcmp-grc.gc.ca	P1260EN	
+DP_CCOHS18		Devin	Pollock	Devin.Pollock@rcmp-grc.gc.ca	P1406EN	
+EDMONTON		Tamara	Hodgins	Tamara.Hodgins@rcmp-grc.gc.ca	P1580EN	
+EDMONTON1		Debbie	Willems	debbie.willems@rcmp-grc.gc.ca	P1176EN P1272EN	
+EDMONTON123		Alexandra	Zoernig	Alexandra.Zoernig@rcmp-grc.gc.ca	P1789EN	
+EDSONFIS		Chad	Benko	chad.d.benko@rcmp-grc.gc.ca	P1176EN P1272EN	
+EINAFETSW0125733!		Stefanie	Wyss	stefanie.Wyss@rcmp-grc.gc.ca	P1176EN P1789EN	
+ELEPHANT1		Vivian	CHU	vivian.chu@rcmp-grc.gc.ca	P1176EN P1406EN P1789EN	
+ESPASSWORD12		Erica	Sabourin	Erica.Sabourin@rcmp-grc.gc.ca	P1406EN	
+FEBRUARY2014		Rebecca	STALKER	rebecca.stalker@rcmp-grc.gc.ca	P1176EN P1272EN P1789EN P1406EN	
+FEIMUI502		Ophelia	Chan	ophelia.chan@rcmp-grc.gc.ca	P1176EN P1272EN P1789EN	
+FIR3ARM5		Eloise	Forest-Allard	Eloise.Forest-Allard@rcmp-grc.gc.ca	P1176EN P1789EN	
+FIREBALL1530		Ross	TAIT	Tait.Ross@rcmp-grc.gc.ca	P1580EN	
+FORENSIC1		Jarret	Webster	jarret.webster@rcmp-grc.gc.ca	P1580EN	
+FORENSIC10		Vivian	LO	Vivian.Lo@rcmp-grc.gc.ca	P1176EN P1789EN	
+FORENSIC123		Celia	Shen	Celia.Shen@rcmp-grc.gc.ca	P1789EN P1272EN	
+FUMEHOOD		Doug	Standing	doug.standing@rcmp-grc.gc.ca	P1176EN	
+GAGNE123		Melanie	Gagne	melanie.gagne@rcmp-grc.gc.ca	P1789EN P3281EN	
+GIANNA30		Kamal	Dosanjh	kamal.dosanjh@rcmp-grc.gc.ca	P1406EN	
+GIANNA302017		KAMAL	DOSANJH	kamal.dosanjh@rcmp-grc.gc.ca	P1406EN	For renewed TDG training
+GRANVILLE		Jeff	Wong	jeff.wong@rcmp-grc.gc.ca	P1176EN P1272EN	
+GTHEALTH16		George	Tillie	George.Tillie@rcmp-grc.gc.ca	P1406EN P1789EN P3281EN	
+GULSETH		Amanda	Gulseth	Amanda.Gulseth@rcmp-grc.gc.ca	P0196EN	
+GUNN1234		Susan	GUNN	Susan.Gunn@rcmp-grc.gc.ca	P1216EN P1254EN P1286EN P1382EN P1631EN P2121EN	
+GW7981		Greg	Williams	greg.williams@rcmp-grc.gc.ca	P0195EN	
+HARLEY2006		Amanda	Haug	amanda.haug@rcmp-grc.gc.ca	P1402EN P1406EN	
+HARMONIE20!		Monique	Roy-Bourgeois	monique.roy-bourgeois@rcmp-grc.gc.ca	P1789EN P2410EN	
+HASSAM360		Ashifa	Hassam	Ashifa.Hassam@rcmp-grc.gc.ca	P1402EN	
+HELLO123		Steve	Gruenberg	steve.gruenberg@rcmp-grc.gc.ca	P1176EN P1272EN	
+HILLBRAND123		Rebecka	Hillebrand	Rebecka.Hillebrand@rcmp-grc.gc.ca	P1789EN P3281EN	Lab
+HIRD123		Elizabeth	Hird	elizabeth.hird@rcmp-grc.gc.ca	P1789EN P3281EN	
+HMEXHIBIT10		Holly	MacDonald	Holly.Macdonald@rcmp-grc.gc.ca	P2410EN	
+HOCRAS		Lily	Ho	l.ho@rcmp-grc.gc.ca	P2410EN	
+HODGINS		Tanya	Hodgins	Tanya.Hodgins@rcmp-grc.gc.ca	P0196EN	
+HOU53		Eric	Doyon	Eric.Doyon@rcmp-grc.gc.ca	P1176EN	
+HS26372		Alliandra	Van Veen	alliandra.vanveen@rcmp-grc.gc.ca	P1499EN P1406EN	
+HS627MG		Maria	Guiao	Maria.Guiao@rcmp-grc.gc.ca	P1789EN	
+HUI123		Brian	Hui	Bryan.Hui@rcmp-grc.gc.ca	P1789EN P3281EN	
+HUNTER123		Cheryl	Radmore	Cheryl.Radmore@rcmp-grc.gc.ca	P1176EN P1406EN P1789EN	
+HUSSEIN123		Hussein	Dhanji	Hussein.Dhanji@rcmp-grc.gc.ca	P0196EN	
+I3K9!V		Jason	YOO	jason.yoo@rcmp-grc.gc.ca	P1176EN P1789EN P1406EN	
+ICANTTHINK		Stephanie	Lin	stephanie.lin@rcmp-grc.gc.ca	P1176EN P1272EN	
+IDENT2		Jonathan	Moran	jonathan.moran@rcmp-grc.gc.ca	P1176EN P1272EN	
+IH8CSLAB		Grace	LI	grace.li@rcmp-grc.gc.ca	P1272EN P1580EN P1789EN	
+IMAGINGLAB-1		Marie	ARMEN	Marie.Armen@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-10		Linda	LITTLE	linda.little@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-11		Mike	MONTGOMERY	michael.montgomery@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-12		Terri	MORIN	terri.morin@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-13		Dave	RUNNELLS	David.Runnells@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-14		Christine	SABOURIN	Christine.Sabourin@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-15		Attilio	SARTORI	attilio.sartori@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-16		Denise	WALKER	denise.walker@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-17		Dawn	WAROWAY	dawn.waroway@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-18		Michael	STANLAKE	michael.stanlake@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-2		David	Arnott	David.Arnott@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-3		Francine	BISSONNETTE	francine.bissonnette@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-4		Martine	CHENIER	Martine.Chenier@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-5		Melissa	COSTELLO	Melissa.Costello@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-6		Sylvie	FAUTEUX	sylvie.fauteux@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-7		Serge	GOUIN	Serge.Gouin@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-8		Maxine	HAIDAR	Maxine.Haidar@rcmp-grc.gc.ca	P1176EN	
+IMAGINGLAB-9		Frank	LEMIRE	Francois.lemire@rcmp-grc.gc.ca	P1176EN	
+ISS2014		Anne-Elizabeth	CHARLAND	Anne-Elizabeth.Charland@rcmp-grc.gc.ca	P2410EN	
+JACKFISH44429		Mike	Donnelly	mike.donnelly@rcmp-grc.gc.ca	P1176EN P1272EN	
+JACKPOT1		John	Power	john.power@rcmp-grc.gc.ca	P1176EN P1272EN	
+JARRETT1		Caitlin	O'REILLY-TODD	Caitlin.O'Reilly-Todd@rcmp-grc.gc.ca	P1176EN P1789EN	
+JESSICA15		Peter	Blekarn	peter.blenkarn@rcmp-grc.gc.ca	P2410EN	
+JH2018		Josette	Hackett	josette.hackett@rcmp-grc.gc.ca	P4564EN	
+JKHEALTH10		Janice	Kerry	Janice.Kerry@rcmp-grc.gc.ca	P2410EN	
+JMCCOHS		Johanne	Mercier	johanne.mercier@rcmp-grc.gc.ca	P1789EN P3281EN	
+JOE123		Greg	LITZENBERGER	Greg.Litzenberger@rcmp-grc.gc.ca	P1580EN	
+JSHEALTH7		Julie	Smerdon	Julie.Smerdon@rcmp-grc.gc.ca	P1789EN P1176EN P1406EN	
+JW1103		Jessica	Williams	jessica.williams@rcmp-grc.gc.ca	P1406EN	
+KAMILLE2010		Charles	Theriault	charles.theriault@rcmp-grc.gc.ca	P1176EN P1272EN	
+KAMY2012		Lyne	ARCAND	Lyne.Arcand@rcmp-grc.gc.ca	P1406EN	
+KAPASSWORD07		Karen	Armstrong	Karen.L.Armstrong@rcmp-grc.gc.ca	P1789EN P3281EN	
+KAPASSWORD15		Kirsten	Arnold	Kirsten.Arnold@rcmp-grc.gc.ca	P1789EN P3281EN	
+KAUR123		Eena	Kaur	Eena.Kaur@rcmp-grc.gc.ca	P1789EN P3281EN	
+KB1103PW		Kathleen	Byatte	kathleen.byatte@rcmp-grc.gc.ca	P1406EN	
+KBSUMMER109		Kelsey	Bylenga	Kelsey.Bylenga@rcmp-grc.gc.ca	P1789EN P3281EN	
+KBSUMMER177		Kisha	Bajwa	Kisha.Bajwa@rcmp-grc.gc.ca	P1789EN P3281EN	
+KELLY123		Kelly	Szalai	kelly.szalai@rcmp-grc.gc.ca	P0196EN	
+KKCCOHS2015		Karen	CHEUNG	Karen.Cheung@rcmp-grc.gc.ca	P1176EN P1789EN	
+KM_CCOHS18		Kathy	Murphy	kathy.murphy@rcmp-grc.gc.ca	P1402EN	
+KOLCZYNSKI		Daniel	KOLCZYNSKI	Daniel.Kolczynski@rcmp-grc.gc.ca	P1176EN P1789EN	
+KRITO12!		James	KOT	james.kot@rcmp-grc.gc.ca	P1176EN P1406EN P1789EN	
+KTNEEC7		Bertrand	Cressier	bertrand.cressier@rcmp-grc.gc.ca	P1176EN P1789EN	
+LATUS123		Olivia	Latus	Olivia.Latus@rcmp-grc.gc.ca	P0196EN P1789EN P3281EN	
+LEO2017		Leo	Leung	Leo.Leung@rcmp-grc.gc.ca	P1789EN P3281EN	
+LKPASSWORD13		Linda	Kenick	Linda.Kenick@rcmp-grc.gc.ca	P1789EN P3281EN	
+LLPASSWORD7		Leo	Leung	Leo.Leung@rcmp-grc.gc.ca	P1176EN	
+LMNO1234		Lana	Hewitt	lana.hewitt@rcmp-grc.gc.ca	P1176EN	
+LOGSDAIL123		Megan	Logsdail	Megan.Logsdail@rcmp-grc.gc.ca	P1789EN P3281EN	Lab
+LRFORENSIC10		Lisa	Rousseau	lisa.rousseau@rcmp-grc.gc.ca	P2410EN	
+LSPASSWORD88		Lyndsay	Selland	Lyndsay.Selland@rcmp-grc.gc.ca	P1789EN P3281EN	
+LUCAS2019		Shannen	Lucas	Shannen.Lucas@rcmp-grc.gc.ca	P1789EN P3281EN	
+LUDLUM0		Robin	Abel	robin.abel@rcmp-grc.gc.ca	P1580EN	
+LUNA2010		Angela	FILBERT	angela.Filbert@rcmp-grc.gc.ca	P1580EN P1402EN	
+LYCCOHS		Sang	Ly	Sang.Ly@rcmp-grc.gc.ca	P1789EN P3281EN	
+M@UR33NSR		Maureen	Stenzel-Rogers	Maureen.Stenzel-Rogers@rcmp-grc.gc.ca	P1402EN P2121EN P1789EN	
+MACDONALD123		Bruce	Macdonald	Bruce.Macdonald@rcmp-grc.gc.ca	P1789EN P3281EN	
+MANDY1		Amanda	Shalagan	amanda.shalagan@rcmp-grc.gc.ca	P1176EN P1272EN	
+MAR2017LB		Lesley	Baldwin	Lesley.Baldwin@rcmp-grc.gc.ca	P1176EN	
+MARCH2014		Kali	BACHTOLD	Kali.Bachtold@rcmp-grc.gc.ca	P1176EN P1272EN P1406EN P1789EN	
+MARLBOROUGH		pam	Tiwana	pam.tiwana@rcmp-grc.gc.ca	P1176EN P1406EN P1789EN	
+MARLBOROUGH2017		PAM	TIWANA	pam.tiwana@rcmp-grc.gc.ca	P1406EN	For re-new TDG training
+MBPASSWORD		Melanie	Brochu	Melanie.Brochu@rcmp-grc.gc.ca	P1406EN	
+MCNEE01		Sydney	McNeely	sydney.mcneely@rcmp-grc.gc.ca	P1406EN P1789EN P3281EN	
+MCPASSWORD8		May	Chiang	May.Chiang@rcmp-grc.gc.ca	P1176EN P1789EN P3281EN	
+MCSUMMER713		Monica	Chang	Monica.Chang@rcmp-grc.gc.ca	P3281EN P1789EN P0195EN	
+MELANIEPICARD		Melanie	Picard	melanie.picard@rcmp-grc.gc.ca	P1176EN P1789EN	
+MINH123		Amy	Minh	amy.minh@rcmp-grc.gc.ca	P0196EN	
+MJ1234		Marie-Josee	VILLENEUVE	marie-josee.villeneuve@rcmp-grc.gc.ca	P1406EN P1580EN	
+MLPASSWORD19		Min	Lee	Min.Lee@rcmp-grc.gc.ca	P1176EN P1789EN	
+MLSPRING110		Maria	Li	Maria.Li@rcmp-grc.gc.ca	P1789EN P3281EN	
+MMSEALP6		Maureen	Proulx	maureen.proulx@rcmp-grc.gc.ca	P1402EN P1406EN	
+MOOKIE		Amy	Soo	Amy.Soo@rcmp-grc.gc.ca	P1402EN P1406EN	
+MOUSETRAP99		Melanie	Brisson	Melanie.Brisson@rcmp-grc.gc.ca	P1402EN	
+MRPASSWORD		Michel	Ravary	Michel.Ravary@rcmp-grc.gc.ca	P1406EN P1176EN	
+MS2013WALK		Alfred	Chan	alfreddy.chan@mail.utoronto.ca	P1176EN P1272EN P1789EN	
+MSANDERC		Mark	Sandercock	MARK.SANDERCOCK@rcmp-grc.gc.ca	P1580EN	
+MTG0305*		Maria	Guiao	Maria.Guiao@rcmp-grc.gc.ca	P1176EN	
+MUTANT4MONKEYS		Afia	OLORUNFEMI	Afia.olorunfemi@rcmp-grc.gc.ca	P1176EN P1789EN	
+MYCCOHS23		Courtney	Campbell	courtney.campbell@rcmp-grc.gc.ca	P1789EN P3281EN	Toxicology
+NEWTIE		Leanne	Scott	leanne.scott@rcmp-grc.gc.ca	P1176EN P1272EN	
+NFPASSWORD		Nichole	Faragher	nichole.faragher@rcmp-grc.gc.ca	P1406EN	
+NFS-R-SHALLEY		Heather	Shalley	heather.shalley@rcmp-grc.gc.ca	P1260EN	
+NGCCOHS18		Carol	Ng	Carol.ng@rcmp-grc.gc.ca	P1789EN P3281EN	
+NICOLE		Judy	Low	judy.low@rcmp-grc.gc.ca	P1402EN P1406EN	
+NIZIO123		Katie	Nizio	Katie.Nizio@rcmp-grc.gc.ca	P1789EN P3281EN	Lab
+NJKWHMIS10		Nancy	Jalbert-Kirkup	Nancy.Jalbert-Kirkup@rcmp-grc.gc.ca	P2410EN	
+NK467P		Christina	Fetterman	christina.fetterman@rcmp-grc.gc.ca	P1176EN P1789EN	
+OILERS2012		Brett	Stefura	brett.stefura@rcmp-grc.gc.ca	P1580EN	
+ONLYME123		Julia	Winslow	Julia.Winslow@rcmp-grc.gc.ca	P1176EN P1402EN P1789EN	
+ONLYME1232017		JULIA	WINSLOW	julia.winslow@rcmp-grc.gc.ca	P1406EN	To re-new TDG training
+OSTONAL123		Darren	Ostonal	Darren.Ostonal@rcmp-grc.gc.ca	P1789EN P3281EN	Lab
+OTTAWA		Alexandra	Zoernig	Alexandra.Zoernig@rcmp-grc.gc.ca	P0195EN P3281EN	
+OTTAWA01		Stephane	Cote	Stephane.Cote@rcmp-grc.gc.ca	P1176EN	
+OTTAWA0323		Kelly	LEBEL	Kelly.Lebel@rcmp-grc.gc.ca	P1176EN P1789EN	
+OTTAWA123		Tanya	Hodgins	Tanya.Hodgins@rcmp-grc.gc.ca	P1789EN P3281EN	
+PASSWORD		Linda	Yu	Linda.Yu@rcmp-grc.gc.ca	P1580EN	
+PASSWORD1		Tanya	Ames	Tanya.Ames@rcmp-grc.gc.ca	P1580EN P1406EN	
+PASSWORD123		Tanya	Hodgins	Tanya.Hodgins@rcmp-grc.gc.ca	P0195EN	
+PICKLES		Nicole	Carriere	nicole.carriere@rcmp-grc.gc.ca	P1402EN	
+PIELOVER		Jeffrey	SOO	jeffrey.soo@rcmp-grc.gc.ca	P1176EN P1272EN P1789EN P1406EN	
+PIPING		Tim	Whiting	Tim.Whiting@rcmp-grc.gc.ca	P2121EN	
+PKPASSWORD107		Parmveer	Kaler	Parmveer.Kaler@rcmp-grc.gc.ca	P1789EN P3281EN	
+PLMQAZ5		Steven	PITTS	Steve.Pitts@rcmp-grc.gc.ca	P1580EN	
+POLL1234		Rachel	Pollock	rachel.pollock@rcmp-grc.gc.ca	P1789EN	
+PRINCEOFTENNIS7		Malina	LEUNG	malina.leung@rcmp-grc.gc.ca	P1176EN P1272EN P1789EN	
+PUMPKIN		Charmaine	LEE	Charmaine.lee@rcmp-grc.gc.ca	P1580EN P1789EN	
+QANDEEL94		Mashal	DAWKINS	Mashal.Ali@rcmp-grc.gc.ca	P1176EN P1406EN P1789EN	
+RAA2018		Rida	Abou-Abbas	Rida.Abou-Abbas@rcmp-grc.gc.ca	P1789EN P3281EN	
+RAINBOW5		Lyngrace	GANDHAM	Lyngrace.Gandham@rcmp-grc.gc.ca	P1176EN P1272EN P1789EN	
+RAMSAY61		Rebecka	Hillebrand	rhillebrand@laurentian.ca	P1176EN P1789EN	
+RATTRAY		Kirsten	Fisher	kirsten.fisher@rcmp-grc.gc.ca	P1176EN P1272EN	
+RAY2013		Linda	Suffidy	linda.suffidy@rcmp-grc.gc.ca	P1789EN P1176EN	
+RCMP		Bob	ZWARICH	Bob.Zwarich@rcmp-grc.gc.ca	P1580EN	
+RCMP123!		Lisa	McCarter	Lisa.McCarter@rcmp-grc.gc.ca	P1789EN P3281EN	
+RCMP12345		Dal	Saini	dal.saini@rcmp-grc.gc.ca	P1176EN P1789EN	
+RCMP41870		Jack	Neri	jack.neri@rcmp-grc.gc.ca	P1176EN P1272EN	
+RCPASSWORD02		Rosalind	Chu	Rosalind.Chu@rcmp-grc.gc.ca	P1789EN P3281EN	
+RCPASSWORD18		Rosalind	Chu	Rosalind.Chu@rcmp-grc.gc.ca	P1176EN	
+RETIREMENT		Mark	Plessis	mark.plessis@rcmp-grc.gc.ca	P1176EN P1272EN	
+RF0252345!		Diane	FAIRLEY	Diane.Fairley@rcmp-grc.gc.ca	P1176EN P1789EN	
+RLHEALTH14		Rolanda	Lam	rolanda.lam@rcmp-grc.gc.ca	P1176EN P1789EN P3281EN	
+S@FETY		Anne	Reusse	anne.reusse@rcmp-grc.gc.ca	P1580EN	
+SABOURIN		Christine	SABOURIN	Christine.Sabourin@rcmp-grc.gc.ca	P1176EN	
+SAFETY1		Bobbi	Greggain	Bobbi.Greggain@rcmp-grc.gc.ca	P1402EN	
+SAFETY1ST		Lidia	Thor	Lidia.Thor@rcmp-grc.gc.ca	P1580EN	
+SAFETY2011		Susan	Walker	susan.walker@rcmp-grc.gc.ca	P1176EN P1789EN	000085712
+SAFETY428		Anita	AGBLOR	anita.agblor@rcmp-grc.gc.ca	P1176EN P1789EN P1406EN	
+SAFETYFIRST2012		Rebecca	Montoya	Rebecca. Montoya@rcmp-grc.gc.ca	P1580EN	
+SAFETYISIN		Aaron	HAWKES	Aaron.hawkes@rcmp-grc.gc.ca	P1176EN P1789EN	
+SANTORINI		Kelly	Lee	kelly.a.lee@rcmp-grc.gc.ca	P1176EN P1272EN	
+SAPASSWORD15		Samaa	Ali	Samaa.Ali@rcmp-grc.gc.ca	P1176EN P1789EN	
+SARAH		Sarah	Wheadon	Sarah.Wheadon@rcmp-grc.gc.ca	P1402EN	
+SARAH123		Sarah	Campbell	sarah.campbell@rcmp-grc.gc.ca	P1402EN	
+SARANAS1		Lynne	Lamoureux	Lynne.Lamoureux@rcmp-grc.gc.ca	P1402EN	
+SASKATCHEWAN		Michael	Wyllie	michael.wyllie@rcmp-grc.gc.ca	P1176EN P1272EN	
+SAWBIRD		Dean	Kraus	dean.kraus@rcmp-grc.gc.ca	P1176EN P1272EN	
+SBB84JN		Jennifer	CASTRONOVO	jennifer.castronovo@rcmp-grc.gc.ca	P1789EN P2410EN	
+SCARLET2014		Christopher	CHANG	Christopher.Chang@rcmp-grc.gc.ca	P1176EN P1406EN P1789EN	
+SHOKER123		Jovanveer	Shoker	Jovanveer.Shoker@rcmp-grc.gc.ca	P1789EN P3281EN	
+SHOKER1234		Jovanveer	Shoker	Jovanveer.shoker@rcmp-grc.gc.ca	P3281EN	
+SIMON123		Simon	Bukasa-Mukendi	simon.bukasa.mukendi@rcmp-grc.gc.ca	P1402EN P1406EN	
+SIOBROV2016		Brandie	KLYNE	brandie.klyne@rcmp-grc.gc.ca	P1176EN P1406EN P1789EN	
+SKIPPER303		Brittany	Brown	brittany.brown@rcmp-grc.gc.ca	P1176EN P1789EN	
+SMILES52		Melissa	McConochie	melissa.mcconochie@rcmp-grc.gc.ca	P1176EN P1272EN P1789EN	
+SNOOPY83		Brian	Yan	Brian.YAN@rcmp-grc.gc.ca	P1176EN P1789EN P1402EN	
+SO2018		Sophie	Ouellette	Sophie.Ouellette@rcmp-grc.gc.ca	P1789EN P3281EN	
+SOCCER		Sarah	Mian	sarah.mian@rcmp-grc.gc.ca	P1402EN	
+SOMEMTL		Della	Lewis	Della.Lewis@rcmp-grc.gc.ca	P1580EN	
+SONG123		Di	Song	Di.Song@rcmp-grc.gc.ca	P1789EN P3281EN	LAB
+SS2017HY		Han	Yin	Han.Yin@rcmp-grc.gc.ca	P3281EN P1789EN	
+ST34MPUNK!		Jacqueline	DUCZEK	Jacqueline.Duczek@rcmp-grc.gc.ca	P1176EN P1789EN	
+STACEYC		Stacey	Cherwonak	Stacey.Cherwonak@rcmp-grc.gc.ca	P1402EN	
+STINGER		Donna	Ternovatsky	donna.ternovatsky@rcmp-grc.gc.ca	P1233EN	
+SUMMER		Bruce	Vogel	bruce.vogel@rcmp-grc.gc.ca	P1176EN P1272EN	
+SZALAI19		Kelly	Szalai	kelly.szalai@rcmp-grc.gc.ca	P1789EN P3281EN	
+THOR123		Lidia	Thor	Lidia.Thor@rcmp-grc.gc.ca	P1789EN P3281EN	
+TIMBERS85		Jason	Timbers	jason.timbers@rcmp-grc.gc.ca	P1176EN P1789EN	
+TKNOPP		Trevor	Knopp	trevor.knopp@rcmp-grc.gc.ca	P1176EN P1272EN	
+TLOML1K		Megan	WAGNER	megan.wagner@rcmp-grc.gc.ca	P1176EN P1789EN P1406EN	
+TMR1929!		Charlotte	McGarrity	charlotte.mcgarrity@rcmp-grc.gc.ca	P1176EN P1789EN	
+TOAOGIJ1		Jessica	Williams	jessica.williams@rcmp-grc.gc.ca	P1176EN P1789EN	
+TRAIN2012		Lynda	Johncox	lynda.johncox@rcmp-grc.gc.ca	P2410EN	
+TRAINEE1234		Juliana	Yeung	Juliana.Yeung@rcmp-grc.gc.ca	P1176EN P1789EN	
+TRAPPER		Stephen	Roach	Stephen.Roach@rcmp-grc.gc.ca	P2410EN	
+TREVOR		Trevor	Lyster	trevor.lyster@rcmp-grc.gc.ca	P1176EN P1272EN	
+TREVOR11		Nancy	Ouellette	nancy.ouellette@rcmp-grc.gc.ca	P1176EN P1789EN	
+TRGDT2016		Tara	READ	Tara.Read@rcmp-grc.gc.ca	P1176EN P1789EN	
+TRSAFETY10		Thomas	Rogerson	Thomas.Rogerson@rcmp-grc.gc.ca	P2410EN	
+TRUDEAU123		Kayla	Trudeau	Kayla.Trudeau@rcmp-grc.gc.ca	P1789EN	
+ULTIMATE		Maggie	Case	maggie.case@rcmp-grc.gc.ca	P1176EN P1789EN	
+VF2018HS		Veronique	Fortin	veronique.fortin@rcmp-grc.gc.ca	P1789EN P3281EN	
+VICTORIA88		Amanda	Pacleb	Amanda.Pacleb@rcmp-grc.gc.ca	P1176EN P1272EN P1406EN P1789EN	
+VIKINGS5		George	Trudel	George.Trudel@rcmp-grc.gc.ca	P1176EN P1216EN	
+VNPASSWORD04		Vincent	Nguyen	vincent.nguyen@rcmp-grc.gc.ca	P1176EN P1789EN P3281EN P0195EN	
+VOLO.COPTR.23		Cole	MacIver	Cole.MacIver@rcmp-grc.gc.ca	P1176EN P1272EN P1789EN	
+WAREHOUSE5		Amal	DHANJI	amal.dhanji@rcmp-grc.gc.ca	P1254EN P1272EN P2121EN	
+WHIMS2013@		Mark	Chaiyakul	Mark.Chaiyakul@rcmp-grc.gc.ca	P1176EN P1789EN	
+WHMIS		Kelly	Coulombe	kelly.coulombe@rcmp-grc.gc.ca	P1580EN	
+WHMIS2012		Laura	Reader	laura.reader@rcmp-grc.gc.ca	P1580EN	
+WHMIS2049		Christopher	Ward	christopher.ward@rcmp-grc.gc.ca	P1176EN P1789EN	
+WHMIS2332		Lucas	Percy	lucas.percy@rcmp-grc.gc.ca	P1176EN P1272EN	
+WHMIS66		Crystal	Samborski	Crystal.Samborski@rcmp-grc.gc.ca	P1176EN P1260EN P1580EN	
+WHMISFORFIS		Guylaine	Thibeault	guylaine.thibeault@rcmp-grc.gc.ca	P1176EN P1272EN	
+WHMISJK2012		Jennifer	Kinneard	Jennifer.Kinneard@rcmp-grc.gc.ca	P1580EN	
+WOBEGONG78		Shannon	MOORE	shannon.moore@rcmp-grc.gc.ca	P1176EN P1789EN	
+WOO123		Michael	Woo	Michael.Woo@rcmp-grc.gc.ca	P1789EN P3281EN	Lab
+WORKSAFE		Ron	Johnston	Ron.Johnston@rcmp-grc.gc.ca	P1580EN	
+WYNWARD28		Doug	Orr	Doug.Orr@rcmp-grc.gc.ca	P1580EN	
+YMPASSWORD2		Yashu	Mohan	Yashu.Mohan@rcmp-grc.gc.ca	P1789EN P1176EN	
+ZAIN1234		Zain	Bhaloo	Zain.Bhaloo@rcmp-grc.gc.ca	P1176EN P1789EN P1402EN	
+ZFISH2016		Lindsey	MARCH	Lindsey.March@rcmp-grc.gc.ca	P1176EN P1789EN	
+ZOERNIG		Alexandra	Zoernig	Alexandra.Zoernig@rcmp-grc.gc.ca	P0196EN	
+ZORR2008		Amber	Overholt	amber.overholt@rcmp-grc.gc.ca	P1580EN	

@@ -21,7 +21,7 @@ function selectAll(ele, id) {
 $(function () { });
 
 
-// used to show/hide description (also uses css hoverUnderline) [used to fadeIn/Out but changed to hide/show]
+// used to show/hide description (also uses css hoverUnderline) [used to use fadeIn/Out but changed to hide/show]
 function fadeIn() {
   $(".thisTitle").toggle();
 }

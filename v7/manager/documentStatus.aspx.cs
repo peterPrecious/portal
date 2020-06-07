@@ -35,20 +35,14 @@ namespace portal.v7.manager
       parms = Encoding.UTF8.GetString(bytes);
 
       byte[] byte2 = System.Text.Encoding.UTF8.GetBytes(parms);
-      parms = System.Convert.ToBase64String(byte2);
+      parms = Convert.ToBase64String(byte2);
       string url ="/DocService/Document.aspx?vParms=" + parms;
-//      Response.Redirect(url, true);
-
+//    Response.Redirect(url, true);
 
       Response.Write("<script>");
       Response.Write("window.open('" + url + "','_new')");
       Response.Write("</script>");
-
-
-
     }
-
-
 
 
     protected void exit_Click(object sender, System.Web.UI.ImageClickEventArgs e)

@@ -14,14 +14,14 @@
 
 <asp:Content ID="mainContent" ContentPlaceHolderID="MainContent" runat="server">
 
-  <div class="divPage" style="width: 500px">
+  <div class="divPage">
     <asp:ImageButton CssClass="exit" ImageUrl="~/styles/icons/vubiz/cancel.png" ID="exit" runat="server" OnClick="exit_Click" />
 
     <h1>Ecommerce Transactions by Date (Excel)</h1>
-    <h2 class="c2">Retrieve up to&nbsp;
+    <h2 class="c2" style="width: 80%; text-align: center;">Retrieve up to&nbsp;
     <asp:DropDownList ID="ddTop" Style="border: none; background-color: #0178B9; color: white; border: 1px solid white;" runat="server">
-      <asp:ListItem>100</asp:ListItem>
-      <asp:ListItem Selected="True">1000</asp:ListItem>
+      <asp:ListItem Selected="True">100</asp:ListItem>
+      <asp:ListItem>1000</asp:ListItem>
       <asp:ListItem>10000</asp:ListItem>
     </asp:DropDownList>
       transactions that occurred on or after the selected Start Date but not beyond the End Date.
@@ -38,15 +38,15 @@
                 <table>
                   <tr>
                     <td>
-                      <asp:DropDownList ID="drpCalMonth1" runat="Server" OnSelectedIndexChanged="setCalendar1" CssClass="drp" AutoPostBack="true"></asp:DropDownList>
-                      <asp:DropDownList ID="drpCalYear1" runat="Server" OnSelectedIndexChanged="setCalendar1" CssClass="drp" AutoPostBack="true"></asp:DropDownList>
+                      <asp:DropDownList ID="drpCalMonth1" runat="Server" OnSelectedIndexChanged="setCalendar" CssClass="drp" AutoPostBack="true"></asp:DropDownList>
+                      <asp:DropDownList ID="drpCalYear1" runat="Server" OnSelectedIndexChanged="setCalendar" CssClass="drp" AutoPostBack="true"></asp:DropDownList>
                     </td>
                   </tr>
                   <tr>
                     <td>
                       <asp:Calendar
-                        ID="Calendar1"
-                        CssClass="calendar1"
+                        ID="Calendar"
+                        CssClass="Calendar"
                         NextPrevStyle-CssClass="nextPrev"
                         OtherMonthDayStyle-ForeColor="#8DC640"
                         TitleStyle-BackColor="#8DC640"

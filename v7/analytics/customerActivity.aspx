@@ -16,8 +16,10 @@
   <div id="divPage" class="divPage">
     <asp:ImageButton CssClass="exit" ImageUrl="~/styles/icons/vubiz/cancel.png" ID="ImageButton1" runat="server" OnClick="exit_Click" />
 
+    <h1>Customer Activity</h1>
+
     <h2 class="c2">List of Accounts with at least 100 LMS learner visits in the last twelve months.
-      Click on the icons at bottom right for graphical and spreasheet renderings.
+      Click on the icons at bottom right for graphical and spreadsheet renderings.
     </h2>
 
     <table class="tabContain" style="margin: auto;">

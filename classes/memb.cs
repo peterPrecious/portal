@@ -11,7 +11,8 @@ namespace portal
     // memb db fields
     public int
       membNo = 0,
-      membLevel = 2;
+      membLevel = 2,
+      membNoVisits = 0;
 
     public string
       membAcctId,
@@ -20,7 +21,6 @@ namespace portal
       membFirstName,
       membLastName,
       membEmail,
-      membNoVisits,
       membCust,
       membMemo,
       membOrganization,
@@ -73,6 +73,7 @@ namespace portal
     {
       membNo = 0;
       membLevel = 2;
+      membNoVisits = 0;
       membActive = true;
 
       membAcctId = null;
@@ -83,7 +84,6 @@ namespace portal
       membEmail = null;
       membFirstVisit = null;
       membLastVisit = null;
-      membNoVisits = null;
       membCust = null;
       membMemo = null;
       membOrganization = null;
@@ -279,7 +279,32 @@ namespace portal
           cmd.Parameters.Add(new SqlParameter("@membLevel", membLevel));
           cmd.ExecuteReader();
         }
-        //con.Close();
+      }
+    }
+
+    public void memberUpdate(string membAcctId, int membNo) // similiar to above, used in learnersUpload - needs programs and Memo
+    {
+      using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
+      {
+        con.Open();
+        using (SqlCommand cmd = new SqlCommand())
+        {
+          cmd.Connection = con;
+          cmd.CommandText = "dbo.sp7memberUpload";
+          cmd.CommandType = CommandType.StoredProcedure;
+
+          cmd.Parameters.Add(new SqlParameter("@membAcctId", membAcctId));
+          cmd.Parameters.Add(new SqlParameter("@membId", membId));
+          cmd.Parameters.Add(new SqlParameter("@membPwd", membPwd));
+          cmd.Parameters.Add(new SqlParameter("@membFirstName", membFirstName));
+          cmd.Parameters.Add(new SqlParameter("@membLastName", membLastName));
+          cmd.Parameters.Add(new SqlParameter("@membEmail", membEmail));
+          cmd.Parameters.Add(new SqlParameter("@membPrograms", membPrograms));
+          cmd.Parameters.Add(new SqlParameter("@membMemo", membMemo));
+          cmd.Parameters.Add(new SqlParameter("@membNo", membNo));
+
+          cmd.ExecuteNonQuery();
+        }
       }
     }
 
@@ -347,7 +372,6 @@ namespace portal
       }
     }
 
-
     public bool memberIsNop(
       string membId,
       int storeId,
@@ -381,9 +405,9 @@ namespace portal
 
           custId = cmd.Parameters["@custId"].Value.ToString();
           membPwd = cmd.Parameters["@membPwd"].Value.ToString();
-          alias = cmd.Parameters["@alias"].Value.ToString(); // changed from profile to the correct "alias" Apr 2019
-          profile = cmd.Parameters["@profile"].Value.ToString(); // changed from profile to the correct "alias" Apr 2019
-          usesPassword = cmd.Parameters["@usesPassword"].Value.ToString(); // changed from profile to the correct "alias" Apr 2019
+          alias = cmd.Parameters["@alias"].Value.ToString();                // changed from profile to the correct "alias" Apr 2019
+          profile = cmd.Parameters["@profile"].Value.ToString();            // changed from profile to the correct "alias" Apr 2019
+          usesPassword = cmd.Parameters["@usesPassword"].Value.ToString();  // changed from profile to the correct "alias" Apr 2019
 
           if (custId.Length == 8 && membPwd.Length > 0)
           {
@@ -569,6 +593,23 @@ namespace portal
           cmd.CommandType = CommandType.StoredProcedure;
           cmd.Parameters.Add(new SqlParameter("@membPrograms", membPrograms));
           cmd.Parameters.Add(new SqlParameter("@membNo", membNo));
+          cmd.ExecuteReader();
+        }
+      }
+    }
+
+    public void memberPrograms2(int membNo, string membPrograms) // similiar to above, used in default.aspx - notice panel
+    {
+      using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
+      {
+        con.Open();
+        using (SqlCommand cmd = new SqlCommand())
+        {
+          cmd.Connection = con;
+          cmd.CommandText = "dbo.sp7memberPrograms2";
+          cmd.CommandType = CommandType.StoredProcedure;
+          cmd.Parameters.Add(new SqlParameter("@membNo", membNo));
+          cmd.Parameters.Add(new SqlParameter("@membPrograms", membPrograms));
           cmd.ExecuteReader();
         }
       }

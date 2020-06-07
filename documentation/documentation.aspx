@@ -7,13 +7,11 @@
   Inherits="portal.v7.documentation" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-
   <link href="/portal/styles/css/styles.min.css" rel="stylesheet" />
   <link href="/portal/styles/css/documentation.min.css" rel="stylesheet" />
 </asp:Content>
 
 <%-- Note: update this documentation/documentation.aspx AS WELL AS documentation/index.html --%>
-
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 

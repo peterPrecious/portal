@@ -627,23 +627,26 @@ namespace portal
           if (pa.price < 0) return (fn.err(461, (pa.programCnt + 1).ToString()));
 
           if (ec.ecomMedia == "Online" && ec.ecomQuantity != 1) return (fn.err(477, (pa.programCnt + 1).ToString()));
-          pa.tmpQuantity = pa.tmpQuantity + ec.ecomQuantity;
-          pa.tmpGst = pa.tmpGst + pa.aGst[i];
-          pa.tmpPst = pa.tmpPst + pa.aPst[i];
-          pa.tmpHst = pa.tmpHst + pa.aHst[i];
-          pa.tmpAmount = pa.tmpAmount + pa.aAmount[i];
+          pa.tmpQuantity += ec.ecomQuantity;
+          pa.tmpGst += pa.aGst[i];
+          pa.tmpPst += pa.aPst[i];
+          pa.tmpHst += pa.aHst[i];
+          pa.tmpAmount += pa.aAmount[i];
 
-          if (ec.ecomPrices != (pa.price * ec.ecomQuantity)) return (fn.err(478, (pa.programCnt + 1).ToString()));
-          if (ec.ecomAmount != (ec.ecomPrices + ec.ecomTaxes)) return (fn.err(479, (pa.programCnt + 1).ToString()));
-          if (ec.ecomCatlNo == 0) return (fn.err(480, ec.ecomPrograms, (pa.programCnt + 1).ToString()));
+          if (ec.ecomPrices != (pa.price * ec.ecomQuantity)) return fn.err(478, (pa.programCnt + 1).ToString());
+          if (ec.ecomAmount != (ec.ecomPrices + ec.ecomTaxes)) return fn.err(479, (pa.programCnt + 1).ToString());
+          if (ec.ecomCatlNo == 0) return fn.err(480, ec.ecomPrograms, (pa.programCnt + 1).ToString());
         }
 
+        // need to round pa.TempAmount like NOP (added Feb 5, 2020)
+        pa.tmpAmount = Math.Round(pa.tmpAmount, 2);
+
         // check total values
-        if (pa.tmpQuantity != pa.totQuantity) return (fn.err(481));
-        if (pa.tmpGst != pa.totGst) return (fn.err(482));
-        if (pa.tmpPst != pa.totPst) return (fn.err(483));
-        if (pa.tmpHst != pa.totHst) return (fn.err(484));
-        if (pa.tmpAmount != pa.totAmount) return (fn.err(485));
+        if (pa.tmpQuantity != pa.totQuantity) return fn.err(481);
+        if (pa.tmpGst != pa.totGst) return fn.err(482);
+        if (pa.tmpPst != pa.totPst) return fn.err(483);
+        if (pa.tmpHst != pa.totHst) return fn.err(484);
+        if (pa.tmpAmount != pa.totAmount) return fn.err(485);
 
         //  '...post line items into the ecom table
         fn.logStep(pa.bStep, pa.logNo, "12.0");
@@ -663,7 +666,6 @@ namespace portal
             int days = ca.catalogueProgramExpires(ec.ecomCustId, ec.ecomPrograms);
             ec.ecomExpires = DateTime.Now.AddDays(days);
           };
-
 
           //    If vEcom_Media = "Online" Then vEcom_Expires = fFormatSqlDate(Now + fCatlExpires(vEcom_CustId, vEcom_Programs)) End If
           if (pa.bCommit) ec.ecommmercePost();

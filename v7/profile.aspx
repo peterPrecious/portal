@@ -7,7 +7,12 @@
   Inherits="portal.v7.profile" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
-  <link href="/portal/styles/css/profile.min.css" rel="stylesheet" />
+
+  <style>
+    .dvProfile td:first-child::after { content: " : " }
+    .dvProfile td { border: none }
+  </style>
+
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -16,13 +21,26 @@
 
     <div class="divPage">
       <asp:ImageButton CssClass="exit" ImageUrl="~/styles/icons/vubiz/cancel.png" ID="exit" runat="server" OnClick="exit_Click" />
-      <h1>My Profile</h1>
-
+      <h1>
+        <asp:Label runat="server" Text="<%$  Resources:portal, profile_1%>"></asp:Label></h1>
+      <h2 style="color: inherit;">
+        <asp:Label runat="server" Text="<%$  Resources:portal, profile_2%>"></asp:Label>
+      </h2>
+      <h3>
+        <asp:Label ID="lab2" runat="server" Text="<%$  Resources:portal, profile_3%>" Visible="false"></asp:Label>
+      </h3>
+      <br />
       <asp:DetailsView
         OnDataBound="dvProfile_DataBound"
         ID="dvProfile"
         CssClass="dvProfile"
         runat="server"
+        HorizontalAlign="Center"
+        BorderStyle="None"
+        CellPadding="5"
+        FieldHeaderStyle-Font-Bold="true"
+        FieldHeaderStyle-HorizontalAlign="Right"
+        RowStyle-HorizontalAlign="Left"
         AutoGenerateRows="False"
         DataKeyNames="membInternal"
         DataSourceID="SqlDataSource1">
@@ -48,11 +66,15 @@
               <asp:Label ID="membLevel" runat="server" Text='<%# Bind("membLevel") %>'></asp:Label>
             </ItemTemplate>
           </asp:TemplateField>
+
+          <asp:BoundField DataField="membPrograms" HeaderText="<%$  Resources:portal, programs%>" />
           <asp:BoundField DataField="membFirstVisit" HeaderText="<%$  Resources:portal, firstVisit%>" DataFormatString="{0:MMM d, yyyy hh:mm}" />
           <asp:BoundField DataField="membLastVisit" HeaderText="<%$  Resources:portal, lastVisit%>" DataFormatString="{0:MMM d, yyyy hh:mm}" />
           <asp:BoundField DataField="membNoVisits" HeaderText="<%$  Resources:portal, noVisits%>" />
         </Fields>
       </asp:DetailsView>
+      <br />
+      <br />
     </div>
 
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:apps %>"
@@ -63,6 +85,7 @@
           UPPER(Memb_Id)            AS membId,
           UPPER(Memb_Pwd)           AS membPwd,
           LOWER(Memb_Email)         AS membEmail, 
+          UPPER(Memb_Programs)      AS membPrograms,
           Memb_Level                AS membLevel, 
           Memb_FirstVisit           AS membFirstVisit, 
           Memb_LastVisit            AS membLastVisit, 

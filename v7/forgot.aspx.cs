@@ -2,7 +2,7 @@
 
 namespace portal
 {
-  public partial class forgot : System.Web.UI.Page
+  public partial class forgot : FormBase
   {
 
     private Mail ma = new Mail();

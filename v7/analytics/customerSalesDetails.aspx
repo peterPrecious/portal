@@ -17,6 +17,8 @@
 
     <asp:ImageButton CssClass="exit" ImageUrl="~/styles/icons/vubiz/cancel.png" ID="ImageButton1" runat="server" OnClick="exit_Click" />
 
+    <h1>Customer Sales Details</h1>
+
     <h2 class="c2">This shows Ecommerce Sales of the top &nbsp;
       <asp:DropDownList ID="ddTop" Style="border: 1px solid white; background-color: #0178B9; color: white;" runat="server">
         <asp:ListItem>10</asp:ListItem>
@@ -97,7 +99,7 @@
             <asp:GridView
               Width="250px"
               ID="gvSalesTotal"
-              OnDataBound="gvSalesTotal_DataBound" 
+              OnDataBound="gvSalesTotal_DataBound"
               runat="server"
               ShowHeader="False"
               BorderStyle="None"
@@ -105,7 +107,7 @@
               DataSourceID="SqlDataSource2"
               AllowSorting="True">
               <Columns>
-                <asp:BoundField ItemStyle-BorderStyle="None" ItemStyle-Width="100px" ItemStyle-ForeColor="White" DataField="Customer"  ReadOnly="True" ItemStyle-Font-Bold="true" />
+                <asp:BoundField ItemStyle-BorderStyle="None" ItemStyle-Width="100px" ItemStyle-ForeColor="White" DataField="Customer" ReadOnly="True" ItemStyle-Font-Bold="true" />
                 <asp:BoundField ItemStyle-BorderStyle="None" ItemStyle-Width="150px" ItemStyle-ForeColor="White" DataField="Sales" ReadOnly="True" DataFormatString="{0:C0}" />
               </Columns>
             </asp:GridView>

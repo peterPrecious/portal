@@ -8,7 +8,6 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
   <link href="/portal/styles/css/about.min.css" rel="stylesheet" />
-
   <script>
     $(function () {
 
@@ -23,7 +22,6 @@
       })
     })
   </script>
-
 </asp:Content>
 
 
@@ -32,10 +30,8 @@
   <div class="divPage">
     <asp:ImageButton CssClass="exit" ImageUrl="~/styles/icons/vubiz/cancel.png" runat="server" OnClick="exit_Click" />
 
-    <h1>
-      <asp:Localize runat="server" Text="<%$  Resources:portal, about_0%>" /></h1>
-    <h2>
-      <asp:Localize runat="server" Text="<%$  Resources:portal, about_01%>" /></h2>
+    <h1><asp:Localize runat="server" Text="<%$  Resources:portal, about_0%>" /></h1>
+    <h2><asp:Localize runat="server" Text="<%$  Resources:portal, about_01%>" /></h2>
 
     <table class="faq">
       <tr>

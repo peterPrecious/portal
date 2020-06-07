@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Web;
 using System.Web.UI.WebControls;
 
 namespace portal.v7.facilitator
@@ -123,9 +122,13 @@ namespace portal.v7.facilitator
 
       se.localize();
 
-      ex.DocName = "Program Activity Details" + " - " + DateTime.Now.ToString("MMM d yyyy");  // excel file name - doesn't like spaces
-      ex.WsName = "Details";                                                                  // this is the worksheet name which shows on the first tab at the bottom
-      ex.SpName = "[apps].[dbo].[sp7programActivityDetailsExcel]";                            // this is the stored proc that drives this - must be "excelWriter" friendly    
+      // ex.DocName = "Program Activity Details" + " - " + DateTime.Now.ToString("MMM d yyyy");  // excel file name - doesn't like spaces
+      ex.DocName = GetGlobalResourceObject("portal", "progActivity_0").ToString() + " - " + DateTime.Now.ToString("MMM d yyyy");  // excel file name - doesn't like spaces
+      // ex.WsName = "Details";                                                                  // this is the worksheet name which shows on the first tab at the bottom
+      ex.WsName = GetGlobalResourceObject("portal", "details").ToString();                       // this is the worksheet name which shows on the first tab at the bottom
+      ex.SpName = "[apps].[dbo].[sp7programActivityDetailsExcel]";                               // this is the stored proc that drives this - must be "excelWriter" friendly    
+
+      ex.Lang = "en"; // added Nov 27, 2019 to enable translation of column headers retrieved from SQL
 
       ex.StrParms[0] = se.custId;
       ex.StrParms[1] = txtMembId.Text;

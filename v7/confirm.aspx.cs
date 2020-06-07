@@ -2,7 +2,7 @@
 
 namespace portal.v7.administrator
 {
-  public partial class Confirm : System.Web.UI.Page
+  public partial class Confirm : FormBase
   {
     protected void Page_Load(object sender, EventArgs e)
     {

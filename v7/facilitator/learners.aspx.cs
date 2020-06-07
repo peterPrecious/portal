@@ -8,9 +8,10 @@ using System.Web.UI.WebControls;
 namespace portal.v7.facilitator
 {
   public partial class learners : FormBase
+
   {
-    private Sess se = new Sess();
-    private Apps ap = new Apps();
+    private readonly Sess se = new Sess();
+    private readonly Apps ap = new Apps();
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -95,7 +96,7 @@ namespace portal.v7.facilitator
       if (dvLearner.FindControl("membId") != null)
       {
         ((TextBox)dvLearner.FindControl("membId")).Text = "";
-        if (se.usesPassword) //se.usesPassword set on SignIn, tyipcally a Profile entry
+        if (se.usesPassword) //se.usesPassword set on SignIn, typically a Profile entry
         {
           ((TextBox)dvLearner.FindControl("membPwd")).Text = "";
         }
@@ -163,6 +164,8 @@ namespace portal.v7.facilitator
 
         // this is the level of the learner being analyzed
         Label ctrMembLevel = (Label)dvLearner.FindControl("membLevel");
+        // just offer levels below your own
+
 
         // these are the Manager Access values    
         Label ctrMembManagerAccess = (Label)dvLearner.FindControl("membManagerAccess");
@@ -192,6 +195,8 @@ namespace portal.v7.facilitator
         {
           managerAccessHide(se.usesPassword);
         }
+
+
       }
 
       if (dvLearner.CurrentMode.ToString() == "Edit")
@@ -211,6 +216,29 @@ namespace portal.v7.facilitator
 
         // this is the level of the learner being analyzed
         HiddenField hidMembLevel = (HiddenField)dvLearner.FindControl("hidMembLevel");
+
+        // added (forgotten) Sep 25, 2019
+        DropDownList ctrMembLevel = (DropDownList)dvLearner.FindControl("membLevel");
+        ctrMembLevel.Items.FindByValue("1").Enabled = false;
+        ctrMembLevel.Items.FindByValue("2").Enabled = true;
+        ctrMembLevel.Items.FindByValue("5").Enabled = false;
+        // disable levels unless beneath your membLevel
+        if (seMembLevel == 3)
+        {
+          ctrMembLevel.Items.FindByValue("3").Enabled = false;
+          ctrMembLevel.Items.FindByValue("4").Enabled = false;
+        }
+        if (seMembLevel == 4)
+        {
+          ctrMembLevel.Items.FindByValue("3").Enabled = true;
+          ctrMembLevel.Items.FindByValue("4").Enabled = false;
+        }
+        if (seMembLevel == 5)
+        {
+          ctrMembLevel.Items.FindByValue("3").Enabled = true;
+          ctrMembLevel.Items.FindByValue("4").Enabled = true;
+        }
+
 
         // set the Manager Access values since can be multiple values, ie 1,2    
         ListBox lstMembManagerAccess = (ListBox)dvLearner.FindControl("membManagerAccess");
@@ -236,29 +264,28 @@ namespace portal.v7.facilitator
         {
           managerAccessHide(se.usesPassword);
         }
-
       }
-
     }
 
     protected void dvLearner_ItemInserting(object sender, DetailsViewInsertEventArgs e)
     {
       // ensure all mandatory fields were entered
       string missingFields = "";
-
-      if (e.Values["membId"] == null) missingFields += " User,";
-      if (e.Values["membPwd"] == null && se.usesPassword) missingFields += " Password,";
-      if (e.Values["membFirstName"] == null) missingFields += " First Name,";
-      if (e.Values["membLastName"] == null) missingFields += " Last Name,";
-      if (e.Values["membEmail"] == null) missingFields += " Email,";
+      if (e.Values["membId"] == null) missingFields += " " + GetGlobalResourceObject("portal", "membId").ToString() + ",";
+      if (e.Values["membPwd"] == null && se.usesPassword) missingFields += " " + GetGlobalResourceObject("portal", "password").ToString() + ",";
+      if (e.Values["membFirstName"] == null) missingFields += " " + GetGlobalResourceObject("portal", "firstName").ToString() + ",";
+      if (e.Values["membLastName"] == null) missingFields += " " + GetGlobalResourceObject("portal", "lastName").ToString() + ",";
+      if (e.Values["membEmail"] == null) missingFields += " " + GetGlobalResourceObject("portal", "email").ToString() + ",";
       if (missingFields.Length > 0)
       {
-        labError.Text = "You are missing mandatory field(s): " + missingFields.TrimEnd(',') + ".";
+        //labError.Text = "You are missing mandatory field(s): " + missingFields.TrimEnd(',') + ".";
+        labError.Text = GetGlobalResourceObject("portal", "learners_8").ToString() + missingFields.TrimEnd(',') + ".";
         e.Cancel = true;
       }
 
       DropDownList ctrMembLevel = (DropDownList)dvLearner.FindControl("membLevel");
       e.Values["membLevel"] = ctrMembLevel.SelectedValue;
+
 
       // create single string for managerAccess display
       ListBox ctrMembManagerAccess = (ListBox)dvLearner.FindControl("membManagerAccess");
@@ -407,7 +434,7 @@ namespace portal.v7.facilitator
       Response.Redirect("/portal/v7/default.aspx");
     }
 
-   
+
     protected void managerAccessHide(bool usesPassword)  // use javascript to hide/show the Manager Access Row (easier)
     {
       //    "$(function () { managerAccess('hide', false); });",
@@ -434,5 +461,9 @@ namespace portal.v7.facilitator
       );
     }
 
+    protected void dvLearner_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+    {
+
+    }
   }
 }

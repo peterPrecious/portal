@@ -2,7 +2,7 @@
 
 namespace portal.v7
 {
-  public partial class iFrame : System.Web.UI.Page
+  public partial class iFrame : FormBase
   {
     protected void Page_Load(object sender, EventArgs e)
     {

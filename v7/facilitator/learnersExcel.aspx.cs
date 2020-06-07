@@ -45,11 +45,12 @@ namespace portal.v7.facilitator
 
     protected void butBegin_Click(object sender, EventArgs e)
     {
-      Excel ex = new Excel(); // instantiate the excelwriter
-
-      ex.DocName = "Learners" + " - " + DateTime.Now.ToString("MMM d yyyy");
-      ex.WsName = "Learners";                                                                           // this is the worksheet name which shows on the first tab at the bottom
-      ex.SpName = "[apps].[dbo].[sp7learnersExcel]";                                                    // this is the stored proc that drives this - must be "excelWriter" friendly    
+      Excel ex = new Excel                                                                                                  // instantiate the excelwriter
+      {
+        DocName = GetGlobalResourceObject("portal", "learners").ToString() + " - " + DateTime.Now.ToString("MMM d yyyy"),   // excel file name - doesn't like spaces
+        WsName = GetGlobalResourceObject("portal", "learners").ToString(),                                                  // this is the worksheet name which shows on the first tab at the bottom
+        SpName = "[apps].[dbo].[sp7learnersExcel]"                                                                          // this is the stored proc that drives this - must be "excelWriter" friendly    
+      };                                                                                              
 
       ex.StrParms[0] = Session["custId"].ToString();
       ex.IntParms[0] = (int)Session["membLevel"];

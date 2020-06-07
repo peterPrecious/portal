@@ -78,7 +78,8 @@ namespace portal
     public static string reQuote(string value) //  replace single and smart quotes with two single quotes so we don't screw up SQL (used to be called reQuote)
     {
       value = value ?? ""; // if null set to ""
-      value = value.Replace("“", "'").Replace("”", "'").Replace("‘", "'").Replace("’", "'").Replace("\"", "'").Replace("''", "'").Replace("'", "''");
+//    value = value.Replace("“", "'").Replace("”", "'").Replace("‘", "'").Replace("’", "'").Replace("\"", "'").Replace("''", "'").Replace("'", "''");
+      value = value.Replace("“", "'").Replace("”", "'").Replace("‘", "'").Replace("’", "'").Replace("\"", "'").Replace("''", "'"); // removed last replace Feb 2020 as double quotes where appearing the memb table
       return value;
     }
 

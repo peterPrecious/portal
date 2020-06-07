@@ -16,6 +16,8 @@
   <div class="divPage">
     <asp:ImageButton CssClass="exit" ImageUrl="~/styles/icons/vubiz/cancel.png" ID="ImageButton1" runat="server" OnClick="exit_Click" />
 
+    <h1>Customer Sales Summary</h1>
+
     <h2>Ecommerce Sales of the top 
     &nbsp;<asp:DropDownList ID="ddTop" AutoPostBack="true" Style="border: 1px solid white; background-color: #0178B9; color: white;" runat="server">
       <asp:ListItem>10</asp:ListItem>
@@ -42,7 +44,7 @@
           <div style="height: 300px; width: 350px; overflow: auto; margin: auto;">
 
             <asp:GridView
-              ID="gvSales" 
+              ID="gvSales"
               runat="server"
               Width="320px"
               ShowHeader="False"
@@ -56,10 +58,10 @@
                   ItemStyle-ForeColor="White" ShowSelectButton="True" ButtonType="Button">
                   <ItemStyle CssClass="customerSales gridLink" ForeColor="White"></ItemStyle>
                 </asp:CommandField>
-                <asp:BoundField 
-                  ItemStyle-CssClass="customerSales" 
-                  DataField="Customer"  
-                  ReadOnly="True" 
+                <asp:BoundField
+                  ItemStyle-CssClass="customerSales"
+                  DataField="Customer"
+                  ReadOnly="True"
                   SortExpression="Customer">
                   <ItemStyle CssClass="customerSales"></ItemStyle>
                 </asp:BoundField>

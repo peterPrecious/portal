@@ -1,5 +1,4 @@
 ﻿<%@ Page
-  Title="Administration Centre"
   Language="C#"
   MasterPageFile="~/v7/site.master"
   AutoEventWireup="true"
@@ -12,16 +11,18 @@
 <asp:Content ID="HeadContent" ContentPlaceHolderID="HeadContent" runat="server">
   <link href="/portal/styles/css/tiles.min.css" rel="stylesheet" />
   <link href="/portal/styles/css/default.min.css" rel="stylesheet" />
+  <link href="/portal/styles/css/notice.css" rel="stylesheet" />
 
   <script>
-    // this captures the tile click 
-    // it stores the tileTargetType and tileTarget into the form's hidden fields
-    // we sumbit this page/form then act accordingly using Page_Load
-    // note frmMaster is defined in site.master
 
-    function __doPostBack(tileTargetType, tileTarget) {
+    function __doPostBack(tileTargetType, tileTarget, tileName) {
+      // this captures the tile click 
+      // it stores the tileTargetType, tileTarget and tile Name into the form's hidden fields
+      // we sumbit this page/form then act accordingly using Page_Load
+      // note frmMaster is defined in site.master
       $("#tileTargetType").val(tileTargetType);
       $("#tileTarget").val(tileTarget);
+      $("#tileName").val(tileName);
       $("#frmMaster").submit();
     }
 
@@ -36,12 +37,8 @@
           $(this).prev().attr("type", "text");
         });
     });
-  </script>
 
-  <style>
-    .newButton { color: white; border: none; border: 1px solid white; background-color: none; font-weight: bold; font-size: 1.0em; padding: 5px 20px; margin: 3px; }
-      .newButton:hover { color: #0178B9; background-color: white; border-right: 2px solid black; border-bottom: 2px solid black; text-decoration: none; }
-  </style>
+  </script>
 
 </asp:Content>
 
@@ -49,6 +46,7 @@
 
   <input type="hidden" id="tileTargetType" name="tileTargetType" />
   <input type="hidden" id="tileTarget" name="tileTarget" />
+  <input type="hidden" id="tileName" name="tileName" />
 
   <asp:Table ID="tabSignIn" CssClass="tabSignIn" runat="server" Visible="false">
 
@@ -76,11 +74,12 @@
       </asp:TableCell>
     </asp:TableRow>
     <asp:TableRow ID="rowMembPwd" Visible="false">
+
       <asp:TableHeaderCell CssClass="tabSignInLabel" Text="<%$  Resources:portal, membPwd%>">Password :</asp:TableHeaderCell><asp:TableCell HorizontalAlign="Left">
         <asp:TextBox ID="txtMembPwd" CssClass="txtMembPwd" Width="250px" TextMode="SingleLine" Text="" runat="server"></asp:TextBox>
         <asp:Image ID="eyeMembPwd" CssClass="eyeMembPwd" ImageUrl="~/styles/icons/eye.png" runat="server" ToolTip="Hide/Show Password" />
       </asp:TableCell><asp:TableCell>
-        <asp:LinkButton CssClass="newButton" OnClick="btnMembPwd_Click" ID="btnMembPwd" runat="server" Text="Next" />
+        <asp:LinkButton CssClass="newButton" OnClick="btnMembPwd_Click" ID="btnMembPwd" runat="server" Text="<%$  Resources:portal, next%>" />
       </asp:TableCell>
     </asp:TableRow>
     <asp:TableRow ID="rowCustId" Visible="false">
@@ -94,10 +93,12 @@
       <asp:TableCell ColumnSpan="3" Style="padding: 20px;"><hr /></asp:TableCell>
     </asp:TableRow>
 
+
     <asp:TableRow>
       <asp:TableCell ColumnSpan="3">
+        <asp:LinkButton CssClass="newButton" ID="butReturn" OnClick="butReturn_Click" runat="server" Text="<%$  Resources:portal, return%>" Visible="false" />
         <asp:LinkButton CssClass="newButton" ID="butRestart" OnClick="butRestart_Click" runat="server" Text="<%$  Resources:portal, restart%>" />
-        <asp:LinkButton CssClass="newButton" ID="butBrowser" OnClientClick="window.open('/vubizApps/Default.aspx?lang=en&email=support@vubiz.com&appId=browser.3')" runat="server" Text="<%$  Resources:portal, browserTest%>" />
+        <asp:LinkButton CssClass="newButton" ID="butBrowser" OnClick="butBrowser_Click" xOnClientClick="browserCheckerUrl()" runat="server" Text="<%$  Resources:portal, browserTest%>" />
       </asp:TableCell>
     </asp:TableRow>
     <asp:TableRow>
@@ -130,14 +131,13 @@
       </asp:TableCell>
     </asp:TableRow>
   </asp:Table>
-
   <div>
     <asp:Label ID="labWelcome" CssClass="labWelcome" runat="server" Text=""></asp:Label><br />
     <asp:Label ID="labManage" CssClass="labManage" runat="server" Text=""></asp:Label><br />
     <asp:Label ID="labContent" CssClass="labContent" runat="server" Text=""></asp:Label>
   </div>
-
   <div class="divPage" style="margin-top: 00px; background-color: inherit;">
+
     <asp:ListView runat="server"
       ID="lvTiles"
       Visible="false"
@@ -146,12 +146,13 @@
       DataSourceID="SqlDataSource1">
       <ItemTemplate>
         <li class="tile"
-          onclick="__doPostBack('<%#Eval("tileTargetType")%>', '<%#Eval("tileTarget")%>')"
+          onclick="__doPostBack('<%#Eval("tileTargetType")%>', '<%#Eval("tileTarget")%>', '<%#Eval("tileName")%>')"
           style="background-color: <%#Eval("tileColor")%>">
           <div class="tileIcon">
             <img src="../styles/tiles/<%#Eval("tileIcon")%>" />
           </div>
-          <asp:Label CssClass="tileTitle" ID="tileTitle" runat="server" Text=""><%#Eval("tileName")%></asp:Label></li>
+          <asp:Label runat="server" CssClass="tileTitle" ID="tileLabel" Text='<%# Eval("tileName") %>' />
+        </li>
       </ItemTemplate>
       <LayoutTemplate>
         <ul id="itemPlaceholderContainer" runat="server" class="tileSet">
@@ -159,8 +160,41 @@
         </ul>
       </LayoutTemplate>
     </asp:ListView>
+
     <asp:Image CssClass="logo" ID="logo" runat="server" />
+
+    <div class="divNotice">
+      <asp:Panel CssClass="panNotice" ID="notice" runat="server" Visible="false">
+        <h1>
+          <asp:Literal runat="server" Text="<%$  Resources:portal, noticeTitle%>"></asp:Literal>
+        </h1>
+
+        <p style="text-align: left;">
+          <asp:Literal runat="server" Text="<%$  Resources:portal, noticeSubTitle%>" />
+          <br /><br />
+          <asp:ListBox 
+            ID="lbxPurchases" 
+            CssClass="lbxPurchases" 
+            Width="400px" 
+            runat="server" />
+        </p>
+
+        <asp:LinkButton ID="lnkNoticeY" CssClass="newButton2" Width="300" Height="25" OnClick="lnkNoticeY_Click" runat="server">
+          <asp:Literal runat="server" Text="<%$  Resources:portal, noticeY%>" />
+        </asp:LinkButton><br /><br />
+
+        <asp:LinkButton ID="lnkNoticeN" CssClass="newButton2" Width="300" Height="45" OnClick="lnkNoticeN_Click" runat="server">
+          <asp:Literal runat="server" Text="<%$  Resources:portal, noticeN%>" />
+        </asp:LinkButton>
+
+        <p style="text-align: left; margin-top: 30px;">
+          <asp:Literal runat="server" Text="<%$  Resources:portal, noticeNote%>" />
+        </p>
+      </asp:Panel>
+    </div>
   </div>
+
+
 
   <asp:SqlDataSource ID="SqlDataSource1" runat="server"
     ConnectionString="<%$ ConnectionStrings:apps %>"

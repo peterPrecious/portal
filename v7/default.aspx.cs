@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Globalization;
+using System.Runtime.CompilerServices;
 using System.Threading;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -9,12 +9,17 @@ namespace portal
 {
   public partial class Default : FormBase
   {
-    private Cust cu = new Cust();
-    private Memb me = new Memb();
-    private Sess se = new Sess();
-    private Apps ap = new Apps();
-    private Mail ma = new Mail();
-    private Prof pr = new Prof();
+    private readonly Cust cu = new Cust();
+    private readonly Memb me = new Memb();
+    private readonly Sess se = new Sess();
+    private readonly Apps ap = new Apps();
+    private readonly Mail ma = new Mail();
+    private readonly Prof pr = new Prof();
+    private readonly Ecom ec = new Ecom();
+
+
+    // use ListItemCollection for programs purchased for the Purchase Notice
+    ListItemCollection listItem = new ListItemCollection();
 
     protected override void InitializeCulture()
     {
@@ -50,10 +55,6 @@ namespace portal
 
       // store date format for EN or FR
       Session["dateFormat"] = (Session["culture"].ToString().Substring(0, 2) == "en") ? "MMM d, yyyy" : "d MMM yyyy";
-
-      // page title which shows on header
-      //      Page.Title = Resources.portal.pageTitleDefault;
-      Page.Title = "Administration Home";
 
     }
 
@@ -106,6 +107,11 @@ namespace portal
           // enable the Register button in case they haven't done this
           btnRegister.Visible = true;
         }
+
+        if (Request["cancelUrl"] != null)
+          butReturn.Visible = true;
+        else
+          butReturn.Visible = false;
 
         // did we start with membGuid?    
         if (Request["membGuid"] != null)
@@ -189,28 +195,29 @@ namespace portal
         }
 
         // language passed in (lang=FR)
-
         if (Request["lang"] == null)
         {
-          Session["culture"] = "en-US";
+          if (Session["lang"] == null)
+          {
+            Session["lang"] = "en";
+            Session["culture"] = "en-US";
+          }
         }
         else
         {
           if (Request["lang"].ToLower() == "en")
           {
+            Session["lang"] = "en";
             Session["culture"] = "en-US";
           }
           if (Request["lang"].ToLower() == "fr")
           {
+            Session["lang"] = "fr";
             Session["culture"] = "fr-CA";
           }
           // we need to reload this program to get rid of any lang parms in the URL, not kept in Session variable
           Response.Redirect("/portal/v7/default.aspx", true);
         }
-
-
-        Thread.CurrentThread.CurrentCulture = CultureInfo.CreateSpecificCulture(Session["culture"].ToString());
-        Thread.CurrentThread.CurrentUICulture = new CultureInfo(Session["culture"].ToString());
 
         // first session visit?
         if ((bool)Session["secure"] == false)
@@ -231,11 +238,14 @@ namespace portal
       // preset credentials for fast testing ( mucks up signin to use anything else )
       if (fn.host() == "localhost")
       {
-        //txtMembId.Attributes["value"] = "VUV5_FAC";
-        //txtCustId.Text = "CCHS2544";
+        //txtMembId.Attributes["value"] = "VUV5_MGR";
+        //txtCustId.Text = "CCHS1068";
 
-        //txtMembId.Attributes["value"] = "BBP@VUBIZ.COM";
-        //txtMembPwd.Text = "password";
+        //txtMembId.Attributes["value"] = "PETER2345";
+        //txtMembPwd.Text = "ALEXANDER";
+
+        //txtMembId.Attributes["value"] = "vubiz-test";
+        //txtMembPwd.Text = "test";
 
         //txtMembId.Attributes["value"] = "VUV8_ADM";
         //txtCustId.Text = "CFIB5288";
@@ -245,7 +255,7 @@ namespace portal
         //txtMembPwd.Attributes["value"] = "TANGERINE";
       }
 
-      // manage tiles
+      // if secure, render tiles
       if ((bool)Session["secure"])
       {
         lvTiles.Visible = true;
@@ -256,6 +266,7 @@ namespace portal
       {
         string targetType = Request["tileTargetType"]; // sender used for target type (1,2,3)
         string target = Request["tileTarget"]; // parameter used for target
+        string tileName = Request["tileName"]; // need this for links to iFrame below
         if (targetType.Length > 0 && target.Length > 0)
         {
           Session["pageName"] = target;
@@ -272,9 +283,7 @@ namespace portal
           target = target.Replace("[[lang]]", se.lang);
           target = target.Replace("[[profile]]", se.profile);
 
-
           //ClientScript.RegisterStartupScript(GetType(), "hwa", "alert('Hello World');", true);
-
 
           // except [[token]] 
           target = target.Replace("[[token]]", ap.token(10));
@@ -288,7 +297,8 @@ namespace portal
           // link to another tab (typically external app)
           if (targetType == "2")
           {
-            Response.Redirect("iFrame.aspx?url=" + Server.UrlEncode(target));
+            // pass &title for determining browser title
+            Response.Redirect("iFrame.aspx?url=" + Server.UrlEncode(target) + "&title=" + tileName);
           }
 
           // link to another menuGroup
@@ -319,7 +329,8 @@ namespace portal
         // Apr 2019: change memberIsNop to return "alias" as well as the mistakenly called "profile" plus usesPassword to determine if we need to render that field
         // checks for Nop AND V8 !!
         // _usesPassword : true if NOP or V8
-        if (me.memberIsNop(txtMembId.Text.ToUpper(), Convert.ToInt32(Session["storeId"]), Session["nopReturnUrl"].ToString(), out string _custId, out string _membPwd, out string _alias, out string _profile, out string _usesPassword))
+        if (me.memberIsNop(txtMembId.Text.ToUpper(), Convert.ToInt32(Session["storeId"]), Session["nopReturnUrl"].ToString(),
+          out string _custId, out string _membPwd, out string _alias, out string _profile, out string _usesPassword))
         {
           // rowMembId.Visible = false;
           btnMembId.Visible = false;
@@ -332,8 +343,9 @@ namespace portal
 
           txtMembPwd.Focus();
         }
-        // if not NOP then see if Visitor (ie registered in apps.dbo.ecomRegister but not v5/memb)
-        else if (me.memberIsVisitor(txtMembId.Text.ToUpper(), Convert.ToInt32(Session["storeId"]), Session["custId"].ToString(), out string _ecomGuid, out string _ecomPwd))
+        // if not NOP then see if Visitor (ie registered in apps.dbo.ecomRegister but not V5/memb)
+        else if (me.memberIsVisitor(txtMembId.Text.ToUpper(), Convert.ToInt32(Session["storeId"]), Session["custId"].ToString(),
+          out string _ecomGuid, out string _ecomPwd))
         {
           btnMembId.Visible = false;
           rowMembPwd.Visible = true;
@@ -541,15 +553,6 @@ namespace portal
         labEmail.Text = "That Email is NOT Unique, ie more than one learner has that email address.";
       }
 
-
-
-
-
-
-
-
-
-
     }
 
     protected void lvTiles_ItemDataBound(object sender, ListViewItemEventArgs e)
@@ -559,21 +562,24 @@ namespace portal
       if (e.Item.ItemType == ListViewItemType.DataItem)
       {
         ListViewDataItem item = (ListViewDataItem)e.Item;
-        string tileName = (string)DataBinder.Eval(item.DataItem, "tileName");
+        string tileName = (string)DataBinder.Eval(item.DataItem, "tileName"); // get tileName from DB
 
         // translate if level 3
         short tileMembLevel = (short)Convert.ToInt16(DataBinder.Eval(item.DataItem, "tileMembLevel"));
         if (tileMembLevel == 3)
         {
-          Label tileLabel = (Label)e.Item.FindControl("tileTitle") as Label;
+          string resourceName = "tile" + tileName.Replace(" ", "").Replace("/", "").Replace("(", "").Replace(")", ""); // craft a resource name for translation
+          Label tileLabel = (Label)e.Item.FindControl("tileLabel") as Label;
           try
           {
-            tileLabel.Text = GetGlobalResourceObject("portal", "tile_" + tileName.Replace(" ", "").Replace("/", "").Replace("(", "").Replace(")", "")).ToString();
+            tileLabel.Text = (string)GetGlobalResourceObject("portal", resourceName);
           }
-          catch (Exception)
+          catch (Exception) // no translation? --- not tested
           {
+            tileLabel.Text = tileName;
           }
         }
+
 
         // only show "Certificate Report" if CustId starts with EVHR
         if (tileName == "Certificate Report" && (se.cust != "EVHR"))
@@ -618,6 +624,71 @@ namespace portal
         }
 
       }
+
+      // render the New Purchase Notice if:
+      //    this a NOP account;
+      //    this a facilitator;
+      //    this fac has made one or more (single or multi seat) purchases;
+      //    one or more of the purhases have not yet been assigned;
+      if (cu.custChannelNop && me.membLevel == 3 && fn.host() == "localhost") // remove && fn.host() == "localhost" when ready to publish live
+      {
+
+        // Create a new ListItemCollection (programs, etc and their status)
+        // instantiated above
+        // ListItemCollection listItem = new ListItemCollection();
+
+        ec.ecomPurchaseNotice(cu.custId, me.membId,
+          out string _membProgram,
+          out string _ecomProgram,
+          out string _progTitle,
+          out string _ecomQuantity);
+
+        // check is we have any purchases (start assuming true)
+        if (
+          !string.IsNullOrEmpty(_membProgram) &&
+          !string.IsNullOrEmpty(_ecomProgram) &&
+          !string.IsNullOrEmpty(_progTitle) &&
+          !string.IsNullOrEmpty(_ecomQuantity)
+          )
+        {
+
+          string[] __membProgram = _membProgram.Split('|');
+          string[] __ecomProgram = _ecomProgram.Split('|');
+          string[] __progTitle = _progTitle.Split('|');
+          string[] __ecomQuantity = _ecomQuantity.Split('|');
+
+          int noPurchases = __ecomProgram.Length;
+          string assigned = GetGlobalResourceObject("portal", "noticeAssigned").ToString();
+
+          // skip the first entry as it will always be empty (starts at 1, thus reduce noPurchases by 1)
+          // listItem.Add("1 X 360 Degree Feedback (P5970EN) - Assigned");
+          // listItem.Add("5 X Assembling the Pieces Toolkit (P4754EN) - Not Assigned");
+
+          listItem.Clear();
+
+          for (int i = 1; i <= noPurchases - 1; i++)
+          {
+            ec.noPurchasedAssigned(cu.custId, __ecomProgram[i], out string _noAssigned);
+            listItem.Add(__ecomQuantity[i] + " X " + __progTitle[i] + " (" + __ecomProgram[i] + ") - " + _noAssigned + " " + assigned);
+          }
+
+          lbxPurchases.Rows = noPurchases - 1;
+
+          lbxPurchases.DataSource = listItem;
+          lbxPurchases.DataBind();
+
+          notice.Visible = true;
+
+        }
+
+      }
+    }
+
+    protected void butReturn_Click(object sender, EventArgs e)
+    {
+      //    string url = Request["returnUrl"];
+      string url = Request["cancelUrl"];
+      Response.Redirect(url, true);
     }
 
     protected void butRestart_Click(object sender, EventArgs e)
@@ -643,6 +714,49 @@ namespace portal
         "&cancelUrl=" + Session["nopCancelUrl"] +
         "&appId=nopRegister";
 
+      Response.Redirect(url, true);
+    }
+
+    protected void butBrowser_Click(object sender, EventArgs e)
+    {
+      string url = "" +
+        fn.scheme() +
+        "://" +
+        fn.host() +
+        "/vubizApps/Default.aspx" +
+        "?lang=" + Session["lang"] +
+        "&email=support@vubiz.com" +
+        "&returnToPortal=y" +
+        "&appId=browser.3";
+
+      Response.Redirect(url, false);
+
+    }
+
+    protected void lnkNoticeN_Click(object sender, EventArgs e)
+    {
+      notice.Visible = false;
+    }
+
+    protected void lnkNoticeY_Click(object sender, EventArgs e)
+    {
+      // this is what a purchase looks like:
+      // 1 X 360 Degree Feedback (P5970EN) - 1 Assigned
+      // extract the Program ID and assign to user
+
+      string program = "", programs = "";
+
+      for (int _i = 0; _i < lbxPurchases.Rows; _i++)
+      {
+        string purchase = lbxPurchases.Items[_i].Value;
+        int _j = purchase.IndexOf("(");
+        program = purchase.Substring(_j + 1, 7);
+        programs += program + ' '; // add to the Memb_Programs field of this leaner
+      }
+      me.memberPrograms2((int)Session["membNo"], programs);
+
+      // if the source is NOP then we need to ensure we don't lose the url parameters if we restart
+      string url = Request.Url.AbsoluteUri;
       Response.Redirect(url, true);
     }
   }

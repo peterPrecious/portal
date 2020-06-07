@@ -16,9 +16,11 @@
   <div class="divPage">
     <asp:ImageButton CssClass="exit" ImageUrl="~/styles/icons/vubiz/cancel.png" ID="ImageButton1" runat="server" OnClick="exit_Click" />
 
-    <h2>List of the top 20 modules accessed during the last twelve months.
-      <br />
-      Click on the icons at bottom right for graphical and spreasheet renderings.
+    <h1>Module Usage</h1>
+
+    <h2>List of the top 20 modules accessed during the last twelve months.<br />
+      Click on the icons at bottom right for graphical and spreadsheet renderings.<br />
+      Note: generating the graph can take several minutes.
     </h2>
 
     <table class="tabContain" style="margin: auto;">

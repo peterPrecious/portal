@@ -99,7 +99,7 @@ namespace portal.services
       "<br>'programs': [{'progId':'P1687EN','progNo':'2814','progTitle':'WHMIS for Workers 2015','progStatus':'not started'},{'progId':'P1324EN','progNo':'693','progTitle':'WHMIS for Workers 2016','progStatus':'not started'}]" +
       "<br>}")]
     #endregion
-    public string memberStatus(string custId, string userId)
+    public string memberStatus(string custId, string membId)
     {
       using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
       {
@@ -111,7 +111,7 @@ namespace portal.services
           cmd.CommandText = "dbo.sp6memberStatus";
           cmd.CommandType = CommandType.StoredProcedure;
           cmd.Parameters.Add(new SqlParameter("@custId", custId));
-          cmd.Parameters.Add(new SqlParameter("@membId", userId));
+          cmd.Parameters.Add(new SqlParameter("@membId", membId));
 
           SqlDataReader drd = cmd.ExecuteReader();
           string result = null, result1 = null, result2 = null;

@@ -25,7 +25,7 @@
     <asp:ImageButton CssClass="exit" ImageUrl="~/styles/icons/vubiz/cancel.png" ID="exit" runat="server" OnClick="Exit_Click" />
     <br />
 
-    <h1>Extend Access to Ecommerce Transactions (coming)</h1>
+    <h1>Extend Access to an Ecommerce Transaction (coming)</h1>
 
     <p class="c2">
       Enter the <b>User Id</b> <span class="yellow">of the Ecommerce Purchaser</span>, the <b>Program Id</b> and <b># Days</b> to extend the Transaction <b>from today</b>.

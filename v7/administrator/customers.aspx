@@ -74,7 +74,9 @@
       <asp:Panel ID="panTop" CssClass="panTop" runat="server" DefaultButton="butSearch">
 
         <h1>
-          <span onclick="fadeIn()" class="hoverUnderline" title="Click to hide/show discription.">Customers</span>
+          <span onclick="fadeIn()" class="hoverUnderline">Customers</span>
+          <span style="font-weight: normal"><asp:Literal ID="Literal1" runat="server" Text="[Clicking the title shows/hides the description.]" /></span>
+
           <asp:ImageButton OnClick="dvCustomer_ItemInit" CssClass="icons add" ImageUrl="~/styles/icons/vubiz/add.png" ToolTip="Add a Customer" runat="server" />
         </h1>
 
@@ -96,8 +98,6 @@
           The only exception is the Customer Id which is generated starting with the 4 characters of the <b>Cust</b> column.
           Once cloned the new Account will appear at the top of the list where you can edit it like any other Account.<br />
           <br />
-
-          <span style="color: yellow"><asp:Literal runat="server" Text="<%$  Resources:portal, learners_1d%>" /></span>
 
           <div style="margin-top: 30px; text-align: center;">
             <asp:TextBox ID="txtSearch" Text="" CssClass="alignCenter" placeholder="<%$  Resources:portal, searchValue%>" runat="server" />

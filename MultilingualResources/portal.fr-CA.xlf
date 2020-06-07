@@ -1,26 +1,166 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 xliff-core-1.2-transitional.xsd">
-  <file datatype="xml" source-language="en" target-language="fr-CA" original="PORTAL/APP_GLOBALRESOURCES/PORTAL.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
+  <file datatype="xml" source-language="en-US" target-language="fr-CA" original="PORTAL/APP_GLOBALRESOURCES/PORTAL.RESX" tool-id="MultilingualAppToolkit" product-name="n/a" product-version="n/a" build-num="n/a">
     <header>
-      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6810.0" tool-company="Microsoft" />
+      <tool tool-id="MultilingualAppToolkit" tool-name="Multilingual App Toolkit" tool-version="4.0.6916.0" tool-company="Microsoft" />
     </header>
     <body>
-      <group id="PORTAL/APP_GLOBALRESOURCES/PORTAL.RESX">
+      <group id="PORTAL/APP_GLOBALRESOURCES/PORTAL.RESX" datatype="resx">
+        <trans-unit id="about_0" translate="yes" xml:space="preserve">
+          <source>About this Service</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">À propos de ce service</target>
+        </trans-unit>
+        <trans-unit id="about_01" translate="yes" xml:space="preserve">
+          <source>Select the Category at Left</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sélectionnez la catégorie à gauche</target>
+        </trans-unit>
+        <trans-unit id="about_1" translate="yes" xml:space="preserve">
+          <source>This service is where you can manage your learners and the content they will review. It also provides a series of reports to monitor learner activities.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ce service est l’endroit où vous pouvez gérer vos apprenants et le contenu qu’ils examineront. Il fournit également une série de rapports pour surveiller les activités des apprenants.</target>
+        </trans-unit>
+        <trans-unit id="about_2" translate="yes" xml:space="preserve">
+          <source>You need to be a Facilitator or Manager (ie NOT a learner) to access this service. Use your credentials (and select your language) then Next. When you are done, please remember to Sign Out at the top left when you are done to secure your data plus conserve resources.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vous devez être un facilitateur ou un gestionnaire (c’est-à-dire pas un apprenant) pour accéder à ce service. Utilisez vos informations d’identification (et sélectionnez votre langue) puis suivant. Lorsque vous avez terminé, n’oubliez pas de vous déconnecter en haut à gauche lorsque vous avez terminé de sécuriser vos données et de conserver vos ressources.</target>
+        </trans-unit>
+        <trans-unit id="about_3" translate="yes" xml:space="preserve">
+          <source>Services are provided for Facilitators in both English and French. If you use a Microsoft Browser (IE or Edge) and have your Language Preference set to French, the service will pick that up. Otherwise it will default to English unless you specify otherwise.  Manager services are only provided in Englsh.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Des services sont fournis aux facilitateurs en anglais et en Français. Si vous utilisez un navigateur Microsoft (IE ou Edge) et que votre préférence linguistique est définie pour Français, le service le reprendra. Sinon, il sera par défaut à l’anglais, sauf si vous spécifiez le contraire.  Les services de gestionnaire ne sont fournis qu’à Englsh.</target>
+        </trans-unit>
+        <trans-unit id="about_4" translate="yes" xml:space="preserve">
+          <source>Facilitators do the heavy lifting for each account. They typically manage the learners and their performance. While Facilitators may have access to the content, they are not considered learners. Each Account is also setup with a Manager who can add a Facilitator to the account plus do a few other site routines.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Les animateurs font le gros du travail pour chaque compte. Ils gèrent généralement les apprenants et leur performance. Bien que les facilitateurs puissent avoir accès au contenu, ils ne sont pas considérés comme apprenants. Chaque compte est également configuré avec un gestionnaire qui peut ajouter un facilitateur au compte plus faire quelques autres routines de site.</target>
+        </trans-unit>
+        <trans-unit id="about_5" translate="yes" xml:space="preserve">
+          <source>Reports come in a variety of flavours. Little online "reports" like this one that you are reading, is an "info" report and will have a blue background. Key online reports where you manage information will have a white background.  Most key report provide CSV and/or Excel versions.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Les rapports viennent dans une variété de saveurs. Peu de "rapports" en ligne comme celui-ci que vous lisez, est un "info" rapport et aura un fond bleu. Les principaux rapports en ligne où vous gérez l’information auront un fond blanc.  La plupart des rapports clés fournissent des versions CSV et/ou Excel.</target>
+        </trans-unit>
+        <trans-unit id="about_6" translate="yes" xml:space="preserve">
+          <source>Account features and reports appear on the menu items at the top left. Operational features for your benefit appear on the top right. Note that this service will NOT run on small screens like a phone since large online forms etc are a key part of the deliverables.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Les caractéristiques et les rapports du compte apparaissent sur les éléments du menu en haut à gauche. Les fonctionnalités opérationnelles à votre avantage apparaissent en haut à droite. Notez que ce service ne fonctionnera pas sur de petits écrans comme un téléphone puisque les grands formulaires en ligne, etc sont un élément clé des livrables.</target>
+        </trans-unit>
+        <trans-unit id="access" translate="yes" xml:space="preserve">
+          <source>Access</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Accès</target>
+        </trans-unit>
+        <trans-unit id="active" translate="yes" xml:space="preserve">
+          <source>Active</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Actif</target>
+        </trans-unit>
+        <trans-unit id="addLearner" translate="yes" xml:space="preserve">
+          <source>Add Learner</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ajouter l’apprenant</target>
+        </trans-unit>
+        <trans-unit id="alertsResend" translate="yes" xml:space="preserve">
+          <source>Resend Email Alerts</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Remendez les alertes par courriel</target>
+        </trans-unit>
+        <trans-unit id="alertsResent" translate="yes" xml:space="preserve">
+          <source>Email Alerts will be resent on the next cycle!</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alertes e-mail sera ressenti sur le prochain cycle!</target>
+        </trans-unit>
+        <trans-unit id="assign" translate="yes" xml:space="preserve">
+          <source>Assign</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Affecter</target>
+        </trans-unit>
+        <trans-unit id="assignedAfter" translate="yes" xml:space="preserve">
+          <source>Assigned After</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Affecté après</target>
+        </trans-unit>
+        <trans-unit id="assignedBefore" translate="yes" xml:space="preserve">
+          <source>Assigned Before</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Affecté avant</target>
+        </trans-unit>
         <trans-unit id="assignPurchasedContent" translate="yes" xml:space="preserve">
           <source>Assign Purchased Content</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Assignation de contenu acheté</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Attribuer du contenu acheté</target>
+        </trans-unit>
+        <trans-unit id="availableAfter" translate="yes" xml:space="preserve">
+          <source>Available After</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Disponible après</target>
+        </trans-unit>
+        <trans-unit id="availableBefore" translate="yes" xml:space="preserve">
+          <source>Available Before</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Disponible avant</target>
+        </trans-unit>
+        <trans-unit id="browserTest" translate="yes" xml:space="preserve">
+          <source>Browser Test</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Test de navigateur</target>
         </trans-unit>
         <trans-unit id="cancel" translate="yes" xml:space="preserve">
           <source>Cancel</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Annuler</target>
         </trans-unit>
+        <trans-unit id="changeLanguage" translate="yes" xml:space="preserve">
+          <source>Change Language</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Changer la langue</target>
+        </trans-unit>
+        <trans-unit id="close" translate="yes" xml:space="preserve">
+          <source>Close</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Fermer</target>
+        </trans-unit>
+        <trans-unit id="commit" translate="yes" xml:space="preserve">
+          <source>Commit</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Engager</target>
+        </trans-unit>
         <trans-unit id="content_1" translate="yes" xml:space="preserve">
           <source>This allows you to assign the programs you have purchased to your learners. Select individual learners below to whom you'd like to assign content or select all learners (click top left).</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cela vous permet d’assigner les programmes que vous avez acheté à vos apprenants. Sélectionnez ci-dessous les apprenants à qui vous souhaitez assigner le contenu ou sélectionnez tous les apprenants (cliquez en haut à gauche).</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cela vous permet d’attribuer les programmes que vous avez achetés à vos apprenants. Sélectionnez les apprenants individuels ci-dessous à qui vous souhaitez affecter du contenu ou sélectionner tous les apprenants (cliquez en haut à gauche).</target>
+        </trans-unit>
+        <trans-unit id="content_10" translate="yes" xml:space="preserve">
+          <source>NOTE: once content is assigned and committed, it cannot be unassigned!</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">REMARQUE : une fois que le contenu est attribué et validé, il ne peut pas être inaffecté !</target>
+        </trans-unit>
+        <trans-unit id="content_2" translate="yes" xml:space="preserve">
+          <source>Then select the programs you want assigned to these learners or select all programs (click top left).</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sélectionnez ensuite les programmes que vous souhaitez assigner à ces apprenants ou sélectionnez tous les programmes (cliquez en haut à gauche).</target>
+        </trans-unit>
+        <trans-unit id="content_3" translate="yes" xml:space="preserve">
+          <source>Then click <bpt id="1">&lt;span class="code"&gt;</bpt>Assign<ept id="1">&lt;/span&gt;</ept> and the Programs will appear in the learner(s) <bpt id="2">&lt;span style="font-weight: bold;"&gt;</bpt>Programs After<ept id="2">&lt;/span&gt;</ept> field.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ensuite, cliquez sur 'bpt id'"1"lt;span class""code"'gt;<it id="1" pos="close">&lt;/bpt&gt;</it>Assign’ept id"1""lt;/span’gt;<it id="2" pos="close">&lt;/ept&gt;</it> et les programmes apparaîtront dans l’apprenant (s) 'bpt id'"2""lt;lt;"font-weight: bold;" -gt;<it id="3" pos="close">&lt;/bpt&gt;</it>Programs After 'ept id'"2"'lt;/span’gt;<it id="4" pos="close">&lt;/ept&gt;</it> champ.</target>
+        </trans-unit>
+        <trans-unit id="content_4" translate="yes" xml:space="preserve">
+          <source>The program count will be reflected in the Assigned After and Available After fields.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Le dépouillement du programme sera reflété dans les champs après et disponibles après.</target>
+        </trans-unit>
+        <trans-unit id="content_5" translate="yes" xml:space="preserve">
+          <source>Click <bpt id="1">&lt;span class="code"&gt;</bpt>Restart<ept id="1">&lt;/span&gt;</ept> to undo what you have done, enabling you to start over.&amp;nbsp; When your assignments look good, then click <bpt id="2">&lt;span class="code"&gt;</bpt>Commit<ept id="2">&lt;/span&gt;</ept>.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cliquez sur 'bpt id'"1"'lt;span class""code"-gt;<it id="1" pos="close">&lt;/bpt&gt;</it>Restart’ept id"1"'lt; /span’gt;<it id="2" pos="close">&lt;/ept&gt;</it> pour défaire ce que vous avez fait, vous permettant de recommencer. Lorsque vos affectations semblent bonnes, puis cliquez sur 'bpt id'"2"lt;span class""code"''<it id="3" pos="close">&lt;/bpt&gt;</it>Commit’ept id""2"'lt;/span’gt;<it id="4" pos="close">&lt;/ept&gt;</it>.</target>
+        </trans-unit>
+        <trans-unit id="content_6" translate="yes" xml:space="preserve">
+          <source><bpt id="1">&lt;span style="font-style:italic;"&gt;</bpt>Note: once content is assigned and committed it cannot be unassigned!<ept id="1">&lt;/span&gt;</ept></source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">"bpt id"1""-lt;span style"font-style:italic;" <it id="1" pos="close">&lt;/bpt&gt;</it>Note : une fois que le contenu est attribué et engagé, il ne peut pas être non affecté ! 'ept id'"1"Lt;/span’gt;<it id="2" pos="close">&lt;/ept&gt;</it></target>
+        </trans-unit>
+        <trans-unit id="content_61" translate="yes" xml:space="preserve">
+          <source>Inactive Learners are only rendered to show possible previous assignments.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Les apprenants inactifs ne sont rendus que pour montrer les affectations précédentes possibles.</target>
+        </trans-unit>
+        <trans-unit id="content_7" translate="yes" xml:space="preserve">
+          <source>First select the Learner(s) that will be assigned Programs</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sélectionnez d’abord l’apprenant(s) qui se verra attribuer des programmes</target>
+        </trans-unit>
+        <trans-unit id="content_8" translate="yes" xml:space="preserve">
+          <source>Next select the Programs you wish to assign to the above Learner(s).</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sélectionnez ensuite les programmes que vous souhaitez attribuer à l’apprenant ci-dessus.</target>
+        </trans-unit>
+        <trans-unit id="content_9" translate="yes" xml:space="preserve">
+          <source>Then click Assign and the Program(s) will be moved to the Learner(s).<bpt id="1">&lt;br &gt;</bpt><ept id="1">&lt;/br&gt;</ept>You will then have an opportunity to Commit the assignment(s) or Restart.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ensuite, cliquez sur Assign et le programme sera déplacé à l’apprenant(s). "bpt id"1"lt;br 'gt;<it id="1" pos="close">&lt;/bpt&gt;</it> 'ept id'"1"'lt;/br’gt;<it id="2" pos="close">&lt;/ept&gt;</it>Vous aurez alors l’occasion de commettre l’affectation(s) ou redémarrer.</target>
+        </trans-unit>
+        <trans-unit id="credentialError" translate="yes" xml:space="preserve">
+          <source>Those Credentials are not on file! Click Restart.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ces informations d’identification ne sont pas au dossier! Cliquez sur Redémarrer.</target>
+        </trans-unit>
+        <trans-unit id="credentialPasswordError" translate="yes" xml:space="preserve">
+          <source>That Password is incorrect!</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ce mot de passe est incorrect!</target>
+        </trans-unit>
+        <trans-unit id="credentials" translate="yes" xml:space="preserve">
+          <source>Please enter your credentials.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">S’il vous plaît entrez vos informations d’identification.</target>
         </trans-unit>
         <trans-unit id="custId" translate="yes" xml:space="preserve">
           <source>Customer Id</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Id de client</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Id client</target>
         </trans-unit>
         <trans-unit id="delete" translate="yes" xml:space="preserve">
           <source>Delete</source>
@@ -38,6 +178,14 @@
           <source>Email</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Courriel</target>
         </trans-unit>
+        <trans-unit id="errorHouston" translate="yes" xml:space="preserve">
+          <source>Houston, we have a problem...</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Houston, nous avons un problème...</target>
+        </trans-unit>
+        <trans-unit id="errorPage" translate="yes" xml:space="preserve">
+          <source>The resource being accessed is not available. Restart required.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">La ressource accessible n’est pas disponible. Redémarrer nécessaire.</target>
+        </trans-unit>
         <trans-unit id="firstName" translate="yes" xml:space="preserve">
           <source>First Name</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Prénom</target>
@@ -45,6 +193,34 @@
         <trans-unit id="firstVisit" translate="yes" xml:space="preserve">
           <source>First Visit</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Première visite</target>
+        </trans-unit>
+        <trans-unit id="forgot" translate="yes" xml:space="preserve">
+          <source>Forgot?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Oublié?</target>
+        </trans-unit>
+        <trans-unit id="forgotCredentials" translate="yes" xml:space="preserve">
+          <source>Forgot Credentials?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Des références oubliées ?</target>
+        </trans-unit>
+        <trans-unit id="forgot_1" translate="yes" xml:space="preserve">
+          <source>Enter your unique email address where we will send your credentials.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Entrez votre adresse e-mail unique où nous vous enverrons vos informations d’identification.</target>
+        </trans-unit>
+        <trans-unit id="introduction" translate="yes" xml:space="preserve">
+          <source>Introduction</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Introduction</target>
+        </trans-unit>
+        <trans-unit id="labContent" translate="yes" xml:space="preserve">
+          <source>Use {0} charm below to access the content.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Utilisez {0} charme ci-dessous pour accéder au contenu.</target>
+        </trans-unit>
+        <trans-unit id="labManage" translate="yes" xml:space="preserve">
+          <source>Use the top corner menu items to manage the system.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Utilisez les éléments du menu du coin supérieur pour gérer le système.</target>
+        </trans-unit>
+        <trans-unit id="labWelcome" translate="yes" xml:space="preserve">
+          <source>Hello {0}. Welcome to the learning portal.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bonjour {0}. Bienvenue sur le portail d’apprentissage.</target>
         </trans-unit>
         <trans-unit id="langEnglish" translate="yes" xml:space="preserve">
           <source>English</source>
@@ -54,6 +230,10 @@
           <source>French</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Français</target>
         </trans-unit>
+        <trans-unit id="language" translate="yes" xml:space="preserve">
+          <source>Language</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Langue</target>
+        </trans-unit>
         <trans-unit id="lastName" translate="yes" xml:space="preserve">
           <source>Last Name</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Nom</target>
@@ -62,25 +242,65 @@
           <source>Last Visit</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Dernière visite</target>
         </trans-unit>
+        <trans-unit id="learner" translate="yes" xml:space="preserve">
+          <source>Add a Learner</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ajouter un apprenant</target>
+        </trans-unit>
         <trans-unit id="learners" translate="yes" xml:space="preserve">
           <source>Learners</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Apprenants</target>
         </trans-unit>
+        <trans-unit id="learners_1a" translate="yes" xml:space="preserve">
+          <source>Click on the column headers to sort learners, the</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cliquez sur les en-têtes de colonne pour trier les apprenants, le</target>
+        </trans-unit>
+        <trans-unit id="learners_1b" translate="yes" xml:space="preserve">
+          <source>icon at top to add a learner and the</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">icône en haut pour ajouter un apprenant et le</target>
+        </trans-unit>
+        <trans-unit id="learners_1c" translate="yes" xml:space="preserve">
+          <source>icon at right for learner details. You can narrow this list by searching any field for any value.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">icône à droite pour les détails de l’apprenant. Vous pouvez réduire cette liste en recherchant n’importe quel champ pour n’importe quelle valeur.</target>
+        </trans-unit>
+        <trans-unit id="learners_1d" translate="yes" xml:space="preserve">
+          <source>[Clicking the title shows/hides this section.]</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[Cliquer sur le titre montre / cache cette section.]</target>
+        </trans-unit>
         <trans-unit id="learners_2" translate="yes" xml:space="preserve">
           <source>Click <bpt id="1">&lt;span class="code"&gt;</bpt>Select<ept id="1">&lt;/span&gt;</ept> for learner details.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cliquez sur détails de <bpt id="1"> &lt;span class="code"&gt; </bpt>Select<ept id="1"> &lt;/span&gt; </ept> pour l’apprenant.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cliquez sur 'bpt id'"1"'lt;span class""code"''<it id="1" pos="close">&lt;/bpt&gt;</it>Select’ept id'"1"'lt;/span’gt;<it id="2" pos="close">&lt;/ept&gt;</it> pour les détails de l’apprenant.</target>
+        </trans-unit>
+        <trans-unit id="level" translate="yes" xml:space="preserve">
+          <source>Level</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Niveau</target>
+        </trans-unit>
+        <trans-unit id="levels" translate="yes" xml:space="preserve">
+          <source>Levels</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Niveaux</target>
         </trans-unit>
         <trans-unit id="membId" translate="yes" xml:space="preserve">
           <source>Username</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Nom d’utilisateur</target>
         </trans-unit>
+        <trans-unit id="membPwd" translate="yes" xml:space="preserve">
+          <source>Password</source>
+          <target state="translated">Mot de passe</target>
+        </trans-unit>
         <trans-unit id="memo" translate="yes" xml:space="preserve">
           <source>Memo</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Mémo</target>
         </trans-unit>
+        <trans-unit id="menuAbout" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">À propos de</target>
+        </trans-unit>
         <trans-unit id="menuActivityReport" translate="yes" xml:space="preserve">
           <source>Activity Report</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport d’activité</target>
+        </trans-unit>
+        <trans-unit id="menuAlias" translate="yes" xml:space="preserve">
+          <source>Profile Aliases</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Profil Aliases</target>
         </trans-unit>
         <trans-unit id="menuAssessmentReport" translate="yes" xml:space="preserve">
           <source>Assessment Report</source>
@@ -88,7 +308,11 @@
         </trans-unit>
         <trans-unit id="menuAssignPurchasedContent" translate="yes" xml:space="preserve">
           <source>Assign Purchased Content</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Assignation de contenu acheté</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Attribuer du contenu acheté</target>
+        </trans-unit>
+        <trans-unit id="menuChangeLanguage" translate="yes" xml:space="preserve">
+          <source>Change Language</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Changer la langue</target>
         </trans-unit>
         <trans-unit id="menuCompletionCSV" translate="yes" xml:space="preserve">
           <source>Completion (CSV)</source>
@@ -96,7 +320,15 @@
         </trans-unit>
         <trans-unit id="menuCompletionReport" translate="yes" xml:space="preserve">
           <source>Completion Report</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport de fin de</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport d’achèvement</target>
+        </trans-unit>
+        <trans-unit id="menuDocumentation" translate="yes" xml:space="preserve">
+          <source>Documentation</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Documentation</target>
+        </trans-unit>
+        <trans-unit id="menuEmailAlerts" translate="yes" xml:space="preserve">
+          <source>Email Alerts</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alertes par courriel</target>
         </trans-unit>
         <trans-unit id="menuFacilitatorServices" translate="yes" xml:space="preserve">
           <source>Facilitator Services</source>
@@ -108,121 +340,91 @@
         </trans-unit>
         <trans-unit id="menuInCompletionCSV" translate="yes" xml:space="preserve">
           <source>InCompletion (CSV)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Inachevé (CSV)</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">InCompletion (CSV)</target>
         </trans-unit>
-        <trans-unit id="menuSignOut" translate="yes" xml:space="preserve">
-          <source>Sign Out</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">se déconnecter</target>
+        <trans-unit id="menuLearner" translate="yes" xml:space="preserve">
+          <source>Add a Leaner</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ajouter un Leaner</target>
+        </trans-unit>
+        <trans-unit id="menuLearnersAddEdit" translate="yes" xml:space="preserve">
+          <source>Add/Edit Learners</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ajouter/Modifier les apprenants</target>
+        </trans-unit>
+        <trans-unit id="menuLearnersExcel" translate="yes" xml:space="preserve">
+          <source>Export Learners</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Apprenants à l’exportation</target>
         </trans-unit>
         <trans-unit id="menuMyProfile" translate="yes" xml:space="preserve">
           <source>My Profile</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Mon profil</target>
         </trans-unit>
+        <trans-unit id="menuProgramActivityDetails" translate="yes" xml:space="preserve">
+          <source>Program Activity Details (Excel)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Détails d’activité du programme (Excel)</target>
+        </trans-unit>
         <trans-unit id="menuReports" translate="yes" xml:space="preserve">
           <source>Reports</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Rapports</target>
+        </trans-unit>
+        <trans-unit id="menuSignOut" translate="yes" xml:space="preserve">
+          <source>Sign Out</source>
+          <target state="translated">Se déconnecter</target>
         </trans-unit>
         <trans-unit id="new_" translate="yes" xml:space="preserve">
           <source>New</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Ajouter</target>
         </trans-unit>
+        <trans-unit id="next" translate="yes" xml:space="preserve">
+          <source>Next</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Suivant</target>
+        </trans-unit>
+        <trans-unit id="noLearners_1" translate="yes" xml:space="preserve">
+          <source>learner has been retrieved.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">apprenant a été récupéré.</target>
+        </trans-unit>
+        <trans-unit id="noLearners_2" translate="yes" xml:space="preserve">
+          <source>learners have been retrieved. For a full list of learners use the Learners app that exports learners to Excel.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">les apprenants ont été récupérés. Pour une liste complète des apprenants, utilisez l’application Learners qui exporte les apprenants vers Excel.</target>
+        </trans-unit>
+        <trans-unit id="noLearners_200" translate="yes" xml:space="preserve">
+          <source>learners have been retrieved based on the Search Criteria. For a full list of learners use the Learners app that exports learners to Excel.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">les apprenants ont été récupérés en fonction des critères de recherche. Pour une liste complète des apprenants, utilisez l’application Learners qui exporte les apprenants vers Excel.</target>
+        </trans-unit>
         <trans-unit id="noVisits" translate="yes" xml:space="preserve">
-          <source>No Visits</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Aucune visite</target>
+          <source>Number of Visits</source>
+          <target state="translated">Nombre de visites</target>
         </trans-unit>
         <trans-unit id="organization" translate="yes" xml:space="preserve">
           <source>Organization</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Organisation</target>
         </trans-unit>
-        <trans-unit id="search" translate="yes" xml:space="preserve">
-          <source>Search</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Rechercher</target>
+        <trans-unit id="parameter" translate="yes" xml:space="preserve">
+          <source>Parameter</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Paramètre</target>
         </trans-unit>
-        <trans-unit id="searchValue" translate="yes" xml:space="preserve">
-          <source>seach value</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">valeur de la recherche</target>
+        <trans-unit id="password" translate="yes" xml:space="preserve">
+          <source>Password</source>
+          <target state="translated">Mot de passe</target>
         </trans-unit>
-        <trans-unit id="signIn" translate="yes" xml:space="preserve">
-          <source>Sign In</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Se connecter</target>
+        <trans-unit id="profile" translate="yes" xml:space="preserve">
+          <source>Profile</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Profil</target>
         </trans-unit>
-        <trans-unit id="uniqueId" translate="yes" xml:space="preserve">
-          <source>Username</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Nom d’utilisateur</target>
+        <trans-unit id="profiles" translate="yes" xml:space="preserve">
+          <source>Profiles</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Profils</target>
         </trans-unit>
-        <trans-unit id="labWelcome" translate="yes" xml:space="preserve">
-          <source>Hello {0}. Welcome to the learning portal.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Bonjour {0}. Bienvenue sur le portail de l’apprentissage.</target>
+        <trans-unit id="profiles_1" translate="yes" xml:space="preserve">
+          <source>Click on the Profile header to sort or search for Profile ...</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cliquez sur l’en-tête du profil pour trier ou rechercher le profil ...</target>
         </trans-unit>
-        <trans-unit id="content_2" translate="yes" xml:space="preserve">
-          <source>Then select the programs you want assigned to these learners or select all programs (click top left).</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Puis sélectionnez les programmes que vous voulez attribué à ces apprenants ou sélectionnez tous les programmes (cliquez en haut à gauche).</target>
+        <trans-unit id="programId" translate="yes" xml:space="preserve">
+          <source>Program Id</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Id du programme</target>
         </trans-unit>
-        <trans-unit id="content_3" translate="yes" xml:space="preserve">
-          <source>Then click <bpt id="1">&lt;span class="code"&gt;</bpt>Assign<ept id="1">&lt;/span&gt;</ept> and the Programs will appear in the learner(s) <bpt id="2">&lt;span style="font-weight: bold;"&gt;</bpt>Programs After<ept id="2">&lt;/span&gt;</ept> field.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Puis cliquez sur <bpt id="1"> &lt;span class="code"&gt; </bpt>Assign<ept id="1"> &lt;/span&gt; </ept> et les programmes apparaîtra dans la learner(s) programmes <bpt id="2"> &lt;span style="font-weight: bold;"&gt; </bpt>après<ept id="2"> &lt;/span&gt; </ept> champ.</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="content_4" translate="yes" xml:space="preserve">
-          <source>The program count will be reflected in the Assigned After and Available After fields.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Le comte de programme qui figurera dans les champs assignés après et disponible.</target>
-        </trans-unit>
-        <trans-unit id="content_5" translate="yes" xml:space="preserve">
-          <source>Click <bpt id="1">&lt;span class="code"&gt;</bpt>Restart<ept id="1">&lt;/span&gt;</ept> to undo what you have done, enabling you to start over.&amp;nbsp; When your assignments look good, then click <bpt id="2">&lt;span class="code"&gt;</bpt>Commit<ept id="2">&lt;/span&gt;</ept>.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cliquez sur <bpt id="1"> &lt;span class="code"&gt; </bpt>Restart<ept id="1"> &lt;/span&gt; </ept> de défaire ce que vous avez fait, vous permettant de démarrer plus.&amp; nbsp ; Lorsque vos missions semblent bonnes, puis cliquez sur <bpt id="2"> &lt;span class="code"&gt; </bpt>commettre<ept id="2">&lt;/span&gt;</ept>.</target>
-        </trans-unit>
-        <trans-unit id="content_6" translate="yes" xml:space="preserve">
-          <source><bpt id="1">&lt;span style="font-style:italic;"&gt;</bpt>Note: once content is assigned and committed it cannot be unassigned!<ept id="1">&lt;/span&gt;</ept></source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion"><bpt id="1"> &lt;span style="font-style:italic;"&gt; </bpt>Remarque : une fois que le contenu est affecté et commis il ne peut pas ne pas avoir de !<ept id="1"> &lt;/span&gt; </ept></target>
-        </trans-unit>
-        <trans-unit id="content_7" translate="yes" xml:space="preserve">
-          <source>First select the Learner(s) that will be assigned Programs</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sélectionnez d’abord le Learner(s) qui sera assigné programmes</target>
-        </trans-unit>
-        <trans-unit id="content_8" translate="yes" xml:space="preserve">
-          <source>Next select the Programs you wish to assign to the above Learner(s).</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ensuite sélectionnez les programmes que vous souhaitez attribuer à la Learner(s) ci-dessus.</target>
-        </trans-unit>
-        <trans-unit id="assign" translate="yes" xml:space="preserve">
-          <source>Assign</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Affecter</target>
-        </trans-unit>
-        <trans-unit id="assignedAfter" translate="yes" xml:space="preserve">
-          <source>Assigned After</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Après une</target>
-        </trans-unit>
-        <trans-unit id="assignedBefore" translate="yes" xml:space="preserve">
-          <source>Assigned Before</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Affecté avant</target>
-        </trans-unit>
-        <trans-unit id="availableAfter" translate="yes" xml:space="preserve">
-          <source>Available After</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Disponible après</target>
-        </trans-unit>
-        <trans-unit id="availableBefore" translate="yes" xml:space="preserve">
-          <source>Available Before</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Disponible avant</target>
-        </trans-unit>
-        <trans-unit id="close" translate="yes" xml:space="preserve">
-          <source>Close</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Fermer</target>
-        </trans-unit>
-        <trans-unit id="commit" translate="yes" xml:space="preserve">
-          <source>Commit</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Engager</target>
-        </trans-unit>
-        <trans-unit id="content_10" translate="yes" xml:space="preserve">
-          <source>NOTE: once content is assigned and committed, it cannot be unassigned!</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Remarque : une fois que le contenu est affecté et engagé, il ne peut pas être non attribué !</target>
-        </trans-unit>
-        <trans-unit id="content_9" translate="yes" xml:space="preserve">
-          <source>Then click Assign and the Program(s) will be moved to the Learner(s).<bpt id="1">&lt;br &gt;</bpt><ept id="1">&lt;/br&gt;</ept>You will then have an opportunity to Commit the assignment(s) or Restart.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Puis cliquez sur attribuer et l’ou les programmes seront déplacé vers le Learner(s). <bpt id="1"> &lt;br &gt; </bpt> <ept id="1"> &lt;/br&gt; </ept>, Vous aurez alors l’occasion de commettre l’ou les affectations ou redémarrer.</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="restart" translate="yes" xml:space="preserve">
-          <source>Restart</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Redémarrer</target>
+        <trans-unit id="programs" translate="yes" xml:space="preserve">
+          <source>Programs</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Programmes</target>
         </trans-unit>
         <trans-unit id="programsAfter" translate="yes" xml:space="preserve">
           <source>Programs After</source>
@@ -232,10 +434,6 @@
           <source>Programs Before</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Programmes avant</target>
         </trans-unit>
-        <trans-unit id="programId" translate="yes" xml:space="preserve">
-          <source>Program Id</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Id de programme</target>
-        </trans-unit>
         <trans-unit id="programTitle" translate="yes" xml:space="preserve">
           <source>Program Title</source>
           <target state="needs-review-translation" state-qualifier="mt-suggestion">Titre du programme</target>
@@ -244,369 +442,509 @@
           <source>Purchased</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Acheté</target>
         </trans-unit>
-        <trans-unit id="menuAbout" translate="yes" xml:space="preserve">
-          <source>About</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">À propos de</target>
+        <trans-unit id="receiveAlerts" translate="yes" xml:space="preserve">
+          <source>Receive Alerts</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Recevoir des alertes</target>
         </trans-unit>
-        <trans-unit id="about_1" translate="yes" xml:space="preserve">
-          <source>This service is where you can manage your learners and the content they will review. It also provides a series of reports to monitor learner activities.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ce service est où vous pouvez gérer vos apprenants et le contenu qu’ils examineront. Il fournit également une série de rapports pour surveiller les activités de l’apprenant.</target>
-        </trans-unit>
-        <trans-unit id="about_2" translate="yes" xml:space="preserve">
-          <source>You need to be a Facilitator or Manager (ie NOT a learner) to access this service. Use your credentials (and select your language) then Next. When you are done, please remember to Sign Out at the top left when you are done to secure your data plus conserve resources.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vous devez être un facilitateur ou un gestionnaire (c’est à dire pas un apprenant) pour accéder à ce service. Utilisez vos informations d’identification (et sélectionnez votre langue) puis Next. Lorsque vous avez terminé, n’oubliez pas de déconnexion en haut à gauche lorsque vous avez terminé pour sécuriser vos données et préserver les ressources.</target>
-        </trans-unit>
-        <trans-unit id="about_3" translate="yes" xml:space="preserve">
-          <source>Services are provided for Facilitators in both English and French. If you use a Microsoft Browser (IE or Edge) and have your Language Preference set to French, the service will pick that up. Otherwise it will default to English unless you specify otherwise.  Manager services are only provided in Englsh.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Services sont fournis pour l’animateur en anglais et en Français. Si vous utilisez un Browser Microsoft (IE ou Edge) et que votre langue de préférence en Français, le service qui viendra chercher. Sinon, il sera par défaut en anglais sauf indication contraire.  Gestionnaire est offert seulement en anglais.</target>
-        </trans-unit>
-        <trans-unit id="about_4" translate="yes" xml:space="preserve">
-          <source>Facilitators do the heavy lifting for each account. They typically manage the learners and their performance. While Facilitators may have access to the content, they are not considered learners. Each Account is also setup with a Manager who can add a Facilitator to the account plus do a few other site routines.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Animateurs font le gros du travail pour chaque compte. En général, ils gèrent les apprenants et leur performance. Alors que les animateurs peuvent avoir accès au contenu, ils ne sont pas considérés comme apprenants. Chaque compte est également configuré avec un gestionnaire qui peut ajouter un facilitateur au compte plus de faire quelques autres routines de site.</target>
-        </trans-unit>
-        <trans-unit id="about_5" translate="yes" xml:space="preserve">
-          <source>Reports come in a variety of flavours. Little online "reports" like this one that you are reading, is an "info" report and will have a blue background. Key online reports where you manage information will have a white background.  Most key report provide CSV and/or Excel versions.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapports viennent dans une variété de saveurs. Peu en ligne des « rapports » comme celui que vous lisez, est un rapport de « info » et aura un fond bleu. Principaux rapports en ligne où vous gérez l’information auront un fond blanc.  La plupart rapportent clé fournissent des versions CSV ou Excel.</target>
-        </trans-unit>
-        <trans-unit id="access" translate="yes" xml:space="preserve">
-          <source>Access</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Accès</target>
-        </trans-unit>
-        <trans-unit id="introduction" translate="yes" xml:space="preserve">
-          <source>Introduction</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Introduction</target>
-        </trans-unit>
-        <trans-unit id="signOut" translate="yes" xml:space="preserve">
-          <source>Sign Out</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">se déconnecter</target>
-        </trans-unit>
-        <trans-unit id="about_0" translate="yes" xml:space="preserve">
-          <source>About this Service</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sur ce Service</target>
-        </trans-unit>
-        <trans-unit id="language" translate="yes" xml:space="preserve">
-          <source>Language</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Langue</target>
-        </trans-unit>
-        <trans-unit id="levels" translate="yes" xml:space="preserve">
-          <source>Levels</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Niveaux</target>
+        <trans-unit id="register" translate="yes" xml:space="preserve">
+          <source>Click to Register!</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cliquez pour vous inscrire!</target>
         </trans-unit>
         <trans-unit id="reports" translate="yes" xml:space="preserve">
           <source>Reports</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Rapports</target>
         </trans-unit>
-        <trans-unit id="sessionVariables" translate="yes" xml:space="preserve">
-          <source>These are internal values maintained during the Session.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Voici les valeurs internes au cours de la Session.</target>
-        </trans-unit>
-        <trans-unit id="credentialError" translate="yes" xml:space="preserve">
-          <source>Those Credentials are not on file! Click Restart.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ces informations d’identification ne sont pas au dossier ! Cliquez sur redémarrer.</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="profiles" translate="yes" xml:space="preserve">
-          <source>Profiles</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Profils</target>
-        </trans-unit>
-        <trans-unit id="parameter" translate="yes" xml:space="preserve">
-          <source>Parameter</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Paramètre</target>
-        </trans-unit>
-        <trans-unit id="profile" translate="yes" xml:space="preserve">
-          <source>Profile</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Profil</target>
-        </trans-unit>
-        <trans-unit id="profiles_1" translate="yes" xml:space="preserve">
-          <source>Click on the Profile header to sort or search for Profile ...</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cliquez sur l’en-tête de profil de tri ou de recherche de profil...</target>
-        </trans-unit>
-        <trans-unit id="value" translate="yes" xml:space="preserve">
-          <source>Value</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Valeur</target>
-        </trans-unit>
-        <trans-unit id="labManage" translate="yes" xml:space="preserve">
-          <source>Use the top corner menu items to manage the system.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Les éléments de menu de coin supérieur permet de gérer le système.</target>
-        </trans-unit>
-        <trans-unit id="menuLearnersExcel" translate="yes" xml:space="preserve">
-          <source>Export Learners</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Exporter des apprenants</target>
-        </trans-unit>
-        <trans-unit id="membPwd" translate="yes" xml:space="preserve">
-          <source>Password</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">mot de passe</target>
-        </trans-unit>
-        <trans-unit id="menuChangeLanguage" translate="yes" xml:space="preserve">
-          <source>Change Language</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Changer la langue</target>
-        </trans-unit>
-        <trans-unit id="menuDocumentation" translate="yes" xml:space="preserve">
-          <source>Documentation</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Documentation</target>
-        </trans-unit>
-        <trans-unit id="addLearner" translate="yes" xml:space="preserve">
-          <source>Add Learner</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ajouter apprenant</target>
-        </trans-unit>
-        <trans-unit id="menuLearner" translate="yes" xml:space="preserve">
-          <source>Add a Leaner</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ajouter un appauvrissement</target>
-        </trans-unit>
-        <trans-unit id="learner" translate="yes" xml:space="preserve">
-          <source>Add a Learner</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ajouter un apprenant</target>
-        </trans-unit>
-        <trans-unit id="menuAlias" translate="yes" xml:space="preserve">
-          <source>Profile Aliases</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Profil alias</target>
-        </trans-unit>
-        <trans-unit id="active" translate="yes" xml:space="preserve">
-          <source>Active</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Actif</target>
-        </trans-unit>
-        <trans-unit id="sql" translate="yes" xml:space="preserve">
-          <source>Oops.  We could not perform that activity.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Oups.  Nous ne pourrions pas effectuer cette activité.</target>
-        </trans-unit>
-        <trans-unit id="password" translate="yes" xml:space="preserve">
-          <source>Password</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">mot de passe</target>
-        </trans-unit>
-        <trans-unit id="programs" translate="yes" xml:space="preserve">
-          <source>Programs</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Programmes</target>
-        </trans-unit>
-        <trans-unit id="changeLanguage" translate="yes" xml:space="preserve">
-          <source>Change Language</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Changer la langue</target>
-        </trans-unit>
-        <trans-unit id="signInLevel" translate="yes" xml:space="preserve">
-          <source>This Portal is only available to Facilitators and/or Managers.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ce portail est uniquement disponible aux animateurs et/ou aux gestionnaires.</target>
-        </trans-unit>
-        <trans-unit id="labContent" translate="yes" xml:space="preserve">
-          <source>Use {0} charm below to access the content.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Charme de {0} ci-dessous permet d’accéder au contenu.</target>
-        </trans-unit>
-        <trans-unit id="level" translate="yes" xml:space="preserve">
-          <source>Level</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Niveau</target>
-        </trans-unit>
-        <trans-unit id="about_6" translate="yes" xml:space="preserve">
-          <source>Account features and reports appear on the menu items at the top left. Operational features for your benefit appear on the top right. Note that this service will NOT run on small screens like a phone since large online forms etc are a key part of the deliverables.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Compte des caractéristiques et rapports apparaissent sur les éléments de menu en haut à gauche. Les caractéristiques opérationnelles de vos prestations apparaissent en haut à droite. Notez que ce service ne fonctionnera pas sur les petits écrans comme un téléphone, étant donné que les formulaires en ligne grands etc. sont un élément clé des livrables.</target>
-        </trans-unit>
-        <trans-unit id="setup" translate="yes" xml:space="preserve">
-          <source>Setup</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Paramétrage</target>
-        </trans-unit>
-        <trans-unit id="about_01" translate="yes" xml:space="preserve">
-          <source>Select the Category at Left</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sélectionnez la catégorie à gauche</target>
-        </trans-unit>
-        <trans-unit id="noLearners_1" translate="yes" xml:space="preserve">
-          <source>learner has been retrieved.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">l’apprenant a été récupérée.</target>
-        </trans-unit>
-        <trans-unit id="noLearners_2" translate="yes" xml:space="preserve">
-          <source>learners have been retrieved. For a full list of learners use the Learners app that exports learners to Excel.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">apprenants ont été récupérées. Pour une liste complète des apprenants utiliser l’app d’apprenants qui exporte les apprenants vers Excel.</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="noLearners_200" translate="yes" xml:space="preserve">
-          <source>learners have been retrieved based on the Search Criteria. For a full list of learners use the Learners app that exports learners to Excel.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">apprenants ont été extraites selon les critères de recherche. Pour une liste complète des apprenants utiliser l’app d’apprenants qui exporte les apprenants vers Excel.</target>
-        </trans-unit>
-        <trans-unit id="next" translate="yes" xml:space="preserve">
-          <source>Next</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Suivant</target>
-        </trans-unit>
-        <trans-unit id="menuEmailAlerts" translate="yes" xml:space="preserve">
-          <source>Email Alerts</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alertes email</target>
-        </trans-unit>
-        <trans-unit id="receiveAlerts" translate="yes" xml:space="preserve">
-          <source>Receive Alerts</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Recevoir des alertes</target>
-        </trans-unit>
         <trans-unit id="resendAlerts" translate="yes" xml:space="preserve">
           <source>Resend Alerts</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Renvoyer les alertes</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Réendez les alertes</target>
         </trans-unit>
-        <trans-unit id="alertsResent" translate="yes" xml:space="preserve">
-          <source>Email Alerts will be resent on the next cycle!</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alertes e-mail vont être renvoyés sur le prochain cycle !</target>
-        </trans-unit>
-        <trans-unit id="alertsResend" translate="yes" xml:space="preserve">
-          <source>Resend Email Alerts</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Renvoyer les alertes Email</target>
-        </trans-unit>
-        <trans-unit id="errorPage" translate="yes" xml:space="preserve">
-          <source>The resource being accessed is not available. Restart required.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">La ressource accédée n’est pas disponible. Redémarrage requis.</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="errorHouston" translate="yes" xml:space="preserve">
-          <source>Houston, we have a problem...</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Houston, nous avons un problème...</target>
-        </trans-unit>
-        <trans-unit id="menuProgramActivityDetails" translate="yes" xml:space="preserve">
-          <source>Program Activity Details (Excel)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Détails de l’activité de programme (Excel)</target>
-        </trans-unit>
-        <trans-unit id="tile_About" translate="yes" xml:space="preserve">
-          <source>About</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">À propos de</target>
-        </trans-unit>
-        <trans-unit id="tile_Documentation" translate="yes" xml:space="preserve">
-          <source>Documentation</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Documentation</target>
-        </trans-unit>
-        <trans-unit id="tile_AssignContent" translate="yes" xml:space="preserve">
-          <source>Assign Content</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Assignation de contenu</target>
-        </trans-unit>
-        <trans-unit id="tile_BrowserReadinessTest" translate="yes" xml:space="preserve">
-          <source>Browser Readiness Test</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Test de préparation de navigateur</target>
-        </trans-unit>
-        <trans-unit id="tile_ChangeLanguage" translate="yes" xml:space="preserve">
-          <source>Change Language</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Changer la langue</target>
-        </trans-unit>
-        <trans-unit id="tile_CompletionReport" translate="yes" xml:space="preserve">
-          <source>Completion Report</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport de fin de</target>
-        </trans-unit>
-        <trans-unit id="tile_EmailAlerts" translate="yes" xml:space="preserve">
-          <source>Email Alerts</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alertes email</target>
-        </trans-unit>
-        <trans-unit id="tile_FacilitatorServices" translate="yes" xml:space="preserve">
-          <source>Facilitator Services</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Services de facilitateur</target>
-        </trans-unit>
-        <trans-unit id="tile_MyProfile" translate="yes" xml:space="preserve">
-          <source>My Profile</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Mon profil</target>
-        </trans-unit>
-        <trans-unit id="tile_ProgramActivityDetails" translate="yes" xml:space="preserve">
-          <source>Program Activity Details</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Détails de l’activité de programme</target>
-        </trans-unit>
-        <trans-unit id="tile_SignOut" translate="yes" xml:space="preserve">
-          <source>Sign Out</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">se déconnecter</target>
-        </trans-unit>
-        <trans-unit id="tile_ActivityReport" translate="yes" xml:space="preserve">
-          <source>Activity Report</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport d’activité</target>
-        </trans-unit>
-        <trans-unit id="tile_AssessmentReport" translate="yes" xml:space="preserve">
-          <source>Assessment Report</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport d’évaluation</target>
-        </trans-unit>
-        <trans-unit id="browserTest" translate="yes" xml:space="preserve">
-          <source>Browser Test</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Test de navigateur</target>
-        </trans-unit>
-        <trans-unit id="credentials" translate="yes" xml:space="preserve">
-          <source>Please enter your credentials.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Veuillez entrer vos informations d’identification.</target>
-        </trans-unit>
-        <trans-unit id="forgot" translate="yes" xml:space="preserve">
-          <source>Forgot?</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vous avez oublié ?</target>
-        </trans-unit>
-        <trans-unit id="learners_1a" translate="yes" xml:space="preserve">
-          <source>Click on the column headers to sort learners, the</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cliquer sur les entêtes de colonne pour trier les apprenants, les</target>
-        </trans-unit>
-        <trans-unit id="learners_1b" translate="yes" xml:space="preserve">
-          <source>icon at top to add a learner and the</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">icône dessus pour ajouter un apprenant et le</target>
-        </trans-unit>
-        <trans-unit id="learners_1c" translate="yes" xml:space="preserve">
-          <source>icon at right for learner details. You can narrow this list by searching any field for any value.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">icône à droite pour plus d’informations de l’apprenant. Vous pouvez affiner cette liste en cherchant n’importe quel domaine de n’importe quelle valeur.</target>
-          <note from="MultilingualUpdate" annotates="source" priority="2">Please verify the translation’s accuracy as the source string was updated after it was translated.</note>
-        </trans-unit>
-        <trans-unit id="menuLearnersAddEdit" translate="yes" xml:space="preserve">
-          <source>Add/Edit Learners</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ajouter/modifier des apprenants</target>
-        </trans-unit>
-        <trans-unit id="tile_LearnersExport" translate="yes" xml:space="preserve">
-          <source>Learners (Export)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Apprenants (Export)</target>
-        </trans-unit>
-        <trans-unit id="tile_LearnersAddEdit" translate="yes" xml:space="preserve">
-          <source>Learners (Add/Edit)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Apprenants (ajouter/modifier)</target>
-        </trans-unit>
-        <trans-unit id="tile_Sessions" translate="yes" xml:space="preserve">
-          <source>Sessions</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sessions</target>
-        </trans-unit>
-        <trans-unit id="tile_Store" translate="yes" xml:space="preserve">
-          <source>Store</source>
-          <target state="needs-review-translation" state-qualifier="tm-suggestion">Magasin</target>
-        </trans-unit>
-        <trans-unit id="tile_MyContentV5" translate="yes" xml:space="preserve">
-          <source>My Content (V5)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mon contenu (V5)</target>
-        </trans-unit>
-        <trans-unit id="tile_MyContentV8" translate="yes" xml:space="preserve">
-          <source>My Content (V8)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mon contenu (V8)</target>
-        </trans-unit>
-        <trans-unit id="forgotCredentials" translate="yes" xml:space="preserve">
-          <source>Forgot Credentials?</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vous avez oublié les informations d’identification ?</target>
+        <trans-unit id="restart" translate="yes" xml:space="preserve">
+          <source>Restart</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Redémarrer</target>
         </trans-unit>
         <trans-unit id="retrieve" translate="yes" xml:space="preserve">
           <source>Retrieve</source>
           <target state="needs-review-translation" state-qualifier="tm-suggestion">Récupérer</target>
         </trans-unit>
-        <trans-unit id="forgot_1" translate="yes" xml:space="preserve">
-          <source>Enter your unique email address where we will send your credentials.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Entrez votre adresse de courriel unique où nous vous enverrons vos informations d’identification.</target>
+        <trans-unit id="search" translate="yes" xml:space="preserve">
+          <source>Search</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Rechercher</target>
         </trans-unit>
-        <trans-unit id="tile_InCompletionReport" translate="yes" xml:space="preserve">
-          <source>InCompletion Report</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport inachevé</target>
+        <trans-unit id="searchValue" translate="yes" xml:space="preserve">
+          <source>seach value</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">valeur seach</target>
         </trans-unit>
-        <trans-unit id="pageTitleDefault" translate="yes" xml:space="preserve">
-          <source>Administration Home</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Accueil administration</target>
+        <trans-unit id="sessionVariables" translate="yes" xml:space="preserve">
+          <source>These are internal values maintained during the Session.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Il s’agit de valeurs internes maintenues pendant la Session.</target>
+        </trans-unit>
+        <trans-unit id="setup" translate="yes" xml:space="preserve">
+          <source>Setup</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Paramétrage</target>
+        </trans-unit>
+        <trans-unit id="signIn" translate="yes" xml:space="preserve">
+          <source>Sign In</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Se connecter</target>
+        </trans-unit>
+        <trans-unit id="signInLevel" translate="yes" xml:space="preserve">
+          <source>This Portal is only available to Facilitators and/or Managers.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ce portail n’est accessible qu’aux facilitateurs et/ou aux gestionnaires.</target>
+        </trans-unit>
+        <trans-unit id="signOut" translate="yes" xml:space="preserve">
+          <source>Sign Out</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">se déconnecter</target>
+        </trans-unit>
+        <trans-unit id="sql" translate="yes" xml:space="preserve">
+          <source>Oops.  We could not perform that activity.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Oups.  Nous n’avons pas pu effectuer cette activité.</target>
         </trans-unit>
         <trans-unit id="sqlDuplicate" translate="yes" xml:space="preserve">
           <source>Oops.  It seems that Username already exists.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Oups.  Il semble que nom d’utilisateur existe déjà.</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Oups.  Il semble que le nom d’utilisateur existe déjà.</target>
         </trans-unit>
-        <trans-unit id="credentialPasswordError" translate="yes" xml:space="preserve">
-          <source>That Password is incorrect!</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ce mot de passe est incorrect !</target>
+        <trans-unit id="uniqueId" translate="yes" xml:space="preserve">
+          <source>Username</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Nom d’utilisateur</target>
         </trans-unit>
-        <trans-unit id="learners_1d" translate="yes" xml:space="preserve">
-          <source>[Clicking the title shows/hides this section.]</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">[Cliquer sur le titre affiche/masque cette section.]</target>
+        <trans-unit id="active?" translate="yes" xml:space="preserve">
+          <source>Active?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Active?</target>
         </trans-unit>
-        <trans-unit id="register" translate="yes" xml:space="preserve">
-          <source>Click to Register!</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cliquez pour vous inscrire !</target>
+        <trans-unit id="allPrograms" translate="yes" xml:space="preserve">
+          <source>All Programs</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Tous les programmes</target>
         </trans-unit>
-        <trans-unit id="content_61" translate="yes" xml:space="preserve">
-          <source>Inactive Learners are only rendered to show possible previous assignments.</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Apprenants inactifs sont rendus seulement pour afficher les attributions antérieures possibles.</target>
+        <trans-unit id="assigned" translate="yes" xml:space="preserve">
+          <source>Assigned</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Affecté</target>
         </trans-unit>
-        <trans-unit id="tile_ProgramActivity(Overal)" translate="yes" xml:space="preserve">
-          <source>Program Activity (Overal)</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Activité de programme (Overal)</target>
+        <trans-unit id="back" translate="yes" xml:space="preserve">
+          <source>Back</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Précédent</target>
+        </trans-unit>
+        <trans-unit id="begin" translate="yes" xml:space="preserve">
+          <source>Begin</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Commencer</target>
+        </trans-unit>
+        <trans-unit id="completed?" translate="yes" xml:space="preserve">
+          <source>Completed?</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Terminé?</target>
+        </trans-unit>
+        <trans-unit id="documentation" translate="yes" xml:space="preserve">
+          <source>Documentation</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Documentation</target>
+        </trans-unit>
+        <trans-unit id="emailAlerts_1" translate="yes" xml:space="preserve">
+          <source>Email Alert Service</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Service d’alerte par courriel</target>
+        </trans-unit>
+        <trans-unit id="emailAlerts_2" translate="yes" xml:space="preserve">
+          <source>This service will email access instructions to any Learner when program(s) have been assigned by the account Facilitator. A Learner must have a valid email address in order to qualify for email alerts.<bpt id="1">&lt;br &gt;</bpt><ept id="1">&lt;/br&gt;</ept>If this service is enabled then each learner can further be configured to use the service or not; also you can resend email alerts by using Add/Edit Learners.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ce service envoie des instructions d’accès par courriel à n’importe quel apprenant lorsque le programme a été assigné par le facilitateur du compte. Un apprenant doit avoir une adresse e-mail valide afin de se qualifier pour les alertes par courriel. "bpt id"1"lt;br 'gt;<it id="1" pos="close">&lt;/bpt&gt;</it> 'ept id'"1"'lt;/br’gt;<it id="2" pos="close">&lt;/ept&gt;</it>Si ce service est activé, alors chaque apprenant peut encore être configuré pour utiliser le service ou non; vous pouvez également renvoyer des alertes par e-mail en utilisant Add/Edit Learners.</target>
+        </trans-unit>
+        <trans-unit id="emailAlerts_3" translate="yes" xml:space="preserve">
+          <source>Service Status is currently</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">L’état du service est actuellement</target>
+        </trans-unit>
+        <trans-unit id="emailAlerts_4" translate="yes" xml:space="preserve">
+          <source>ENABLED</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Activé</target>
+        </trans-unit>
+        <trans-unit id="emailAlerts_5" translate="yes" xml:space="preserve">
+          <source>DISABLED</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Handicapés</target>
+        </trans-unit>
+        <trans-unit id="emailAlerts_6" translate="yes" xml:space="preserve">
+          <source>Enable email alerts</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Activez les alertes par e-mail</target>
+        </trans-unit>
+        <trans-unit id="emailAlerts_7" translate="yes" xml:space="preserve">
+          <source>Disable email alerts</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Désactiver les alertes par courriel</target>
+        </trans-unit>
+        <trans-unit id="endDate" translate="yes" xml:space="preserve">
+          <source>End Date</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Date de fin</target>
+        </trans-unit>
+        <trans-unit id="lastAccessed" translate="yes" xml:space="preserve">
+          <source>Last Accessed</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Dernier accès le</target>
+        </trans-unit>
+        <trans-unit id="learnerId" translate="yes" xml:space="preserve">
+          <source>Learner Id</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Id apprenant</target>
+        </trans-unit>
+        <trans-unit id="learners_1" translate="yes" xml:space="preserve">
+          <source>Learner Id</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Id apprenant</target>
+        </trans-unit>
+        <trans-unit id="learners_10" translate="yes" xml:space="preserve">
+          <source>Note: select/highlight either 'No Special Access' OR any combination of the other values. Use CTRL click to select/highlight multiple values.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Remarque : sélectionnez/mettez en surbrillance « Pas d’accès spécial » ou toute combinaison des autres valeurs. Utilisez le clic CTRL pour sélectionner/mettre en évidence plusieurs valeurs.</target>
+        </trans-unit>
+        <trans-unit id="learners_11" translate="yes" xml:space="preserve">
+          <source>The Level value should NOT be changed once updated since other values depend on its state.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">La valeur de niveau ne devrait PAS être modifiée une fois mise à jour puisque d’autres valeurs dépendent de son état.</target>
+        </trans-unit>
+        <trans-unit id="learners_12" translate="yes" xml:space="preserve">
+          <source>Export Learners to Excel</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Exporter les apprenants vers Excel</target>
+        </trans-unit>
+        <trans-unit id="learners_13" translate="yes" xml:space="preserve">
+          <source>There are</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Il y a</target>
+        </trans-unit>
+        <trans-unit id="learners_14" translate="yes" xml:space="preserve">
+          <source>learners available for Export.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">les apprenants disponibles pour l’exportation.</target>
+        </trans-unit>
+        <trans-unit id="learners_3" translate="yes" xml:space="preserve">
+          <source>There are currently no Learners in this Account. Use the Add icon above to Add learners.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Il n’y a actuellement aucun apprenant dans ce compte. Utilisez l’icône Ajouter ci-dessus pour ajouter des apprenants.</target>
+        </trans-unit>
+        <trans-unit id="learners_4" translate="yes" xml:space="preserve">
+          <source>If this learner did not receive their 'Welcome' email alert(s), for whatever reason, click the Email icon and the system will resend any outstanding Email Alerts.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Si cet apprenant n’a pas reçu son alerte par e-mail «Bienvenue»), pour une raison quelconque, cliquez sur l’icône e-mail et le système va renvoyer les alertes e-mail en suspens.</target>
+        </trans-unit>
+        <trans-unit id="learners_5" translate="yes" xml:space="preserve">
+          <source>When done, click the icon at top to return to the Learner List.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Une fois terminé, cliquez sur l’icône en haut pour revenir à la liste d’apprenants.</target>
+        </trans-unit>
+        <trans-unit id="learners_6" translate="yes" xml:space="preserve">
+          <source>Note: <bpt id="1">&lt;b&gt;</bpt>Username<ept id="1">&lt;/b&gt;</ept> must be globally unique (suggest email). Fields up to and including Email are mandatory. The <bpt id="2">&lt;b&gt;</bpt>Programs<ept id="2">&lt;/b&gt;</ept> field is assigned elsewhere thus is read only.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Note: 'bpt id'"1"lt;b’gt;<it id="1" pos="close">&lt;/bpt&gt;</it>Username’ept id'"1"lt;/b’gt;<it id="2" pos="close">&lt;/ept&gt;</it> doit être globalement unique (suggérez e-mail). Les champs jusqu’à et y compris l’email sont obligatoires. Le 'bpt id'"2"lt;b’gt;<it id="3" pos="close">&lt;/bpt&gt;</it>Programs’ept id'"2"lt;/b’gt;<it id="4" pos="close">&lt;/ept&gt;</it> champ est assigné ailleurs est ainsi lu seulement.</target>
+        </trans-unit>
+        <trans-unit id="learners_7" translate="yes" xml:space="preserve">
+          <source>Add/Edit Learner</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Ajouter/Modifier l’apprenant</target>
+        </trans-unit>
+        <trans-unit id="learners_8" translate="yes" xml:space="preserve">
+          <source>You are missing mandatory field(s):</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Vous manquez le champ obligatoire(s) :</target>
+        </trans-unit>
+        <trans-unit id="learners_9" translate="yes" xml:space="preserve">
+          <source>Note: clicking on the Field name (i.e. Username) will provide a description above.  Click on the description to remove it.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Remarque : en cliquant sur le nom de champ (c.-à-d. nom d’utilisateur) fournira une description ci-dessus.  Cliquez sur la description pour la supprimer.</target>
         </trans-unit>
         <trans-unit id="managerAccess" translate="yes" xml:space="preserve">
           <source>Manager Access</source>
-          <target state="needs-review-translation" state-qualifier="mt-suggestion">Access Manager</target>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Accès du gestionnaire</target>
+        </trans-unit>
+        <trans-unit id="memberNo" translate="yes" xml:space="preserve">
+          <source>Member No</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Membre No</target>
+        </trans-unit>
+        <trans-unit id="noLearners" translate="yes" xml:space="preserve">
+          <source>A learner must have a name and email address to appear on this list.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Un apprenant doit avoir un nom et une adresse e-mail pour apparaître sur cette liste.</target>
+        </trans-unit>
+        <trans-unit id="optional" translate="yes" xml:space="preserve">
+          <source>optional</source>
+          <target state="translated">optionnel</target>
+        </trans-unit>
+        <trans-unit id="pageAbout" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">À propos de</target>
+        </trans-unit>
+        <trans-unit id="pageActivityReport" translate="yes" xml:space="preserve">
+          <source>Rapport d'activité</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport d’activité</target>
+        </trans-unit>
+        <trans-unit id="pageAssessmentReport" translate="yes" xml:space="preserve">
+          <source>Assessment Report</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport d’évaluation</target>
+        </trans-unit>
+        <trans-unit id="pageAssessmentResponses(Details)" translate="yes" xml:space="preserve">
+          <source>Assessment Responses (Details)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Réponses d’évaluation (Détails)</target>
+        </trans-unit>
+        <trans-unit id="pageAssessmentResponses(Summary)" translate="yes" xml:space="preserve">
+          <source>Assessment Responses (Summary)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Réponses d’évaluation (Résumé)</target>
+        </trans-unit>
+        <trans-unit id="pageAssessments" translate="yes" xml:space="preserve">
+          <source>Learner Assessments</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Évaluations des apprenants</target>
+        </trans-unit>
+        <trans-unit id="pageBrowserReadinessTest" translate="yes" xml:space="preserve">
+          <source>Browser Readiness Test</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Test de préparation au navigateur</target>
+        </trans-unit>
+        <trans-unit id="pageCompletionReport" translate="yes" xml:space="preserve">
+          <source>Completion Report</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport d’achèvement</target>
+        </trans-unit>
+        <trans-unit id="pageCustomerActivity" translate="yes" xml:space="preserve">
+          <source>Customer Activity</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Activité client</target>
+        </trans-unit>
+        <trans-unit id="pageCustomerSalesDetails" translate="yes" xml:space="preserve">
+          <source>Customer Sales Details</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Détails des ventes des clients</target>
+        </trans-unit>
+        <trans-unit id="pageCustomerSalesSummary" translate="yes" xml:space="preserve">
+          <source>Customer Sales Summary</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Résumé des ventes des clients</target>
+        </trans-unit>
+        <trans-unit id="pageDefault" translate="yes" xml:space="preserve">
+          <source>Welcome</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bienvenue</target>
+        </trans-unit>
+        <trans-unit id="pageDocumentation" translate="yes" xml:space="preserve">
+          <source>Documentation</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Documentation</target>
+        </trans-unit>
+        <trans-unit id="pageEmailAlerts" translate="yes" xml:space="preserve">
+          <source>Email Alerts</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alertes par courriel</target>
+        </trans-unit>
+        <trans-unit id="pageInCompletionReport" translate="yes" xml:space="preserve">
+          <source>InCompletion Report</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport sur l’incompléttion</target>
+        </trans-unit>
+        <trans-unit id="pageLearners" translate="yes" xml:space="preserve">
+          <source>Learners</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Apprenants</target>
+        </trans-unit>
+        <trans-unit id="pageLearnersExcel" translate="yes" xml:space="preserve">
+          <source>Learners (Export)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Apprenants (Exportation)</target>
+        </trans-unit>
+        <trans-unit id="pageModuleUsage" translate="yes" xml:space="preserve">
+          <source>Module Usage</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Utilisation du module</target>
+        </trans-unit>
+        <trans-unit id="pageProfile" translate="yes" xml:space="preserve">
+          <source>My Profile</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Mon profil</target>
+        </trans-unit>
+        <trans-unit id="pageProgramActivityDetails" translate="yes" xml:space="preserve">
+          <source>Program Activity Details</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Détails de l’activité du programme</target>
+        </trans-unit>
+        <trans-unit id="pageProgramActivityDetailsExcel" translate="yes" xml:space="preserve">
+          <source>Program Activity Details (Excel)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Détails d’activité du programme (Excel)</target>
+        </trans-unit>
+        <trans-unit id="pageProgramsAssignedExcel" translate="yes" xml:space="preserve">
+          <source>Programs Assigned (Excel)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Programmes assignés (Excel)</target>
+        </trans-unit>
+        <trans-unit id="pageProgramsPurchasedAndAssigned" translate="yes" xml:space="preserve">
+          <source>Programs Purchased And Assigned</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Programmes achetés et attribués</target>
+        </trans-unit>
+        <trans-unit id="pageSessions" translate="yes" xml:space="preserve">
+          <source>Sessions</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sessions</target>
+        </trans-unit>
+        <trans-unit id="pageUploadLearners" translate="yes" xml:space="preserve">
+          <source>Upload Learners</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Télécharger les apprenants</target>
+        </trans-unit>
+        <trans-unit id="pageWelcome1" translate="yes" xml:space="preserve">
+          <source>Welcome</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Bienvenue</target>
+        </trans-unit>
+        <trans-unit id="profile_1" translate="yes" xml:space="preserve">
+          <source>My Profile</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Mon profil</target>
+        </trans-unit>
+        <trans-unit id="profile_2" translate="yes" xml:space="preserve">
+          <source>A few key values from my profile.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Quelques valeurs clés de mon profil.</target>
+        </trans-unit>
+        <trans-unit id="profile_3" translate="yes" xml:space="preserve">
+          <source>[Note: the Username for Internals is not exposed.]</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">[Note : le nom d’utilisateur des internes n’est pas exposé.]</target>
+        </trans-unit>
+        <trans-unit id="progActivity_0" translate="yes" xml:space="preserve">
+          <source>Program Activity Details</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Détails de l’activité du programme</target>
+        </trans-unit>
+        <trans-unit id="progActivity_1" translate="yes" xml:space="preserve">
+          <source>Program Activity Details (Excel)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Détails d’activité du programme (Excel)</target>
+        </trans-unit>
+        <trans-unit id="progActivity_2" translate="yes" xml:space="preserve">
+          <source>Select the Start and End Dates and optionally a Learner Id (leave empty for all Learners) then click on the Excel Icon at the bottom right. Dates default to the previous month.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Sélectionnez les dates de démarrage et de fin et optionnellement un identifiant d’apprenant (laisser vide pour tous les apprenants) puis cliquez sur l’icône Excel en bas à droite. Dates par défaut au mois précédent.</target>
+        </trans-unit>
+        <trans-unit id="progAssigned_1" translate="yes" xml:space="preserve">
+          <source>Programs Assigned (Excel) for</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Programmes assignés (Excel) pour</target>
+        </trans-unit>
+        <trans-unit id="progAssigned_2" translate="yes" xml:space="preserve">
+          <source>Press the Begin button to generate the Excel which shows all the Learners that have been assigned the Program(s) selected below.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Appuyez sur le bouton Démarrer pour générer l’Excel qui affiche tous les apprenants qui ont été affectés au programme (s) sélectionné ci-dessous.</target>
+        </trans-unit>
+        <trans-unit id="progsPurch_1" translate="yes" xml:space="preserve">
+          <source>Programs Purchased and Assigned for</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Programmes achetés et attribués pour</target>
+        </trans-unit>
+        <trans-unit id="progsPurch_2" translate="yes" xml:space="preserve">
+          <source>Click on any Program Id for the Program Title.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cliquez sur n’importe quel id de programme pour le titre du programme.</target>
+        </trans-unit>
+        <trans-unit id="progsPurch_3" translate="yes" xml:space="preserve">
+          <source>Click on the Learners Icon to see which learners were assigned that Program Id.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cliquez sur l’icône des apprenants pour voir quels apprenants ont été affectés à cette id de programme.</target>
+        </trans-unit>
+        <trans-unit id="progsPurch_4" translate="yes" xml:space="preserve">
+          <source>Display Learners who where assigned this Program.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Afficher les apprenants qui ont assigné ce programme.</target>
+        </trans-unit>
+        <trans-unit id="progsPurch_5" translate="yes" xml:space="preserve">
+          <source>Inactive Learners will have a line-through their learner Id.</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Les apprenants inactifs auront une ligne à travers leur id apprenant.</target>
+        </trans-unit>
+        <trans-unit id="return" translate="yes" xml:space="preserve">
+          <source>Return</source>
+          <target state="needs-review-translation">Retour</target>
+        </trans-unit>
+        <trans-unit id="strDate" translate="yes" xml:space="preserve">
+          <source>Start Date</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Date début</target>
+        </trans-unit>
+        <trans-unit id="tileAbout" translate="yes" xml:space="preserve">
+          <source>About</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">À propos de</target>
+        </trans-unit>
+        <trans-unit id="tileActivityReport" translate="yes" xml:space="preserve">
+          <source>Activity Report</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport d’activité</target>
+        </trans-unit>
+        <trans-unit id="tileAssessmentReport" translate="yes" xml:space="preserve">
+          <source>Assessment Report</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport d’évaluation</target>
+        </trans-unit>
+        <trans-unit id="tileAssessmentResponsesDetails" translate="yes" xml:space="preserve">
+          <source>Assessment Responses (Details)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Réponses d’évaluation (Détails)</target>
+        </trans-unit>
+        <trans-unit id="tileAssessmentResponsesSummary" translate="yes" xml:space="preserve">
+          <source>Assessment Responses (Summary)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Réponses d’évaluation (Résumé)</target>
+        </trans-unit>
+        <trans-unit id="tileAssignContent" translate="yes" xml:space="preserve">
+          <source>Assign Content</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Attribuer du contenu</target>
+        </trans-unit>
+        <trans-unit id="tileBrowserReadinessTest" translate="yes" xml:space="preserve">
+          <source>Browser Readiness Test</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Test de préparation au navigateur</target>
+        </trans-unit>
+        <trans-unit id="tileCertificateReport" translate="yes" xml:space="preserve">
+          <source>Certificate Report</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport de certificat</target>
+        </trans-unit>
+        <trans-unit id="tileCompletionReport" translate="yes" xml:space="preserve">
+          <source>Completion Report</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport d’achèvement</target>
+        </trans-unit>
+        <trans-unit id="tileDocumentation" translate="yes" xml:space="preserve">
+          <source>Documentation</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Documentation</target>
+        </trans-unit>
+        <trans-unit id="tileEmailAlerts" translate="yes" xml:space="preserve">
+          <source>Email Alerts</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Alertes par courriel</target>
+        </trans-unit>
+        <trans-unit id="tileFacilitatorServices" translate="yes" xml:space="preserve">
+          <source>Facilitator Services</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Services de facilitateur</target>
+        </trans-unit>
+        <trans-unit id="tileInCompletionReport" translate="yes" xml:space="preserve">
+          <source>InCompletion Report</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Rapport sur l’incompléttion</target>
+        </trans-unit>
+        <trans-unit id="tileLearnersAddEdit" translate="yes" xml:space="preserve">
+          <source>Learners (Add/Edit)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Apprenants (Ajouter/Modifier)</target>
+        </trans-unit>
+        <trans-unit id="tileLearnersExport" translate="yes" xml:space="preserve">
+          <source>Learners (Export)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Apprenants (Exportation)</target>
+        </trans-unit>
+        <trans-unit id="tileMyContentV5" translate="yes" xml:space="preserve">
+          <source>My Content (V5)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mon contenu (V5)</target>
+        </trans-unit>
+        <trans-unit id="tileMyContentV8" translate="yes" xml:space="preserve">
+          <source>My Content (V8)</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Mon contenu (V8)</target>
+        </trans-unit>
+        <trans-unit id="tileMyProfile" translate="yes" xml:space="preserve">
+          <source>My Profile</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Mon profil</target>
+        </trans-unit>
+        <trans-unit id="tileProgramActivityDetails" translate="yes" xml:space="preserve">
+          <source>Program Activity Details</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Détails de l’activité du programme</target>
+        </trans-unit>
+        <trans-unit id="tileProgramActivityOverall" translate="yes" xml:space="preserve">
+          <source>Program Activity Overall</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Activité du programme dans son ensemble</target>
+        </trans-unit>
+        <trans-unit id="tileProgramsAssigned" translate="yes" xml:space="preserve">
+          <source>Programs Assigned</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Programmes assignés</target>
+        </trans-unit>
+        <trans-unit id="tileProgramsPurchasedAndAssigned" translate="yes" xml:space="preserve">
+          <source>Programs Purchased and Assigned</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Programmes achetés et attribués</target>
+        </trans-unit>
+        <trans-unit id="tileSessions" translate="yes" xml:space="preserve">
+          <source>Sessions</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Sessions</target>
+        </trans-unit>
+        <trans-unit id="tileSignOut" translate="yes" xml:space="preserve">
+          <source>Sign Out</source>
+          <target state="translated">Se déconnecter</target>
+        </trans-unit>
+        <trans-unit id="tileStore" translate="yes" xml:space="preserve">
+          <source>Store</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Magasin</target>
+        </trans-unit>
+        <trans-unit id="title" translate="yes" xml:space="preserve">
+          <source>Click to hide/show description</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Cliquez pour masquer/afficher la description</target>
+        </trans-unit>
+        <trans-unit id="type" translate="yes" xml:space="preserve">
+          <source>Type</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Type</target>
+        </trans-unit>
+        <trans-unit id="uploadLearnersDownload" translate="yes" xml:space="preserve">
+          <source>Download Learners</source>
+          <target state="needs-review-translation" state-qualifier="mt-suggestion">Télécharger Learners</target>
+        </trans-unit>
+        <trans-unit id="userName" translate="yes" xml:space="preserve">
+          <source>Username</source>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Nom d’utilisateur</target>
+        </trans-unit>
+        <trans-unit id="noticeY" translate="yes" xml:space="preserve">
+          <source>I would like to take these courses myself.</source>
+          <target state="translated">J'aimerais suivre ces cours moi-même.</target>
+        </trans-unit>
+        <trans-unit id="noticeTitle" translate="yes" xml:space="preserve">
+          <source>Purchase Notice</source>
+          <target state="translated">Avis d'achat</target>
+        </trans-unit>
+        <trans-unit id="noticeAssigned" translate="yes" xml:space="preserve">
+          <source>Assigned</source>
+          <target state="translated">Assigné</target>
+        </trans-unit>
+        <trans-unit id="noticeN" translate="yes" xml:space="preserve">
+          <source>They will be assigned to a different learner profile.</source>
+          <target state="translated">Ils seront assignés à un autre apprenant.</target>
+        </trans-unit>
+        <trans-unit id="noticeNote" translate="yes" xml:space="preserve">
+          <source>Note: You can click on the Facilitator Services tile to Add Learners and Assign Content.</source>
+          <target state="translated">Note : Vous pouvez cliquer sur la tuile Services du facilitateur pour ajouter des apprenants et assigner du contenu.</target>
+        </trans-unit>
+        <trans-unit id="noticeSubTitle" translate="yes" xml:space="preserve">
+          <source>We noticed that you have some purchases that are not assigned.</source>
+          <target state="translated">Nous avons remarqué que certains cours ne sont pas assignés.</target>
         </trans-unit>
       </group>
     </body>

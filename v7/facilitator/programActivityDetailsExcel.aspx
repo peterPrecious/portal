@@ -12,13 +12,21 @@
 
 <asp:Content ID="mainContent" ContentPlaceHolderID="MainContent" runat="server">
 
-  <div class="divPage" style="width: 800px;">
+  <div class="divPage">
     <asp:ImageButton CssClass="exit" ImageUrl="~/styles/icons/vubiz/cancel.png" ID="exit" runat="server" OnClick="exit_Click" /><br />
-    <h1>Program Activity Details (Excel)</h1>
-    <h2>Select the Start and End Dates and optionally a Learner Id (leave empty for all Learners) then click on the Excel Icon at the bottom right. Dates default to the previous month.</h2>
+
+    <h1>
+      <asp:Label ID="lab1" runat="server" Text="<%$  Resources:portal, progActivity_1%>" />
+    </h1>
+
+    <h2>
+      <asp:Label ID="lab2" runat="server" Text="<%$  Resources:portal, progActivity_2%>" />
+    </h2>
+
     <table class="tabContain" style="margin: 50px auto 0;">
       <tr>
-        <td class="tdPrompt">Start Date:</td>
+        <td class="tdPrompt">
+          <asp:Label ID="lab3" runat="server" Text="<%$  Resources:portal, strDate%>" />:</td>
         <td class="tdCalendar">
           <table>
             <tr>
@@ -34,7 +42,8 @@
             </tr>
           </table>
         </td>
-        <td class="tdPrompt">End Date:</td>
+        <td class="tdPrompt">
+          <asp:Label ID="lab4" runat="server" Text="<%$  Resources:portal, endDate%>" />:</td>
         <td class="tdCalendar">
           <table>
             <tr>
@@ -52,8 +61,10 @@
         </td>
       </tr>
       <tr class="trData">
-        <td colspan="4" style="text-align: center; color: white;">Learner Id (optional);
-        <asp:TextBox Width="300px" ID="txtMembId" runat="server"></asp:TextBox>
+        <td colspan="4" style="text-align: center; color: white;">
+          <asp:Literal runat="server" Text="<%$  Resources:portal, learnerId%>" />
+          (<asp:Literal runat="server" Text="<%$  Resources:portal, optional%>" />) :
+          <asp:TextBox Width="300px" ID="txtMembId" runat="server"></asp:TextBox>
         </td>
       </tr>
       <tr class="trData">

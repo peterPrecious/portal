@@ -4,7 +4,7 @@ using System.Threading;
 
 namespace portal
 {
-  public partial class errors : System.Web.UI.Page
+  public partial class errors : FormBase
   {
 
     protected override void InitializeCulture()
