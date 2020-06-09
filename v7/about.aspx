@@ -27,6 +27,8 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
 
+  <%--git test--%>
+
   <div class="divPage">
     <asp:ImageButton CssClass="exit" ImageUrl="~/styles/icons/vubiz/cancel.png" runat="server" OnClick="exit_Click" />
 
