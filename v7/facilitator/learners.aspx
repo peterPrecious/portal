@@ -40,6 +40,15 @@
         $(".resendAlerts").hide();
       }
     }
+
+    //SH - 07/02/20 - Kick off search when enter is pressed inside search value field
+    function txtSearch_EnterEvent(e) {
+      console.info("keyCode: " + e.keyCode);
+      if (e.keyCode == 13) {
+        $('input[name="<%=butSearch.UniqueID%>"]').click();
+      }
+    }
+
     $(function () {
       if ($("#MainContent_dvLearner_lab_membEmailAlert")[0] !== undefined) {
         if ($("#MainContent_dvLearner_lab_membEmailAlert")[0].checked) {
@@ -116,10 +125,9 @@
         $(".membNo").on("click", function () { $(".labError").html('[Vubiz Internal] est une valeur système utilisée par Vubiz Support à des fins de support.') })
       }
 
-
-
       // clears the labError
-      $(".labError").on("click", function () { $(".labError").html('') })
+      $(".labError").on("click", function () { $(".labError").html('') });
+
     })
   </script>
 </asp:Content>
@@ -147,13 +155,15 @@
           <asp:Literal runat="server" Text="<%$  Resources:portal, learners_1a%>" />
           <asp:Literal runat="server" Text="<%$  Resources:portal, learners_1b%>" />
           <asp:Literal runat="server" Text="<%$  Resources:portal, learners_1c%>" />
-                   
-
 
           <span style="color: yellow"><asp:Literal runat="server" Text="<%$  Resources:portal, learners_1d%>" /></span>
-          <div style="margin: 30px; text-align: center;">
-            <asp:TextBox ID="txtSearch" Text="" CssClass="alignCenter" placeholder="<%$  Resources:portal, searchValue%>" runat="server" />
+          <div style="margin: 30px 30px 0px 30px; text-align: center;">
+            <asp:TextBox ID="txtSearch" Text="" CssClass="txtSearch" placeholder="<%$  Resources:portal, searchValue%>" runat="server" onkeydown="return txtSearch_EnterEvent(event)" />
             <asp:Button ID="butSearch" OnClick="butSearch_Click" CssClass="button" runat="server" Text="<%$  Resources:portal, search%>" />
+            <asp:Button ID="butClear" OnClick="butClear_Click" CssClass="button newButton1" runat="server" Text="<%$  Resources:portal, clear%>" />
+          </div>
+          <div style="margin: 0px 30px 30px 30px; text-align: center;">
+            <asp:CheckBox ID="chkIncludeChildAccounts" runat="server" checked="false" Text="<%$  Resources:portal, includeChildAccounts%>" />
           </div>
         </div>
 

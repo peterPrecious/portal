@@ -55,6 +55,13 @@ namespace portal.v7.facilitator
       gvLearners.DataBind();
     }
 
+    // fired when we clear the search criteria
+    protected void butClear_Click(object sender, EventArgs e)
+    {
+      txtSearch.Text = "";
+      gvLearners.DataBind();
+    }
+
     // this is fired when we select a learner to edit
     protected void gvLearners_SelectedIndexChanged(object sender, EventArgs e)
     {

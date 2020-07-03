@@ -78,6 +78,7 @@
     <Content Include="App_GlobalResources\portal.resx">
       <Generator>GlobalResourceProxyGenerator</Generator>
       <LastGenOutput>portal1.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="documentation\accountManagement.docx" />
     <Content Include="documentation\documentation.aspx" />
@@ -349,6 +350,9 @@
     <Content Include="documentation\Portal Modifications - Extend Manager Access - App.docx" />
     <Content Include="documentation\Portal Modifications - Extend Manager Access - Learner.docx" />
     <Content Include="documentation\Portal Modifications - Passwords.docx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Properties\PublishProfiles\cloudWeb.pubxml" />
     <Content Include="v7\site.master" />
     <None Include="Properties\PublishProfiles\stagingWeb.pubxml" />
@@ -393,9 +397,6 @@
     <Content Include="v7\facilitator\learnersExcel.aspx" />
     <Content Include="v7\kendoUI.aspx" />
     <Content Include="v7\profile.aspx" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_GlobalResources\portal.fr-CA.designer.cs">

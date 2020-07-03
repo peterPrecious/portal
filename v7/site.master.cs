@@ -36,7 +36,7 @@ namespace portal
       if (se.secure)
       {
         panHeader.Visible = true;
-        panHeader.Visible = true;
+        panHeader.Visible = true; //TODO: is this supposed to be for the footer?
 
         // create sessions link for debugging
         if (fn.host() == "localhost" || se.membLevel == 5)

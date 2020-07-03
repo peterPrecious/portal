@@ -9,7 +9,7 @@
 
 <head runat="server">
 
-  <title><%: Page.Title %></title>
+  <title>Vubiz | <%: Page.Title %></title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="https://vubiz.com/vubizApps/styles/favicon.ico" />
@@ -17,9 +17,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="/portal/scripts/$urls.min.js"></script>
 
-  <script src="/portal/scripts/v7.min.js"></script>
-  <link href="/portal/styles/css/styles.min.css" rel="stylesheet" />
-  <link href="/portal/styles/css/siteMaster.min.css" rel="stylesheet" />
+    #if DEBUG
+    <script src="/portal/scripts/v7.js"></script>
+    <link href="/portal/styles/css/styles.css" rel="stylesheet" />
+    <link href="/portal/styles/css/siteMaster.css" rel="stylesheet" />
+    #else
+    <script src="/portal/scripts/v7.min.js"></script>
+    <link href="/portal/styles/css/styles.min.css" rel="stylesheet" />
+    <link href="/portal/styles/css/siteMaster.min.css" rel="stylesheet" />
+    #endif
 
   <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
 

@@ -708,6 +708,12 @@
   <data name="searchValue" xml:space="preserve">
     <value>seach value</value>
   </data>
+  <data name="clear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="includeChildAccounts" xml:space="preserve">
+    <value>Include Child Accounts</value>
+  </data>
   <data name="sessionVariables" xml:space="preserve">
     <value>These are internal values maintained during the Session.</value>
   </data>

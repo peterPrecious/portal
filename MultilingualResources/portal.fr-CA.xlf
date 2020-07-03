@@ -946,6 +946,14 @@
           <source>We noticed that you have some purchases that are not assigned.</source>
           <target state="translated">Nous avons remarqué que certains cours ne sont pas assignés.</target>
         </trans-unit>
+        <trans-unit id="includeChildAccounts" translate="yes" xml:space="preserve">
+          <source>Include Child Accounts</source>
+          <target state="new">Include Child Accounts</target>
+        </trans-unit>
+        <trans-unit id="clear" translate="yes" xml:space="preserve">
+          <source>Clear</source>
+          <target state="new">Clear</target>
+        </trans-unit>
       </group>
     </body>
   </file>

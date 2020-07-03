@@ -256,13 +256,18 @@ div#panHeader:after {
     color: #0979bb !important;
 }
 
+.hoverUnderline {
+  cursor: pointer;
+}
+
+
 /* LOGIN PAGE */
 .tabSignIn {
-    width: 75% !important;
-    max-width: 1000px !important;
-    background: #ddd !important;
-    border-radius: 20px !important;
-    border: none !important;
+  width: 75% !important;
+  max-width: 1000px !important;
+  background: #ddd !important;
+  border-radius: 20px !important;
+  border: none !important;
 } 
 .tabSignIn tr:first-child td {
     width: 100%;

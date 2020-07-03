@@ -304,6 +304,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Clear.
+        /// </summary>
+        internal static string clear {
+            get {
+                return ResourceManager.GetString("clear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Close.
         /// </summary>
         internal static string close {
@@ -642,6 +651,15 @@ namespace Resources {
         internal static string forgot_1 {
             get {
                 return ResourceManager.GetString("forgot_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Include Child Accounts.
+        /// </summary>
+        internal static string includeChildAccounts {
+            get {
+                return ResourceManager.GetString("includeChildAccounts", resourceCulture);
             }
         }
         
