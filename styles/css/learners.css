@@ -39,3 +39,8 @@ option:checked { font-weight: bold; font-style: italic; }
 .newButton1 { min-width: 80px !important; }
 
 .txtSearch { width: 400px; text-align: center; }
+
+.labError {
+  top: 5px;
+  position: relative;
+}

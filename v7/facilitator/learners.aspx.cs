@@ -18,6 +18,13 @@ namespace portal.v7.facilitator
       se.localize();
       labError.Text = "";
 
+      //SH - 07/06/20 - Display 'Include Child Accounts' flag for memb_level 4 or greater
+      int membLevel = int.Parse(Session["membLevel"].ToString());
+      if(membLevel >= 4)
+      {
+        chkIncludeChildAccounts.Visible = true;
+      }
+
       // count number of learners to configure the title (store in session variable)
       int userCount = int.Parse(Session["userCount"].ToString());
       if (userCount == 0)
@@ -52,12 +59,22 @@ namespace portal.v7.facilitator
     // fired when we capture the search criteria
     protected void butSearch_Click(object sender, EventArgs e)
     {
+      if (chkIncludeChildAccounts.Checked)
+      {
+        gvLearners.DataSourceID = SqlDataSource3.ID;
+      }
+      else
+      {
+        gvLearners.DataSourceID = SqlDataSource1.ID;
+      }
+
       gvLearners.DataBind();
     }
 
     // fired when we clear the search criteria
     protected void butClear_Click(object sender, EventArgs e)
     {
+      chkIncludeChildAccounts.Checked = false;
       txtSearch.Text = "";
       gvLearners.DataBind();
     }

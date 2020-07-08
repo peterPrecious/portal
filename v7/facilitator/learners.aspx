@@ -94,6 +94,7 @@
 
       // generates a yellow description in labError of panBottom
       if (lang !== "fr") {
+        $(".membAcctId").on("click", function () { $(".labError").html("Customer ID represents the account the learner is assigned to.") })
         $(".membId").on("click", function () { $(".labError").html("Username is a globally unique value for this learner (i.e. Email Address). Once assigned it cannot be changed.") })
         $(".membPwd").on("click", function () { $(".labError").html("Password provides extra security. It can be modified at a later stage.") })
         $(".membFirstName").on("click", function () { $(".labError").html("First Name is used in reports and certificates.") })
@@ -109,6 +110,7 @@
         $(".membActive").on("click", function () { $(".labError").html("Active is a key field. If set 'off' then this individual will no longer have access to the system.") })
         $(".membNo").on("click", function () { $(".labError").html('[Vubiz Internal] is a system value used by Vubiz Support for support purposes.') })
       } else {
+        $(".membAcctId").on("click", function () { $(".labError").html("L’identification du client représente le compte auquel l'apprenant est affecté.") })
         $(".membId").on("click", function () { $(".labError").html("Le nom d'utilisateur est une valeur unique à l'échelle mondiale pour cet apprenant (c.-à-d. adresse e-mail). Une fois assigné, il ne peut pas être changé.") })
         $(".membPwd").on("click", function () { $(".labError").html("Mot de passe offre une sécurité supplémentaire. Il peut être modifié à un stade ultérieur.") })
         $(".membFirstName").on("click", function () { $(".labError").html("Le prénom est utilisé dans les rapports et les certificats.") })
@@ -163,7 +165,7 @@
             <asp:Button ID="butClear" OnClick="butClear_Click" CssClass="button newButton1" runat="server" Text="<%$  Resources:portal, clear%>" />
           </div>
           <div style="margin: 0px 30px 30px 30px; text-align: center;">
-            <asp:CheckBox ID="chkIncludeChildAccounts" runat="server" checked="false" Text="<%$  Resources:portal, includeChildAccounts%>" />
+            <asp:CheckBox ID="chkIncludeChildAccounts" runat="server" Visible="false" checked="false" Text="<%$  Resources:portal, includeChildAccounts%>" />
           </div>
         </div>
 
@@ -249,7 +251,6 @@
           CssClass="labError"
           ForeColor="Yellow"
           Font-Bold="true"
-          Width="600"
           runat="server" />
 
         <asp:DetailsView runat="server"
@@ -270,6 +271,22 @@
           OnItemDeleted="dvLearner_ItemDeleted" OnPageIndexChanging="dvLearner_PageIndexChanging">
 
           <Fields>
+
+            <asp:TemplateField HeaderText="<%$ Resources:portal, custId%>">
+              <EditItemTemplate>
+                <asp:Label ID="membAcctId" runat="server" Text='<%# Bind("membAcctId") %>' Enabled="false"></asp:Label>
+              </EditItemTemplate>
+              <InsertItemTemplate>
+                <asp:TextBox ID="membAcctId" CssClass="upper" Enabled="false" runat="server" Text='<%# Bind("membAcctId") %>' />
+              </InsertItemTemplate>
+              <ItemTemplate>
+                <asp:Label ID="membAcctId" runat="server" Text='<%# Bind("membAcctId") %>' Enabled="false"></asp:Label>
+              </ItemTemplate>
+              <HeaderStyle CssClass="tip membAcctId" Font-Bold="True" HorizontalAlign="Right" />
+            </asp:TemplateField>
+
+            <asp:TemplateField></asp:TemplateField>
+
             <asp:TemplateField HeaderText="<%$ Resources:portal, uniqueId%>">
               <EditItemTemplate>
                 <asp:Label ID="lab_membId" runat="server" Text='<%# Bind("membId") %>' Enabled="false"></asp:Label>
@@ -550,7 +567,8 @@
     runat="server"
     ConnectionString="<%$ ConnectionStrings:apps %>"
     SelectCommand="
-      SELECT 
+      SELECT
+        Memb_AcctId                       AS membAcctId,
         Memb_No                           AS membNo,
         Memb_Id                           AS membId,
         Memb_Pwd                          AS membPwd,
@@ -671,6 +689,94 @@
       <asp:Parameter Name="membEmailAlert" />
       <asp:Parameter Name="membActive" />
     </InsertParameters>
+
+  </asp:SqlDataSource>
+
+  <asp:SqlDataSource
+    ID="SqlDataSource3" runat="server"
+    ConnectionString="<%$ ConnectionStrings:apps %>"
+    SelectCommand="
+      DECLARE @Temp_Table AS TABLE (membNo INTEGER, membId VARCHAR(128), membFirstName VARCHAR(32), membLastName VARCHAR(64), membEmail VARCHAR(128), membOrganization VARCHAR(128), membLevel INTEGER)
+
+      INSERT INTO @Temp_Table
+      SELECT
+	      [Memb_No]               AS membNo,
+	      [Memb_Id]               AS membId,
+	      [Memb_FirstName]        AS membFirstName,
+	      [Memb_LastName]         AS membLastName,
+	      [Memb_Email]            AS membEmail,
+	      [Memb_Organization]     AS membOrganization,
+	      [Memb_Level]            AS membLevel
+      FROM 
+	      V5_Vubz.dbo.Memb
+      WHERE
+	      Memb_Email              != '' AND
+	      Memb_FirstName          != '' AND
+	      Memb_LastName           != '' AND
+	      Memb_Level              &lt; @membLevel AND
+	      Memb_AcctId             = @membAcctId AND
+	      Memb_Internal           = 0 AND
+	      (
+		      LEN(@search)          = 0 OR
+		      @search               IS NULL OR
+		      @search               = '*' OR
+		      Memb_Id               LIKE '%' + @search + '%' OR
+		      Memb_FirstName        LIKE '%' + @search + '%' OR
+		      Memb_LastName         LIKE '%' + @search + '%' OR
+		      Memb_Email            LIKE '%' + @search + '%' OR
+		      Memb_Organization     LIKE '%' + @search + '%'
+	      )
+
+      INSERT INTO @Temp_Table
+      SELECT
+	      M.[Memb_No]               AS membNo,
+	      M.[Memb_Id]               AS membId,
+	      M.[Memb_FirstName]        AS membFirstName,
+	      M.[Memb_LastName]         AS membLastName,
+	      M.[Memb_Email]            AS membEmail,
+	      M.[Memb_Organization]     AS membOrganization,
+	      M.[Memb_Level]            AS membLevel
+      FROM
+	      V5_Vubz.dbo.Memb AS M
+	      INNER JOIN V5_Vubz.dbo.Cust AS C
+		      ON M.Memb_AcctId = C.Cust_AcctId
+      WHERE
+	      C.Cust_ParentId			    = @membAcctId AND
+	      Memb_Email              != '' AND
+	      Memb_FirstName          != '' AND
+	      Memb_LastName           != '' AND
+	      Memb_Level              &lt; @membLevel AND
+	      Memb_Internal           = 0 AND
+	      (
+		      LEN(@search)          = 0 OR
+		      @search               IS NULL OR
+		      @search               = '*' OR
+		      Memb_Id               LIKE '%' + @search + '%' OR
+		      Memb_FirstName        LIKE '%' + @search + '%' OR
+		      Memb_LastName         LIKE '%' + @search + '%' OR
+		      Memb_Email            LIKE '%' + @search + '%' OR
+		      Memb_Organization     LIKE '%' + @search + '%'
+	      )
+
+      SELECT
+	      membNo,
+	      membId,
+	      membFirstName,
+	      membLastName,
+	      membEmail,
+	      membOrganization,
+	      membLevel
+      FROM
+	      @Temp_Table
+      ORDER BY 
+	      membLastName,
+	      membFirstName
+    ">
+    <SelectParameters>
+      <asp:SessionParameter Name="membLevel" SessionField="membLevel" />
+      <asp:SessionParameter Name="membAcctId" DefaultValue="" SessionField="custAcctId" />
+      <asp:ControlParameter Name="search" ControlID="txtSearch" DefaultValue="*" PropertyName="Text" />
+    </SelectParameters>
 
   </asp:SqlDataSource>
 
