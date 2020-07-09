@@ -359,6 +359,7 @@
     </None>
     <Content Include="repository\BigAdmins.xlsx" />
     <Content Include="repository\DEMO0000_Learners.xlsx" />
+    <Content Include="Web.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
       <SubType>Designer</SubType>
