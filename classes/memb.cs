@@ -353,10 +353,10 @@ namespace portal
     }
 
     public void memberInsertSpecialsNew2(string custId)
-    // revised May 28, 2019
-    // only need to pass in CustId to create all the new Internals - values are in SP
-    // this will delete any existing credentials and add in the new (useful for converting old to new)
     {
+      // revised May 28, 2019
+      // only need to pass in CustId to create all the new Internals - values are in SP
+      // this will delete any existing credentials and add in the new (useful for converting old to new)
       using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
       {
         con.Open();
@@ -406,10 +406,34 @@ namespace portal
           custId = cmd.Parameters["@custId"].Value.ToString();
           membPwd = cmd.Parameters["@membPwd"].Value.ToString();
           alias = cmd.Parameters["@alias"].Value.ToString();                // changed from profile to the correct "alias" Apr 2019
-          profile = cmd.Parameters["@profile"].Value.ToString();            // changed from profile to the correct "alias" Apr 2019
-          usesPassword = cmd.Parameters["@usesPassword"].Value.ToString();  // changed from profile to the correct "alias" Apr 2019
+          profile = cmd.Parameters["@profile"].Value.ToString();
+          usesPassword = cmd.Parameters["@usesPassword"].Value.ToString();
 
           if (custId.Length == 8 && membPwd.Length > 0)
+          {
+            return (true);
+          }
+          return (false);
+        }
+      }
+    }
+
+    public bool memberIsUnique(string membId) // used in portal signin if not a registered V8 user
+    {
+      int count = 0;
+      using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
+      {
+        con.Open();
+        using (SqlCommand cmd = new SqlCommand())
+        {
+          cmd.Connection = con;
+          cmd.CommandText = "dbo.sp7memberIsUnique";
+          cmd.CommandType = CommandType.StoredProcedure;
+          cmd.Parameters.Add(new SqlParameter("@membId", membId));
+          cmd.Parameters.Add("@count", SqlDbType.Int).Direction = ParameterDirection.Output;
+          cmd.ExecuteNonQuery();
+          count = (int)cmd.Parameters["@count"].Value;
+          if (count == 1)
           {
             return (true);
           }
@@ -598,7 +622,7 @@ namespace portal
       }
     }
 
-    public void memberPrograms2(int membNo, string membPrograms) // similiar to above, used in default.aspx - notice panel
+    public void memberPrograms2(int membNo, string membPrograms) // similiar to above, used in default.aspx - notice panel, adds membPrograms to what's there
     {
       using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
       {
@@ -614,6 +638,42 @@ namespace portal
         }
       }
     }
+
+    public void memberPrograms2a(int membNo, out string membPrograms) // similiar to above, simply used to get the membPrograms
+    {
+      using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
+      {
+        con.Open();
+        using (SqlCommand cmd = new SqlCommand())
+        {
+          cmd.Connection = con;
+          cmd.CommandText = "dbo.sp7memberPrograms2a";
+          cmd.CommandType = CommandType.StoredProcedure;
+          cmd.Parameters.Add(new SqlParameter("@membNo", membNo));
+          cmd.Parameters.Add("@membPrograms", SqlDbType.VarChar, 8000).Direction = ParameterDirection.Output;
+          cmd.ExecuteNonQuery();
+          membPrograms = cmd.Parameters["@membPrograms"].Value.ToString();
+        }
+      }
+    }
+
+    public void memberPrograms2b(int membNo) // similiar to above, simply used to clear out membPrograms
+    {
+      using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
+      {
+        con.Open();
+        using (SqlCommand cmd = new SqlCommand())
+        {
+          cmd.Connection = con;
+          cmd.CommandText = "dbo.sp7memberPrograms2b";
+          cmd.CommandType = CommandType.StoredProcedure;
+          cmd.Parameters.Add(new SqlParameter("@membNo", membNo));
+          cmd.ExecuteNonQuery();
+        }
+      }
+    }
+
+
 
     public void memberSignIn(string custId, string membId_inp) // used in v7 to signin
     {

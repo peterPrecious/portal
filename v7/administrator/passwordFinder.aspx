@@ -21,8 +21,7 @@
 
       <h1>
         <span onclick="fadeIn()" class="hoverUnderline">
-          <asp:Literal runat="server" Text="<%$  Resources:portal, title%>" />
-          <asp:Literal runat="server" Text="<%$  Resources:portal, learners%>" />
+          <asp:Literal runat="server" Text="Learner Password Finder" />
         </span>
       </h1>
 
