@@ -123,6 +123,15 @@ namespace portal.v7.facilitator
     protected global::System.Web.UI.WebControls.DetailsView dvLearner;
 
     /// <summary>
+    /// panIncludeChildAccounts_Message control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel panIncludeChildAccounts_Message;
+
+    /// <summary>
     /// SqlDataSource1 control.
     /// </summary>
     /// <remarks>

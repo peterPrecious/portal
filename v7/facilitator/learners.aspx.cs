@@ -85,6 +85,15 @@ namespace portal.v7.facilitator
       panTop.Visible = false;
       panBot.Visible = true;
       dvLearner.ChangeMode(DetailsViewMode.ReadOnly);
+
+      //TODO: add flag to determine if account is a child account
+      //panIncludeChildAccounts_Message.Visible = true;
+
+      //TODO: disable buttons
+      //btnEdit
+      //btnDelete
+      //btnInsert
+      //btnUpdate
     }
 
     // this is the icon at the top title to add a learner

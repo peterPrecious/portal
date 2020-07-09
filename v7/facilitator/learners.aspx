@@ -512,6 +512,10 @@
           <HeaderStyle Font-Bold="True" HorizontalAlign="Right" />
         </asp:DetailsView>
 
+        <asp:Panel ID="panIncludeChildAccounts_Message" CssClass="panIncludeChildAccounts_Message" runat="server" Visible="false">
+          Learner Profiles accessed from another Account are Read Only. You cannot Update or Delete this Learner's Profile.
+        </asp:Panel>
+
       </asp:Panel>
 
     </asp:Panel>
@@ -696,7 +700,7 @@
     ID="SqlDataSource3" runat="server"
     ConnectionString="<%$ ConnectionStrings:apps %>"
     SelectCommand="
-      DECLARE @Temp_Table AS TABLE (membNo INTEGER, membId VARCHAR(128), membFirstName VARCHAR(32), membLastName VARCHAR(64), membEmail VARCHAR(128), membOrganization VARCHAR(128), membLevel INTEGER)
+      DECLARE @Temp_Table AS TABLE (membNo INTEGER, membId VARCHAR(128), membFirstName VARCHAR(32), membLastName VARCHAR(64), membEmail VARCHAR(128), membOrganization VARCHAR(128), membLevel INTEGER, membChild INTEGER)
 
       INSERT INTO @Temp_Table
       SELECT
@@ -706,7 +710,8 @@
 	      [Memb_LastName]         AS membLastName,
 	      [Memb_Email]            AS membEmail,
 	      [Memb_Organization]     AS membOrganization,
-	      [Memb_Level]            AS membLevel
+	      [Memb_Level]            AS membLevel,
+	      0						            AS membChild
       FROM 
 	      V5_Vubz.dbo.Memb
       WHERE
@@ -735,13 +740,14 @@
 	      M.[Memb_LastName]         AS membLastName,
 	      M.[Memb_Email]            AS membEmail,
 	      M.[Memb_Organization]     AS membOrganization,
-	      M.[Memb_Level]            AS membLevel
-      FROM
-	      V5_Vubz.dbo.Memb AS M
-	      INNER JOIN V5_Vubz.dbo.Cust AS C
+	      M.[Memb_Level]            AS membLevel,
+	      1						              AS membChild
+      FROM 
+	      Memb AS M
+	      INNER JOIN Cust AS C
 		      ON M.Memb_AcctId = C.Cust_AcctId
       WHERE
-	      C.Cust_ParentId			    = @membAcctId AND
+	      C.Cust_ParentId			= @membAcctId AND
 	      Memb_Email              != '' AND
 	      Memb_FirstName          != '' AND
 	      Memb_LastName           != '' AND
@@ -765,7 +771,8 @@
 	      membLastName,
 	      membEmail,
 	      membOrganization,
-	      membLevel
+	      membLevel,
+	      membChild
       FROM
 	      @Temp_Table
       ORDER BY 
