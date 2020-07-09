@@ -11,23 +11,6 @@ namespace portal
 
     protected void Page_Load(object sender, EventArgs e)
     {
-      // translate the page title which will appear on the browser header
-      //string pageTitle = ("page" + MainContent.Page.Title).Replace(" ", "").Replace("(", "").Replace(")", "");
-      //try
-      //{
-      //  pageTitle = (string)GetGlobalResourceObject("portal", pageTitle);
-      //}
-      //catch (Exception) { }
-      //if (pageTitle != "page")
-      //{
-      //  MainContent.Page.Title = pageTitle;
-      //}
-
-
-      //// put the child page name in footer
-      //butPageName.Text = MainContent.Page.Title;
-      //headerTitle.Text = MainContent.Page.Title;
-
       //if cannot localize means session has expired so restart
       bool isOk = se.localize();
       if (!isOk) Response.Redirect("~/v7/default.aspx", true);

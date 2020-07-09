@@ -28,6 +28,7 @@ namespace portal
     {
       return HttpContext.Current.Request.Url.Scheme.ToString();
     }
+
     public static string host() // ie www.mywebsite.com
     {
       return HttpContext.Current.Request.Url.Host.ToString();

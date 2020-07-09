@@ -143,7 +143,6 @@
 
       <asp:Panel ID="panTop" CssClass="panTop" runat="server">
 
-        <%--          <span onclick="fadeIn()" class="hoverUnderline" title="<%$  Resources:portal, title%>">--%>
         <h1>
           <span onclick="fadeIn()" class="hoverUnderline">
             <asp:Literal runat="server" Text="<%$  Resources:portal, title%>" />

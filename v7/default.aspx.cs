@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
-using System.Runtime.CompilerServices;
+using System.Text;
 using System.Threading;
+using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -17,9 +19,7 @@ namespace portal
     private readonly Prof pr = new Prof();
     private readonly Ecom ec = new Ecom();
 
-
-    // use ListItemCollection for programs purchased for the Purchase Notice
-    ListItemCollection listItem = new ListItemCollection();
+    ListItemCollection listItem = new ListItemCollection(); // used for the Purchase Notice feature
 
     protected override void InitializeCulture()
     {
@@ -238,11 +238,15 @@ namespace portal
       // preset credentials for fast testing ( mucks up signin to use anything else )
       if (fn.host() == "localhost")
       {
+        //txtMembId.Attributes["value"] = "";
+        //txtCustId.Text = "";
+
+
         //txtMembId.Attributes["value"] = "VUV5_MGR";
         //txtCustId.Text = "CCHS1068";
 
-        //txtMembId.Attributes["value"] = "PETER2345";
-        //txtMembPwd.Text = "ALEXANDER";
+        txtMembId.Attributes["value"] = "PETER2345";
+        txtMembPwd.Text = "ALEXANDER";
 
         //txtMembId.Attributes["value"] = "vubiz-test";
         //txtMembPwd.Text = "test";
@@ -324,12 +328,24 @@ namespace portal
         Session["isNop"] = false;
         Session["usesPassword"] = false;
 
-        // first check Username to see if this is a V8 or NOP system wide unique ID (on memb table), if so then check Password else show CustId  
+        bool isNopV8 = true; // use this for next few steps
+
+        // first check if Username is V8/NOP and unique
+        if (isNopV8 & me.memberIsUnique(txtMembId.Text.ToUpper()))
+        {
+          isNopV8 = true;
+        }
+        else
+        {
+          isNopV8 = false;
+        }
+
+        // first check Username and if V8 or NOP then show Password else show CustId  
         // Aug 2018: if there is no nopReturnUrl or ChildId on the apps table then insert it - means they bought courses in NOP but didn't hit Administration
         // Apr 2019: change memberIsNop to return "alias" as well as the mistakenly called "profile" plus usesPassword to determine if we need to render that field
         // checks for Nop AND V8 !!
         // _usesPassword : true if NOP or V8
-        if (me.memberIsNop(txtMembId.Text.ToUpper(), Convert.ToInt32(Session["storeId"]), Session["nopReturnUrl"].ToString(),
+        if (isNopV8 & me.memberIsNop(txtMembId.Text.ToUpper(), Convert.ToInt32(Session["storeId"]), Session["nopReturnUrl"].ToString(),
           out string _custId, out string _membPwd, out string _alias, out string _profile, out string _usesPassword))
         {
           // rowMembId.Visible = false;
@@ -340,9 +356,9 @@ namespace portal
           Session["alias"] = _alias.ToUpper(); // changed to alias from original profile Apr 2019  // Session["profile"] = _profile.ToUpper(); // used as profile when it was originally alias?
           Session["isNop"] = true;
           if (_usesPassword == "True") Session["usesPassword"] = true; // default is set to false above
-
           txtMembPwd.Focus();
         }
+
         // if not NOP then see if Visitor (ie registered in apps.dbo.ecomRegister but not V5/memb)
         else if (me.memberIsVisitor(txtMembId.Text.ToUpper(), Convert.ToInt32(Session["storeId"]), Session["custId"].ToString(),
           out string _ecomGuid, out string _ecomPwd))
@@ -354,6 +370,7 @@ namespace portal
           Session["isVisitor"] = true;
           txtMembPwd.Focus();
         }
+
         // if neither NOP nor Visitor then assume V5, show CustId and hide Username and Password
         else
         {
@@ -562,6 +579,7 @@ namespace portal
       if (e.Item.ItemType == ListViewItemType.DataItem)
       {
         ListViewDataItem item = (ListViewDataItem)e.Item;
+
         string tileName = (string)DataBinder.Eval(item.DataItem, "tileName"); // get tileName from DB
 
         // translate if level 3
@@ -579,7 +597,6 @@ namespace portal
             tileLabel.Text = tileName;
           }
         }
-
 
         // only show "Certificate Report" if CustId starts with EVHR
         if (tileName == "Certificate Report" && (se.cust != "EVHR"))
@@ -599,8 +616,10 @@ namespace portal
           item.Visible = false;
         }
 
-        // only show "Sessions" if admin or on localhost, stagingweb.vubiz.com or corproate.vubiz.com
-        if (tileName == "Sessions" && !(se.membLevel == 5 || fn.host() == "localhost"))
+        // only show "Sessions" if admin or on localhost, stagingweb.vubiz.com or corporate.vubiz.com
+        if (tileName == "Sessions" && se.membLevel < 5)
+        // changed Jun 25, 2020 to show "Sessions" if admin 
+        //        if (tileName == "Sessions" && !(se.membLevel == 5 || fn.host() == "localhost"))
         {
           item.Visible = false;
         }
@@ -625,50 +644,70 @@ namespace portal
 
       }
 
+      testClear.Visible = true;
+
       // render the New Purchase Notice if:
       //    this a NOP account;
       //    this a facilitator;
       //    this fac has made one or more (single or multi seat) purchases;
       //    one or more of the purhases have not yet been assigned;
-      if (cu.custChannelNop && me.membLevel == 3 && fn.host() == "localhost") // remove && fn.host() == "localhost" when ready to publish live
+      //    all purchases have not been assigned to the NOP / FAC
+
+      //    remove the fn.host() references when going live: should be as below:
+   // if (cu.custChannelNop && me.membLevel == 3)
+      if (cu.custChannelNop && me.membLevel == 3 && (fn.host() == "localhost" || fn.host() == "stagingweb.vubiz.com"))
       {
-
-        // Create a new ListItemCollection (programs, etc and their status)
-        // instantiated above
-        // ListItemCollection listItem = new ListItemCollection();
-
+        // Create a new ListItemCollection (programs purchase)  ...  instantiated above at top
         ec.ecomPurchaseNotice(cu.custId, me.membId,
-          out string _membProgram,
-          out string _ecomProgram,
-          out string _progTitle,
-          out string _ecomQuantity);
+        out string _membPrograms,
+        out string _ecomPrograms,
+        out string _progTitles,
+        out string _ecomQuantitys);
 
-        // check is we have any purchases (start assuming true)
+        // confirm we have purchases above (start assuming true), all or some of these fields contain values
         if (
-          !string.IsNullOrEmpty(_membProgram) &&
-          !string.IsNullOrEmpty(_ecomProgram) &&
-          !string.IsNullOrEmpty(_progTitle) &&
-          !string.IsNullOrEmpty(_ecomQuantity)
+          !string.IsNullOrEmpty(_membPrograms) &&
+          !string.IsNullOrEmpty(_ecomPrograms) &&
+          !string.IsNullOrEmpty(_progTitles) &&
+          !string.IsNullOrEmpty(_ecomQuantitys)
           )
         {
 
-          string[] __membProgram = _membProgram.Split('|');
-          string[] __ecomProgram = _ecomProgram.Split('|');
-          string[] __progTitle = _progTitle.Split('|');
-          string[] __ecomQuantity = _ecomQuantity.Split('|');
+          // put the purchase values into string arrays
+          string[] __membProgram = _membPrograms.Split('|');
+          string[] __ecomProgram = _ecomPrograms.Split('|');
+          string[] __progTitle = _progTitles.Split('|');
+          string[] __ecomQuantity = _ecomQuantitys.Split('|');
 
-          int noPurchases = __ecomProgram.Length;
+          int noPurchases = __ecomProgram.Length; // noPurchases equals number of values in the array
           string assigned = GetGlobalResourceObject("portal", "noticeAssigned").ToString();
 
-          // skip the first entry as it will always be empty (starts at 1, thus reduce noPurchases by 1)
+          // listItems will look like this:
           // listItem.Add("1 X 360 Degree Feedback (P5970EN) - Assigned");
           // listItem.Add("5 X Assembling the Pieces Toolkit (P4754EN) - Not Assigned");
 
           listItem.Clear();
 
+          // this is the number of programs that have been assigned to the person running this (self).  
+          // important: if all programs have been assigned to "self" then no need to render the purchase notice panel
+          int selfAssigned = 0; int exists;
+
+          // get membPrograms before running this app so we can see if all programs in this section are already assigned
+          string membPrograms = ""; 
+          me.memberPrograms2a((int)Session["membNo"], out membPrograms);
+
+
+          // skip the first entry as it will always be empty (starts at 1, thus reduce noPurchases by 1)
           for (int i = 1; i <= noPurchases - 1; i++)
           {
+
+            // this determines how many of each program have been assigned, across the account
             ec.noPurchasedAssigned(cu.custId, __ecomProgram[i], out string _noAssigned);
+
+            // this determines how many of each program have been assigned to the NOP fac (self)
+            exists = membPrograms.IndexOf(__ecomProgram[i]);
+            if (exists > -1) selfAssigned++;
+
             listItem.Add(__ecomQuantity[i] + " X " + __progTitle[i] + " (" + __ecomProgram[i] + ") - " + _noAssigned + " " + assigned);
           }
 
@@ -677,10 +716,8 @@ namespace portal
           lbxPurchases.DataSource = listItem;
           lbxPurchases.DataBind();
 
-          notice.Visible = true;
-
+          if (selfAssigned != (noPurchases - 1)) notice.Visible = true; else notice.Visible = false;
         }
-
       }
     }
 
@@ -744,21 +781,71 @@ namespace portal
       // 1 X 360 Degree Feedback (P5970EN) - 1 Assigned
       // extract the Program ID and assign to user
 
-      string program = "", programs = "";
+      // we need to collect/save programs that are not already on the learner profile else they will be duplicated 
+      string program = "", programs = "", membPrograms = "";
 
+      // get membPrograms before running this app
+      me.memberPrograms2a((int)Session["membNo"], out membPrograms);
+
+      // assemble the new programs then clean them up (eliminate duplicates)
       for (int _i = 0; _i < lbxPurchases.Rows; _i++)
       {
         string purchase = lbxPurchases.Items[_i].Value;
         int _j = purchase.IndexOf("(");
         program = purchase.Substring(_j + 1, 7);
-        programs += program + ' '; // add to the Memb_Programs field of this leaner
+        programs += program + " ";
       }
-      me.memberPrograms2((int)Session["membNo"], programs);
+      membPrograms += " " + programs; // add to existing membPrograms
+      membPrograms = cleanMembPrograms(membPrograms); // cleaning sorts and removes duplicates
+      me.memberPrograms((int)Session["membNo"], membPrograms);
 
       // if the source is NOP then we need to ensure we don't lose the url parameters if we restart
-      string url = Request.Url.AbsoluteUri;
+      //string url = Request.Url.AbsoluteUri;
+
+      // using this link from the tiles table, it is where a tile click for My Content (V8) goes
+      // v8?profile=[[profile]]&membGuid=[[membGuidTemp]]&custId=[[custId]]&lang=[[lang]]
+
+      //url = "/v8/Default.aspx?appId=vubiz.8&profile=vubz&parms=Jm1lbWJHdWlkPUYwREJCMzA4LTE4MzgtNEFEOC1CNzA5LTUyNTkzOERGNkJBNSZjdXN0SWQ9VlVCWjNZRTkmbGFuZz1lbg==";
+
+      string parms = ""
+        + "&membGuid=" + Session["membGuidTemp"].ToString().ToUpper()
+        + "&custId=" + Session["custId"].ToString().ToUpper()
+        + "&lang=" + Session["lang"].ToString().ToUpper()
+        + "&startPage=" + "catalogue"
+        + "&returnUrl=" + HttpContext.Current.Request.Url.AbsoluteUri;
+      byte[] bytes = Encoding.Default.GetBytes(parms);
+      parms = Encoding.UTF8.GetString(bytes);
+      byte[] byte2 = System.Text.Encoding.UTF8.GetBytes(parms);
+      parms = Convert.ToBase64String(byte2);
+
+      string url = "/v8?profile=" + Session["profile"].ToString() + "&parms=" + parms;
       Response.Redirect(url, true);
     }
+
+    protected string cleanMembPrograms(string membPrograms)
+    {
+      string[] programs = membPrograms.Split();
+      Array.Sort(programs);
+      programs = RemoveDuplicates(programs);
+      membPrograms = string.Join(" ", programs);
+      return membPrograms.Trim();
+    }
+
+    public static string[] RemoveDuplicates(string[] s)
+    {// https://stackoverflow.com/questions/9673/how-do-i-remove-duplicates-from-a-c-sharp-array      
+
+      HashSet<string> set = new HashSet<string>(s);
+      string[] result = new string[set.Count];
+      set.CopyTo(result);
+      return result;
+    }
+
+    protected void testClear_Click(object sender, EventArgs e)
+    {
+      me.memberPrograms2b((int)Session["membNo"]);
+    }
+
+    // check for Shaun
   }
 
 }

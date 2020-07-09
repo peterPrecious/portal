@@ -352,7 +352,7 @@ select {
     border: 1px solid #0979bb !important;
     text-decoration: none !important;
 }
-tr#MainContent_rowMembId td, tr#MainContent_rowMembId th, tr#MainContent_rowCustId td, tr#MainContent_rowCustId th {
+tr#MainContent_rowMembId td, tr#MainContent_rowMembId th, tr#MainContent_rowCustId td, tr#MainContent_rowCustId th, tr#MainContent_rowMembPwd td, tr#MainContent_rowMembPwd th{
     width: 32%;
     display: table-cell;
 }
@@ -484,27 +484,27 @@ hr {border-style: none !important;}
     .topnavlinks {display: none !important;}
     .topnavlinks:first-child, .pushtoright {display: inline-block !important; line-height: inherit; padding: 10px; float: none; position: relative;}
     img.headlogo {margin-left: -10px;}
-    tr#MainContent_rowMembId th, tr#MainContent_rowCustId th {
+    tr#MainContent_rowMembId th, tr#MainContent_rowCustId th, tr#MainContent_rowMembPwd th {
         display: block;
         position: absolute;
         margin-top: -30px;
         text-align: left;
     }
-    tr#MainContent_rowCustId th {
+    tr#MainContent_rowCustId th, tr#MainContent_rowMembPwd th {
         margin-top: -15px;
     }
-    tr#MainContent_rowMembId td:nth-child(2), tr#MainContent_rowCustId td:nth-child(2) {
+    tr#MainContent_rowMembId td:nth-child(2), tr#MainContent_rowCustId td:nth-child(2), tr#MainContent_rowMembPwd td:nth-child(2) {
         display: flex;
         justify-content: flex-start;
         align-items: center;
     }
-    input#MainContent_txtMembId, input#MainContent_txtCustId {
+    input#MainContent_txtMembId, input#MainContent_txtCustId, input#MainContent_txtMembPwd {
         width: 40vw !important;
         display: inline-flex;
         justify-content: center;
         align-items: center;
     }
-    input#MainContent_txtCustId {
+    input#MainContent_txtCustId, input#MainContent_txtMembPwd, tr#MainContent_rowMembPwd .eyeMembPwd, tr#MainContent_rowMembPwd a#MainContent_btnMembPwd {
         margin-top: 18px;
     }
     .eyeMembId, .eyeMembPwd {

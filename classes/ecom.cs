@@ -88,7 +88,7 @@ namespace portal
     }
 
 
-    // returns purchased items and assignment status (used in Default.asp for the Purchase Notice)
+    // returns purchased items info (used in Default.asp for the Purchase Notice)
     public void ecomPurchaseNotice(
       string custId,
       string membId,

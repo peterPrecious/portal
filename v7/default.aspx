@@ -84,7 +84,7 @@
     </asp:TableRow>
     <asp:TableRow ID="rowCustId" Visible="false">
       <asp:TableHeaderCell CssClass="tabSignInLabel" Text="<%$  Resources:portal, custId%>">Customer Id :</asp:TableHeaderCell><asp:TableCell HorizontalAlign="Left">
-        <asp:TextBox ID="txtCustId" MaxLength="8" Width="250px" CssClass="input upper" Text="VUBZ5678" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtCustId" MaxLength="8" Width="250px" CssClass="input upper" Text="" runat="server"></asp:TextBox>
       </asp:TableCell><asp:TableCell>
         <asp:LinkButton CssClass="newButton" OnClick="btnCustId_Click" ID="btnCustId" runat="server" Text="<%$  Resources:portal, next%>" />
       </asp:TableCell>
@@ -161,6 +161,8 @@
       </LayoutTemplate>
     </asp:ListView>
 
+    <asp:LinkButton ID="testClear" OnClick="testClear_Click" Visible="false" runat="server">[ Test/Clear Programs ]</asp:LinkButton>
+
     <asp:Image CssClass="logo" ID="logo" runat="server" />
 
     <div class="divNotice">
@@ -172,29 +174,29 @@
         <p style="text-align: left;">
           <asp:Literal runat="server" Text="<%$  Resources:portal, noticeSubTitle%>" />
           <br /><br />
-          <asp:ListBox 
-            ID="lbxPurchases" 
-            CssClass="lbxPurchases" 
-            Width="400px" 
+          <asp:ListBox
+            ID="lbxPurchases"
+            CssClass="lbxPurchases"
+            Width="400px"
             runat="server" />
         </p>
 
-        <asp:LinkButton ID="lnkNoticeY" CssClass="newButton2" Width="300" Height="25" OnClick="lnkNoticeY_Click" runat="server">
+        <asp:LinkButton ID="lnkNoticeY" CssClass="newButton2" Height="25" OnClick="lnkNoticeY_Click" runat="server">
           <asp:Literal runat="server" Text="<%$  Resources:portal, noticeY%>" />
         </asp:LinkButton><br /><br />
 
-        <asp:LinkButton ID="lnkNoticeN" CssClass="newButton2" Width="300" Height="45" OnClick="lnkNoticeN_Click" runat="server">
+        <asp:LinkButton ID="lnkNoticeN" CssClass="newButton2" Height="45" OnClick="lnkNoticeN_Click" runat="server">
           <asp:Literal runat="server" Text="<%$  Resources:portal, noticeN%>" />
         </asp:LinkButton>
 
         <p style="text-align: left; margin-top: 30px;">
           <asp:Literal runat="server" Text="<%$  Resources:portal, noticeNote%>" />
         </p>
+
       </asp:Panel>
     </div>
+
   </div>
-
-
 
   <asp:SqlDataSource ID="SqlDataSource1" runat="server"
     ConnectionString="<%$ ConnectionStrings:apps %>"

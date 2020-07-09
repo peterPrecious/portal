@@ -350,9 +350,6 @@
     <Content Include="documentation\Portal Modifications - Extend Manager Access - App.docx" />
     <Content Include="documentation\Portal Modifications - Extend Manager Access - Learner.docx" />
     <Content Include="documentation\Portal Modifications - Passwords.docx" />
-    <Content Include="Web.config">
-      <SubType>Designer</SubType>
-    </Content>
     <None Include="Properties\PublishProfiles\cloudWeb.pubxml" />
     <Content Include="v7\site.master" />
     <None Include="Properties\PublishProfiles\stagingWeb.pubxml" />
