@@ -74,8 +74,9 @@ namespace portal.v7.facilitator
     // fired when we clear the search criteria
     protected void butClear_Click(object sender, EventArgs e)
     {
-      chkIncludeChildAccounts.Checked = false;
       txtSearch.Text = "";
+      chkIncludeChildAccounts.Checked = false;
+      gvLearners.DataSourceID = SqlDataSource1.ID;
       gvLearners.DataBind();
     }
 

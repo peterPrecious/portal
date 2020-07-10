@@ -742,8 +742,8 @@
 	      M.[Memb_Level]            AS membLevel,
 	      1						              AS membChild
       FROM 
-	      Memb AS M
-	      INNER JOIN Cust AS C
+	      V5_Vubz.dbo.Memb AS M
+	      INNER JOIN V5_Vubz.dbo.Cust AS C
 		      ON M.Memb_AcctId = C.Cust_AcctId
       WHERE
 	      C.Cust_ParentId			= @membAcctId AND

@@ -16,16 +16,9 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="/portal/scripts/$urls.min.js"></script>
-
-    #if DEBUG
-    <script src="/portal/scripts/v7.js"></script>
-    <link href="/portal/styles/css/styles.css" rel="stylesheet" />
-    <link href="/portal/styles/css/siteMaster.css" rel="stylesheet" />
-    #else
-    <script src="/portal/scripts/v7.min.js"></script>
-    <link href="/portal/styles/css/styles.min.css" rel="stylesheet" />
-    <link href="/portal/styles/css/siteMaster.min.css" rel="stylesheet" />
-    #endif
+  <script src="/portal/scripts/v7.min.js"></script>
+  <link href="/portal/styles/css/styles.min.css" rel="stylesheet" />
+  <link href="/portal/styles/css/siteMaster.min.css" rel="stylesheet" />
 
   <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
 

@@ -15,11 +15,16 @@
 
   <script>
 
-    function __doPostBack(tileTargetType, tileTarget, tileName) {
+    function ___doPostBack(tileTargetType, tileTarget, tileName) {
+      //SH - 07/10/20 - For some reason __doPostBack stopped being called, any other function name still gets called, 
+      //prefixed an additional underscore and everything works as it did.
+      //Will look into the cause but am committing this to have a work around in place.
+
       // this captures the tile click 
       // it stores the tileTargetType, tileTarget and tile Name into the form's hidden fields
       // we sumbit this page/form then act accordingly using Page_Load
       // note frmMaster is defined in site.master
+
       $("#tileTargetType").val(tileTargetType);
       $("#tileTarget").val(tileTarget);
       $("#tileName").val(tileName);
@@ -146,7 +151,7 @@
       DataSourceID="SqlDataSource1">
       <ItemTemplate>
         <li class="tile"
-          onclick="__doPostBack('<%#Eval("tileTargetType")%>', '<%#Eval("tileTarget")%>', '<%#Eval("tileName")%>')"
+          onclick="___doPostBack('<%#Eval("tileTargetType")%>', '<%#Eval("tileTarget")%>', '<%#Eval("tileName")%>')" 
           style="background-color: <%#Eval("tileColor")%>">
           <div class="tileIcon">
             <img src="../styles/tiles/<%#Eval("tileIcon")%>" />

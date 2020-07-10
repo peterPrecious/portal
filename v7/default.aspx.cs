@@ -241,12 +241,11 @@ namespace portal
         //txtMembId.Attributes["value"] = "";
         //txtCustId.Text = "";
 
-
         //txtMembId.Attributes["value"] = "VUV5_MGR";
         //txtCustId.Text = "CCHS1068";
 
-        txtMembId.Attributes["value"] = "PETER2345";
-        txtMembPwd.Text = "ALEXANDER";
+        //txtMembId.Attributes["value"] = "PETER2345";
+        //txtMembPwd.Text = "ALEXANDER";
 
         //txtMembId.Attributes["value"] = "vubiz-test";
         //txtMembPwd.Text = "test";
