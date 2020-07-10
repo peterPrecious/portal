@@ -45,7 +45,7 @@
           <asp:TextBox Height="18" CssClass="learnerId" ID="learnerId" placeholder="learnerId" Width="500" Text="483FBD77A79B016B59266CF2ED0CD14949AE145F" runat="server"></asp:TextBox>
         </asp:TableCell>
         <asp:TableCell>
-          <asp:TextBox Height="18" CssClass="programId" ID="programId" placeholder="Program Id" Width="70" Text="P1932EN" runat="server" MaxLength="7"></asp:TextBox>
+          <asp:TextBox Height="18" CssClass="programId" ID="programId" placeholder="Program Id" Width="100" Text="P1932EN" runat="server" MaxLength="7"></asp:TextBox>
         </asp:TableCell>
         <asp:TableCell>
           <asp:TextBox Height="18" CssClass="noDays" ID="noDays" placeholder="# Days" Width="50" Text="-1" runat="server"></asp:TextBox>
