@@ -943,6 +943,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Learner Profiles accessed from another Account are Read Only..
+        /// </summary>
+        internal static string learners_child_1 {
+            get {
+                return ResourceManager.GetString("learners_child_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You cannot Update or Delete this Learner&apos;s Profile..
+        /// </summary>
+        internal static string learners_child_2 {
+            get {
+                return ResourceManager.GetString("learners_child_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Level.
         /// </summary>
         internal static string level {

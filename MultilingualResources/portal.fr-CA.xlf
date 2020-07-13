@@ -954,6 +954,14 @@
           <source>Clear</source>
           <target state="new">Clear</target>
         </trans-unit>
+        <trans-unit id="learners_child_1" translate="yes" xml:space="preserve">
+          <source>Learner Profiles accessed from another Account are Read Only.</source>
+          <target state="new">Learner Profiles accessed from another Account are Read Only.</target>
+        </trans-unit>
+        <trans-unit id="learners_child_2" translate="yes" xml:space="preserve">
+          <source>You cannot Update or Delete this Learner's Profile.</source>
+          <target state="new">You cannot Update or Delete this Learner's Profile.</target>
+        </trans-unit>
       </group>
     </body>
   </file>

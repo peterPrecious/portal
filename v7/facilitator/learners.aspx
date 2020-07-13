@@ -186,6 +186,7 @@
             <asp:BoundField DataField="membLastName" HeaderText="<%$  Resources:portal, lastName%>" SortExpression="membLastName" />
             <asp:BoundField DataField="membEmail" HeaderText="<%$  Resources:portal, email%>" SortExpression="membEmail" />
             <asp:BoundField DataField="membLevel" HeaderText="<%$  Resources:portal, level%>" SortExpression="membLevel" />
+            <asp:BoundField DataField="membChild" HeaderText="Child" HeaderStyle-CssClass="gvLearners_hiddencol" ItemStyle-CssClass="gvLearners_hiddencol" InsertVisible="false" />
             <asp:TemplateField HeaderText="Details">
               <ItemTemplate>
                 <asp:ImageButton
@@ -512,7 +513,7 @@
         </asp:DetailsView>
 
         <asp:Panel ID="panIncludeChildAccounts_Message" CssClass="panIncludeChildAccounts_Message" runat="server" Visible="false">
-          Learner Profiles accessed from another Account are Read Only. You cannot Update or Delete this Learner's Profile.
+          <asp:Literal runat="server" Text="<%$  Resources:portal, learners_child_1%>" /><br /><asp:Literal runat="server" Text="<%$  Resources:portal, learners_child_2%>" />
         </asp:Panel>
 
       </asp:Panel>
@@ -533,7 +534,8 @@
         [Memb_LastName]         AS membLastName,
         [Memb_Email]            AS membEmail,
         [Memb_Organization]     AS membOrganization,
-        [Memb_Level]            AS membLevel
+        [Memb_Level]            AS membLevel,
+        0						            AS membChild
       FROM 
         V5_Vubz.dbo.Memb
       WHERE
