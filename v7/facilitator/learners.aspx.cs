@@ -15,28 +15,45 @@ namespace portal.v7.facilitator
 
     protected void Page_Load(object sender, EventArgs e)
     {
-      se.localize();
-      labError.Text = "";
-
-      //SH - 07/06/20 - Display 'Include Child Accounts' flag for memb_level 4 or greater
-      int membLevel = int.Parse(Session["membLevel"].ToString());
-      if(membLevel >= 4)
+      if (!IsPostBack)
       {
-        chkIncludeChildAccounts.Visible = true;
+        se.localize();
+        labError.Text = "";
+
+        //SH - 07/06/20 - Display 'Include Child Accounts' flag for memb_level 4 or greater
+        int membLevel = int.Parse(Session["membLevel"].ToString());
+        if (membLevel >= 4)
+        {
+          chkIncludeChildAccounts.Visible = true;
+        }
+
+        // count number of learners to configure the title (store in session variable)
+        int userCount = int.Parse(Session["userCount"].ToString());
+        if (userCount == 0)
+        {
+          setNoLearnersText();
+        }
+
+        // this is called by javascript to edit the userName
+        if (Request.Form["__EVENTTARGET"] == "ctl00$MainContent$dvLearner$membId")
+        {
+          membIdValidate();
+        }
+      }
+    }
+
+    protected override void Render(HtmlTextWriter writer)
+    {
+      // Register controls for event validation
+      foreach (GridViewRow r in gvLearners.Rows)
+      {
+        if (r.RowType == DataControlRowType.DataRow)
+        {
+          Page.ClientScript.RegisterForEventValidation(gvLearners.UniqueID, "Select$" + r.RowIndex);
+        }
       }
 
-      // count number of learners to configure the title (store in session variable)
-      int userCount = int.Parse(Session["userCount"].ToString());
-      if (userCount == 0)
-      {
-        setNoLearnersText();
-      }
-
-      // this is called by javascript to edit the userName
-      if (Request.Form["__EVENTTARGET"] == "ctl00$MainContent$dvLearner$membId")
-      {
-        membIdValidate();
-      }
+      base.Render(writer);
     }
 
     protected void setNoLearnersText()
@@ -96,6 +113,15 @@ namespace portal.v7.facilitator
       gvLearners.DataSourceID = SqlDataSource1.ID;
       gvLearners.DataBind();
       setNoLearnersText();
+    }
+
+    protected void gvLearners_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+      if (e.Row.RowType == DataControlRowType.DataRow)
+      {
+        e.Row.Attributes["onclick"] = ClientScript.GetPostBackClientHyperlink(this.gvLearners, "Select$" + e.Row.RowIndex);
+        e.Row.Attributes["style"] = "cursor:pointer";
+      }
     }
 
     // this is fired when we select a learner to edit

@@ -177,6 +177,7 @@
           DataKeyNames="membNo"
           DataSourceID="SqlDataSource1"
           HorizontalAlign="Center"
+          OnRowDataBound="gvLearners_RowDataBound"
           OnSelectedIndexChanged="gvLearners_SelectedIndexChanged"
           PageSize="20"
           RowStyle-HorizontalAlign="Left">
