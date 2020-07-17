@@ -43,7 +43,6 @@
 
     //SH - 07/02/20 - Kick off search when enter is pressed inside search value field
     function txtSearch_EnterEvent(e) {
-      console.info("keyCode: " + e.keyCode);
       if (e.keyCode == 13) {
         $('input[name="<%=butSearch.UniqueID%>"]').click();
       }

@@ -58,7 +58,7 @@ namespace portal.v7.facilitator
 
     protected void setNoLearnersText()
     {
-      DataView dv = null;
+      DataView dv;
 
       if (chkIncludeChildAccounts.Checked)
       {
