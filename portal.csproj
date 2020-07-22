@@ -285,6 +285,7 @@
     <Content Include="styles\tiles\store.png" />
     <Content Include="styles\tiles\wrench.png" />
     <Content Include="styles\tiles\tileIcons.html" />
+    <Content Include="v7\administrator\passwordReplace.aspx" />
     <Content Include="v7\administrator\profiles.aspx" />
     <Content Include="v7\confirm.aspx" />
     <Content Include="v7\administrator\customers.aspx" />
@@ -446,6 +447,13 @@
       <DependentUpon>vuAcct.svc</DependentUpon>
     </Compile>
     <Compile Include="services\vuAcctI.cs" />
+    <Compile Include="v7\administrator\passwordReplace.aspx.cs">
+      <DependentUpon>passwordReplace.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="v7\administrator\passwordReplace.aspx.designer.cs">
+      <DependentUpon>passwordReplace.aspx</DependentUpon>
+    </Compile>
     <Compile Include="v7\administrator\profiles.aspx.cs">
       <DependentUpon>profiles.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

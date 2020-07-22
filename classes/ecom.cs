@@ -90,7 +90,7 @@ namespace portal
 
     // returns purchased items info (used in Default.asp for the Purchase Notice)
     public void ecomPurchaseNotice(
-      string custId,
+      //string custId,
       string membId,
       out string _membProgram,
       out string _ecomProgram,
@@ -108,7 +108,7 @@ namespace portal
           cmd.Connection = con;
           cmd.CommandText = "dbo.sp6purchaseNotice";
           cmd.CommandType = CommandType.StoredProcedure;
-          cmd.Parameters.Add(new SqlParameter("@custId", custId));
+          //cmd.Parameters.Add(new SqlParameter("@custId", custId));
           cmd.Parameters.Add(new SqlParameter("@membId", membId));
           SqlDataReader drd = cmd.ExecuteReader();
           while (drd.Read())

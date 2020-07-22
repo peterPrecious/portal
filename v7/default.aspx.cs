@@ -654,10 +654,11 @@ namespace portal
 
       //    remove the fn.host() references when going live: should be as below:
    // if (cu.custChannelNop && me.membLevel == 3)
-      if (cu.custChannelNop && me.membLevel == 3 && (fn.host() == "localhost" || fn.host() == "stagingweb.vubiz.com"))
+      if (cu.custChannelNop && me.membLevel == 3 && (fn.host() == "localhost" || fn.host() == "stagingweb.vubiz.com" || fn.host() == "corporate.vubiz.com"))
       {
         // Create a new ListItemCollection (programs purchase)  ...  instantiated above at top
-        ec.ecomPurchaseNotice(cu.custId, me.membId,
+//        ec.ecomPurchaseNotice(cu.custId, me.membId,
+        ec.ecomPurchaseNotice(me.membId,
         out string _membPrograms,
         out string _ecomPrograms,
         out string _progTitles,
@@ -810,7 +811,7 @@ namespace portal
         + "&membGuid=" + Session["membGuidTemp"].ToString().ToUpper()
         + "&custId=" + Session["custId"].ToString().ToUpper()
         + "&lang=" + Session["lang"].ToString().ToUpper()
-        + "&startPage=" + "catalogue"
+        + "&startPage=" + "programs"
         + "&returnUrl=" + HttpContext.Current.Request.Url.AbsoluteUri;
       byte[] bytes = Encoding.Default.GetBytes(parms);
       parms = Encoding.UTF8.GetString(bytes);
@@ -844,7 +845,6 @@ namespace portal
       me.memberPrograms2b((int)Session["membNo"]);
     }
 
-    // check for Shaun
   }
 
 }

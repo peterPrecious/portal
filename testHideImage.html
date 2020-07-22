@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <img src="styles/sadFace.gif" /><br />
+
+  <script>
+    $(window).resize(function () {
+      $(window).height() < 500 ? $("img").hide() : $("img").show();
+    });
+  </script>
+
+</body>
+</html>
