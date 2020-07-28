@@ -405,6 +405,12 @@
   <data name="learners_9" xml:space="preserve">
     <value>Note: clicking on the Field name (i.e. Username) will provide a description above.  Click on the description to remove it.</value>
   </data>
+  <data name="learners_child_1" xml:space="preserve">
+    <value>Learner Profiles accessed from another Account are Read Only.</value>
+  </data>
+  <data name="learners_child_2" xml:space="preserve">
+    <value>You cannot Update or Delete this Learner's Profile.</value>
+  </data>
   <data name="level" xml:space="preserve">
     <value>Level</value>
   </data>

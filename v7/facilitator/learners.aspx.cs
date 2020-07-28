@@ -15,44 +15,77 @@ namespace portal.v7.facilitator
 
     protected void Page_Load(object sender, EventArgs e)
     {
-      se.localize();
-      labError.Text = "";
-
-      //SH - 07/06/20 - Display 'Include Child Accounts' flag for memb_level 4 or greater
-      int membLevel = int.Parse(Session["membLevel"].ToString());
-      if(membLevel >= 4)
+      if (!IsPostBack)
       {
-        chkIncludeChildAccounts.Visible = true;
-      }
+        se.localize();
+        labError.Text = "";
 
-      // count number of learners to configure the title (store in session variable)
-      int userCount = int.Parse(Session["userCount"].ToString());
-      if (userCount == 0)
-      {
-        DataView dv = (DataView)SqlDataSource1.Select(DataSourceSelectArguments.Empty);
-        Session["userCount"] = dv.Count;
-        if (dv.Count == 0)
+        //SH - 07/06/20 - Display 'Include Child Accounts' flag for memb_level 4 or greater
+        int membLevel = int.Parse(Session["membLevel"].ToString());
+        if (membLevel >= 4)
         {
-          noLearners.Visible = false;
+          chkIncludeChildAccounts.Visible = true;
         }
-        else if (dv.Count == 1)
+
+        // count number of learners to configure the title (store in session variable)
+        int userCount = int.Parse(Session["userCount"].ToString());
+        if (userCount == 0)
         {
-          noLearners.Text = Session["userCount"] + " " + GetGlobalResourceObject("portal", "noLearners_1").ToString();
+          setNoLearnersText();
         }
-        else if (dv.Count == 200)
+
+        // this is called by javascript to edit the userName
+        if (Request.Form["__EVENTTARGET"] == "ctl00$MainContent$dvLearner$membId")
         {
-          noLearners.Text = Session["userCount"] + " " + GetGlobalResourceObject("portal", "noLearners_200").ToString();
-        }
-        else
-        {
-          noLearners.Text = Session["userCount"] + " " + GetGlobalResourceObject("portal", "noLearners_2").ToString();
+          membIdValidate();
         }
       }
+    }
 
-      // this is called by javascript to edit the userName
-      if (Request.Form["__EVENTTARGET"] == "ctl00$MainContent$dvLearner$membId")
+    protected override void Render(HtmlTextWriter writer)
+    {
+      // Register controls for event validation
+      foreach (GridViewRow r in gvLearners.Rows)
       {
-        membIdValidate();
+        if (r.RowType == DataControlRowType.DataRow)
+        {
+          Page.ClientScript.RegisterForEventValidation(gvLearners.UniqueID, "Select$" + r.RowIndex);
+        }
+      }
+
+      base.Render(writer);
+    }
+
+    protected void setNoLearnersText()
+    {
+      DataView dv;
+
+      if (chkIncludeChildAccounts.Checked)
+      {
+        dv = (DataView)SqlDataSource3.Select(DataSourceSelectArguments.Empty);
+      }
+      else
+      {
+        dv = (DataView)SqlDataSource1.Select(DataSourceSelectArguments.Empty);
+      }
+
+      Session["userCount"] = dv.Count;
+
+      if (dv.Count == 0)
+      {
+        noLearners.Visible = false;
+      }
+      else if (dv.Count == 1)
+      {
+        noLearners.Text = Session["userCount"] + " " + GetGlobalResourceObject("portal", "noLearners_1").ToString();
+      }
+      else if (dv.Count == 200)
+      {
+        noLearners.Text = Session["userCount"] + " " + GetGlobalResourceObject("portal", "noLearners_200").ToString();
+      }
+      else
+      {
+        noLearners.Text = Session["userCount"] + " " + GetGlobalResourceObject("portal", "noLearners_2").ToString();
       }
     }
 
@@ -69,6 +102,7 @@ namespace portal.v7.facilitator
       }
 
       gvLearners.DataBind();
+      setNoLearnersText();
     }
 
     // fired when we clear the search criteria
@@ -78,23 +112,50 @@ namespace portal.v7.facilitator
       chkIncludeChildAccounts.Checked = false;
       gvLearners.DataSourceID = SqlDataSource1.ID;
       gvLearners.DataBind();
+      setNoLearnersText();
+    }
+
+    protected void gvLearners_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+      if (e.Row.RowType == DataControlRowType.DataRow)
+      {
+        e.Row.Attributes["onclick"] = ClientScript.GetPostBackClientHyperlink(this.gvLearners, "Select$" + e.Row.RowIndex);
+        e.Row.Attributes["style"] = "cursor:pointer";
+      }
     }
 
     // this is fired when we select a learner to edit
     protected void gvLearners_SelectedIndexChanged(object sender, EventArgs e)
     {
+      panIncludeChildAccounts_Message.Visible = false;
       panTop.Visible = false;
       panBot.Visible = true;
       dvLearner.ChangeMode(DetailsViewMode.ReadOnly);
+      dvLearner.DataBind();
 
-      //TODO: add flag to determine if account is a child account
-      //panIncludeChildAccounts_Message.Visible = true;
+      GridViewRow row = gvLearners.SelectedRow;
+      if(!string.IsNullOrWhiteSpace(row.Cells[5].Text))
+      {
+        int isChild = Convert.ToInt32(row.Cells[5].Text);
 
-      //TODO: disable buttons
-      //btnEdit
-      //btnDelete
-      //btnInsert
-      //btnUpdate
+        if (isChild > 0)
+        {
+          ImageButton btnEdit = (ImageButton)dvLearner.FindControl("btnEdit");
+          ImageButton btnDelete = (ImageButton)dvLearner.FindControl("btnDelete");
+
+          if (btnEdit != null)
+          {
+            btnEdit.Enabled = false;
+          }
+
+          if (btnDelete != null)
+          {
+            btnDelete.Enabled = false;
+          }
+
+          panIncludeChildAccounts_Message.Visible = true;
+        }
+      }
     }
 
     // this is the icon at the top title to add a learner

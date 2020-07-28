@@ -26,7 +26,15 @@
     .dvLearner td:last-child { text-align: left; }
   .dvLearner tr:last-child td { text-align: center; height: 50px; vertical-align: middle; }
 
-.membLevel, .membManagerAccess { border: none; font-size: 1em; width: 200px; }
+.gvLearners_hiddencol {
+  display: none;
+}
+
+.membLevel, .membManagerAccess {
+  border: none;
+  font-size: 1em;
+  width: 200px;
+}
 
 .commands { padding: 0 10px; }
 option:checked { font-weight: bold; font-style: italic; }
@@ -43,4 +51,10 @@ option:checked { font-weight: bold; font-style: italic; }
 .labError {
   top: 5px;
   position: relative;
+}
+
+.panIncludeChildAccounts_Message {
+  color: red;
+  font-weight: bold;
+  text-align: center;
 }
