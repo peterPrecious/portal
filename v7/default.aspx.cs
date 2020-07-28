@@ -710,7 +710,8 @@ namespace portal
 
             // Brad decided everything but the title was overkill
             //            listItem.Add(__ecomQuantity[i] + " X " + __progTitle[i] + " (" + __ecomProgram[i] + ") - " + _noAssigned + " " + assigned);
-            listItem.Add(__progTitle[i]);
+            listItem.Add(__progTitle[i] + " (" + __ecomProgram[i] + ")");
+            //listItem.Add(__progTitle[i]);
           }
 
           lbxPurchases.Rows = noPurchases - 1;
