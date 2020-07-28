@@ -708,9 +708,7 @@ namespace portal
             exists = membPrograms.IndexOf(__ecomProgram[i]);
             if (exists > -1) selfAssigned++;
 
-            // Brad decided everything but the title was overkill
-            //            listItem.Add(__ecomQuantity[i] + " X " + __progTitle[i] + " (" + __ecomProgram[i] + ") - " + _noAssigned + " " + assigned);
-            listItem.Add(__progTitle[i]);
+            listItem.Add(__ecomQuantity[i] + " X " + __progTitle[i] + " (" + __ecomProgram[i] + ") - " + _noAssigned + " " + assigned);
           }
 
           lbxPurchases.Rows = noPurchases - 1;
