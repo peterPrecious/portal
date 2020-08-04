@@ -30,7 +30,7 @@ namespace portal.v7.manager
       // when testing on localhost, we need to force B's app from staging since we don't have that app locallh
       string host = fn.host();
       string url = host == "localhost"
-        ? "https://stagingweb.vubiz.com/Gold/vuSCORMAdmin/SessionQuickEdit.aspx?MembNo=" + membNo + "&SessionID=" + sessId + "&memberID=" + membNo + "&moduleID=" + modsNo + "&programID=" + progNo
+        ? "https://vubizstaging.com/Gold/vuSCORMAdmin/SessionQuickEdit.aspx?MembNo=" + membNo + "&SessionID=" + sessId + "&memberID=" + membNo + "&moduleID=" + modsNo + "&programID=" + progNo
         : "/Gold/vuSCORMAdmin/SessionQuickEdit.aspx?MembNo=" + membNo + "&SessionID=" + sessId + "&memberID=" + membNo + "&moduleID=" + modsNo + "&programID=" + progNo;
       miniEditor.Attributes["src"] = url;
       miniEditorShell.Visible = true;

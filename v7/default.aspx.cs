@@ -653,11 +653,11 @@ namespace portal
       //    all purchases have not been assigned to the NOP / FAC
 
       //    remove the fn.host() references when going live: should be as below:
-   // if (cu.custChannelNop && me.membLevel == 3)
-      if (cu.custChannelNop && me.membLevel == 3 && (fn.host() == "localhost" || fn.host() == "stagingweb.vubiz.com" || fn.host() == "corporate.vubiz.com"))
+      // if (cu.custChannelNop && me.membLevel == 3)
+      if (cu.custChannelNop && me.membLevel == 3 && (fn.host() == "localhost" || fn.host() == "vubizstaging.com"))
       {
         // Create a new ListItemCollection (programs purchase)  ...  instantiated above at top
-//        ec.ecomPurchaseNotice(cu.custId, me.membId,
+        //      ec.ecomPurchaseNotice(cu.custId, me.membId,
         ec.ecomPurchaseNotice(me.membId,
         out string _membPrograms,
         out string _ecomPrograms,
@@ -690,36 +690,57 @@ namespace portal
 
           // this is the number of programs that have been assigned to the person running this (self).  
           // important: if all programs have been assigned to "self" then no need to render the purchase notice panel
-          int selfAssigned = 0; int exists;
+          int isSelfAssigned = 0, canSelfAssign = 0; int exists;
 
           // get membPrograms before running this app so we can see if all programs in this section are already assigned
-          string membPrograms = ""; 
+          string membPrograms = "";
           me.memberPrograms2a((int)Session["membNo"], out membPrograms);
 
 
-          // skip the first entry as it will always be empty (starts at 1, thus reduce noPurchases by 1)
+          // loop through the purchases (1-x), skipping the first entry(0) as it will always be empty (starts at 1, thus reduce noPurchases by 1)
           for (int i = 1; i <= noPurchases - 1; i++)
           {
-
             // this determines how many of each program have been assigned, across the account
             ec.noPurchasedAssigned(cu.custId, __ecomProgram[i], out string _noAssigned);
 
-            // this determines how many of each program have been assigned to the NOP fac (self)
-            exists = membPrograms.IndexOf(__ecomProgram[i]);
-            if (exists > -1) selfAssigned++;
-
-            // Brad decided everything but the title was overkill
-            //            listItem.Add(__ecomQuantity[i] + " X " + __progTitle[i] + " (" + __ecomProgram[i] + ") - " + _noAssigned + " " + assigned);
-            listItem.Add(__progTitle[i] + " (" + __ecomProgram[i] + ")");
-            //listItem.Add(__progTitle[i]);
+            // only continue if we have some programs left to assign
+            if (Int32.Parse(_noAssigned) < Int32.Parse(__ecomQuantity[i]))
+            {
+              // has this program been self assigned to the NOP fac (ie the program is in the membPrograms field
+              // only show programs that have not been isSelfAssigned
+              exists = membPrograms.IndexOf(__ecomProgram[i]);
+              if (exists > -1)
+              {
+                isSelfAssigned++;
+              }
+              else
+              {
+                canSelfAssign++;
+                listItem.Add(__progTitle[i] + " (" + __ecomProgram[i] + ")");
+              }
+            }
           }
 
-          lbxPurchases.Rows = noPurchases - 1;
 
-          lbxPurchases.DataSource = listItem;
-          lbxPurchases.DataBind();
+          // render the listBox?          
+          //          if (isSelfAssigned != (noPurchases - 1))
+//          if (isSelfAssigned > 0)
+            if (canSelfAssign > 0)
+            {
+            // populate the ListBox
+//            lbxPurchases.Rows = isSelfAssigned;
+            lbxPurchases.Rows = canSelfAssign;
+            lbxPurchases.DataSource = listItem;
+            lbxPurchases.DataBind();
 
-          if (selfAssigned != (noPurchases - 1)) notice.Visible = true; else notice.Visible = false;
+            notice.Visible = true;
+          }
+          else
+          {
+            notice.Visible = false;
+          }
+
+
         }
       }
     }

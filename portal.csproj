@@ -351,9 +351,10 @@
     <Content Include="documentation\Portal Modifications - Extend Manager Access - App.docx" />
     <Content Include="documentation\Portal Modifications - Extend Manager Access - Learner.docx" />
     <Content Include="documentation\Portal Modifications - Passwords.docx" />
-    <None Include="Properties\PublishProfiles\cloudWeb.pubxml" />
     <Content Include="v7\site.master" />
-    <None Include="Properties\PublishProfiles\stagingWeb.pubxml" />
+    <None Include="Properties\PublishProfiles\stagingNew01.pubxml" />
+    <None Include="Properties\PublishProfiles\stagingNew02.pubxml" />
+    <None Include="Properties\PublishProfiles\vubizcloud.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -765,6 +766,7 @@
   <ItemGroup>
     <XliffResource Include="MultilingualResources\portal.fr-CA.xlf" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
