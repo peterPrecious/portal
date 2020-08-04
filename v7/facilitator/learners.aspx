@@ -285,8 +285,6 @@
               <HeaderStyle CssClass="tip membAcctId" Font-Bold="True" HorizontalAlign="Right" />
             </asp:TemplateField>
 
-            <asp:TemplateField></asp:TemplateField>
-
             <asp:TemplateField HeaderText="<%$ Resources:portal, uniqueId%>">
               <EditItemTemplate>
                 <asp:Label ID="lab_membId" runat="server" Text='<%# Bind("membId") %>' Enabled="false"></asp:Label>
