@@ -197,7 +197,7 @@ namespace portal.v7.facilitator
         }
         else
         {
-          DetailsViewRow row = dvLearner.Rows[1];
+          DetailsViewRow row = dvLearner.Rows[2];
           row.Visible = false;
         }
 
@@ -249,7 +249,7 @@ namespace portal.v7.facilitator
           Label labMembPwd = (Label)dvLearner.FindControl("membPwd");
           if (labMembPwd != null)
           {
-            DetailsViewRow row = dvLearner.Rows[1];
+            DetailsViewRow row = dvLearner.Rows[2];
             row.Visible = false;
           }
         }
@@ -301,7 +301,7 @@ namespace portal.v7.facilitator
           TextBox txtMembPwd = (TextBox)dvLearner.FindControl("membPwd");
           if (txtMembPwd != null)
           {
-            DetailsViewRow row = dvLearner.Rows[1];
+            DetailsViewRow row = dvLearner.Rows[2];
             row.Visible = false;
           }
         }
