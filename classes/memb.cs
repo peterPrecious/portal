@@ -604,7 +604,7 @@ namespace portal
       return (membNo.ToString() + "-" + l);
     }
 
-    public void memberPrograms(int membNo, string membPrograms) // used in assignPrograms
+    public void memberPrograms(int membNo, string membPrograms) // used in assignPrograms (default.aspx)
     {
       using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
       {

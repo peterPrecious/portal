@@ -231,9 +231,25 @@ namespace portal
         logo.ImageUrl = imageUrl;
       }
 
-      // preset credentials for fast localhost testing ( mucks up signin to use anything else )
+      // preset credentials for fast testing ( mucks up signin to use anything else )
       if (fn.host() == "localhost")
       {
+        //txtMembId.Attributes["value"] = "";
+        //txtCustId.Text = "";
+
+        //txtMembId.Attributes["value"] = "VUV5_MGR";
+        //txtCustId.Text = "CCHS1068";
+
+        //txtMembId.Attributes["value"] = "PETER2345";
+        //txtMembPwd.Text = "ALEXANDER";
+
+        //txtMembId.Attributes["value"] = "vubiz-test";
+        //txtMembPwd.Text = "test";
+
+        //txtMembId.Attributes["value"] = "VUV8_ADM";
+        //txtCustId.Text = "CFIB5288";
+        //txtCustId.Text = "EVHR3DUX";
+
         txtMembId.Attributes["value"] = "TESTAUG2020-1";
         txtMembPwd.Attributes["value"] = "TEST";
       }
@@ -241,8 +257,10 @@ namespace portal
       // if secure, render tiles
       if ((bool)Session["secure"])
       {
+        Session["menuItems"] = "";
         Session["curMenuItems"] = 0;
         Session["numMenuItems"] = lvTiles.Items.Count;
+
         lvTiles.Visible = true;
       }
 
@@ -364,6 +382,11 @@ namespace portal
         }
 
         txtMembId.Attributes["value"] = Session["membId"].ToString();
+
+        // this is to determine if the menu has been listed
+        Session["menuItems"] = "";
+
+        // txtMembPwd.Attributes["value"] = "TANGERINE";
       }
 
     }
@@ -679,7 +702,7 @@ namespace portal
 
           // get membPrograms before running this app so we can see if all programs in this section are already assigned
           string membPrograms = "";
-          //        Session["menuItems"] = "";
+          Session["menuItems"] = "";
 
           me.memberPrograms2a((int)Session["membNo"], out membPrograms);
 
@@ -779,13 +802,40 @@ namespace portal
     protected void lnkNoticeY_Click(object sender, EventArgs e)
     {
       notice.Visible = false;
+      //    return;
+
+      // this is what a purchase looks like:
+      // 1 X 360 Degree Feedback (P5970EN) - 1 Assigned
+      // extract the Program ID and assign to user
 
       // we need to collect/save programs that are not already on the learner profile else they will be duplicated 
-      string membPrograms = "";
+      string program = "", programs = "", membPrograms = "";
 
       // get membPrograms before running this app
       me.memberPrograms2a((int)Session["membNo"], out membPrograms);
 
+      // assemble the new programs then clean them up (eliminate duplicates)
+      //    string[] purchases = membPrograms.Split();
+
+      //Table tabPurchases = (Table)Panel1.FindControl("tabPurchases");
+      //foreach (TableRow row in tabPurchases.Rows)
+      //{
+      //  pooh = row.Cells[0].ToString();
+      //}
+
+
+
+      //for (int _i = 0; _i < lbxPurchases.Rows; _i++)
+      //{
+      //  string purchase = lbxPurchases.Items[_i].Value;
+      //  int _j = purchase.IndexOf("(");
+      //  program = purchase.Substring(_j + 1, 7);
+      //  programs += program + " ";
+      //}
+
+
+
+//      membPrograms += " " + programs; // add to existing membPrograms
       membPrograms += " " + Session["menuItems"]; // add to existing membPrograms
       membPrograms = cleanMembPrograms(membPrograms); // cleaning sorts and removes duplicates
       me.memberPrograms((int)Session["membNo"], membPrograms);
@@ -796,17 +846,13 @@ namespace portal
       // using this link from the tiles table, it is where a tile click for My Content (V8) goes
       // v8?profile=[[profile]]&membGuid=[[membGuidTemp]]&custId=[[custId]]&lang=[[lang]]
 
-      //localhost/v8/Default.aspx?appId=vubiz.8&profile=vubz&parms=Jm1lbWJHdWlkPUYwREJCMzA4LTE4MzgtNEFEOC1CNzA5LTUyNTkzOERGNkJBNSZjdXN0SWQ9VlVCWjNZRTkmbGFuZz1lbg==
-      // Thread.Sleep(TimeSpan.FromSeconds(10)); // pause before jumping to another app - doesn't seem to help
-
-      // this is the tileTarget for My Content (v8)
-      //             /v8?profile=[[profile]]&membGuid=[[membGuidTemp]]&custId=[[custId]]
+      //url = "/v8/Default.aspx?appId=vubiz.8&profile=vubz&parms=Jm1lbWJHdWlkPUYwREJCMzA4LTE4MzgtNEFEOC1CNzA5LTUyNTkzOERGNkJBNSZjdXN0SWQ9VlVCWjNZRTkmbGFuZz1lbg==";
 
       string parms = ""
         + "&membGuid=" + Session["membGuidTemp"].ToString().ToUpper()
         + "&custId=" + Session["custId"].ToString().ToUpper()
         + "&lang=" + Session["lang"].ToString().ToUpper()
-        + "&startPage=" + "page_programs"
+        + "&startPage=" + "programs"
         + "&returnUrl=" + HttpContext.Current.Request.Url.AbsoluteUri;
       byte[] bytes = Encoding.Default.GetBytes(parms);
       parms = Encoding.UTF8.GetString(bytes);
@@ -814,7 +860,6 @@ namespace portal
       parms = Convert.ToBase64String(byte2);
 
       string url = "/v8?profile=" + Session["profile"].ToString() + "&parms=" + parms;
-
       Response.Redirect(url, true);
     }
 
