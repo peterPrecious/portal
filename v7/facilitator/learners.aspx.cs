@@ -190,6 +190,9 @@ namespace portal.v7.facilitator
 
       if (dvLearner.FindControl("membId") != null)
       {
+        //membAcctId Row, not needed on insert
+        dvLearner.Rows[0].Visible = false;
+
         ((TextBox)dvLearner.FindControl("membId")).Text = "";
         if (se.usesPassword) //se.usesPassword set on SignIn, typically a Profile entry
         {

@@ -9,19 +9,28 @@
   <link href="/portal/styles/css/learners.css" rel="stylesheet" />
   <script>
     var trSave = "";  // this is where we save the managerAccess row, which we hide and then show
+    var trIndex = -1;
+
     function managerAccess(action, usesPassword) {
-      // determine which row to hide/show depending on whether this account usesPassword or not
-      var rowNo = 8;
-      if (usesPassword == 'True') rowNo = 9;
-      var trRow = $(".detailsView")[0].rows[rowNo]; // get row9, normally managerAccess unless that has been detached
-      var tdTxt = $(".detailsView")[0].rows[rowNo].cells[0].innerHTML; // get row9, normally managerAccess unless that has been detached
-      if (action === "hide" && tdTxt === "Manager Access") {
-        trRowSave = trRow;
-        trRow.remove();
-      } if (action === "show" && tdTxt != "Manager Access" && trRowSave != "") {
+      if (action === "hide" ) {
+        $("table.dvLearner > tbody  > tr").each(function (index) {
+          if ($(".dvLearner")[0].rows[index].cells[0].innerHTML === "Manager Access") {
+            trIndex = index;  //store row index for future use
+            var trRow = $(".dvLearner")[0].rows[trIndex]; // get managerAccess row
+            trRowSave = trRow;  //store row for future use
+            trRow.remove();
+            return false;
+          }
+        });
+      }
+      else if (action === "show" && trRowSave != "" && trIndex > -1) {
+        var trRow = $(".dvLearner")[0].rows[trIndex];
         trRow.before(trRowSave);  // if it was detached then plop the row back into the table
+        trSave = "";  //reset holding variable
+        trIndex = -1; //reset holding variable
       }
     }
+
     function membIdValidate(action) {
       if (action === "onFocus") { // this will reset any invalid membId plus associated label
         $("#MainContent_dvLearner_membId").val("");
@@ -386,7 +395,7 @@
 
             <asp:TemplateField HeaderText="<%$ Resources:portal, level%>" HeaderStyle-Font-Bold="true" HeaderStyle-HorizontalAlign="Right">
               <EditItemTemplate>
-                <asp:DropDownList Height="23" ID="membLevel" SelectedValue='<%# Bind("membLevel") %>' CssClass="membLevel" runat="server">
+                <asp:DropDownList ID="membLevel" SelectedValue='<%# Bind("membLevel") %>' CssClass="membLevel" runat="server">
                   <asp:ListItem Value="1" Text="Guest"></asp:ListItem>
                   <asp:ListItem Value="2" Text="Learner"></asp:ListItem>
                   <asp:ListItem Value="3" Text="Facilitator"></asp:ListItem>
@@ -398,7 +407,7 @@
                 <asp:Literal runat="server" Text="<%$ Resources:portal, learners_11%>" />
               </EditItemTemplate>
               <InsertItemTemplate>
-                <asp:DropDownList Height="23" ID="membLevel" SelectedValue='<%# Bind("membLevel") %>' CssClass="membLevel" runat="server">
+                <asp:DropDownList ID="membLevel" SelectedValue='<%# Bind("membLevel") %>' CssClass="membLevel" runat="server">
                   <asp:ListItem Value="1" Text="Guest"></asp:ListItem>
                   <asp:ListItem Value="2" Text="Learner"></asp:ListItem>
                   <asp:ListItem Value="3" Text="Facilitator"></asp:ListItem>
