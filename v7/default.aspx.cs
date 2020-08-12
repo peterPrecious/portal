@@ -307,7 +307,6 @@ namespace portal
         Session["membId"] = txtMembId.Text.ToUpper();
         Session["isVisitor"] = false;
         Session["isNop"] = false;
-        Session["usesPassword"] = false;
 
         bool isNopV8 = true; // use this for next few steps
 
@@ -321,13 +320,18 @@ namespace portal
           isNopV8 = false;
         }
 
+        //Retrieve member profile and populate usesPassword
+        me.memberGetProfile(txtMembId.Text.ToUpper(), out string _profile);
+        pr.profileValueByParameter(_profile, "password", out string _usesPassword);
+        Session["usesPassword"] = (_usesPassword == "True");
+
         // first check Username and if V8 or NOP then show Password else show CustId  
         // Aug 2018: if there is no nopReturnUrl or ChildId on the apps table then insert it - means they bought courses in NOP but didn't hit Administration
         // Apr 2019: change memberIsNop to return "alias" as well as the mistakenly called "profile" plus usesPassword to determine if we need to render that field
         // checks for Nop AND V8 !!
         // _usesPassword : true if NOP or V8
         if (isNopV8 & me.memberIsNop(txtMembId.Text.ToUpper(), Convert.ToInt32(Session["storeId"]), Session["nopReturnUrl"].ToString(),
-          out string _custId, out string _membPwd, out string _alias, out string _profile, out string _usesPassword))
+          out string _custId, out string _membPwd, out string _alias, out string _profile_old, out string _usesPassword_old))
         {
           // rowMembId.Visible = false;
           btnMembId.Visible = false;
@@ -336,7 +340,6 @@ namespace portal
           Session["membPwd"] = _membPwd.ToUpper();
           Session["alias"] = _alias.ToUpper(); // changed to alias from original profile Apr 2019  // Session["profile"] = _profile.ToUpper(); // used as profile when it was originally alias?
           Session["isNop"] = true;
-          if (_usesPassword == "True") Session["usesPassword"] = true; // default is set to false above
           txtMembPwd.Focus();
         }
 

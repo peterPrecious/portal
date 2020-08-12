@@ -15,9 +15,10 @@ namespace portal.v7.facilitator
 
     protected void Page_Load(object sender, EventArgs e)
     {
+      se.localize();
+
       if (!IsPostBack)
       {
-        se.localize();
         labError.Text = "";
 
         //SH - 07/06/20 - Display 'Include Child Accounts' flag for memb_level 4 or greater

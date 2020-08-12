@@ -372,6 +372,27 @@ namespace portal
       }
     }
 
+    public void memberGetProfile(
+      string membId,
+      out string profile)
+    {
+      using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
+      {
+        con.Open();
+        using (SqlCommand cmd = new SqlCommand())
+        {
+          cmd.Connection = con;
+          cmd.CommandText = "dbo.sp7memberGetProfile";
+          cmd.CommandType = CommandType.StoredProcedure;
+          cmd.Parameters.Add(new SqlParameter("@membId", membId));
+          cmd.Parameters.Add("@profile", SqlDbType.VarChar, 50).Direction = ParameterDirection.Output;
+          cmd.ExecuteNonQuery();
+
+          profile = cmd.Parameters["@profile"].Value.ToString();
+        }
+      }
+    }
+
     public bool memberIsNop(
       string membId,
       int storeId,
