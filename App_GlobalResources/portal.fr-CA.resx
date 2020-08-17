@@ -717,4 +717,7 @@
   <data name="noticeSubTitle" xml:space="preserve">
     <value>Nous avons remarqué que certains cours ne sont pas assignés.</value>
   </data>
+  <data name="clear" xml:space="preserve">
+    <value>Effacer</value>
+  </data>
 </root>

@@ -96,47 +96,52 @@
       });
     });
 
+    function setLabError(desc) {
+      if ($(".labError").html() == "" || $(".labError").html() != desc) {
+        $(".labError").html(desc);
+      } else {
+        $(".labError").html("");
+      }
+    }
+
     $(function () {
 
       var lang = "<%=Session["lang"]%>";  // get language from C#
 
       // generates a yellow description in labError of panBottom
       if (lang !== "fr") {
-        $(".membAcctId").on("click", function () { $(".labError").html("Customer ID represents the account the learner is assigned to.") })
-        $(".membId").on("click", function () { $(".labError").html("Username is a globally unique value for this learner (i.e. Email Address). Once assigned it cannot be changed.") })
-        $(".membPwd").on("click", function () { $(".labError").html("Password provides extra security. It can be modified at a later stage.") })
-        $(".membFirstName").on("click", function () { $(".labError").html("First Name is used in reports and certificates.") })
-        $(".membLastName").on("click", function () { $(".labError").html("Last Name is used in reports and certificates.") })
-        $(".membEmail").on("click", function () { $(".labError").html("Email is used when you wish certain documents to be forwarded to you.") })
-        $(".membOrganization").on("click", function () { $(".labError").html("Organization appears on certain reports.") })
-        $(".membMemo").on("click", function () { $(".labError").html("Memo is meant to maintain fields of value to your organization.") })
-        $(".membPrograms").on("click", function () { $(".labError").html("Programs are assigned in a different app and are listed here for convenience.") })
-        $(".membLevel").on("click", function () { $(".labError").html("The Level determines the features accessible to this person. Can be Learner or Facilitator.") })
-        $(".membManagerAccess").on("click", function () { $(".labError").html("Manager Access are special apps optionally available to a Manager.") })
-        $(".membReceiveAlerts").on("click", function () { $(".labError").html("Receive Alerts enables this person to receive Email Alerts.") })
-        $(".membResendAlerts").on("click", function () { $(".labError").html("Resend Alerts will resend any outstanding Email Alerts.") })
-        $(".membActive").on("click", function () { $(".labError").html("Active is a key field. If set 'off' then this individual will no longer have access to the system.") })
-        $(".membNo").on("click", function () { $(".labError").html('[Vubiz Internal] is a system value used by Vubiz Support for support purposes.') })
+        $(".membAcctId").on("click", function () { setLabError("Customer ID represents the account the learner is assigned to."); });
+        $(".membId").on("click", function () { setLabError("Username is a globally unique value for this learner (i.e. Email Address). Once assigned it cannot be changed."); });
+        $(".membPwd").on("click", function () { setLabError("Password provides extra security. It can be modified at a later stage."); });
+        $(".membFirstName").on("click", function () { setLabError("First Name is used in reports and certificates."); });
+        $(".membLastName").on("click", function () { setLabError("Last Name is used in reports and certificates."); });
+        $(".membEmail").on("click", function () { setLabError("Email is used when you wish certain documents to be forwarded to you."); });
+        $(".membOrganization").on("click", function () { setLabError("Organization appears on certain reports."); });
+        $(".membMemo").on("click", function () { setLabError("Memo is meant to maintain fields of value to your organization."); });
+        $(".membPrograms").on("click", function () { setLabError("Programs are assigned in a different app and are listed here for convenience."); });
+        $(".membLevel").on("click", function () { setLabError("The Level determines the features accessible to this person. Can be Learner or Facilitator."); });
+        $(".membManagerAccess").on("click", function () { setLabError("Manager Access are special apps optionally available to a Manager."); });
+        $(".membReceiveAlerts").on("click", function () { setLabError("Receive Alerts enables this person to receive Email Alerts."); });
+        $(".membResendAlerts").on("click", function () { setLabError("Resend Alerts will resend any outstanding Email Alerts."); });
+        $(".membActive").on("click", function () { setLabError("Active is a key field. If set 'off' then this individual will no longer have access to the system."); });
+        $(".membNo").on("click", function () { setLabError("[Vubiz Internal] is a system value used by Vubiz Support for support purposes."); });
       } else {
-        $(".membAcctId").on("click", function () { $(".labError").html("L’identification du client représente le compte auquel l'apprenant est affecté.") })
-        $(".membId").on("click", function () { $(".labError").html("Le nom d'utilisateur est une valeur unique à l'échelle mondiale pour cet apprenant (c.-à-d. adresse e-mail). Une fois assigné, il ne peut pas être changé.") })
-        $(".membPwd").on("click", function () { $(".labError").html("Mot de passe offre une sécurité supplémentaire. Il peut être modifié à un stade ultérieur.") })
-        $(".membFirstName").on("click", function () { $(".labError").html("Le prénom est utilisé dans les rapports et les certificats.") })
-        $(".membLastName").on("click", function () { $(".labError").html("Le nom de famille est utilisé dans les rapports et les certificats.") })
-        $(".membEmail").on("click", function () { $(".labError").html("L'e-mail est utilisé lorsque vous souhaitez que certains documents vous soient transmis.") })
-        $(".membOrganization").on("click", function () { $(".labError").html("L'organisation apparaît sur certains rapports.") })
-        $(".membMemo").on("click", function () { $(".labError").html("Memo est destiné à maintenir des champs de valeur pour votre organisation.") })
-        $(".membPrograms").on("click", function () { $(".labError").html("Les programmes sont attribués dans une application différente et sont répertoriés ici pour plus de commodité.") })
-        $(".membLevel").on("click", function () { $(".labError").html("Le niveau détermine les caractéristiques accessibles à cette personne. Peut être apprenant ou facilitateur.") })
-        $(".membManagerAccess").on("click", function () { $(".labError").html("Manager Access sont des applications spéciales disponibles en option pour un Manager.") })
-        $(".membReceiveAlerts").on("click", function () { $(".labError").html("Recevoir des alertes permet à cette personne de recevoir des alertes par e-mail.") })
-        $(".membResendAlerts").on("click", function () { $(".labError").html("Les alertes de réception permettent à cette personne de recevoir des alertes par e-mail.") })
-        $(".membActive").on("click", function () { $(".labError").html("L'activité est un domaine clé. S'il est mis hors tension, cette personne n'aura plus accès au système.") })
-        $(".membNo").on("click", function () { $(".labError").html('[Vubiz Internal] est une valeur système utilisée par Vubiz Support à des fins de support.') })
+        $(".membAcctId").on("click", function () { setLabError("L’identification du client représente le compte auquel l'apprenant est affecté."); });
+        $(".membId").on("click", function () { setLabError("Le nom d'utilisateur est une valeur unique à l'échelle mondiale pour cet apprenant (c.-à-d. adresse e-mail). Une fois assigné, il ne peut pas être changé."); });
+        $(".membPwd").on("click", function () { setLabError("Mot de passe offre une sécurité supplémentaire. Il peut être modifié à un stade ultérieur."); });
+        $(".membFirstName").on("click", function () { setLabError("Le prénom est utilisé dans les rapports et les certificats."); });
+        $(".membLastName").on("click", function () { setLabError("Le nom de famille est utilisé dans les rapports et les certificats."); });
+        $(".membEmail").on("click", function () { setLabError("L'e-mail est utilisé lorsque vous souhaitez que certains documents vous soient transmis."); });
+        $(".membOrganization").on("click", function () { setLabError("L'organisation apparaît sur certains rapports."); });
+        $(".membMemo").on("click", function () { setLabError("Memo est destiné à maintenir des champs de valeur pour votre organisation."); });
+        $(".membPrograms").on("click", function () { setLabError("Les programmes sont attribués dans une application différente et sont répertoriés ici pour plus de commodité."); });
+        $(".membLevel").on("click", function () { setLabError("Le niveau détermine les caractéristiques accessibles à cette personne. Peut être apprenant ou facilitateur."); });
+        $(".membManagerAccess").on("click", function () { setLabError("Manager Access sont des applications spéciales disponibles en option pour un Manager."); });
+        $(".membReceiveAlerts").on("click", function () { setLabError("Recevoir des alertes permet à cette personne de recevoir des alertes par e-mail."); });
+        $(".membResendAlerts").on("click", function () { setLabError("Les alertes de réception permettent à cette personne de recevoir des alertes par e-mail."); });
+        $(".membActive").on("click", function () { setLabError("L'activité est un domaine clé. S'il est mis hors tension, cette personne n'aura plus accès au système."); });
+        $(".membNo").on("click", function () { setLabError("[Vubiz Internal] est une valeur système utilisée par Vubiz Support à des fins de support."); });
       }
-
-      // clears the labError
-      $(".labError").on("click", function () { $(".labError").html('') });
 
     })
   </script>
@@ -273,13 +278,11 @@
           HeaderStyle-HorizontalAlign="Right"
           ID="dvLearner"
           OnDataBound="dvLearner_DataBound"
-
           OnItemInserting="dvLearner_ItemInserting"
           OnItemInserted="dvLearner_ItemInserted"
           OnItemUpdating="dvLearner_ItemUpdating"
           OnItemUpdated="dvLearner_ItemUpdated"
-          OnItemDeleted="dvLearner_ItemDeleted" 
-          >
+          OnItemDeleted="dvLearner_ItemDeleted" OnPageIndexChanging="dvLearner_PageIndexChanging">
 
           <Fields>
 
@@ -501,14 +504,10 @@
               <HeaderStyle CssClass="tip membNo" />
             </asp:TemplateField>
 
-
-<%--            
-            <asp:ImageButton ImageUrl="~/styles/icons/vubiz/update.png" ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" xToolTip="Update a Learner" />
---%>
-
+            <%-- These icons are being overriden and set in portal\styles\css\styles.css --%>
             <asp:TemplateField ShowHeader="False" ControlStyle-CssClass="icons">
               <EditItemTemplate>
-                <asp:ImageButton ImageUrl="~/styles/icons/vubiz/update.png" ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" ToolTip="Update a Learner" />
+                <asp:ImageButton ImageUrl="~/styles/icons/vubiz/update.png" ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" ToolTip="Update Learner" />
                 <asp:ImageButton ImageUrl="~/styles/icons/vubiz/cancel.png" ID="btnCancel" runat="server" CausesValidation="False" CommandName="" ToolTip="Cancel Operation" OnClick="btnCancel_Click" />
               </EditItemTemplate>
               <InsertItemTemplate>

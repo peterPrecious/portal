@@ -961,6 +961,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Update Learner.
+        /// </summary>
+        internal static string learnerUpdate {
+            get {
+                return ResourceManager.GetString("learnerUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Level.
         /// </summary>
         internal static string level {

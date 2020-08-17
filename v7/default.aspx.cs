@@ -400,7 +400,7 @@ namespace portal
 
     protected void btnCustId_Click(object sender, EventArgs e)
     {
-      membSignin(txtCustId.Text, Session["membId"].ToString());
+      membSignin(txtCustId.Text.ToUpper(), Session["membId"].ToString());
     }
 
     protected void membSignin(string custId, string membId)

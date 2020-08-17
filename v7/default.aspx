@@ -98,7 +98,7 @@
     </asp:TableRow>
     <asp:TableRow ID="rowMembId" CssClass="formRow">
       <asp:TableHeaderCell CssClass="tabSignInLabel" Text="<%$  Resources:portal, membId%>">Username :</asp:TableHeaderCell><asp:TableCell HorizontalAlign="Left">
-        <asp:TextBox ID="txtMembId" CssClass="txtMembId" Width="250px" TextMode="SingleLine" Text="" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtMembId" CssClass="txtMembId upper" Width="250px" TextMode="SingleLine" Text="" runat="server"></asp:TextBox>
         <asp:Image ID="eyeMembId" CssClass="eyeMembId" ImageUrl="~/styles/icons/eye.png" runat="server" ToolTip="Hide/Show UserName" />
       </asp:TableCell>
       <asp:TableCell>
@@ -108,7 +108,7 @@
     <asp:TableRow ID="rowMembPwd" Visible="false">
 
       <asp:TableHeaderCell CssClass="tabSignInLabel" Text="<%$  Resources:portal, membPwd%>">Password :</asp:TableHeaderCell><asp:TableCell HorizontalAlign="Left">
-        <asp:TextBox ID="txtMembPwd" CssClass="txtMembPwd" Width="250px" TextMode="SingleLine" Text="" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtMembPwd" CssClass="txtMembPwd upper" Width="250px" TextMode="SingleLine" Text="" runat="server"></asp:TextBox>
         <asp:Image ID="eyeMembPwd" CssClass="eyeMembPwd" ImageUrl="~/styles/icons/eye.png" runat="server" ToolTip="Hide/Show Password" />
       </asp:TableCell><asp:TableCell>
         <asp:LinkButton CssClass="newButton" OnClick="btnMembPwd_Click" ID="btnMembPwd" runat="server" Text="<%$  Resources:portal, next%>" />

@@ -294,8 +294,6 @@ namespace portal.v7.facilitator
         {
           managerAccessHide(se.usesPassword);
         }
-
-
       }
 
       if (dvLearner.CurrentMode.ToString() == "Edit")
@@ -407,11 +405,11 @@ namespace portal.v7.facilitator
         string sqlNumber = ((System.Data.SqlClient.SqlException)e.Exception).Number.ToString();
         if (sqlNumber == "2627")
         {
-          labError.Text = "<p />" + GetGlobalResourceObject("portal", "sqlDuplicate").ToString();
+          labError.Text = "<p>" + GetGlobalResourceObject("portal", "sqlDuplicate").ToString() + "</p>";
         }
         else
         {
-          labError.Text = "<p />" + GetGlobalResourceObject("portal", "sql").ToString() + "<br />[SQL error: " + sqlNumber + " - " + e.Exception.Message.ToString() + "]  Contact Support Services.";
+          labError.Text = "<p>" + GetGlobalResourceObject("portal", "sql").ToString() + "<br />[SQL error: " + sqlNumber + " - " + e.Exception.Message.ToString() + "]  Contact Support Services." + "</p>";
         }
         e.ExceptionHandled = true;
         e.KeepInInsertMode = true;
@@ -432,9 +430,13 @@ namespace portal.v7.facilitator
       {
         TextBox txtMembPwd = (TextBox)dvLearner.FindControl("membPwd"); _membPwd = txtMembPwd.Text.Trim();
       }
+
       TextBox txtMembFirstName = (TextBox)dvLearner.FindControl("membFirstName"); _membFirstName = txtMembFirstName.Text.Trim();
       TextBox txtMembLastName = (TextBox)dvLearner.FindControl("membLastName"); _membLastName = txtMembLastName.Text.Trim();
       TextBox txtMembEmail = (TextBox)dvLearner.FindControl("membEmail"); _membEmail = txtMembEmail.Text.Trim();
+
+      HiddenField hidMembLevel = (HiddenField)dvLearner.FindControl("hidMembLevel");
+      int seMembLevel = int.Parse(Session["membLevel"].ToString());
 
       string missingFields = "";
       if (se.usesPassword)
@@ -446,7 +448,7 @@ namespace portal.v7.facilitator
       if (_membEmail.Length == 0) missingFields += " Email,";
       if (missingFields.Length > 0)
       {
-        labError.Text = "<p />You are missing mandatory field(s): " + missingFields.TrimEnd(',') + ".";
+        labError.Text = "<p />You are missing mandatory field(s): " + missingFields.TrimEnd(',') + ".</p>";
         labError.Visible = true;
         e.Cancel = true;
       }
@@ -465,8 +467,19 @@ namespace portal.v7.facilitator
           membManagerAccess += item.Value + ",";
         }
       }
+
       if (membManagerAccess != null) membManagerAccess = membManagerAccess.TrimEnd(',');
       e.NewValues["membManagerAccess"] = membManagerAccess;
+
+      // both the session memb (ie me) and the user memb (being analyzed) must be managers
+      if ((hidMembLevel.Value == "4" || hidMembLevel.Value == "5") && seMembLevel > 3)
+      {
+        managerAccessShow(se.usesPassword);
+      }
+      else
+      {
+        managerAccessHide(se.usesPassword);
+      }
     }
 
     protected void dvLearner_ItemUpdated(object sender, DetailsViewUpdatedEventArgs e)

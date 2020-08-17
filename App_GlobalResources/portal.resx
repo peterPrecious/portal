@@ -342,6 +342,9 @@
   <data name="lastVisit" xml:space="preserve">
     <value>Last Visit</value>
   </data>
+  <data name="learnerUpdate" xml:space="preserve">
+    <value>Update Learner</value>
+  </data>
   <data name="learner" xml:space="preserve">
     <value>Add a Learner</value>
   </data>
