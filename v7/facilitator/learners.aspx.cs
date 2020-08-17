@@ -574,9 +574,9 @@ namespace portal.v7.facilitator
       );
     }
 
-    //protected void dvLearner_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
-    //{
+    protected void dvLearner_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+    {
 
-    //}
+    }
   }
 }
