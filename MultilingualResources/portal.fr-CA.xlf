@@ -952,7 +952,7 @@
         </trans-unit>
         <trans-unit id="clear" translate="yes" xml:space="preserve">
           <source>Clear</source>
-          <target state="new">Clear</target>
+          <target state="needs-review-translation" state-qualifier="tm-suggestion">Effacer</target>
         </trans-unit>
         <trans-unit id="learners_child_1" translate="yes" xml:space="preserve">
           <source>Learner Profiles accessed from another Account are Read Only.</source>
@@ -961,6 +961,10 @@
         <trans-unit id="learners_child_2" translate="yes" xml:space="preserve">
           <source>You cannot Update or Delete this Learner's Profile.</source>
           <target state="new">You cannot Update or Delete this Learner's Profile.</target>
+        </trans-unit>
+        <trans-unit id="learnerUpdate" translate="yes" xml:space="preserve">
+          <source>Update Learner</source>
+          <target state="new">Update Learner</target>
         </trans-unit>
       </group>
     </body>
