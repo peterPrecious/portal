@@ -424,6 +424,7 @@ namespace portal.v7.facilitator
 
     protected void dvLearner_ItemUpdating(object sender, DetailsViewUpdateEventArgs e)
     {
+
       string _membPwd = "", _membFirstName = "", _membLastName = "", _membEmail = "";
 
       // ensure all mandatory fields were entered
@@ -560,9 +561,9 @@ namespace portal.v7.facilitator
       );
     }
 
-    protected void dvLearner_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
-    {
+    //protected void dvLearner_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
+    //{
 
-    }
+    //}
   }
 }

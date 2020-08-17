@@ -100,7 +100,8 @@
       <asp:TableHeaderCell CssClass="tabSignInLabel" Text="<%$  Resources:portal, membId%>">Username :</asp:TableHeaderCell><asp:TableCell HorizontalAlign="Left">
         <asp:TextBox ID="txtMembId" CssClass="txtMembId" Width="250px" TextMode="SingleLine" Text="" runat="server"></asp:TextBox>
         <asp:Image ID="eyeMembId" CssClass="eyeMembId" ImageUrl="~/styles/icons/eye.png" runat="server" ToolTip="Hide/Show UserName" />
-      </asp:TableCell><asp:TableCell>
+      </asp:TableCell>
+      <asp:TableCell>
         <asp:LinkButton CssClass="newButton" OnClick="btnMembId_Click" ID="btnMembId" runat="server" Text="<%$  Resources:portal, next%>" />
       </asp:TableCell>
     </asp:TableRow>

@@ -273,11 +273,13 @@
           HeaderStyle-HorizontalAlign="Right"
           ID="dvLearner"
           OnDataBound="dvLearner_DataBound"
+
           OnItemInserting="dvLearner_ItemInserting"
           OnItemInserted="dvLearner_ItemInserted"
           OnItemUpdating="dvLearner_ItemUpdating"
           OnItemUpdated="dvLearner_ItemUpdated"
-          OnItemDeleted="dvLearner_ItemDeleted" OnPageIndexChanging="dvLearner_PageIndexChanging">
+          OnItemDeleted="dvLearner_ItemDeleted" 
+          >
 
           <Fields>
 
@@ -499,9 +501,14 @@
               <HeaderStyle CssClass="tip membNo" />
             </asp:TemplateField>
 
+
+<%--            
+            <asp:ImageButton ImageUrl="~/styles/icons/vubiz/update.png" ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" xToolTip="Update a Learner" />
+--%>
+
             <asp:TemplateField ShowHeader="False" ControlStyle-CssClass="icons">
               <EditItemTemplate>
-                <asp:ImageButton ImageUrl="~/styles/icons/vubiz/update.png" ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" ToolTip="Update Learner" />
+                <asp:ImageButton ImageUrl="~/styles/icons/vubiz/update.png" ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" ToolTip="Update a Learner" />
                 <asp:ImageButton ImageUrl="~/styles/icons/vubiz/cancel.png" ID="btnCancel" runat="server" CausesValidation="False" CommandName="" ToolTip="Cancel Operation" OnClick="btnCancel_Click" />
               </EditItemTemplate>
               <InsertItemTemplate>

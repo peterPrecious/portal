@@ -641,11 +641,11 @@ namespace portal
       testClear.Visible = true;
 
       //    remove the fn.host() references when going live: should be as below:
-      // if (cu.custChannelNop && me.membLevel == 3)
-      if (cu.custChannelNop &&
-          me.membLevel == 3 &&
-          (fn.host() == "localhost" || fn.host() == "vubizstaging.com") // remove when live
-         )
+      //if (cu.custChannelNop &&
+      //    me.membLevel == 3 &&
+      //      (fn.host() == "localhost" || fn.host() == "vubizstaging.com") // remove when live
+
+      if (cu.custChannelNop && me.membLevel == 3)
       {
         // Create a new ListItemCollection (programs purchase)  ...  instantiated above at top
         //      ec.ecomPurchaseNotice(cu.custId, me.membId,
