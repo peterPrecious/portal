@@ -8,10 +8,12 @@ using System.Web.UI.WebControls;
 namespace portal.v7.facilitator
 {
   public partial class learners : FormBase
-
   {
     private readonly Sess se = new Sess();
     private readonly Apps ap = new Apps();
+
+    //SH - 2020/08/18 - Adding to replace se.usesPassword that is set from the profile, stakeholders would like password to be shown 100% of the time, not wanting to remove or comment out all of the logic just yet
+    private readonly bool usesPassword = true;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -195,7 +197,7 @@ namespace portal.v7.facilitator
         dvLearner.Rows[0].Visible = false;
 
         ((TextBox)dvLearner.FindControl("membId")).Text = "";
-        if (se.usesPassword) //se.usesPassword set on SignIn, typically a Profile entry
+        if (usesPassword)
         {
           ((TextBox)dvLearner.FindControl("membPwd")).Text = "";
         }
@@ -238,7 +240,7 @@ namespace portal.v7.facilitator
         HiddenField hidMembLevel = (HiddenField)dvLearner.FindControl("hidMembLevel");
         hidMembLevel.Value = "2";
 
-        managerAccessHide(se.usesPassword); // Hide until membLevel set to 4 or 5
+        managerAccessHide(usesPassword); // Hide until membLevel set to 4 or 5
         ((CheckBox)dvLearner.FindControl("membActive")).Checked = true;
         ((CheckBox)dvLearner.FindControl("membEmailAlert")).Checked = true;
       }
@@ -248,7 +250,7 @@ namespace portal.v7.facilitator
     {
       if (dvLearner.CurrentMode.ToString() == "ReadOnly")  // display 
       {
-        if (!se.usesPassword)  // hide Pwd if not needed  
+        if (!usesPassword)  // hide Pwd if not needed  
         {
           Label labMembPwd = (Label)dvLearner.FindControl("membPwd");
           if (labMembPwd != null)
@@ -288,17 +290,17 @@ namespace portal.v7.facilitator
               if (managerAccess.IndexOf("3") > -1) { ctrMembManagerAccess.Text += "<br />&nbsp;&nbsp;&nbsp;Extend Ecommerce"; }
             }
           }
-          managerAccessShow(se.usesPassword);
+          managerAccessShow(usesPassword);
         }
         else
         {
-          managerAccessHide(se.usesPassword);
+          managerAccessHide(usesPassword);
         }
       }
 
       if (dvLearner.CurrentMode.ToString() == "Edit")
       {
-        if (!se.usesPassword)  // hide Pwd if not needed  
+        if (!usesPassword)  // hide Pwd if not needed  
         {
           TextBox txtMembPwd = (TextBox)dvLearner.FindControl("membPwd");
           if (txtMembPwd != null)
@@ -355,11 +357,11 @@ namespace portal.v7.facilitator
             if (managerAccess.IndexOf("2") > -1) lstMembManagerAccess.Items[2].Selected = true;
             if (managerAccess.IndexOf("3") > -1) lstMembManagerAccess.Items[3].Selected = true;
           }
-          managerAccessShow(se.usesPassword);
+          managerAccessShow(usesPassword);
         }
         else
         {
-          managerAccessHide(se.usesPassword);
+          managerAccessHide(usesPassword);
         }
       }
     }
@@ -369,7 +371,7 @@ namespace portal.v7.facilitator
       // ensure all mandatory fields were entered
       string missingFields = "";
       if (e.Values["membId"] == null) missingFields += " " + GetGlobalResourceObject("portal", "membId").ToString() + ",";
-      if (e.Values["membPwd"] == null && se.usesPassword) missingFields += " " + GetGlobalResourceObject("portal", "password").ToString() + ",";
+      if (e.Values["membPwd"] == null && usesPassword) missingFields += " " + GetGlobalResourceObject("portal", "password").ToString() + ",";
       if (e.Values["membFirstName"] == null) missingFields += " " + GetGlobalResourceObject("portal", "firstName").ToString() + ",";
       if (e.Values["membLastName"] == null) missingFields += " " + GetGlobalResourceObject("portal", "lastName").ToString() + ",";
       if (e.Values["membEmail"] == null) missingFields += " " + GetGlobalResourceObject("portal", "email").ToString() + ",";
@@ -426,7 +428,7 @@ namespace portal.v7.facilitator
       string _membPwd = "", _membFirstName = "", _membLastName = "", _membEmail = "";
 
       // ensure all mandatory fields were entered
-      if (se.usesPassword)
+      if (usesPassword)
       {
         TextBox txtMembPwd = (TextBox)dvLearner.FindControl("membPwd"); _membPwd = txtMembPwd.Text.Trim();
       }
@@ -439,7 +441,7 @@ namespace portal.v7.facilitator
       int seMembLevel = int.Parse(Session["membLevel"].ToString());
 
       string missingFields = "";
-      if (se.usesPassword)
+      if (usesPassword)
       {
         if (_membPwd.Length == 0) missingFields += " Password,";
       }
@@ -474,11 +476,11 @@ namespace portal.v7.facilitator
       // both the session memb (ie me) and the user memb (being analyzed) must be managers
       if ((hidMembLevel.Value == "4" || hidMembLevel.Value == "5") && seMembLevel > 3)
       {
-        managerAccessShow(se.usesPassword);
+        managerAccessShow(usesPassword);
       }
       else
       {
-        managerAccessHide(se.usesPassword);
+        managerAccessHide(usesPassword);
       }
     }
 
@@ -574,9 +576,5 @@ namespace portal.v7.facilitator
       );
     }
 
-    protected void dvLearner_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
-    {
-
-    }
   }
 }

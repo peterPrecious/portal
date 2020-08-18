@@ -282,7 +282,7 @@
           OnItemInserted="dvLearner_ItemInserted"
           OnItemUpdating="dvLearner_ItemUpdating"
           OnItemUpdated="dvLearner_ItemUpdated"
-          OnItemDeleted="dvLearner_ItemDeleted" OnPageIndexChanging="dvLearner_PageIndexChanging">
+          OnItemDeleted="dvLearner_ItemDeleted">
 
           <Fields>
 
