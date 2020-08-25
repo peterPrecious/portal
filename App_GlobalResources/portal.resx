@@ -183,6 +183,9 @@
   <data name="availableBefore" xml:space="preserve">
     <value>Available Before</value>
   </data>
+  <data name="available" xml:space="preserve">
+    <value>Available</value>
+  </data>
   <data name="back" xml:space="preserve">
     <value>Back</value>
   </data>
@@ -668,6 +671,9 @@
   </data>
   <data name="programsBefore" xml:space="preserve">
     <value>Programs Before</value>
+  </data>
+  <data name="programsAssigned" xml:space="preserve">
+    <value>Programs Assigned</value>
   </data>
   <data name="programTitle" xml:space="preserve">
     <value>Program Title</value>

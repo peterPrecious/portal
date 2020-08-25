@@ -17,6 +17,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="/portal/scripts/$urls.min.js"></script>
   <script src="/portal/scripts/v7.min.js"></script>
+  <script src="/portal/scripts/jquery.hotkeys.js"></script>
   <link href="/portal/styles/css/styles.min.css" rel="stylesheet" />
   <link href="/portal/styles/css/siteMaster.min.css" rel="stylesheet" />
 

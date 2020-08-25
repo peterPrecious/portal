@@ -966,6 +966,14 @@
           <source>Update Learner</source>
           <target state="new">Update Learner</target>
         </trans-unit>
+        <trans-unit id="available" translate="yes" xml:space="preserve">
+          <source>Available</source>
+          <target state="new">Available</target>
+        </trans-unit>
+        <trans-unit id="programsAssigned" translate="yes" xml:space="preserve">
+          <source>Programs Assigned</source>
+          <target state="new">Programs Assigned</target>
+        </trans-unit>
       </group>
     </body>
   </file>

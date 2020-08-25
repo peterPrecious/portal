@@ -241,6 +241,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Available.
+        /// </summary>
+        internal static string available {
+            get {
+                return ResourceManager.GetString("available", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Available After.
         /// </summary>
         internal static string availableAfter {
@@ -1722,6 +1731,15 @@ namespace Resources {
         internal static string programsAfter {
             get {
                 return ResourceManager.GetString("programsAfter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Programs Assigned.
+        /// </summary>
+        internal static string programsAssigned {
+            get {
+                return ResourceManager.GetString("programsAssigned", resourceCulture);
             }
         }
         

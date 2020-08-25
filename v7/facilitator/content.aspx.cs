@@ -246,7 +246,7 @@ namespace portal.v7.facilitator
         checkbox.Checked = false;
 
         // hide if no programs to assign
-        if (gvRow.Cells[5].Text == "0" || gvRow.Cells[7].Text == "0")
+        if (gvRow.Cells[5].Text == "0")  // || gvRow.Cells[7].Text == "0")
         {
           checkbox.Visible = false;
         }
@@ -287,7 +287,7 @@ namespace portal.v7.facilitator
         e.Row.Cells[5].Text = e.Row.Cells[5].Text.Replace("&nbsp;", "");
 
         // if this row is false
-        if (e.Row.Cells[6].Text == "False")
+        if (e.Row.Cells[5].Text == "False")
         {
           e.Row.Cells[0].Enabled = false; // disable the checkbox
           e.Row.Cells[1].Style.Add("text-decoration", "line-through");

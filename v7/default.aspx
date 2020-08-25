@@ -30,6 +30,15 @@
       $("#frmMaster").submit();
     }
     $(function () {
+      //set hotkey to show/hide testing tools/tips
+      $(document).bind('keydown', 'alt+v', function() {
+        if($(".testingBlock").is(":visible")) {
+          $(".testingBlock").hide();
+        } else {
+          $(".testingBlock").show();
+        }
+      });
+
       // set fields to password
       $(".txtMembId, .txtMembPwd").attr("type", "password");
       // essentially toggle by mouseUp and mouseDown
@@ -193,7 +202,7 @@
       </LayoutTemplate>
     </asp:ListView>
 
-    <asp:LinkButton ID="testClear" OnClick="testClear_Click" Visible="false" runat="server">[ Test/Clear Programs ]</asp:LinkButton>
+    <asp:LinkButton ID="testClear" OnClick="testClear_Click" CssClass="testingBlock" Visible="false" runat="server">[ Test/Clear Programs ]</asp:LinkButton>
 
     <asp:Image CssClass="logo" ID="logo" runat="server" />
 

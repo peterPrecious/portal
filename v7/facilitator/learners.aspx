@@ -103,7 +103,6 @@
         $(".labError").html("");
       }
     }
-
     $(function () {
 
       var lang = "<%=Session["lang"]%>";  // get language from C#

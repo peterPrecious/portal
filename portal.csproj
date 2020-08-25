@@ -91,6 +91,7 @@
     <Content Include="repository\CCHS1068_Learners.txt" />
     <Content Include="repository\DEMO0000_Learners.txt" />
     <Content Include="repository\listInternals.sql" />
+    <Content Include="scripts\jquery.hotkeys.js" />
     <Content Include="scripts\v7.min.js">
       <DependentUpon>v7.js</DependentUpon>
     </Content>

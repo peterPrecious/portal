@@ -19,6 +19,12 @@ namespace portal
     private readonly Prof pr = new Prof();
     private readonly Ecom ec = new Ecom();
 
+    #if DEBUG
+      private readonly bool isDebug = true;
+    #else
+      private readonly bool isDebug = false;
+    #endif
+
     protected override void InitializeCulture()
     {
       if (Session["culture"] == null) se.initialize();
@@ -638,7 +644,10 @@ namespace portal
       //    this fac has made one or more (single or multi seat) purchases;
       //    one or more of the purhases have not yet been assigned;
       //    all purchases have not been assigned to the NOP / FAC
-      testClear.Visible = true;
+      if(isDebug)
+      {
+        testClear.Visible = true;
+      }
 
       //    remove the fn.host() references when going live: should be as below:
       //if (cu.custChannelNop &&

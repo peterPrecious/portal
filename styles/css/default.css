@@ -18,3 +18,8 @@ h1, h2, .labEmail { color: white; }
 .labContent { color: red; text-decoration: none; font-size: 1.2em; font-weight: bold; }
 
 .logo { margin-top: 60px; background-color: white; opacity: 0.3; }
+
+/* used for all testing helpers */
+.testingBlock {
+  display: none;
+}
