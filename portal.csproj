@@ -302,6 +302,8 @@
     <Content Include="v7\iFrame.aspx" />
     <Content Include="v7\manager\assessmentEditor.aspx" />
     <Content Include="v7\manager\assessments.aspx" />
+    <Content Include="v7\manager\childAccountsAccessedExcel.aspx" />
+    <Content Include="v7\manager\childAccountsExcel.aspx" />
     <Content Include="v7\manager\crossAccountProgramActivityExcel.aspx" />
     <Content Include="v7\manager\documentStatus.aspx" />
     <Content Include="v7\manager\learnersDownload.aspx" />
@@ -560,6 +562,20 @@
     </Compile>
     <Compile Include="v7\manager\assessments.aspx.designer.cs">
       <DependentUpon>assessments.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="v7\manager\childAccountsAccessedExcel.aspx.cs">
+      <DependentUpon>childAccountsAccessedExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="v7\manager\childAccountsAccessedExcel.aspx.designer.cs">
+      <DependentUpon>childAccountsAccessedExcel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="v7\manager\childAccountsExcel.aspx.cs">
+      <DependentUpon>childAccountsExcel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="v7\manager\childAccountsExcel.aspx.designer.cs">
+      <DependentUpon>childAccountsExcel.aspx</DependentUpon>
     </Compile>
     <Compile Include="v7\manager\crossAccountProgramActivityExcel.aspx.cs">
       <DependentUpon>crossAccountProgramActivityExcel.aspx</DependentUpon>
