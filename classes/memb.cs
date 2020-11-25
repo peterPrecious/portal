@@ -729,6 +729,133 @@ namespace portal
       }
     }
 
+
+
+    public string buildNavMenu(int membLevel, string membFirstName, string membLastName, string imageUrl) // used to create nav menu in header
+    {
+      string navHtml;
+
+      using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
+      {
+        string query = @"
+          SELECT
+            tileName,
+            tileOrder,
+            tileMembLevel,
+            tileTargetType,
+            tileTarget
+          FROM
+            apps.dbo.tiles
+          WHERE
+            tileActive = 1
+            AND " + membLevel + @" != 0
+            AND tileMembLevel <= " + membLevel + @"
+            AND tileGroup = 'menuV7'
+          ORDER BY
+            tileOrder, tileName";
+
+        con.Open();
+
+        using (SqlCommand cmd = new SqlCommand())
+        {
+          cmd.CommandTimeout = 100;
+          cmd.Connection = con;
+          cmd.CommandText = query;
+          cmd.CommandType = CommandType.Text;
+          SqlDataReader drd = cmd.ExecuteReader();
+
+          string menuHtml = null;
+          string profileURL = "profile.aspx";
+          string profileTitle = "My Profile";
+          string storeURL = "https://vubiz.com/";
+          string storeTitle = "Store";
+
+          //build drop down
+          double lastTileOrder = 0;
+
+          while (drd.Read())
+          {
+            var tileName = drd["tileName"].ToString();
+            var tileOrder = (double)drd["tileOrder"];
+            var tileMembLevel = (byte)drd["tileMembLevel"];
+            var tileTargetType = (byte)drd["tileTargetType"];
+            var tileTarget = drd["tileTarget"].ToString();
+
+            if (tileTargetType == 9)
+            {
+              //tileTargetType 9 is reserved for main menu icons
+              if (tileName.ToLower() == "my profile")
+              {
+                profileURL = tileTarget;
+                profileTitle = tileName;
+                continue;
+              } else if (tileName.ToLower() == "store")
+              {
+                storeURL = tileTarget;
+                storeTitle = tileName;
+                continue;
+              }
+            }
+
+            int firstDigit = (int)(tileOrder / Math.Pow(10, (int)Math.Floor(Math.Log10(tileOrder))));
+            int firstLastDigit = (int)(lastTileOrder / Math.Pow(10, (int)Math.Floor(Math.Log10(lastTileOrder))));
+
+            //add spacer
+            if (lastTileOrder != 0 && (firstDigit != firstLastDigit))
+            {
+              menuHtml += "<li class=\"navbar-menu-items-spacer\"></li>";
+            }
+
+            //add menu item
+            if(tileTargetType == 7 || tileTargetType == 8)
+            {
+              //open in dialog
+              menuHtml += "<li><span onclick=\"displayMenuDialog('" + tileTargetType + "','" + tileName + "','" + tileTarget + "');\">" + tileName + "</span></li>";
+            }
+            else if (tileTargetType == 1 || tileTargetType == 3)
+            {
+              menuHtml += "<li><span onclick=\"___doPostBack('" + tileTargetType + "', '" + tileTarget + "', '" + tileName + "');\">" + tileName + "</span></li>";
+            }
+            else
+            {
+              menuHtml += "<li><a href=\"" + tileTarget + "\">" + tileName + "</a></li>";
+            }
+
+            //save memb level of current menu item
+            lastTileOrder = tileOrder;
+          }
+
+          drd.Close();
+
+          navHtml = "<nav class=\"navbar\">";
+          navHtml += "<h1 class=\"header-title\" onclick=\"goHome()\"><img src=\"" + imageUrl + "\" alt=\"Logo\"></h1>";
+          navHtml += "<ul id=\"navbar-menu\">";
+
+          //add store icon
+          //navHtml += "<span id=\"store\" class=\"navbar-menu-static\" onclick=\"___doPostBack('1', '" + storeURL + "', '" + storeTitle + "');\" title=\"" + storeTitle + "\"><i class=\"fas fa-shopping-cart\"></i></span>";
+
+          //get member initials
+          var membInitials = (membFirstName.Length > 0 ? membFirstName.Substring(0, 1) : "") + (membLastName.Length > 0 ? membLastName.Substring(0, 1) : "");
+
+          //add user medalion, if membInitials is empty use user icon
+          //navHtml += "<li class=\"navbar-menu-user\" title=\"" + profileTitle + "\" " + (!string.IsNullOrEmpty(profileURL) ? "onclick=\"displayMenuDialog('9','" + profileTitle + "','" + profileURL + "');\"" : "") + "><span class=\"navbar-menu-button-account\">" + (membInitials == "" ? "<i class=\"fas fa-user\"></i>" : membInitials) + "</span></li>";
+          navHtml += "<li class=\"navbar-menu-user\"><span class=\"navbar-menu-button-account\">" + (membInitials == "" ? "<i class=\"fas fa-user\"></i>" : membInitials) + "</span></li>";
+
+          //add burger
+          navHtml += "<li><div class=\"burger\" onclick=\"displayNavMenu(this)\"><div class=\"bar1\"></div><div class=\"bar2\"></div><div class=\"bar3\"></div></div></li>";
+          navHtml += "</ul>";
+
+          //create drop down
+          navHtml += "<div id=\"navbar-menu-items\"><ul>";
+          navHtml += menuHtml;
+          navHtml += "</ul></div>";
+          navHtml += "</nav>";
+        }
+      }
+
+      return navHtml;
+    }
+
     #endregion
   }
 }

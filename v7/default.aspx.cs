@@ -6,6 +6,7 @@ using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.Services;
 
 namespace portal
 {
@@ -19,11 +20,11 @@ namespace portal
     private readonly Prof pr = new Prof();
     private readonly Ecom ec = new Ecom();
 
-    #if DEBUG
-      private readonly bool isDebug = true;
-    #else
+#if DEBUG
+    private readonly bool isDebug = true;
+#else
       private readonly bool isDebug = false;
-    #endif
+#endif
 
     protected override void InitializeCulture()
     {
@@ -231,17 +232,17 @@ namespace portal
       Session["lang"] = Session["culture"].ToString().Substring(0, 2);
 
       // get logo from profile
-      if (Session["logo"] != null)
-      {
-        string imageUrl = "/vubizApps/styles/logos/" + Session["logo"].ToString();
-        logo.ImageUrl = imageUrl;
-      }
+      //if (Session["logo"] != null)
+      //{
+      //  string imageUrl = "/vubizApps/styles/logos/" + Session["logo"].ToString();
+      //  logo.ImageUrl = imageUrl;
+      //}
 
       // preset credentials for fast localhost testing ( mucks up signin to use anything else )
       if (fn.host() == "localhost")
       {
-        txtMembId.Attributes["value"] = "TESTAUG2020-1";
-        txtMembPwd.Attributes["value"] = "TEST";
+        txtMembId.Attributes["value"] = "admin3jgp@vubiz.com";
+        txtMembPwd.Attributes["value"] = "vuv5_adm";
       }
 
       // if secure, render tiles
@@ -258,6 +259,7 @@ namespace portal
         string targetType = Request["tileTargetType"]; // sender used for target type (1,2,3)
         string target = Request["tileTarget"]; // parameter used for target
         string tileName = Request["tileName"]; // need this for links to iFrame below
+
         if (targetType.Length > 0 && target.Length > 0)
         {
           Session["pageName"] = target;
@@ -270,7 +272,7 @@ namespace portal
           target = target.Replace("[[membId]]", se.membId);
           target = target.Replace("[[membNo]]", se.membNo.ToString());
           target = target.Replace("[[membGuidTemp]]", se.membGuidTemp);
-          target = target.Replace("[[nopReturnUrl]]", se.nopReturnUrl);
+          target = target.Replace("[[nopReturnUrl]]", !string.IsNullOrEmpty(se.nopReturnUrl) ? se.nopReturnUrl : "https://vubiz.com?");
           target = target.Replace("[[lang]]", se.lang);
           target = target.Replace("[[profile]]", se.profile);
 
@@ -299,6 +301,13 @@ namespace portal
             lvTiles.DataBind();
           }
         }
+      }
+
+      //SH - 11/17/2020 - this is to facilitate deep linking from v8 and only works for targetType 3
+      if (Request["startPage"] != null)
+      {
+        Session["tileGroup"] = Request["startPage"];
+        lvTiles.DataBind();
       }
     }
 
@@ -487,26 +496,36 @@ namespace portal
           {
             url = "/vubizApps/Errors.aspx?errorId=502&lang=" + Session["lang"];
           }
-          Session.Abandon(); Response.Redirect(url);
+
+          Session.Abandon();
+          Response.Redirect(url);
         }
 
         // hide signin table
         tabSignIn.Visible = false;
 
         // get logo from profile
+        string imageUrl = null;
         if (Session["logo"] != null)
         {
-          string imageUrl = "/vubizApps/styles/logos/" + Session["logo"].ToString();
-          logo.ImageUrl = imageUrl;
+          imageUrl = "/vubizApps/styles/logos/" + Session["logo"].ToString();
+          //logo.ImageUrl = imageUrl;
         }
 
         // render tiles
         lvTiles.Visible = true;
 
+        // build nav menu
+        var navMenu = me.buildNavMenu(me.membLevel, me.membFirstName, me.membLastName, imageUrl);
+        panHeader.Controls.Clear();
+        panHeader.Controls.Add(new LiteralControl(navMenu));
+
       }
       else
       {
-        labWelcome.Text = GetGlobalResourceObject("portal", "credentialError").ToString(); //Those Credentials are not on file!                                                                                         //       Session.Clear();
+        labWelcome.Text = GetGlobalResourceObject("portal", "credentialError").ToString();
+        //Those Credentials are not on file!
+        //Session.Clear();
       }
     }
 
@@ -644,7 +663,7 @@ namespace portal
       //    this fac has made one or more (single or multi seat) purchases;
       //    one or more of the purhases have not yet been assigned;
       //    all purchases have not been assigned to the NOP / FAC
-      if(isDebug)
+      if (isDebug)
       {
         testClear.Visible = true;
       }
@@ -851,6 +870,13 @@ namespace portal
     protected void testClear_Click(object sender, EventArgs e)
     {
       me.memberPrograms2b((int)Session["membNo"]);
+    }
+
+    [WebMethod]
+    public static string goHome()
+    {
+      HttpContext.Current.Session["tileGroup"] = "home";
+      return "/portal/v7/default.aspx";
     }
 
   }

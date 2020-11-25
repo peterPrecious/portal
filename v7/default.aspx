@@ -204,7 +204,7 @@
 
     <asp:LinkButton ID="testClear" OnClick="testClear_Click" CssClass="testingBlock" Visible="false" runat="server">[ Test/Clear Programs ]</asp:LinkButton>
 
-    <asp:Image CssClass="logo" ID="logo" runat="server" />
+    <%--<asp:Image CssClass="logo" ID="logo" runat="server" />--%>
 
     <div class="divNotice">
       <asp:Panel CssClass="panNotice" ID="notice" runat="server" Visible="false">

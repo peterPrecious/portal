@@ -1,4 +1,4 @@
-﻿.tabSignIn { width: 600px; margin: 75px auto 20px; border-collapse: collapse; background-color: #0178B9; border: 20px solid #0178B9; border-bottom: 40px solid #0178B9; }
+﻿.tabSignIn { text-align: center; width: 600px; margin: 75px auto 20px; border-collapse: collapse; background-color: #0178B9; border: 20px solid #0178B9; border-bottom: 40px solid #0178B9; }
   .tabSignIn td { border: none; padding: 6px; }
   .tabSignIn .tabSignInLabel:first-child:after { content: " : "; }
   .tabSignIn th, .tabSignIn th label { border: none; padding: 6px; color: white; text-align: right; font-weight: 500; }

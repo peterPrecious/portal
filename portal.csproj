@@ -97,6 +97,7 @@
     </Content>
     <Content Include="services\accountManagement.asmx" />
     <Content Include="services\vuAcct.svc" />
+    <Content Include="styles\bg_trans.png" />
     <Content Include="styles\css\about.css" />
     <Content Include="styles\css\about.min.css">
       <DependentUpon>about.css</DependentUpon>
@@ -286,6 +287,7 @@
     <Content Include="styles\tiles\store.png" />
     <Content Include="styles\tiles\wrench.png" />
     <Content Include="styles\tiles\tileIcons.html" />
+    <Content Include="styles\vubiz_logo.png" />
     <Content Include="v7\administrator\passwordReplace.aspx" />
     <Content Include="v7\administrator\profiles.aspx" />
     <Content Include="v7\confirm.aspx" />

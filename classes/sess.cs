@@ -22,7 +22,7 @@ namespace portal
 
     public string
       cust, custAcctId, custId, custChannelManager, custParentId,
-      membFirstName, membLastName, membId, membPwd, membGuid, membGuidTemp,
+      membFirstName, membLastName, membId, membPwd, membGuid, membGuidTemp, membJobs,
       culture, ecomGuid, lang, menuItems, nopCancelUrl, nopReturnUrl, source, profile, tileGroup;
     #endregion
 
@@ -55,6 +55,7 @@ namespace portal
       HttpContext.Current.Session["membPwd"] = "";
       HttpContext.Current.Session["membGuid"] = "";
       HttpContext.Current.Session["membGuidTemp"] = "";
+      HttpContext.Current.Session["membJobs"] = "";
       HttpContext.Current.Session["culture"] = null;
       HttpContext.Current.Session["ecomGuid"] = "";
       HttpContext.Current.Session["lang"] = "en";
@@ -103,6 +104,7 @@ namespace portal
       membPwd = HttpContext.Current.Session["membPwd"].ToString();
       membGuid = HttpContext.Current.Session["membGuid"].ToString();
       membGuidTemp = HttpContext.Current.Session["membGuidTemp"].ToString();
+      membJobs = HttpContext.Current.Session["membJobs"].ToString();
       menuItems = HttpContext.Current.Session["menuItems"].ToString();
       culture = HttpContext.Current.Session["culture"].ToString();
       ecomGuid = HttpContext.Current.Session["ecomGuid"].ToString();

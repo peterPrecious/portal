@@ -15,13 +15,119 @@
   <link rel="shortcut icon" href="https://vubiz.com/vubizApps/styles/favicon.ico" />
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://kit.fontawesome.com/5346d6271b.js" crossorigin="anonymous"></script>
   <script src="/portal/scripts/$urls.min.js"></script>
   <script src="/portal/scripts/v7.min.js"></script>
   <script src="/portal/scripts/jquery.hotkeys.js"></script>
   <link href="/portal/styles/css/styles.min.css" rel="stylesheet" />
   <link href="/portal/styles/css/siteMaster.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
   <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
+
+  <script>
+
+    var menuTimeout;
+
+    function displayNavMenu(ctrl) {
+      let isMobile = window.matchMedia("only screen and (max-device-width: 600px)").matches;
+
+      $("html").unbind("click");
+
+      if (isMobile) {
+        if ($("#navbar-menu-items").is(":visible")) {
+          $("#navbar-menu-items").hide();
+        } else {
+          $("#navbar-menu-items").show();
+
+          menuTimeout = setTimeout(function () {
+            $("html").one("click", function () {
+              //close nav menu
+              if ($("#navbar-menu-items").is(":visible")) {
+                $(".burger").click();
+              }
+            });
+          }, 1000);
+        }
+      } else {
+        toggleBurger(ctrl);
+        if ($("#navbar-menu-items").is(":visible")) {
+          $("#navbar-menu-items").hide("fast");
+          clearTimeout(menuTimeout);
+        } else {
+          $("#navbar-menu-items").show("slow");
+
+          menuTimeout = setTimeout(function () {
+            $("html").one("click", function () {
+              //close nav menu
+              if ($("#navbar-menu-items").is(":visible")) {
+                $(".burger").click();
+              }
+            });
+          }, 1000);
+        }
+      }
+    }
+
+    function toggleBurger(x) {
+      x.classList.toggle("change");
+    }
+
+    function displayMenuDialog(type, title, endpoint) {
+      var dialogHeight = $(window).height();
+      var dialogWidth = $(window).width();
+
+      if (type == "7") {
+        //open in iframe
+        $(".site").append("<div id=\"navMenuDialog\" style=\"overflow: hidden;\"><iframe src=\"" + endpoint + "?header=false\" height=\"" + (dialogHeight - 170) + "\" width=\"" + (dialogWidth - 120) + "\" title=\"" + title + "\"></iframe></div>");
+      } else {
+        //load page into dialog
+        $(".site").append("<div id=\"navMenuDialog\"></div>");
+        $("#navMenuDialog").load(endpoint + "?header=false");
+      }
+
+      $("#navMenuDialog").dialog({
+        title: title,
+        modal: true,
+        width: dialogWidth - 100,
+        height: dialogHeight - 40,
+        maxWidth: 850,
+        maxHeight: dialogHeight - 10,
+        position: { my: "top", at: "top+20", of: window },
+        buttons: {
+          Close: function () {
+            $(this).parent(".ui-dialog").find(".ui-dialog-titlebar-close").click();
+          }
+        },
+        close: function (event, ui) {
+          $("#navMenuDialog").remove();
+        },
+      });
+
+      return false;
+    }
+
+    function goHome() {
+
+      $.ajax({
+        type: "POST",
+        url: "/portal/v7/default.aspx/goHome",
+        contentType: "application/json;",
+        dataType: 'json',
+        success: function (response) {
+          window.location.replace(response.d);
+        },
+        failure: function (response) {
+          console.log(response.d);
+        }
+      });
+
+      return false;
+
+    }
+
+  </script>
 
 </head>
 
@@ -38,9 +144,9 @@
         <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
       </div>
 
-      <div class="footer">
+      <asp:Panel CssClass="footer" ID="panFooter" runat="server" Visible="false">
         <asp:HyperLink Target="_blank" ID="butPageName" CssClass="pageName" runat="server"></asp:HyperLink>
-      </div>
+      </asp:Panel>
 
     </div>
   </form>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Web.UI;
 
 namespace portal
 {
@@ -18,14 +19,36 @@ namespace portal
       // show/hide footer/header
       if (se.secure)
       {
-        panHeader.Visible = true;
-        panHeader.Visible = true; //TODO: is this supposed to be for the footer?
+        if (Request.QueryString["header"] != null && Request.QueryString["header"].Equals("false"))
+        {
+          //do nothing
+        }
+        else
+        {
+          panHeader.Visible = true;
+        }
+        
+        //panFooter.Visible = true; //TODO: wire up after revamp
 
         // create sessions link for debugging
         if (fn.host() == "localhost" || se.membLevel == 5)
         {
           butPageName.NavigateUrl = "~/v7/administrator/sessions.aspx";
         }
+
+        // get logo from profile
+        string imageUrl = null;
+        if (Session["logo"] != null)
+        {
+          imageUrl = "/vubizApps/styles/logos/" + Session["logo"].ToString();
+        }
+
+        // build nav menu
+        Memb me = new Memb();
+        var navMenu = me.buildNavMenu(se.membLevel, se.membFirstName, se.membLastName, imageUrl);
+        panHeader.Controls.Clear();
+        panHeader.Controls.Add(new LiteralControl(navMenu));
+
       }
     }
 
