@@ -17,6 +17,7 @@ namespace portal.services
 
 
 
+
     #region Description
     [WebMethod(Description = "<br>" +
       "Changes a User Id ('Password' in V5) using parameters:<ol>" +
@@ -101,6 +102,8 @@ namespace portal.services
     #endregion
     public string memberStatus(string custId, string membId)
     {
+
+
       using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
       {
         con.Open();
@@ -115,12 +118,19 @@ namespace portal.services
 
           SqlDataReader drd = cmd.ExecuteReader();
           string result = null, result1 = null, result2 = null;
+
+          // added const "V" to return the proper values if there are not result2 (programs) - previously just returned "[" for some reason.  Friday Nov 13, 2020
+          const string V = "[]";
+
           if (drd.HasRows)
           {
             result1 = convertSqlToJSON(drd, false);
             drd.NextResult();
             result2 = convertSqlToJSON(drd, true);
-
+            if (!drd.HasRows)
+            {
+              result2 = V;
+            }
             result = "{\"member\": " + result1 + ", \"programs\": " + result2 + "}";
           }
 
