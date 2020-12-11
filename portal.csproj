@@ -357,6 +357,7 @@
     <Content Include="documentation\Portal Modifications - Extend Manager Access - Learner.docx" />
     <Content Include="documentation\Portal Modifications - Passwords.docx" />
     <Content Include="v7\site.master" />
+    <Content Include="documentation\v5translation.docx" />
     <None Include="Properties\PublishProfiles\stagingNew01.pubxml" />
     <None Include="Properties\PublishProfiles\stagingNew02.pubxml" />
     <None Include="Properties\PublishProfiles\vubizcloud.pubxml" />
