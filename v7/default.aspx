@@ -201,7 +201,7 @@
     <asp:Label ID="labContent" CssClass="labContent" runat="server" Text=""></asp:Label>
   </div>
 
-  <div class="divPage" style="margin-top: 70px; background-color: inherit;">
+  <div class="divPage">
 
     <asp:ListView runat="server"
       ID="lvTiles"

@@ -424,9 +424,11 @@ div#panHeader:after {
     height: 36px;
 }
 .divPage {
-	font-size: 14px;
-  margin-top: 30px;
+  font-size: 14px;
+  margin-top: 70px;
+  margin-bottom: 50px;
 }
+
 .divPage .tileSet .tile .tileTitle {
     display: block;
     text-align: left;

@@ -1,4 +1,4 @@
-﻿.panBoth { width: 100%; min-width: 750px; margin: 50px auto; padding: 0; }
+﻿.panBoth { width: 100%; min-width: 750px; /*margin: 50px auto;*/ padding: 0; }
 
 .panTop .title1 { padding-bottom: 20px; text-align: center; }
 .panTop .btnAdd { margin: 5px 0 0 20px; }
