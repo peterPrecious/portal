@@ -12,7 +12,7 @@
   .gvCustomers tr th { padding: 5px; white-space: nowrap; height: 30px; }
     .gvCustomers tr th:first-child { text-align: left; }
   .gvCustomers tr td:nth-child(1), .gvCustomers tr td:nth-child(2) { padding-left: 5px; }
-  .gvCustomers tr:last-child td { height: 040px;  }
+  .gvCustomers tr:last-child td { height: 040px; }
   .gvCustomers .txtClone { text-align: center; text-transform: uppercase; }
   .gvCustomers .commands * { border: none; padding: 2px 5px; }
 
@@ -32,4 +32,7 @@ option:checked { font-weight: bold; font-style: italic; }
 .info { margin-top: 5px; width: 25px; }
 .edit { margin: 15px; }
 .email { width: 25px; margin: 0; }
-.iconsc { width: 25px; padding: 0; }
+.icons { width: 25px; padding: 0; }
+
+.dropDown { padding: 0; height: 20px; vertical-align: middle; margin-bottom: 2px; }
+.thisTitle { margin-top:25px;}

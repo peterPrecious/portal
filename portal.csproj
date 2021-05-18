@@ -102,6 +102,10 @@
     <Content Include="styles\css\about.min.css">
       <DependentUpon>about.css</DependentUpon>
     </Content>
+    <Content Include="styles\css\modules.css" />
+    <Content Include="styles\css\modules.min.css">
+      <DependentUpon>modules.css</DependentUpon>
+    </Content>
     <Content Include="styles\css\notice.css" />
     <Content Include="styles\css\notice.min.css">
       <DependentUpon>notice.css</DependentUpon>
@@ -181,11 +185,7 @@
     <Content Include="styles\css\kendoUI.min.css">
       <DependentUpon>kendoUI.css</DependentUpon>
     </Content>
-    <Content Include="styles\css\learners - Copy.min - Copy.css">
-      <DependentUpon>modules.css</DependentUpon>
-    </Content>
     <Content Include="styles\css\customers.css" />
-    <Content Include="styles\css\modules.css" />
     <Content Include="styles\css\passwordFinder.min.css">
       <DependentUpon>passwordFinder.css</DependentUpon>
     </Content>
@@ -234,6 +234,14 @@
     <Content Include="styles\icons\dropdownArrow.jpg" />
     <Content Include="styles\icons\eye.png" />
     <Content Include="styles\icons\home.png" />
+    <Content Include="styles\icons\portal\add.png" />
+    <Content Include="styles\icons\portal\back.png" />
+    <Content Include="styles\icons\portal\cancel.png" />
+    <Content Include="styles\icons\portal\clone.png" />
+    <Content Include="styles\icons\portal\delete.png" />
+    <Content Include="styles\icons\portal\details.png" />
+    <Content Include="styles\icons\portal\edit.png" />
+    <Content Include="styles\icons\portal\update.png" />
     <Content Include="styles\icons\vubiz\add.png" />
     <Content Include="styles\icons\vubiz\back.png" />
     <Content Include="styles\icons\vubiz\cancel.png" />
@@ -287,6 +295,7 @@
     <Content Include="styles\tiles\store.png" />
     <Content Include="styles\tiles\wrench.png" />
     <Content Include="styles\tiles\tileIcons.html" />
+    <Content Include="styles\vubizdefault.jpg" />
     <Content Include="styles\vubiz_logo.png" />
     <Content Include="v7\administrator\passwordReplace.aspx" />
     <Content Include="v7\administrator\profiles.aspx" />
@@ -358,8 +367,11 @@
     <Content Include="documentation\Portal Modifications - Passwords.docx" />
     <Content Include="v7\site.master" />
     <Content Include="documentation\v5translation.docx" />
+    <None Include="Properties\PublishProfiles\Live.pubxml" />
     <None Include="Properties\PublishProfiles\stagingNew01.pubxml" />
     <None Include="Properties\PublishProfiles\stagingNew02.pubxml" />
+    <None Include="Properties\PublishProfiles\VMCANSTWEB-01.pubxml" />
+    <None Include="Properties\PublishProfiles\VMCANSTWEB-02.pubxml" />
     <None Include="Properties\PublishProfiles\vubizcloud.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

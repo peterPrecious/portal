@@ -2,6 +2,9 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.IO;
+using System.Reflection;
+using System.Net;
 using System.Web;
 
 namespace portal
@@ -10,6 +13,49 @@ namespace portal
   public static class fn
   {
     #region General Functions
+
+    public static string AssemblyDirectory
+    {
+      get
+      {
+        string codeBase = Assembly.GetExecutingAssembly().CodeBase;
+        UriBuilder uri = new UriBuilder(codeBase);
+        string path = Uri.UnescapeDataString(uri.Path);
+        return Path.GetDirectoryName(path);
+      }
+    }
+
+    public static string GetRootUrl()
+    {
+      var oRequest = System.Web.HttpContext.Current.Request;
+      return oRequest.Url.GetLeftPart(System.UriPartial.Authority);
+    }
+
+    public static string GetAppUrl()
+    {
+      var oRequest = System.Web.HttpContext.Current.Request;
+      return oRequest.Url.GetLeftPart(System.UriPartial.Authority)
+          + System.Web.VirtualPathUtility.ToAbsolute("~/");
+    }
+
+    public static bool URLExists(string url)
+    {
+      HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+      request.Timeout = 1000;
+      request.Method = "HEAD";
+
+      try
+      {
+        using (HttpWebResponse response = (HttpWebResponse)request.GetResponse())
+        {
+          return response.StatusCode == HttpStatusCode.OK;
+        }
+      }
+      catch (WebException)
+      {
+        return false;
+      }
+    }
 
     public static bool IsNumeric(this string str)
     {

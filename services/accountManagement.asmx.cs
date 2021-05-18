@@ -102,8 +102,6 @@ namespace portal.services
     #endregion
     public string memberStatus(string custId, string membId)
     {
-
-
       using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
       {
         con.Open();

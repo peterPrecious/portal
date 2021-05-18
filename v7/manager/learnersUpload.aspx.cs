@@ -94,7 +94,7 @@ namespace portal.v7.manager
     {
       char tab = '\t';
       char emp = '\0';
-      string validId = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@$%^*()_+-{}[];,.:";
+      string validId = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@$%^*()_+-{}[];,.:";
       string record, header;
       int rowCnt = 0;
       int colCnt = -1;
@@ -137,7 +137,8 @@ namespace portal.v7.manager
             {
               if (validId.IndexOf(c.ToString()) == -1)
               {
-                StatusLabel.Text = "[Row: " + rowCnt + ", Col: " + colCnt + "] Invalid Learner Id:" + field + ". Use only A-Z, 0-9 and !@$%^*()_+-{}[];,.:"; return;
+                StatusLabel.Text = "[Row: " + rowCnt + ", Col: " + colCnt + "] Invalid Learner Id: " + field + ". Use only A-Z, 0-9 and !@$%^*()_+-{}[];,.:";
+                return;
               }
             }
 
@@ -215,7 +216,7 @@ namespace portal.v7.manager
         rowCnt++; // use to ignore header
 
         record = line.Trim();
-        if (record.Replace(tab, emp).Length > 0 && rowCnt > 2)          // ignore empty records (easy to pass in from excel plus header)
+        if (record.Replace(tab, emp).Length > 0 && rowCnt > 1)          // ignore empty records (easy to pass in from excel plus header)
         {
           colCnt = -1;
 

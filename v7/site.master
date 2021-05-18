@@ -11,6 +11,7 @@
 
   <title>Vubiz | <%: Page.Title %></title>
   <meta charset="utf-8" />
+  <meta name="robots" content="noindex,nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="shortcut icon" href="https://vubiz.com/vubizApps/styles/favicon.ico" />
 
@@ -74,6 +75,12 @@
       x.classList.toggle("change");
     }
 
+    function url_domain(url) {
+      var a = document.createElement('a');
+      a.href = url;
+      return a.hostname;
+    }
+
     function displayMenuDialog(type, title, endpoint) {
       var dialogHeight = $(window).height();
       var dialogWidth = $(window).width();
@@ -84,7 +91,7 @@
       } else {
         //load page into dialog
         $(".site").append("<div id=\"navMenuDialog\"></div>");
-        $("#navMenuDialog").load(endpoint + "?header=false");
+        $("#navMenuDialog").load(window.location.protocol + "//" + url_domain(window.location.href) + "/portal/v7/" + endpoint + "?header=false");
       }
 
       $("#navMenuDialog").dialog({
@@ -108,8 +115,37 @@
       return false;
     }
 
-    function goHome() {
+    function goToContent(tileTarget) {
+      $.ajax({
+        type: "POST",
+        url: "/portal/v7/default.aspx/goToContent",
+        contentType: "application/json;",
+        data: "{'tileGroup':'" + tileTarget + "'}",
+        success: function (response) {
+          window.location.replace(response.d);
+        },
+        failure: function (response) {
+          console.log(response.d);
+        }
+      });
+    }
 
+    function goToMenuItem(tileTarget) {
+      $.ajax({
+        type: "POST",
+        url: "/portal/v7/default.aspx/goToMenuItem",
+        contentType: "application/json;",
+        data: "{'tileGroup':'" + tileTarget + "'}",
+        success: function (response) {
+          window.location.replace(response.d);
+        },
+        failure: function (response) {
+          console.log(response.d);
+        }
+      });
+    }
+
+    function goHome() {
       $.ajax({
         type: "POST",
         url: "/portal/v7/default.aspx/goHome",
@@ -124,7 +160,6 @@
       });
 
       return false;
-
     }
 
   </script>

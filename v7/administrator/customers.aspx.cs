@@ -10,19 +10,37 @@ namespace portal.v7.administrator
 {
   public partial class customers : FormBase
   {
-    Sess se = new Sess();
+    private readonly Sess se = new Sess();
 
     protected void Page_Load(object sender, EventArgs e)
     {
-      Session["custId"] = "";
       se.localize();
-      labError_1.Text = "";
-      panConfirmShell.Visible = false;
+
+      if (!IsPostBack)
+      {
+
+      }
     }
 
     protected void butSearch_Click(object sender, EventArgs e)
     {
+      gvCustomers.DataSourceID = SqlDataSource1.ID;
+
       gvCustomers.DataBind();
+    }
+
+    protected void butRestart_Click(object sender, EventArgs e)
+    { // fired when we clear the search criteria
+      Response.Redirect("/portal/v7/administrator/customers.aspx");
+    }
+
+    protected void gvCustomers_RowDataBound(object sender, GridViewRowEventArgs e)
+    {
+      if (e.Row.RowType == DataControlRowType.DataRow)
+      {
+        e.Row.Attributes["onclick"] = ClientScript.GetPostBackClientHyperlink(this.gvCustomers, "Select$" + e.Row.RowIndex);
+        e.Row.Attributes["style"] = "cursor:pointer";
+      }
     }
 
     protected void gvCustomers_SelectedIndexChanged(object sender, EventArgs e)
@@ -30,29 +48,36 @@ namespace portal.v7.administrator
       // this is fired when we select a customer to edit
       panTop.Visible = false;
       panBot.Visible = true;
-      panBot_1.Visible = false;
-      panBot_2.Visible = true;
+
+      //panBotTitle.Visible = false;
+      panCustPrefix.Visible = false;
+      dvCustomer.Visible = true;
+
       dvCustomer.ChangeMode(DetailsViewMode.ReadOnly);
+      dvCustomer.DataBind();
+
+      GridViewRow row = gvCustomers.SelectedRow;
     }
 
     protected void btnCustPrefix_Click(object sender, EventArgs e)
     {
-      labError_1.Text = "";
+      labError.Text = "";
       TextBox custPrefix = (TextBox)panCustPrefix.FindControl("txtCustPrefix");
       string txtCustPrefix = custPrefix.Text.ToUpper();
       if (txtCustPrefix.Length != 4)
       {
-        labError_1.Text = "Please enter a 4 character Customer Id prefix, ie 'ABCD'.";
+        labError.Text = "Please enter a 4 character Customer Id prefix, ie '" + se.cust + "'.";
         custPrefix.Text = "";
         return;
       }
       if (!Regex.IsMatch(txtCustPrefix, @"^[A-Z]+$"))
       {
-        labError_1.Text = "Each of the 4 characters must be Alpha (A-Z).";
+        labError.Text = "Each of the 4 characters must be Alpha (A-Z).";
         custPrefix.Text = "";
         return;
       }
-      // this SP generates the next CustId and inserts an empty record with V8=true 
+
+      // this generates the next CustId and inserts an empty record with V8=true 
       // it also creates the NEW Account Internals
 
       string txtNextCustId = "";
@@ -72,20 +97,22 @@ namespace portal.v7.administrator
       }
       Session["custId"] = txtNextCustId;
 
-      panBot_1.Visible = false; // hide the creation of the cust_id
-      panBot_2.Visible = true;  // show the record details (now in edit mode)
-
       dvCustomer.ChangeMode(DetailsViewMode.Insert);
       dvCustomer.DataBind();
+
+      panCustPrefix.Visible = false;
+      dvCustomer.Visible = true;
+      panBot.Visible = true;
+
+      labCust.Text = txtNextCustId.Substring(0, 4);
+      labCustId.Text = txtNextCustId;
     }
 
     protected void listCustomers_Click(object sender, EventArgs e)
     {
-      // this is the icon on the bottom title to return and list modules
-      gvCustomers.DataBind();
       panTop.Visible = true;
       panBot.Visible = false;
-      labError_1.Text = "";
+      labError.Text = "";
     }
 
     protected void btnInsertCancel_Click(object sender, EventArgs e)
@@ -100,15 +127,42 @@ namespace portal.v7.administrator
 
     protected void dvCustomer_ItemInit(object sender, ImageClickEventArgs e)
     {
-      // this normally initializes all fields when we add a new Customer but 
-      // we are now doing this after they enter the Cust_Id prefix above
+      // this initializes all fields when we add a new Customer
+      // 
+      // ...but we are now doing this after they enter the Cust_Id prefix above
       panTop.Visible = false;
       panBot.Visible = true;
-      panBot_1.Visible = true;
-      panBot_2.Visible = false;
+      labError.Text = "";
 
-      labCust.Text = se.cust;
-      labCustId.Text = se.cust;
+      dvCustomer.ChangeMode(DetailsViewMode.Insert);
+      dvCustomer.DataBind();
+
+      if (dvCustomer.FindControl("custId") != null)
+      {
+        //custAcctId Row, not needed on insert
+        dvCustomer.Rows[0].Visible = false;
+      }
+    }
+
+    protected void dvCustomer_DataBound(object sender, EventArgs e)
+    {
+      if (dvCustomer.CurrentMode.ToString() == "ReadOnly")  // display 
+      {
+        panBotHeader.Text = "Customer Details";
+      }
+
+      if (dvCustomer.CurrentMode.ToString() == "Edit")
+      {
+        panBotHeader.Text = "Edit this Customer Profile";
+      }
+    }
+
+    protected void dvCustomer_Restart(object sender, ImageClickEventArgs e)
+    {
+      // this restarts the app
+      dvCustomer.ChangeMode(DetailsViewMode.ReadOnly);
+      dvCustomer.DataBind();
+      Response.Redirect("customers.aspx");
     }
 
     protected void dvCustomer_ItemDeleted(object sender, DetailsViewDeletedEventArgs e)
@@ -116,12 +170,119 @@ namespace portal.v7.administrator
       Response.Redirect("/portal/v7/administrator/customers.aspx");
     }
 
+    protected void dvCustomer_ItemInserting(object sender, DetailsViewInsertEventArgs e)
+    {
+      // ensure all mandatory fields were entered
+      string missingFields = "";
+      if (e.Values["custId"] == null) missingFields += " Customer Id,";
+      if (e.Values["custTitle"] == null) missingFields += " Title,";
+
+      //if (e.Values["custFirstName"] == null) missingFields += " " + GetGlobalResourceObject("portal", "firstName").ToString() + ",";
+      //if (e.Values["custLastName"] == null) missingFields += " " + GetGlobalResourceObject("portal", "lastName").ToString() + ",";
+      //if (e.Values["custEmail"] == null) missingFields += " " + GetGlobalResourceObject("portal", "email").ToString() + ",";
+
+
+      if (missingFields.Length > 0)
+      {
+        //labError.Text = "You are missing mandatory field(s): " + missingFields.TrimEnd(',') + ".";
+        labError.Text = GetGlobalResourceObject("portal", "customers_8").ToString() + missingFields.TrimEnd(',') + ".";
+        e.Cancel = true;
+      }
+
+      //DropDownList ctrMembLevel = (DropDownList)dvCustomer.FindControl("membLevel");
+      //e.Values["membLevel"] = ctrMembLevel.SelectedValue;
+
+
+      //// create single string for managerAccess display
+      //ListBox ctrMembManagerAccess = (ListBox)dvCustomer.FindControl("membManagerAccess");
+      //string membManagerAccess = null;
+      //foreach (ListItem item in ctrMembManagerAccess.Items)
+      //{
+      //  if (item.Selected)
+      //  {
+      //    membManagerAccess += item.Value + ",";
+      //  }
+      //}
+      //if (membManagerAccess != null) membManagerAccess = membManagerAccess.TrimEnd(',');
+      //e.Values["membManagerAccess"] = membManagerAccess;
+    }
+
+    protected void dvCustomer_ItemInserted(object sender, DetailsViewInsertedEventArgs e)
+    {
+      if (e.Exception != null)
+      {
+        string sqlNumber = ((System.Data.SqlClient.SqlException)e.Exception).Number.ToString();
+        if (sqlNumber == "2627")
+        {
+          labError.Text = "<p>" + GetGlobalResourceObject("portal", "sqlDuplicate").ToString() + "</p>";
+        }
+        else
+        {
+          labError.Text = "<p>" + GetGlobalResourceObject("portal", "sql").ToString() + "<br />[SQL error: " + sqlNumber + " - " + e.Exception.Message.ToString() + "]  Contact Support Services." + "</p>";
+        }
+        e.ExceptionHandled = true;
+        e.KeepInInsertMode = true;
+      }
+      else
+      {
+        Response.Redirect("/portal/v7/administrator/customers.aspx");
+      }
+    }
+
+    protected void dvCustomer_ItemUpdating(object sender, DetailsViewUpdateEventArgs e)
+    {
+
+      string _custTitle = "";
+      //, _membFirstName = "", _membLastName = "", _membEmail = "";
+
+      // ensure all mandatory fields were entered
+      TextBox txtCustTitle = (TextBox)dvCustomer.FindControl("custTitle"); _custTitle = txtCustTitle.Text.Trim();
+      //TextBox txtMembLastName = (TextBox)dvCustomer.FindControl("membLastName"); _membLastName = txtMembLastName.Text.Trim();
+      //TextBox txtMembEmail = (TextBox)dvCustomer.FindControl("membEmail"); _membEmail = txtMembEmail.Text.Trim();
+
+      //HiddenField hidMembLevel = (HiddenField)dvCustomer.FindControl("hidMembLevel");
+      //int seMembLevel = int.Parse(Session["membLevel"].ToString());
+
+      string missingFields = "";
+      if (_custTitle.Length == 0) missingFields += " Title,";
+      //if (_membLastName.Length == 0) missingFields += " Last Name,";
+      //if (_membEmail.Length == 0) missingFields += " Email,";
+      if (missingFields.Length > 0)
+      {
+        labError.Text = "<p />You are missing mandatory field(s): " + missingFields.TrimEnd(',') + ".</p>";
+        labError.Visible = true;
+        e.Cancel = true;
+      }
+
+      // for some reason I need to force this value into custLang
+      DropDownList ctrCustLang = (DropDownList)dvCustomer.FindControl("custLang");
+      e.NewValues["custLang"] = ctrCustLang.SelectedValue;
+
+
+    }
+
+    protected void dvCustomer_ItemUpdated(object sender, DetailsViewUpdatedEventArgs e)
+    {
+      if (e.Exception != null)
+      {
+        string sqlNumber = ((System.Data.SqlClient.SqlException)e.Exception).Number.ToString();
+        labError.Text = "<p />" + GetGlobalResourceObject("portal", "sql").ToString() + "<br />[SQL error: " + sqlNumber + " - " + e.Exception.Message.ToString() + "]  Contact Support Services.";
+
+        labError.Visible = true;
+        e.ExceptionHandled = true;
+      }
+      else
+      {
+        Response.Redirect("/portal/v7/administrator/customers.aspx");
+      }
+    }
+
     protected void dvCustomer_PreRender(object sender, EventArgs e)
     {
-      if (dvCustomer.Rows.Count > 0)
-      {
-        dvCustomer.Rows[0].Cells[1].Text = Session["custId"].ToString();
-      }
+      //if (dvCustomer.Rows.Count > 0)
+      //{
+      //  dvCustomer.Rows[0].Cells[1].Text = Session["custId"].ToString();
+      //}
     }
 
     protected void btnUpdate_Click(object sender, ImageClickEventArgs e)
@@ -165,7 +326,7 @@ namespace portal.v7.administrator
       Session["confirmParms"] = e.CommandArgument;
       btnConfirmOk.Visible = true; // this is set to false below
       string[] parm = Session["confirmParms"].ToString().Split('|');
-      int custLearners = 0; // custLearners is a count of learners excluding internals and big sales
+      int custLearners = 0; // custLearners is a count of learners excluding internals and BIGMGR (password)
       if (parm[0] == "Delete")  // Delete, not Clone, uses an extra parm
       {
         custLearners = Convert.ToInt32(parm[3]);
@@ -174,7 +335,7 @@ namespace portal.v7.administrator
       if (parm[0] == "Clone")
       {
         labConfirmTitle.Text = "Note !";
-        labConfirmMessage.Text = "You are about to Clone Account '" + parm[1] + "'.<br />Clicking OK will create a new Account whose Customer Id will start with '" + parm[2] + "'";
+        labConfirmMessage.Text = "You are about to Clone Account <b>" + parm[1] + "</b>.<br />Clicking OK will create a new Account whose Customer Id will start with '" + parm[2] + "'";
         btnConfirmCancel.Text = "Cancel";
         btnConfirmOk.Text = "OK";
         panConfirmShell.Visible = true;
@@ -182,7 +343,7 @@ namespace portal.v7.administrator
       else if (parm[0] == "Delete" && custLearners == 0)
       {
         labConfirmTitle.Text = "Note !";
-        labConfirmMessage.Text = "You are about to Delete Account '" + parm[1] + "'!<br />It is important to remember that clicking OK is an irreversible action.";
+        labConfirmMessage.Text = "You are about to Delete Account <b>" + parm[1] + "</b>!<br />It is important to remember that clicking OK is an irreversible action.";
         btnConfirmCancel.Text = "Cancel";
         btnConfirmOk.Text = "OK";
         panConfirmShell.Visible = true;
@@ -190,7 +351,7 @@ namespace portal.v7.administrator
       else if (parm[0] == "Delete" && custLearners > 0)
       {
         labConfirmTitle.Text = "Oops !";
-        labConfirmMessage.Text = "You cannot Delete Account '" + parm[1] + "'<br />because it contains " + parm[3] + " active learner(s).";
+        labConfirmMessage.Text = "You cannot Delete Account <b>" + parm[1] + "</b><br />because it contains " + parm[3] + " active learner(s).";
         btnConfirmCancel.Text = "Cancel";
         btnConfirmOk.Text = "OK";
         btnConfirmOk.Visible = false;
@@ -259,6 +420,14 @@ namespace portal.v7.administrator
       Response.Redirect("/portal/v7/default.aspx");
     }
 
+    protected void ddActive_SelectedIndexChanged(object sender, EventArgs e)
+    {
 
+    }
+
+    protected void txtCustPrefix_PreRender(object sender, EventArgs e)
+    {
+
+    }
   }
 }

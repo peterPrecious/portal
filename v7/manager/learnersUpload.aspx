@@ -10,14 +10,15 @@
   <style>
     .labCustId1,
     .labCustId2,
-    .labCustId3 { color: yellow; font-weight: bold; font-size: smaller; }
+    .labCustId3 { color: var(--vubiz-orange); font-weight: bold; font-size: smaller; }
 
     .statusLabel,
-    .statusLabel2 { color: yellow; width: 600px; margin: auto; text-align: left; }
+    .statusLabel2 { color: var(--vubiz-orange); margin: auto; font-size: 1.2em; width: 800px; text-align: center; }
     .statusLabel { font-weight: bold; }
     .statusLabel2 { font-weight: normal; }
 
-    a { color: yellow; text-decoration: underline; font-size: larger; font-weight: bold; text-transform: uppercase; font-size: 9pt; }
+    a { color: var(--vubiz-orange); text-decoration: underline; font-size: larger; font-weight: bold; text-transform: uppercase; font-size: 9pt; }
+    a:hover { color: var(--vubiz-orange); }
     /* this is so the underline from a above is ignored */
     .newButton { text-decoration: none }
     .light { font-weight: 600 !important; text-transform: capitalize; }
@@ -43,7 +44,7 @@
     .details tr td { padding-bottom: 15px; padding-right: 10px; }
     .details tr:first-child td { font-weight: bold; }
     .details tr:not(:first-child) td:first-child { text-align: center; }
-    code { color: yellow; font-weight: bold; font-size: larger }
+    code { color: var(--vubiz-orange); font-weight: bold; font-size: larger }
 
     label { left: 120px; }
 
@@ -82,7 +83,7 @@
     <h1><span onclick="fadeIn2()" class="hoverUnderline" title="Click to show/hide description.">Upload Learners (via Tab Delimited File)</span></h1>
     <h2>[Clicking on the Title shows/hides this app's description and functionality.]</h2>
     <%--    <h3 class="statusLabel" id="StatusLabel" style="display:none;">    </h3>--%>
-    <asp:Label ID="StatusLabel" runat="server"></asp:Label>
+    <asp:Label ID="StatusLabel" class="statusLabel" runat="server"></asp:Label>
 
 
     <asp:Panel runat="server" CssClass="panStatus" ID="panStatus" Visible="false">
@@ -113,14 +114,14 @@
       <br>
       <span style="font-weight: bold">First</span>: Start with an Excel spreadsheet of your learners and 
       arrange the columns so they conform to the sample file here: 
-      <a style="color: yellow" target="_blank" href="/portal/repository/DEMO0000_LEARNERS.xlsx">DEMO0000_LEARNERS.xlsx</a>. 
+      <a style="color: var(--vubiz-orange);" target="_blank" href="/portal/repository/DEMO0000_LEARNERS.xlsx">DEMO0000_LEARNERS.xlsx</a>. 
       Do not remove any unused columns from this spreadsheet. 
       Leave the column contents blank if it is not applicable, but do not remove it.&nbsp; 
       Your spreadsheet MUST contain a header row that MUST be exactly the same as in the sample file. 
       If you use Program Ids, ensure you separate multiple entries with a space.<br>
       <br>
       <span style="font-weight: bold">Second</span>: Save the .xls file as a Text (Tab Delimited) file for uploading. 
-      Click here for a sample text file: <a style="color: yellow" target="_blank" href="/portal/repository/DEMO0000_LEARNERS.txt">DEMO0000_LEARNERS.txt</a>.<br>
+      Click here for a sample text file: <a style="color: var(--vubiz-orange);" target="_blank" href="/portal/repository/DEMO0000_LEARNERS.txt">DEMO0000_LEARNERS.txt</a>.<br>
       <br>
       <span style="font-weight: bold">Third</span>: Follow the steps below to upload your .txt file. 
       If you are updating your Learner database by uploading ALL active Learners, you should "Inactivate all existing Learners..." 

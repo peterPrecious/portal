@@ -15,13 +15,13 @@ namespace portal.v7.administrator
   {
 
     /// <summary>
-    /// ImageButton1 control.
+    /// exit control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+    protected global::System.Web.UI.WebControls.ImageButton exit;
 
     /// <summary>
     /// panConfirmShell control.
@@ -96,15 +96,6 @@ namespace portal.v7.administrator
     protected global::System.Web.UI.WebControls.Panel panTop;
 
     /// <summary>
-    /// Literal1 control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Literal Literal1;
-
-    /// <summary>
     /// ddActive control.
     /// </summary>
     /// <remarks>
@@ -132,6 +123,15 @@ namespace portal.v7.administrator
     protected global::System.Web.UI.WebControls.Button butSearch;
 
     /// <summary>
+    /// butRestart control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Button butRestart;
+
+    /// <summary>
     /// gvCustomers control.
     /// </summary>
     /// <remarks>
@@ -150,31 +150,31 @@ namespace portal.v7.administrator
     protected global::System.Web.UI.WebControls.Panel panBot;
 
     /// <summary>
-    /// panBot_1 control.
+    /// panBotHeader control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Panel panBot_1;
+    protected global::System.Web.UI.WebControls.Label panBotHeader;
 
     /// <summary>
-    /// litBot_1 control.
+    /// titleAddACustomer control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Literal litBot_1;
+    protected global::System.Web.UI.WebControls.ImageButton titleAddACustomer;
 
     /// <summary>
-    /// labError_1 control.
+    /// panBotTitle control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label labError_1;
+    protected global::System.Web.UI.WebControls.Panel panBotTitle;
 
     /// <summary>
     /// labCust control.
@@ -184,15 +184,6 @@ namespace portal.v7.administrator
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label labCust;
-
-    /// <summary>
-    /// labCustId control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label labCustId;
 
     /// <summary>
     /// panCustPrefix control.
@@ -222,31 +213,31 @@ namespace portal.v7.administrator
     protected global::System.Web.UI.WebControls.Button btnCustPrefix;
 
     /// <summary>
-    /// panBot_2 control.
+    /// panPooh control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Panel panBot_2;
+    protected global::System.Web.UI.WebControls.Panel panPooh;
 
     /// <summary>
-    /// lit_Bot_2 control.
+    /// labCustId control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Literal lit_Bot_2;
+    protected global::System.Web.UI.WebControls.Label labCustId;
 
     /// <summary>
-    /// labError_2 control.
+    /// labError control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Label labError_2;
+    protected global::System.Web.UI.WebControls.Label labError;
 
     /// <summary>
     /// dvCustomer control.
@@ -274,5 +265,14 @@ namespace portal.v7.administrator
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
+
+    /// <summary>
+    /// SqlDataSource3 control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
   }
 }

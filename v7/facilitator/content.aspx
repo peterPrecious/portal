@@ -76,7 +76,7 @@
             <asp:BoundField DataField="Learner Id" HeaderText="<%$  Resources:portal, uniqueId%>" SortExpression="Learner Id" />
             <asp:BoundField DataField="First Name" HeaderText="<%$  Resources:portal, firstName%>" SortExpression="First Name" />
             <asp:BoundField DataField="Last Name" HeaderText="<%$  Resources:portal, lastName%>" SortExpression="Last Name" />
-            <asp:BoundField DataField="Programs Before" HeaderText="<%$ Resources:portal, programsAssigned%>" SortExpression="Programs Before" />
+            <asp:BoundField DataField="Programs Before" HeaderText="<%$ Resources:portal, programsBefore%>" SortExpression="Programs Before" />
             <%--<asp:BoundField DataField="Programs After" HeaderText="<%$ Resources:portal, programsAfter%>" SortExpression="Programs After" />--%>
             <asp:BoundField DataField="Active" HeaderText="Active?" SortExpression="Active" />
           </Columns>
@@ -106,7 +106,7 @@
               </ItemTemplate>
             </asp:TemplateField>
             <asp:BoundField DataField="Program Id" HeaderText="Program Id" SortExpression="Program Id" />
-            <asp:BoundField DataField="Program Title" HeaderText="Program Title" SortExpression="Program Title" ReadOnly="True" />
+            <asp:BoundField DataField="Program Title" HeaderText="Program Title" SortExpression="Program Title" ReadOnly="True" ItemStyle-CssClass="gvProgs_ProgramTitle" />
             <asp:BoundField DataField="Purchased" HeaderText="Purchased" ReadOnly="True" SortExpression="Purchased" />
             <asp:TemplateField HeaderText="<%$  Resources:portal, assigned%>"></asp:TemplateField>
             <asp:TemplateField HeaderText="<%$  Resources:portal, available%>"></asp:TemplateField>

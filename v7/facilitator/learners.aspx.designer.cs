@@ -24,6 +24,60 @@ namespace portal.v7.facilitator
     protected global::System.Web.UI.WebControls.ImageButton exit;
 
     /// <summary>
+    /// panConfirmShell control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel panConfirmShell;
+
+    /// <summary>
+    /// panConfirm control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel panConfirm;
+
+    /// <summary>
+    /// labConfirmTitle control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label labConfirmTitle;
+
+    /// <summary>
+    /// labConfirmMessage control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label labConfirmMessage;
+
+    /// <summary>
+    /// btnConfirmCancel control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.LinkButton btnConfirmCancel;
+
+    /// <summary>
+    /// btnConfirmOk control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.LinkButton btnConfirmOk;
+
+    /// <summary>
     /// panBoth control.
     /// </summary>
     /// <remarks>
@@ -69,13 +123,13 @@ namespace portal.v7.facilitator
     protected global::System.Web.UI.WebControls.Button butSearch;
 
     /// <summary>
-    /// butClear control.
+    /// butRestart control.
     /// </summary>
     /// <remarks>
     /// Auto-generated field.
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
-    protected global::System.Web.UI.WebControls.Button butClear;
+    protected global::System.Web.UI.WebControls.Button butRestart;
 
     /// <summary>
     /// chkIncludeChildAccounts control.
@@ -103,6 +157,24 @@ namespace portal.v7.facilitator
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Panel panBot;
+
+    /// <summary>
+    /// panBotHeader control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label panBotHeader;
+
+    /// <summary>
+    /// titleAddALearner control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.ImageButton titleAddALearner;
 
     /// <summary>
     /// labError control.

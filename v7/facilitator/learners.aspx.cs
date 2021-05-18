@@ -12,7 +12,9 @@ namespace portal.v7.facilitator
     private readonly Sess se = new Sess();
     private readonly Apps ap = new Apps();
 
-    //SH - 2020/08/18 - Adding to replace se.usesPassword that is set from the profile, stakeholders would like password to be shown 100% of the time, not wanting to remove or comment out all of the logic just yet
+    // SH - 2020/08/18 - Added to replace se.usesPassword that is set from the profile,
+    // stakeholders would like password to be shown 100% of the time,
+    // not wanting to remove or comment out all of the logic just yet
     private readonly bool usesPassword = true;
 
     protected void Page_Load(object sender, EventArgs e)
@@ -92,9 +94,9 @@ namespace portal.v7.facilitator
       }
     }
 
-    // fired when we capture the search criteria
     protected void butSearch_Click(object sender, EventArgs e)
     {
+      // fired when we capture the search criteria
       if (chkIncludeChildAccounts.Checked)
       {
         gvLearners.DataSourceID = SqlDataSource3.ID;
@@ -108,14 +110,15 @@ namespace portal.v7.facilitator
       setNoLearnersText();
     }
 
-    // fired when we clear the search criteria
-    protected void butClear_Click(object sender, EventArgs e)
+    protected void butRestart_Click(object sender, EventArgs e)
     {
-      txtSearch.Text = "";
-      chkIncludeChildAccounts.Checked = false;
-      gvLearners.DataSourceID = SqlDataSource1.ID;
-      gvLearners.DataBind();
-      setNoLearnersText();
+      // fired when we clear the search criteria
+      //txtSearch.Text = "";
+      //chkIncludeChildAccounts.Checked = false;
+      //gvLearners.DataSourceID = SqlDataSource1.ID;
+      //gvLearners.DataBind();
+      //setNoLearnersText();
+      Response.Redirect("/portal/v7/facilitator/learners.aspx");
     }
 
     protected void gvLearners_RowDataBound(object sender, GridViewRowEventArgs e)
@@ -127,17 +130,18 @@ namespace portal.v7.facilitator
       }
     }
 
-    // this is fired when we select a learner to edit
     protected void gvLearners_SelectedIndexChanged(object sender, EventArgs e)
     {
+      // this is fired when we select a learner to edit
       panIncludeChildAccounts_Message.Visible = false;
       panTop.Visible = false;
       panBot.Visible = true;
+
       dvLearner.ChangeMode(DetailsViewMode.ReadOnly);
       dvLearner.DataBind();
 
       GridViewRow row = gvLearners.SelectedRow;
-      if(!string.IsNullOrWhiteSpace(row.Cells[5].Text))
+      if (!string.IsNullOrWhiteSpace(row.Cells[5].Text))
       {
         int isChild = Convert.ToInt32(row.Cells[5].Text);
 
@@ -161,16 +165,16 @@ namespace portal.v7.facilitator
       }
     }
 
-    // this is the icon at the top title to add a learner
     protected void AddLearner_Click(object sender, EventArgs e)
     {
+      // this is the icon at the top title to add a learner
       panTop.Visible = false;
       panBot.Visible = true;
     }
 
-    // this is the icon on the bottom title to return and list learners
-    protected void ListLearners_Click(object sender, EventArgs e)
+    protected void listLearners_Click(object sender, EventArgs e)
     {
+      // this is the icon on the bottom title to return and list learners
       panTop.Visible = true;
       panBot.Visible = false;
       labError.Text = "";
@@ -181,75 +185,11 @@ namespace portal.v7.facilitator
       dvLearner.ChangeMode(DetailsViewMode.ReadOnly);
     }
 
-    // this initializes all fields when you add a new learner
-    protected void dvLearner_ItemInit(object sender, ImageClickEventArgs e)
-    {
-      panTop.Visible = false;
-      panBot.Visible = true;
-      labError.Text = "";
-
-      dvLearner.ChangeMode(DetailsViewMode.Insert);
-      dvLearner.DataBind();
-
-      if (dvLearner.FindControl("membId") != null)
-      {
-        //membAcctId Row, not needed on insert
-        dvLearner.Rows[0].Visible = false;
-
-        ((TextBox)dvLearner.FindControl("membId")).Text = "";
-        if (usesPassword)
-        {
-          ((TextBox)dvLearner.FindControl("membPwd")).Text = "";
-        }
-        else
-        {
-          DetailsViewRow row = dvLearner.Rows[2];
-          row.Visible = false;
-        }
-
-        ((TextBox)dvLearner.FindControl("membFirstName")).Text = "";
-        ((TextBox)dvLearner.FindControl("membLastName")).Text = "";
-        ((TextBox)dvLearner.FindControl("membEmail")).Text = "";
-        ((TextBox)dvLearner.FindControl("membOrganization")).Text = "";
-        ((TextBox)dvLearner.FindControl("membMemo")).Text = "";
-
-        DropDownList ctrMembLevel = (DropDownList)dvLearner.FindControl("membLevel");
-        ctrMembLevel.Items.FindByValue("1").Enabled = false;
-        ctrMembLevel.Items.FindByValue("2").Enabled = true;
-        ctrMembLevel.Items.FindByValue("5").Enabled = false;
-        // disable levels unless beneath your membLevel
-        int seMembLevel = int.Parse(Session["membLevel"].ToString());
-        if (seMembLevel == 3)
-        {
-          ctrMembLevel.Items.FindByValue("3").Enabled = false;
-          ctrMembLevel.Items.FindByValue("4").Enabled = false;
-        }
-        if (seMembLevel == 4)
-        {
-          ctrMembLevel.Items.FindByValue("3").Enabled = true;
-          ctrMembLevel.Items.FindByValue("4").Enabled = false;
-        }
-        if (seMembLevel == 5)
-        {
-          ctrMembLevel.Items.FindByValue("3").Enabled = true;
-          ctrMembLevel.Items.FindByValue("4").Enabled = true;
-        }
-        Label labMembLevel = (Label)dvLearner.FindControl("labMembLevel");
-        labMembLevel.Text = ""; // only used for read
-
-        HiddenField hidMembLevel = (HiddenField)dvLearner.FindControl("hidMembLevel");
-        hidMembLevel.Value = "2";
-
-        managerAccessHide(usesPassword); // Hide until membLevel set to 4 or 5
-        ((CheckBox)dvLearner.FindControl("membActive")).Checked = true;
-        ((CheckBox)dvLearner.FindControl("membEmailAlert")).Checked = true;
-      }
-    }
-
     protected void dvLearner_DataBound(object sender, EventArgs e)
     {
       if (dvLearner.CurrentMode.ToString() == "ReadOnly")  // display 
       {
+        panBotHeader.Text = "Learner Details";
         if (!usesPassword)  // hide Pwd if not needed  
         {
           Label labMembPwd = (Label)dvLearner.FindControl("membPwd");
@@ -300,6 +240,8 @@ namespace portal.v7.facilitator
 
       if (dvLearner.CurrentMode.ToString() == "Edit")
       {
+        panBotHeader.Text = "Edit this Learner Profile";
+
         if (!usesPassword)  // hide Pwd if not needed  
         {
           TextBox txtMembPwd = (TextBox)dvLearner.FindControl("membPwd");
@@ -366,6 +308,73 @@ namespace portal.v7.facilitator
       }
     }
 
+
+    protected void dvLearner_ItemInit(object sender, ImageClickEventArgs e)
+    {
+      // this initializes all fields when you add a new learner
+
+      panTop.Visible = false;
+      panBot.Visible = true;
+      labError.Text = "";
+
+      dvLearner.ChangeMode(DetailsViewMode.Insert);
+      dvLearner.DataBind();
+
+      if (dvLearner.FindControl("membId") != null)
+      {
+        //membAcctId Row, not needed on insert
+        dvLearner.Rows[0].Visible = false;
+
+        ((TextBox)dvLearner.FindControl("membId")).Text = "";
+        if (usesPassword)
+        {
+          ((TextBox)dvLearner.FindControl("membPwd")).Text = "";
+        }
+        else
+        {
+          DetailsViewRow row = dvLearner.Rows[2];
+          row.Visible = false;
+        }
+
+        ((TextBox)dvLearner.FindControl("membFirstName")).Text = "";
+        ((TextBox)dvLearner.FindControl("membLastName")).Text = "";
+        ((TextBox)dvLearner.FindControl("membEmail")).Text = "";
+        ((TextBox)dvLearner.FindControl("membOrganization")).Text = "";
+        ((TextBox)dvLearner.FindControl("membMemo")).Text = "";
+
+        DropDownList ctrMembLevel = (DropDownList)dvLearner.FindControl("membLevel");
+        ctrMembLevel.Items.FindByValue("1").Enabled = false;
+        ctrMembLevel.Items.FindByValue("2").Enabled = true;
+        ctrMembLevel.Items.FindByValue("5").Enabled = false;
+        // disable levels unless beneath your membLevel
+        int seMembLevel = int.Parse(Session["membLevel"].ToString());
+        if (seMembLevel == 3)
+        {
+          ctrMembLevel.Items.FindByValue("3").Enabled = false;
+          ctrMembLevel.Items.FindByValue("4").Enabled = false;
+        }
+        if (seMembLevel == 4)
+        {
+          ctrMembLevel.Items.FindByValue("3").Enabled = true;
+          ctrMembLevel.Items.FindByValue("4").Enabled = false;
+        }
+        if (seMembLevel == 5)
+        {
+          ctrMembLevel.Items.FindByValue("3").Enabled = true;
+          ctrMembLevel.Items.FindByValue("4").Enabled = true;
+        }
+        Label labMembLevel = (Label)dvLearner.FindControl("labMembLevel");
+        labMembLevel.Text = ""; // only used for read
+
+        HiddenField hidMembLevel = (HiddenField)dvLearner.FindControl("hidMembLevel");
+        hidMembLevel.Value = "2";
+
+        managerAccessHide(usesPassword); // Hide until membLevel set to 4 or 5
+        ((CheckBox)dvLearner.FindControl("membActive")).Checked = true;
+        ((CheckBox)dvLearner.FindControl("membEmailAlert")).Checked = true;
+      }
+    }
+
     protected void dvLearner_ItemInserting(object sender, DetailsViewInsertEventArgs e)
     {
       // ensure all mandatory fields were entered
@@ -382,9 +391,13 @@ namespace portal.v7.facilitator
         e.Cancel = true;
       }
 
+      if (e.Values["membAcctId"] == null)
+      {
+        e.Values["membAcctId"] = Session["custAcctId"];
+      }
+
       DropDownList ctrMembLevel = (DropDownList)dvLearner.FindControl("membLevel");
       e.Values["membLevel"] = ctrMembLevel.SelectedValue;
-
 
       // create single string for managerAccess display
       ListBox ctrMembManagerAccess = (ListBox)dvLearner.FindControl("membManagerAccess");
@@ -424,7 +437,6 @@ namespace portal.v7.facilitator
 
     protected void dvLearner_ItemUpdating(object sender, DetailsViewUpdateEventArgs e)
     {
-
       string _membPwd = "", _membFirstName = "", _membLastName = "", _membEmail = "";
 
       // ensure all mandatory fields were entered
@@ -544,11 +556,66 @@ namespace portal.v7.facilitator
       ((Label)dvLearner.FindControl("labResendEmailAlerts")).Visible = true;
     }
 
+    protected void btnConfirmOk_Click(object sender, EventArgs e)
+    {
+      //string[] parm = Session["confirmParms"].ToString().Split('|');
+      //int custLearners = 0;
+      //if (parm[0] == "Delete")  // Delete, not Clone, uses an extra parm
+      //{
+      //  custLearners = Convert.ToInt32(parm[3]);
+      //}
+
+      //if (parm[0] == "Clone")
+      //{
+      //  string cloneCustId = parm[1];
+      //  string cloneCustPrefix = parm[2];
+
+      //  using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
+      //  {
+      //    con.Open();
+      //    using (SqlCommand cmd = new SqlCommand())
+      //    {
+      //      cmd.Connection = con;
+      //      cmd.CommandText = "dbo.sp7nextCustId5";
+      //      cmd.CommandType = CommandType.StoredProcedure;
+      //      cmd.Parameters.Add(new SqlParameter("@cloneCustId", cloneCustId));
+      //      cmd.Parameters.Add(new SqlParameter("@cloneCustPrefix", cloneCustPrefix));
+
+      //      cmd.ExecuteNonQuery();
+      //    }
+      //  }
+      //}
+      //else if (parm[0] == "Delete" && custLearners == 0)
+      //{
+      //  string deleteCustId = parm[1];
+      //  string deleteCustGuid = parm[2];
+
+      //  using (SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["apps"].ConnectionString))
+      //  {
+      //    con.Open();
+      //    using (SqlCommand cmd = new SqlCommand())
+      //    {
+      //      cmd.Connection = con;
+      //      cmd.CommandText = "dbo.sp7customerDelete";
+      //      cmd.CommandType = CommandType.StoredProcedure;
+      //      cmd.Parameters.Add(new SqlParameter("@custId", deleteCustId));
+      //      cmd.Parameters.Add(new SqlParameter("@custGuid", deleteCustGuid));
+
+      //      cmd.ExecuteNonQuery();
+      //    }
+      //  }
+
+      //}
+
+      //Session["confirmParms"] = "";
+      Response.Redirect("/portal/v7/facilitator/learners.aspx");
+
+    }
+
     protected void exit_Click(object sender, System.Web.UI.ImageClickEventArgs e)
     {
       Response.Redirect("/portal/v7/default.aspx");
     }
-
 
     protected void managerAccessHide(bool usesPassword)  // use javascript to hide/show the Manager Access Row (easier)
     {
@@ -575,6 +642,5 @@ namespace portal.v7.facilitator
         true
       );
     }
-
   }
 }

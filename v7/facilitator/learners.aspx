@@ -1,4 +1,5 @@
 ﻿<%@ Page
+  Title="Learners"
   Language="C#"
   MasterPageFile="~/v7/site.master"
   AutoEventWireup="true"
@@ -6,13 +7,13 @@
   Inherits="portal.v7.facilitator.learners" %>
 
 <asp:Content ID="headContent" ContentPlaceHolderID="HeadContent" runat="server">
-  <link href="/portal/styles/css/learners.css" rel="stylesheet" />
+  <link href="/portal/styles/css/learners.min.css" rel="stylesheet" />
   <script>
     var trSave = "";  // this is where we save the managerAccess row, which we hide and then show
     var trIndex = -1;
 
     function managerAccess(action, usesPassword) {
-      if (action === "hide" ) {
+      if (action === "hide") {
         $("table.dvLearner > tbody  > tr").each(function (index) {
           if ($(".dvLearner")[0].rows[index].cells[0].innerHTML === "Manager Access") {
             trIndex = index;  //store row index for future use
@@ -30,7 +31,6 @@
         trIndex = -1; //reset holding variable
       }
     }
-
     function membIdValidate(action) {
       if (action === "onFocus") { // this will reset any invalid membId plus associated label
         $("#MainContent_dvLearner_membId").val("");
@@ -49,9 +49,8 @@
         $(".resendAlerts").hide();
       }
     }
-
-    //SH - 07/02/20 - Kick off search when enter is pressed inside search value field
     function txtSearch_EnterEvent(e) {
+      //SH - 07/02/20 - Kick off search when enter is pressed inside search value field
       if (e.keyCode == 13) {
         $('input[name="<%=butSearch.UniqueID%>"]').click();
       }
@@ -103,9 +102,9 @@
         $(".labError").html("");
       }
     }
-    $(function () {
 
-      var lang = "<%=Session["lang"]%>";  // get language from C#
+    $(function () {
+      var lang = "<%=Session["lang"]%>";  // get language
 
       // generates a yellow description in labError of panBottom
       if (lang !== "fr") {
@@ -142,6 +141,8 @@
         $(".membNo").on("click", function () { setLabError("[Vubiz Internal] est une valeur système utilisée par Vubiz Support à des fins de support."); });
       }
 
+      // clears the labError
+      $(".labError").on("click", function () { setLabError("") })
     })
   </script>
 </asp:Content>
@@ -149,34 +150,53 @@
 <asp:Content ID="mainContent" ContentPlaceHolderID="MainContent" runat="server">
 
   <div class="divPage">
-    <asp:ImageButton CssClass="exit" ImageUrl="~/styles/icons/vubiz/cancel.png" ID="exit" runat="server" OnClick="exit_Click" />
+
+    <asp:ImageButton CssClass="exit" ImageUrl="~/styles/icons/portal/cancel.png"
+      ID="exit" runat="server" OnClick="exit_Click" />
+
+    <asp:Panel ID="panConfirmShell" CssClass="panConfirmShell" runat="server" Visible="false">
+      <asp:Panel ID="panConfirm" CssClass="panConfirm" runat="server">
+        <h1><asp:Label ID="labConfirmTitle" runat="server"></asp:Label></h1>
+        <h2>
+          <asp:Label ID="labConfirmMessage" runat="server"></asp:Label><br /><br />
+          <asp:LinkButton CssClass="newButton" ID="btnConfirmCancel" OnClientClick='$(".panConfirm").hide(); return false;' runat="server"></asp:LinkButton>&nbsp;&nbsp;
+          <asp:LinkButton CssClass="newButton" ID="btnConfirmOk" OnClick="btnConfirmOk_Click" runat="server"></asp:LinkButton>
+        </h2>
+      </asp:Panel>
+    </asp:Panel>
 
     <asp:Panel ID="panBoth" CssClass="panBoth" runat="server">
 
       <asp:Panel ID="panTop" CssClass="panTop" runat="server">
+        <br /><br />
 
         <h1>
           <span onclick="fadeIn()" class="hoverUnderline">
-            <asp:Literal runat="server" Text="<%$  Resources:portal, title%>" />
             <asp:Literal runat="server" Text="<%$  Resources:portal, learners%>" />
           </span>
-          <asp:ImageButton OnClick="dvLearner_ItemInit" CssClass="icons add" ImageUrl="~/styles/icons/vubiz/add.png" ToolTip="Add a Learner" runat="server" />
+
+          <asp:ImageButton runat="server"
+            ImageUrl="~/styles/icons/portal/add.png"
+            OnClick="dvLearner_ItemInit"
+            ToolTip="Add a Learner"
+            Width="25" />
         </h1>
 
         <div class="thisTitle">
-          <asp:Literal ID="noLearners" runat="server" />    <%--A learner must have a name and email address to appear on this list.--%>
+          <asp:Literal ID="noLearners" runat="server" />   <%--A learner must have a name and email address to appear on this list.--%>
           <asp:Literal runat="server" Text="<%$  Resources:portal, learners_1a%>" />
           <asp:Literal runat="server" Text="<%$  Resources:portal, learners_1b%>" />
           <asp:Literal runat="server" Text="<%$  Resources:portal, learners_1c%>" />
+          <br /><br />
+          <asp:Literal runat="server" Text="<%$  Resources:portal, learners_1d%>" />
 
-          <span style="color: yellow"><asp:Literal runat="server" Text="<%$  Resources:portal, learners_1d%>" /></span>
-          <div style="margin: 30px 30px 0px 30px; text-align: center;">
-            <asp:TextBox ID="txtSearch" Text="" CssClass="txtSearch" placeholder="<%$  Resources:portal, searchValue%>" runat="server" onkeydown="return txtSearch_EnterEvent(event)" />
+          <div style="margin-top: 30px; text-align: center;">
+            <asp:TextBox ID="txtSearch" Text="" CssClass="alignCenter" placeholder="<%$  Resources:portal, searchValue%>" runat="server" onkeydown="return txtSearch_EnterEvent(event)" />
             <asp:Button ID="butSearch" OnClick="butSearch_Click" CssClass="button" runat="server" Text="<%$  Resources:portal, search%>" />
-            <asp:Button ID="butClear" OnClick="butClear_Click" CssClass="button newButton1" runat="server" Text="<%$  Resources:portal, clear%>" />
+            <asp:Button ID="butRestart" OnClick="butRestart_Click" CssClass="button newButton1" runat="server" Text="<%$  Resources:portal, restart%>" />
           </div>
           <div style="margin: 0px 30px 30px 30px; text-align: center;">
-            <asp:CheckBox ID="chkIncludeChildAccounts" runat="server" Visible="false" checked="false" Text="<%$  Resources:portal, includeChildAccounts%>" />
+            <asp:CheckBox ID="chkIncludeChildAccounts" runat="server" Visible="false" Checked="false" Text="<%$  Resources:portal, includeChildAccounts%>" />
           </div>
         </div>
 
@@ -184,38 +204,38 @@
           AllowPaging="True"
           AllowSorting="True"
           AutoGenerateColumns="False"
-          ID="gvLearners"
           CssClass="gvLearners"
           DataKeyNames="membNo"
           DataSourceID="SqlDataSource1"
+          HeaderStyle-BackColor="#0178B9"
+          HeaderStyle-ForeColor="White"
           HorizontalAlign="Center"
+          ID="gvLearners"
           OnRowDataBound="gvLearners_RowDataBound"
           OnSelectedIndexChanged="gvLearners_SelectedIndexChanged"
           PageSize="20"
-          RowStyle-HorizontalAlign="Left">
+          Width="800px">
           <Columns>
             <asp:BoundField DataField="membId" HeaderText="<%$  Resources:portal, username%>" SortExpression="membId" />
             <asp:BoundField DataField="membFirstName" HeaderText="<%$  Resources:portal, firstName%>" SortExpression="membFirstName" />
             <asp:BoundField DataField="membLastName" HeaderText="<%$  Resources:portal, lastName%>" SortExpression="membLastName" />
             <asp:BoundField DataField="membEmail" HeaderText="<%$  Resources:portal, email%>" SortExpression="membEmail" />
-            <asp:BoundField DataField="membLevel" HeaderText="<%$  Resources:portal, level%>" SortExpression="membLevel" />
+            <asp:BoundField DataField="membLevel" HeaderText="<%$  Resources:portal, level%>" SortExpression="membLevel" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center" />
             <asp:BoundField DataField="membChild" HeaderText="Child" HeaderStyle-CssClass="gvLearners_hiddencol" ItemStyle-CssClass="gvLearners_hiddencol" InsertVisible="false" />
-            <asp:TemplateField HeaderText="Details">
+            <asp:TemplateField HeaderText="Details" HeaderStyle-HorizontalAlign="Center" ItemStyle-HorizontalAlign="Center">
               <ItemTemplate>
-                <asp:ImageButton
-                  CssClass="icons info"
-                  ID="btnSelect"
-                  ToolTip="Display details of this Learner"
-                  runat="server"
+                <asp:ImageButton runat="server"
                   CausesValidation="True"
                   CommandName="Select"
-                  ImageUrl="~/styles/icons/vubiz/info.png"
-                  Text="Details" />
+                  CssClass="icons2"
+                  ID="btnSelect"
+                  ImageUrl="~/styles/icons/portal/details.png"
+                  Text="Details"
+                  ToolTip="Display details of this Learner" />
               </ItemTemplate>
             </asp:TemplateField>
-          </Columns>
 
-          <RowStyle HorizontalAlign="Left" />
+          </Columns>
 
           <PagerSettings
             FirstPageImageUrl="~/styles/icons/grids/frst.png"
@@ -225,8 +245,7 @@
             Position="Bottom"
             Mode="NextPreviousFirstLast" />
           <PagerStyle CssClass="commands" HorizontalAlign="Center" />
-
-          <EmptyDataRowStyle ForeColor="Yellow" Font-Size="Large" />
+          <EmptyDataRowStyle ForeColor="Black" Font-Size="Large" HorizontalAlign="Center" />
           <EmptyDataTemplate>
             <br />
             <asp:Literal runat="server" Text="<%$ Resources:portal, learners_3%>" />
@@ -240,14 +259,14 @@
 
         <h1>
           <span onclick="fadeIn()" class="hoverUnderline">
-            <asp:Label CssClass="resendAlerts" runat="server" Text="<%$  Resources:portal, learners_7%>"></asp:Label>
+            <asp:Label ID="panBotHeader" CssClass="resendAlerts" runat="server" 
+              Text="<%$  Resources:portal, learners_7%>" />
           </span>
-          <asp:ImageButton
-            OnClick="ListLearners_Click"
-            CssClass="icons"
-            ImageUrl="~/styles/icons/vubiz/back.png"
-            ToolTip="Return to List"
-            runat="server" />
+          <asp:ImageButton runat="server"
+            ID="titleAddALearner"
+            ImageUrl="~/styles/icons/portal/back.png"
+            OnClick="listLearners_Click"
+            ToolTip="Return to Learner List" />
         </h1>
 
         <div class="thisTitle">
@@ -255,16 +274,12 @@
           <asp:Label CssClass="resendAlerts" runat="server" Text="<%$  Resources:portal, learners_4%>"></asp:Label>
           <asp:Label CssClass="resendAlerts" runat="server" Text="<%$  Resources:portal, learners_5%>"></asp:Label>
           <asp:Label CssClass="resendAlerts" runat="server" Text="<%$  Resources:portal, learners_9%>"></asp:Label>
-          <span style="color: yellow"><asp:Literal runat="server" Text="<%$  Resources:portal, learners_1d%>" /></span>
-
+          <br /><br />
         </div>
 
-        <asp:Label
-          ID="labError"
-          CssClass="labError"
-          ForeColor="Yellow"
-          Font-Bold="true"
-          runat="server" />
+        <div style="margin-left: auto; margin-right: auto; text-align: center">
+          <asp:Label runat="server" ID="labError" CssClass="labError" />
+        </div>
 
         <asp:DetailsView runat="server"
           AutoGenerateRows="False"
@@ -285,15 +300,15 @@
 
           <Fields>
 
-            <asp:TemplateField HeaderText="<%$ Resources:portal, custId%>">
+            <asp:TemplateField HeaderText="<%$ Resources:portal, acctId%>">
               <EditItemTemplate>
-                <asp:Label ID="membAcctId" runat="server" Text='<%# Bind("membAcctId") %>' Enabled="false"></asp:Label>
+                <asp:Label ID="lab_membAcctId" runat="server" Text='<%# Bind("membAcctId") %>' Enabled="false"></asp:Label>
               </EditItemTemplate>
               <InsertItemTemplate>
                 <asp:TextBox ID="membAcctId" CssClass="upper" Enabled="false" runat="server" Text='<%# Bind("membAcctId") %>' />
               </InsertItemTemplate>
               <ItemTemplate>
-                <asp:Label ID="membAcctId" runat="server" Text='<%# Bind("membAcctId") %>' Enabled="false"></asp:Label>
+                <asp:Label ID="lab_membAcctId" runat="server" Text='<%# Bind("membAcctId") %>' Enabled="false"></asp:Label>
               </ItemTemplate>
               <HeaderStyle CssClass="tip membAcctId" Font-Bold="True" HorizontalAlign="Right" />
             </asp:TemplateField>
@@ -398,8 +413,10 @@
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="<%$ Resources:portal, level%>" HeaderStyle-Font-Bold="true" HeaderStyle-HorizontalAlign="Right">
+
               <EditItemTemplate>
-                <asp:DropDownList ID="membLevel" SelectedValue='<%# Bind("membLevel") %>' CssClass="membLevel" runat="server">
+                <asp:DropDownList ID="membLevel" SelectedValue='<%# Bind("membLevel") %>' 
+                  CssClass="membLevel" runat="server">
                   <asp:ListItem Value="1" Text="Guest"></asp:ListItem>
                   <asp:ListItem Value="2" Text="Learner"></asp:ListItem>
                   <asp:ListItem Value="3" Text="Facilitator"></asp:ListItem>
@@ -410,8 +427,10 @@
                 <br />
                 <asp:Literal runat="server" Text="<%$ Resources:portal, learners_11%>" />
               </EditItemTemplate>
+
               <InsertItemTemplate>
-                <asp:DropDownList ID="membLevel" SelectedValue='<%# Bind("membLevel") %>' CssClass="membLevel" runat="server">
+                <asp:DropDownList ID="membLevel" SelectedValue='<%# Bind("membLevel") %>' 
+                  CssClass="membLevel" runat="server">
                   <asp:ListItem Value="1" Text="Guest"></asp:ListItem>
                   <asp:ListItem Value="2" Text="Learner"></asp:ListItem>
                   <asp:ListItem Value="3" Text="Facilitator"></asp:ListItem>
@@ -421,11 +440,13 @@
                 <asp:Label ID="labMembLevel" runat="server">Level</asp:Label>
                 <asp:HiddenField ID="hidMembLevel" Value='<%# Bind("membLevel") %>' runat="server" />
               </InsertItemTemplate>
+
               <ItemTemplate>
                 <asp:Label ID="membLevel" runat="server" Text='<%# Bind("membLevelText") %>'></asp:Label>
                 <asp:HiddenField ID="hidMembLevel" Value='<%# Bind("membLevel") %>' runat="server" />
               </ItemTemplate>
               <HeaderStyle CssClass="tip membLevel" Font-Bold="True" HorizontalAlign="Right" />
+
             </asp:TemplateField>
 
             <asp:TemplateField HeaderText="<%$ Resources:portal, managerAccess%>" HeaderStyle-Font-Bold="true" HeaderStyle-HorizontalAlign="Right">
@@ -493,7 +514,7 @@
               <HeaderStyle CssClass="tip membActive" Font-Bold="True" HorizontalAlign="Right" />
             </asp:TemplateField>
 
-            <asp:TemplateField HeaderText="[ Vubiz Internal ]">
+            <asp:TemplateField HeaderText="[ Internal No ]">
               <EditItemTemplate>
                 <asp:Label ID="membNo" runat="server" Text='<%# Eval("membNo") %>' Enabled="false"></asp:Label>
               </EditItemTemplate>
@@ -503,25 +524,38 @@
               <HeaderStyle CssClass="tip membNo" />
             </asp:TemplateField>
 
-            <%-- These icons are being overriden and set in portal\styles\css\styles.css --%>
-            <asp:TemplateField ShowHeader="False" ControlStyle-CssClass="icons">
+            <asp:TemplateField ShowHeader="False" ControlStyle-CssClass="icons2">
               <EditItemTemplate>
-                <asp:ImageButton ImageUrl="~/styles/icons/vubiz/update.png" ID="btnUpdate" runat="server" CausesValidation="True" CommandName="Update" ToolTip="Update Learner" />
-                <asp:ImageButton ImageUrl="~/styles/icons/vubiz/cancel.png" ID="btnCancel" runat="server" CausesValidation="False" CommandName="" ToolTip="Cancel Operation" OnClick="btnCancel_Click" />
+                <br /><br /><br />
+                <asp:ImageButton ImageUrl="~/styles/icons/portal/update.png" ID="btnUpdate" runat="server"
+                  CausesValidation="True" CommandName="Update" ToolTip="Update Learner" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:ImageButton ImageUrl="~/styles/icons/portal/cancel.png" ID="btnCancel" runat="server"
+                  CausesValidation="False" CommandName="" ToolTip="Cancel Operation" OnClick="btnCancel_Click" />
               </EditItemTemplate>
               <InsertItemTemplate>
-                <asp:ImageButton ImageUrl="~/styles/icons/vubiz/update.png" ID="btnInsert" runat="server" CausesValidation="True" CommandName="Insert" ToolTip="Add a Learner" />
-                <asp:ImageButton ImageUrl="~/styles/icons/vubiz/cancel.png" ID="btnCancel" runat="server" CausesValidation="False" CommandName="Cancel" ToolTip="Cancel Operation" OnClick="btnCancel_Click" />
+                <br /><br /><br />
+                <asp:ImageButton ImageUrl="~/styles/icons/portal/update.png" ID="btnInsert" runat="server"
+                  CausesValidation="True" CommandName="Insert" ToolTip="Add a Learner" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:ImageButton ImageUrl="~/styles/icons/portal/cancel.png" ID="btnCancel" runat="server"
+                  CausesValidation="False" CommandName="" ToolTip="Cancel Operation" OnClick="btnCancel_Click" />
               </InsertItemTemplate>
               <ItemTemplate>
-                <asp:ImageButton ImageUrl="~/styles/icons/vubiz/edit.png" ID="btnEdit" runat="server" CausesValidation="True" CommandName="Edit" ToolTip="Edit Learner's Profile" />
-                <asp:ImageButton ImageUrl="~/styles/icons/vubiz/delete.png" ID="btnDelete" runat="server" CausesValidation="False" CommandName="Delete" ToolTip="Delete Learner" OnClientClick="return confirm('Are you certain you want to permanently delete this Learner?')" />
+                <br /><br /><br />
+                <asp:ImageButton ImageUrl="~/styles/icons/portal/edit.png" ID="btnEdit" runat="server"
+                  CausesValidation="True" CommandName="Edit" ToolTip="Edit Learner's Profile" />
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <asp:ImageButton ImageUrl="~/styles/icons/portal/delete.png" ID="btnDelete" runat="server"
+                  CausesValidation="False" CommandName="Delete" ToolTip="Delete Learner" 
+                  OnClientClick="return confirm('Are you certain you want to permanently delete this Learner?')" />
               </ItemTemplate>
-              <ControlStyle CssClass="icons edit" />
             </asp:TemplateField>
 
           </Fields>
+
           <HeaderStyle Font-Bold="True" HorizontalAlign="Right" />
+
         </asp:DetailsView>
 
         <asp:Panel ID="panIncludeChildAccounts_Message" CssClass="panIncludeChildAccounts_Message" runat="server" Visible="false">
@@ -535,18 +569,18 @@
   </div>
 
   <%-- Note: we are using the Memb_Jobs field to contain the MembAccess Values, either null or 0-3 or a combo of, ie: 1,3 --%>
-  <asp:SqlDataSource
-    ID="SqlDataSource1" runat="server"
+  <asp:SqlDataSource runat="server"
+    ID="SqlDataSource1"
     ConnectionString="<%$ ConnectionStrings:apps %>"
     SelectCommand="
-      SELECT TOP 200 
-        [Memb_No]               AS membNo, 
-        [Memb_Id]               AS membId, 
-        [Memb_FirstName]        AS membFirstName, 
-        [Memb_LastName]         AS membLastName,
-        [Memb_Email]            AS membEmail,
-        [Memb_Organization]     AS membOrganization,
-        [Memb_Level]            AS membLevel,
+      SELECT 
+        Memb_No                 AS membNo, 
+        Memb_Id                 AS membId, 
+        Memb_FirstName          AS membFirstName, 
+        Memb_LastName           AS membLastName,
+        Memb_Email              AS membEmail,
+        Memb_Organization       AS membOrganization,
+        Memb_Level              AS membLevel,
         0						            AS membChild
       FROM 
         V5_Vubz.dbo.Memb
@@ -579,9 +613,8 @@
 
   </asp:SqlDataSource>
 
-  <asp:SqlDataSource
+  <asp:SqlDataSource runat="server"
     ID="SqlDataSource2"
-    runat="server"
     ConnectionString="<%$ ConnectionStrings:apps %>"
     SelectCommand="
       SELECT
@@ -695,7 +728,6 @@
     <InsertParameters>
       <asp:Parameter Name="membId" />
       <asp:Parameter Name="membPwd" />
-      <asp:SessionParameter Name="membAcctId" DefaultValue="" SessionField="custAcctId" />
       <asp:Parameter Name="membFirstName" />
       <asp:Parameter Name="membLastName" />
       <asp:Parameter Name="membEmail" />
@@ -709,21 +741,29 @@
 
   </asp:SqlDataSource>
 
-  <asp:SqlDataSource
-    ID="SqlDataSource3" runat="server"
+  <asp:SqlDataSource runat="server"
+    ID="SqlDataSource3"
     ConnectionString="<%$ ConnectionStrings:apps %>"
     SelectCommand="
-      DECLARE @Temp_Table AS TABLE (membNo INTEGER, membId VARCHAR(128), membFirstName VARCHAR(32), membLastName VARCHAR(64), membEmail VARCHAR(128), membOrganization VARCHAR(128), membLevel INTEGER, membChild INTEGER)
-
+      DECLARE @Temp_Table AS TABLE (
+        membNo INTEGER, 
+        membId VARCHAR(128), 
+        membFirstName VARCHAR(32), 
+        membLastName VARCHAR(64), 
+        membEmail VARCHAR(128), 
+        membOrganization VARCHAR(128), 
+        membLevel INTEGER,       
+        membChild INTEGER
+      )
       INSERT INTO @Temp_Table
       SELECT
-	      [Memb_No]               AS membNo,
-	      [Memb_Id]               AS membId,
-	      [Memb_FirstName]        AS membFirstName,
-	      [Memb_LastName]         AS membLastName,
-	      [Memb_Email]            AS membEmail,
-	      [Memb_Organization]     AS membOrganization,
-	      [Memb_Level]            AS membLevel,
+	      Memb_No                 AS membNo,
+	      Memb_Id                 AS membId,
+	      Memb_FirstName          AS membFirstName,
+	      Memb_LastName           AS membLastName,
+	      Memb_Email              AS membEmail,
+	      Memb_Organization       AS membOrganization,
+	      Memb_Level              AS membLevel,
 	      0						            AS membChild
       FROM 
 	      V5_Vubz.dbo.Memb
@@ -747,20 +787,20 @@
 
       INSERT INTO @Temp_Table
       SELECT
-	      M.[Memb_No]               AS membNo,
-	      M.[Memb_Id]               AS membId,
-	      M.[Memb_FirstName]        AS membFirstName,
-	      M.[Memb_LastName]         AS membLastName,
-	      M.[Memb_Email]            AS membEmail,
-	      M.[Memb_Organization]     AS membOrganization,
-	      M.[Memb_Level]            AS membLevel,
-	      1						              AS membChild
+	      M.Memb_No               AS membNo,
+	      M.Memb_Id               AS membId,
+	      M.Memb_FirstName        AS membFirstName,
+	      M.Memb_LastName         AS membLastName,
+	      M.Memb_Email            AS membEmail,
+	      M.Memb_Organization     AS membOrganization,
+	      M.Memb_Level            AS membLevel,
+	      1						            AS membChild
       FROM 
 	      V5_Vubz.dbo.Memb AS M
 	      INNER JOIN V5_Vubz.dbo.Cust AS C
 		      ON M.Memb_AcctId = C.Cust_AcctId
       WHERE
-	      C.Cust_ParentId			= @membAcctId AND
+	      C.Cust_ParentId			    = @membAcctId AND
 	      Memb_Email              != '' AND
 	      Memb_FirstName          != '' AND
 	      Memb_LastName           != '' AND

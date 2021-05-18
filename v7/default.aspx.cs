@@ -60,7 +60,6 @@ namespace portal
 
       // store date format for EN or FR
       Session["dateFormat"] = (Session["culture"].ToString().Substring(0, 2) == "en") ? "MMM d, yyyy" : "d MMM yyyy";
-
     }
 
     protected void Page_Load(object sender, EventArgs e)
@@ -116,8 +115,47 @@ namespace portal
         else
           butReturn.Visible = false;
 
-        // did we start with membGuid?    
+        var staleTTL = false;
+
         if (Request["membGuid"] != null)
+        {
+          // when membGuid is present, check profile for TTL duration
+          var profileTTL = 20;
+
+          // if membRef is present, calculate TTL duration
+          if (Request["membRef"] != null)
+          {
+            long membRef = 0;
+
+            try
+            {
+              membRef = Convert.ToInt64(Request["membRef"]);
+            }
+            catch { }
+
+            if (membRef > 0)
+            {
+              TimeSpan sincelast = TimeSpan.FromTicks(DateTime.Now.Ticks - membRef);
+
+              if (sincelast.TotalMinutes > profileTTL)
+              {
+                staleTTL = true;
+              }
+            }
+          }
+          else
+          {
+            // if profile has TTL and membRef is not present, do not pass through
+            //if ()
+            //{
+              staleTTL = true;
+            //}
+          }
+
+        }
+
+        // did we start with membGuid?
+        if (Request["membGuid"] != null) // && !staleTTL)
         {
           Session["source"] = Request["source"];
 
@@ -190,7 +228,6 @@ namespace portal
             Session["membNo"] = me.membNo;
             Session["membLevel"] = me.membLevel;
 
-
             // temp hack
             if (Session["cust"].ToString() == "CCHS") { Session["logo"] = "cchs.png"; }
 
@@ -225,18 +262,11 @@ namespace portal
         // first session visit?
         if ((bool)Session["secure"] == false)
         {
-          tabSignIn.Visible = true;
+          panSignIn.Visible = true;
         }
       }
 
       Session["lang"] = Session["culture"].ToString().Substring(0, 2);
-
-      // get logo from profile
-      //if (Session["logo"] != null)
-      //{
-      //  string imageUrl = "/vubizApps/styles/logos/" + Session["logo"].ToString();
-      //  logo.ImageUrl = imageUrl;
-      //}
 
       // preset credentials for fast localhost testing ( mucks up signin to use anything else )
       if (fn.host() == "localhost")
@@ -275,6 +305,7 @@ namespace portal
           target = target.Replace("[[nopReturnUrl]]", !string.IsNullOrEmpty(se.nopReturnUrl) ? se.nopReturnUrl : "https://vubiz.com?");
           target = target.Replace("[[lang]]", se.lang);
           target = target.Replace("[[profile]]", se.profile);
+          target = target.Replace("[[membRef]]", DateTime.Now.Ticks.ToString());
 
           //ClientScript.RegisterStartupScript(GetType(), "hwa", "alert('Hello World');", true);
 
@@ -315,7 +346,7 @@ namespace portal
     {
       if (string.IsNullOrWhiteSpace(txtMembId.Text))
       {
-        Response.Redirect("default.aspx", true);
+        //Response.Redirect("default.aspx", true);
       }
       else
       {
@@ -484,7 +515,9 @@ namespace portal
           // if we have a profile go to v8
           if (Session["profile"].ToString().Length > 0) // returns "evhr|https://somereturnURL.com" so if null will just return "|"
           {
-            url = "/v8?profile=" + Session["profile"] + "&membGuid=" + Session["membGuidTemp"] + "&custId=" + Session["custId"];
+            long time = DateTime.Now.Ticks;
+
+            url = "/v8?profile=" + Session["profile"] + "&membGuid=" + Session["membGuidTemp"] + "&custId=" + Session["custId"] + "&membRef=" + time;
           }
           // if we have a returnUrl go there
           else if (Session["returnUrl"].ToString().Length > 0)
@@ -502,7 +535,7 @@ namespace portal
         }
 
         // hide signin table
-        tabSignIn.Visible = false;
+        panSignIn.Visible = false;
 
         // get logo from profile
         string imageUrl = null;
@@ -798,8 +831,10 @@ namespace portal
         "&returnToPortal=y" +
         "&appId=browser.3";
 
-      Response.Redirect(url, false);
+      //Response.Redirect(url, false);
 
+      string ss = "<script type=text/javascript>window.open('" + url + "', \"\",\"height=600,width=1000,left=50,top=50,toolbar=no,menubar=no\");</script>";
+      ClientScript.RegisterClientScriptBlock(this.GetType(), "ClientScript", ss);
     }
 
     protected void lnkNoticeN_Click(object sender, EventArgs e)
@@ -877,6 +912,26 @@ namespace portal
     {
       HttpContext.Current.Session["tileGroup"] = "home";
       return "/portal/v7/default.aspx";
+    }
+
+    [WebMethod]
+    public static string goToMenuItem(string tileGroup)
+    {
+      HttpContext.Current.Session["tileGroup"] = tileGroup;
+      return "/portal/v7/default.aspx";
+    }
+
+    [WebMethod]
+    public static string goToContent(string tileGroup)
+    {
+      Sess tempSE = new Sess();
+      tempSE.localize();
+
+      tileGroup = tileGroup.Replace("[[membGuidTemp]]", tempSE.membGuidTemp);
+      tileGroup = tileGroup.Replace("[[profile]]", tempSE.profile);
+      tileGroup = tileGroup.Replace("[[membRef]]", DateTime.Now.Ticks.ToString());
+
+      return tileGroup;
     }
 
   }

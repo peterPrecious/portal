@@ -183,9 +183,6 @@
   <data name="availableBefore" xml:space="preserve">
     <value>Available Before</value>
   </data>
-  <data name="available" xml:space="preserve">
-    <value>Available</value>
-  </data>
   <data name="back" xml:space="preserve">
     <value>Back</value>
   </data>
@@ -391,7 +388,7 @@
     <value>Click &lt;span class="code"&gt;Select&lt;/span&gt; for learner details.</value>
   </data>
   <data name="learners_3" xml:space="preserve">
-    <value>There are currently no Learners in this Account. Use the Add icon above to Add learners.</value>
+    <value>There are currently no learners in this Account.&lt;br /&gt;Use the Add icon above to Add a Learner.</value>
   </data>
   <data name="learners_4" xml:space="preserve">
     <value>If this learner did not receive their 'Welcome' email alert(s), for whatever reason, click the Email icon and the system will resend any outstanding Email Alerts.</value>
@@ -672,9 +669,6 @@
   <data name="programsBefore" xml:space="preserve">
     <value>Programs Before</value>
   </data>
-  <data name="programsAssigned" xml:space="preserve">
-    <value>Programs Assigned</value>
-  </data>
   <data name="programTitle" xml:space="preserve">
     <value>Program Title</value>
   </data>
@@ -829,7 +823,7 @@
     <value>Store</value>
   </data>
   <data name="title" xml:space="preserve">
-    <value>Click to hide/show description</value>
+    <value>Learners</value>
   </data>
   <data name="type" xml:space="preserve">
     <value>Type</value>
@@ -842,5 +836,23 @@
   </data>
   <data name="userName" xml:space="preserve">
     <value>Username</value>
+  </data>
+  <data name="title1" xml:space="preserve">
+    <value>[Clicking the title shows/hides the description.]</value>
+  </data>
+  <data name="learners_7a" xml:space="preserve">
+    <value>Add A Learner</value>
+  </data>
+  <data name="learners_7b" xml:space="preserve">
+    <value>Edit This Learner</value>
+  </data>
+  <data name="acctId" xml:space="preserve">
+    <value>Account Id</value>
+  </data>
+  <data name="customers_8" xml:space="preserve">
+    <value>You are missing mandatory field(s):</value>
+  </data>
+  <data name="available" xml:space="preserve">
+    <value>Available</value>
   </data>
 </root>

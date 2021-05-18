@@ -5,6 +5,7 @@
   --accent-color: #8dc641;
   --light-accent-color: #d0f999;
   --light-color: #fff;
+  --vubiz-orange: #f69540;
   scroll-behavior: smooth;
 }
 
@@ -138,7 +139,7 @@ nav {
 }
 
 .navbar-menu-user {
-  /*cursor: pointer;*/
+  cursor: pointer;
   margin-top: 3px;
   width: 35px;
   height: 35px;
@@ -380,7 +381,7 @@ div#panHeader:after {
   cursor: pointer;
   text-align: right;
   border: 1px solid #ffffff;
-  border-radius: 14px;
+  border-radius: 8px;
 }
 .divPage .tile:first-child, .divPage .tile:nth-child(2), .divPage .tile:nth-child(3), .divPage .tile:nth-child(4) {
     margin-top: 2.5%;
@@ -421,6 +422,7 @@ div#panHeader:after {
 }
 .divPage {
 	font-size: 14px;
+  margin-top: 30px;
 }
 .divPage .tileSet .tile .tileTitle {
     display: block;
@@ -449,16 +451,68 @@ div#panHeader:after {
 
 
 /* LOGIN PAGE */
+
+.panSignIn_footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3.4rem;
+  background-color: #333;
+  color: #ddd;
+}
+
+.panSignIn_footer .footer-powered {
+  float: right;
+  padding-right: 15px;
+  padding-top: 15px;
+  font-size: .65em;
+}
+
+.panSignIn_footer .footer-copyright {
+  float: left;
+  padding-left: 8px;
+  padding-top: 30px;
+  font-size: .65em;
+}
+
+.panSignIn_footer  .footer-powered img {
+  width: 70px;
+}
+
+.tabSignIn .newButton {
+  min-width: unset !important;
+  border-radius: unset !important;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/*.tabSignIn .linkButton {
+  background: unset;
+  border: unset;
+  color: #000;
+  box-shadow: unset;
+}
+
+.tabSignIn .linkButton:hover {
+  background-color: unset;
+  color: #0979bb;
+  border: unset;
+  text-decoration: none;
+}*/
+
 .tabSignIn {
-  width: 75% !important;
-  max-width: 1000px !important;
-  background: #ddd !important;
-  border-radius: 20px !important;
-  border: none !important;
-} 
+  width: 75%;
+  border: none;
+  background-color: rgba(255,255,255,0.96);
+  padding: 15px;
+  max-width: 720px;
+  margin-top: -243px !important;
+  top: 50%;
+  position: relative;
+}
+
 .tabSignIn tr:first-child td {
     width: 100%;
-    border-radius: 20px 20px 0 0;
     background: #0979bb;
     padding: 0px 20px;
     font-weight: normal;
@@ -488,34 +542,35 @@ select {
 }
 
 .newButton, .button, .button100, .button150, .button200, input[type="button"], input[type="submit"], input[type="reset"], input[type="file"]::-webkit-file-upload-button, button {
-    vertical-align: middle;
-    font-family: inherit;
-    -webkit-appearance: none;
-    transition: background-color 0.25s ease-out, color 0.25s ease-out;
-    line-height: 1;
-    text-align: center;
-    background-color: #0979bb;
-    color: #ffffff;
-    padding: 12px;
-    border-radius: 5px;
-    text-decoration: none;
-    border: 1px solid #ffffff;
-    justify-content: center;
-    align-items: center;
-    -moz-box-shadow: 1px 1px 15px rgba(0,0,0,0.15);
-    -webkit-box-shadow: 1px 1px 15px rgba(0,0,0,0.15);
-    box-shadow: 1px 1px 15px rgba(0,0,0,0.15);
-    height: auto;
-    cursor: pointer;
-    margin: 5px 5px 5px 0px;
-    letter-spacing: 1px;
-    font-size: 14px;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: auto;
-    position: relative;
-    min-width: 120px;
+  vertical-align: middle;
+  font-family: inherit;
+  -webkit-appearance: none;
+  transition: background-color 0.25s ease-out, color 0.25s ease-out;
+  line-height: 1;
+  text-align: center;
+  background-color: #0979bb;
+  color: #ffffff;
+  padding: 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  border: 1px solid #ffffff;
+  justify-content: center;
+  align-items: center;
+  -moz-box-shadow: 1px 1px 15px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 1px 1px 15px rgba(0,0,0,0.15);
+  box-shadow: 1px 1px 15px rgba(0,0,0,0.15);
+  height: auto;
+  cursor: pointer;
+  margin: 5px 5px 5px 0px;
+  letter-spacing: 1px;
+  font-size: 14px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  position: relative;
+  min-width: 120px;
+  border: 1px solid transparent;
 }
 
 .ui-dialog .ui-dialog-titlebar-close {
@@ -545,7 +600,7 @@ select {
     text-decoration: none !important;
 }
 tr#MainContent_rowMembId td, tr#MainContent_rowMembId th, tr#MainContent_rowCustId td, tr#MainContent_rowCustId th, tr#MainContent_rowMembPwd td, tr#MainContent_rowMembPwd th{
-    width: 32%;
+    /*width: 25%;*/
     display: table-cell;
 }
 tr#MainContent_rowMembId td:last-child, tr#MainContent_rowCustId td:last-child, tr#MainContent_rowMembPwd td:last-child {
@@ -659,51 +714,62 @@ hr {border-style: none !important;}
 
 /* MEDIA QUERIES */
 @media (max-width: 1299px) {
-    .headertoolbar {text-align: center;}
-    .hdmasterleft,.hdmasterright {width: 48%;}
-    .navitems {display: none !important;}
-    .pushtoright {position: inherit; float: none;}
-    .divPage .tile:first-child, .divPage .tile:nth-child(2), .divPage .tile:nth-child(3), .divPage .tile:nth-child(4) {margin-top: 0px;}
-    .tabSignIn {width: 96% !important;} 
+  .headertoolbar {text-align: center;}
+  .hdmasterleft,.hdmasterright {width: 48%;}
+  .navitems {display: none !important;}
+  .pushtoright {position: inherit; float: none;}
+  .divPage .tile:first-child, .divPage .tile:nth-child(2), .divPage .tile:nth-child(3), .divPage .tile:nth-child(4) {margin-top: 0px;}
 }
 @media (max-width: 933px) {
-	input#MainContent_txtMembId, input#MainContent_txtCustId, input#MainContent_txtMembPwd {max-width: 190px;}
+	/*input#MainContent_txtMembId, input#MainContent_txtCustId, input#MainContent_txtMembPwd {max-width: 160px;}*/
 }
-@media (max-width: 760px) {
-    .hdmasterleft,.hdmasterright {display: block; width: 100%; text-align: center;}
-    .headermaster {margin-top: 20px;}
-    .topnavlinks {display: none !important;}
-    .topnavlinks:first-child, .pushtoright {display: inline-block !important; line-height: inherit; padding: 10px; float: none; position: relative;}
-    img.headlogo {margin-left: -10px;}
-    tr#MainContent_rowMembId th, tr#MainContent_rowCustId th, tr#MainContent_rowMembPwd th {
-        display: block;
-        position: absolute;
-        margin-top: -30px;
-        text-align: left;
-    }
-    tr#MainContent_rowCustId th, tr#MainContent_rowMembPwd th {
-        margin-top: -15px;
-    }
-    tr#MainContent_rowMembId td:nth-child(2), tr#MainContent_rowCustId td:nth-child(2), tr#MainContent_rowMembPwd td:nth-child(2) {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-    }
-    input#MainContent_txtMembId, input#MainContent_txtCustId, input#MainContent_txtMembPwd {
-        width: 40vw !important;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-    }
-    input#MainContent_txtCustId, input#MainContent_txtMembPwd, tr#MainContent_rowMembPwd .eyeMembPwd, tr#MainContent_rowMembPwd a#MainContent_btnMembPwd {
-        margin-top: 18px;
-    }
-    .eyeMembId, .eyeMembPwd {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        width: 32px;
-    }
+@media (max-width: 600px) {
+  .hdmasterleft,.hdmasterright {display: block; width: 100%; text-align: center;}
+  .headermaster {margin-top: 20px;}
+  .topnavlinks {display: none !important;}
+  .topnavlinks:first-child, .pushtoright {display: inline-block !important; line-height: inherit; padding: 10px; float: none; position: relative;}
+  img.headlogo {margin-left: -10px;}
+  tr#MainContent_rowMembId th, tr#MainContent_rowCustId th, tr#MainContent_rowMembPwd th {
+    display: block;
+    position: absolute;
+    margin-top: -35px;
+    text-align: left;
+    padding-left: 15px !important;
+  }
+  tr#MainContent_rowCustId th, tr#MainContent_rowMembPwd th {
+    margin-top: -15px;
+  }
+  tr#MainContent_rowMembId td:nth-child(2), tr#MainContent_rowCustId td:nth-child(2), tr#MainContent_rowMembPwd td:nth-child(2) {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 15px;
+  }
+  tr#MainContent_rowMembId td:last-child, tr#MainContent_rowCustId td:last-child, tr#MainContent_rowMembPwd td:last-child {
+    display: flex;
+  }
+  input#MainContent_txtMembId, input#MainContent_txtCustId, input#MainContent_txtMembPwd {
+    width: 80vw !important;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  input#MainContent_txtCustId, input#MainContent_txtMembPwd, tr#MainContent_rowMembPwd .eyeMembPwd {
+    margin-top: 18px;
+  }
+  .eyeMembId, .eyeMembPwd {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+  }
+
+  #MainContent_btnMembId, #MainContent_btnMembPwd {
+    position: relative;
+    left: 50%;
+    width: 205px;
+    margin-left: -125px;
+  }
 }
 
 /* CUSTOMIZED SCROLLBAR */

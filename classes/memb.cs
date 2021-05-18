@@ -2,6 +2,7 @@
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web;
 
 namespace portal
 {
@@ -781,6 +782,13 @@ namespace portal
             var tileTargetType = (byte)drd["tileTargetType"];
             var tileTarget = drd["tileTarget"].ToString();
 
+            if (string.IsNullOrEmpty(menuHtml))
+            {
+              //add home menu item
+              menuHtml += "<li><span onclick=\"goHome();\">Home</span></li>";
+              menuHtml += "<li class=\"navbar-menu-items-spacer\"></li>";
+            }
+
             if (tileTargetType == 9)
             {
               //tileTargetType 9 is reserved for main menu icons
@@ -812,9 +820,17 @@ namespace portal
               //open in dialog
               menuHtml += "<li><span onclick=\"displayMenuDialog('" + tileTargetType + "','" + tileName + "','" + tileTarget + "');\">" + tileName + "</span></li>";
             }
-            else if (tileTargetType == 1 || tileTargetType == 3)
+            else if (tileTargetType == 1)
             {
-              menuHtml += "<li><span onclick=\"___doPostBack('" + tileTargetType + "', '" + tileTarget + "', '" + tileName + "');\">" + tileName + "</span></li>";
+              menuHtml += "<li><span onclick=\"goToContent('" + tileTarget + "');\">" + tileName + "</span></li>";
+            }
+            else if (tileTargetType == 2)
+            {
+              menuHtml += "<li><a href=\"" + fn.GetAppUrl() + "v7/" + tileTarget + "\">" + tileName + "</a></li>";
+            }
+            else if (tileTargetType == 3)
+            {
+              menuHtml += "<li><span onclick=\"goToMenuItem('" + tileTarget + "');\">" + tileName + "</span></li>";
             }
             else
             {
@@ -827,8 +843,30 @@ namespace portal
 
           drd.Close();
 
+          string imageUrlDark = imageUrl;
+
+          //create url for dark image
+          if (!string.IsNullOrEmpty(imageUrlDark) && imageUrlDark.Contains("."))
+          {
+            imageUrlDark = imageUrlDark.Insert(imageUrlDark.LastIndexOf('.'), "_dark");
+
+            if (!fn.URLExists(fn.GetRootUrl() + imageUrlDark))
+            {
+              imageUrlDark = null;
+            }
+          }
+
           navHtml = "<nav class=\"navbar\">";
-          navHtml += "<h1 class=\"header-title\" onclick=\"goHome()\"><img src=\"" + imageUrl + "\" alt=\"Logo\"></h1>";
+
+          if(imageUrlDark != null)
+          {
+            navHtml += "<h1 class=\"header-title\" onclick=\"goHome()\"><img src=\"" + imageUrlDark + "\" onerror=\"javascript:this.src='" + imageUrl + "'\" alt=\"Logo\"></h1>";
+          }
+          else
+          {
+            navHtml += "<h1 class=\"header-title\" onclick=\"goHome()\"><img src=\"" + imageUrl + "\" alt=\"Logo\"></h1>";
+          }
+
           navHtml += "<ul id=\"navbar-menu\">";
 
           //add store icon
@@ -838,8 +876,8 @@ namespace portal
           var membInitials = (membFirstName.Length > 0 ? membFirstName.Substring(0, 1) : "") + (membLastName.Length > 0 ? membLastName.Substring(0, 1) : "");
 
           //add user medalion, if membInitials is empty use user icon
-          //navHtml += "<li class=\"navbar-menu-user\" title=\"" + profileTitle + "\" " + (!string.IsNullOrEmpty(profileURL) ? "onclick=\"displayMenuDialog('9','" + profileTitle + "','" + profileURL + "');\"" : "") + "><span class=\"navbar-menu-button-account\">" + (membInitials == "" ? "<i class=\"fas fa-user\"></i>" : membInitials) + "</span></li>";
-          navHtml += "<li class=\"navbar-menu-user\"><span class=\"navbar-menu-button-account\">" + (membInitials == "" ? "<i class=\"fas fa-user\"></i>" : membInitials) + "</span></li>";
+          navHtml += "<li class=\"navbar-menu-user\" title=\"" + profileTitle + "\" " + (!string.IsNullOrEmpty(profileURL) ? "onclick=\"displayMenuDialog('9','" + profileTitle + "','" + profileURL + "');\"" : "") + "><span class=\"navbar-menu-button-account\">" + (membInitials == "" ? "<i class=\"fas fa-user\"></i>" : membInitials) + "</span></li>";
+          //navHtml += "<li class=\"navbar-menu-user\"><span class=\"navbar-menu-button-account\">" + (membInitials == "" ? "<i class=\"fas fa-user\"></i>" : membInitials) + "</span></li>";
 
           //add burger
           navHtml += "<li><div class=\"burger\" onclick=\"displayNavMenu(this)\"><div class=\"bar1\"></div><div class=\"bar2\"></div><div class=\"bar3\"></div></div></li>";

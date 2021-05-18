@@ -11,31 +11,23 @@ namespace portal.v7.administrator
 
     protected void Page_Load(object sender, EventArgs e)
     {
-      Session["custId"] = "";
+      //Session["custId"] = "";
 
-      lnkHide.Visible = true;
-      lnkShow.Visible = false;
+      //string start = Request.QueryString["start"];
+      //if (fn.fDefault(start, "") == "dvProfile")
+      //{
+      //  panTop.Visible = false;
+      //  panBot.Visible = true;
+      //  SqlDataSource2.SelectParameters["profNo"].DefaultValue = Session["profNo"].ToString();
+      //  dvProfile.ChangeMode(DetailsViewMode.ReadOnly);
+      //}
 
-      string start = Request.QueryString["start"];
-      if (fn.fDefault(start, "") == "dvProfile")
-      {
-        panTop.Visible = false;
-        panBot.Visible = true;
-        SqlDataSource2.SelectParameters["profNo"].DefaultValue = Session["profNo"].ToString();
-        dvProfile.ChangeMode(DetailsViewMode.ReadOnly);
-      }
-
-      panConfirmShell.Visible = false;
+      //panConfirmShell.Visible = false;
     }
 
     protected void butSearch_Click(object sender, EventArgs e)
     {
       gvProfiles.DataBind();
-    }
-
-    protected void dvProfileInit_Click(object sender, EventArgs e)
-    {
-
     }
 
     protected void gvProfiles_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,7 +46,6 @@ namespace portal.v7.administrator
     {
       panTop.Visible = true;
       panBot.Visible = false;
-
     }
 
     protected void btnCancel_Click(object sender, EventArgs e)
@@ -78,7 +69,7 @@ namespace portal.v7.administrator
           labConfirmTitle.Text = "Oops !";
           labConfirmMessage.Text = "In order to Clone '" + parm[2] + "',<br />you must enter a new Profile Clone Name.";
           btnConfirmOk.Visible = false;
-          btnConfirmCancel.Text = "OK";
+          btnConfirmCancel.Text = "OK Cancel";
           panConfirmShell.Visible = true;
         }
         else
@@ -122,7 +113,7 @@ namespace portal.v7.administrator
           using (SqlCommand cmd = new SqlCommand())
           {
             cmd.Connection = con;
-            cmd.CommandText = "dbo.[sp7profileClone]";
+            cmd.CommandText = "dbo.sp7profileClone";
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.Add(new SqlParameter("@profileNameOld", profileNameOld));
             cmd.Parameters.Add(new SqlParameter("@profileNameNew", profileNameNew));
@@ -191,7 +182,7 @@ namespace portal.v7.administrator
       hideRow("l", i--, "profEmailFrom");
       hideRow("c", i--, "profEcommerce");
       hideRow("l", i--, "profCustId");
-      hideRow("l", i--, "profCourseTile_en");
+      hideRow("l", i--, "profCourseTileName_en");
       hideRow("l", i--, "profNameReports");
       hideRow("l", i--, "profNamePrograms");
       hideRow("l", i--, "profNameCatalogue");
@@ -203,7 +194,7 @@ namespace portal.v7.administrator
       hideRow("c", i--, "profAutoEnroll");
       hideRow("l", i--, "profAlias");
 
-      lnkShow.Visible = true;
+      //lnkShow.Visible = true;
     }
 
     protected void hideRow(string type, int rowNo, string control)
@@ -223,9 +214,9 @@ namespace portal.v7.administrator
 
     protected void lnkHide_Click(object sender, EventArgs e)
     {
-      hideRows(sender, e);
-      lnkHide.Visible = false;
-      lnkShow.Visible = true;
+      //hideRows(sender, e);
+      //lnkHide.Visible = false;
+      //lnkShow.Visible = true;
     }
 
     protected void lnkShow_Click(object sender, EventArgs e)
@@ -233,39 +224,206 @@ namespace portal.v7.administrator
       Response.Redirect("profiles.aspx?start=dvProfile&profNo=" + Session["profNo"].ToString());
     }
 
-    protected void dvProfile_ItemCreated(object sender, EventArgs e)
+
+
+
+    protected void dvProfile_ItemInit(object sender, EventArgs e)
     {
-      Session["profNo"] = gvProfiles.DataKeys[1].Value;
+      // this initializes all fields when you add a new profile
 
       panTop.Visible = false;
       panBot.Visible = true;
-      dvProfile.ChangeMode(DetailsViewMode.ReadOnly);
+      labError.Text = "";
+
+      dvProfile.ChangeMode(DetailsViewMode.Insert);
+      dvProfile.DataBind();
+
+      ((TextBox)dvProfile.FindControl("profName")).Text = "";
+      ((TextBox)dvProfile.FindControl("profAlias")).Text = "";
+
+      ((CheckBox)dvProfile.FindControl("profAutoEnroll")).Checked = true;
+      ((CheckBox)dvProfile.FindControl("profAutoEnrollWs")).Checked = true;
+      ((CheckBox)dvProfile.FindControl("profAutoSignIn")).Checked = true;
+
+      ((TextBox)dvProfile.FindControl("profCertPrograms")).Text = "";
+      ((TextBox)dvProfile.FindControl("profCertPrograms_E")).Text = "";
+
+      DropDownList profContentSource = (DropDownList)dvProfile.FindControl("profContentSource");
+      profContentSource.Items.FindByValue("ecommerce").Enabled = true;
+      profContentSource.Items.FindByValue("assigned").Enabled = false;
+      profContentSource.Items.FindByValue("ecom-assigned").Enabled = false;
+
+      ((TextBox)dvProfile.FindControl("profNameCatalogue")).Text = "";
+      ((TextBox)dvProfile.FindControl("profNamePrograms")).Text = "";
+      ((TextBox)dvProfile.FindControl("profNameReports")).Text = "";
+      ((TextBox)dvProfile.FindControl("profNameCourses")).Text = "";
+      ((TextBox)dvProfile.FindControl("profCourseTileName_en")).Text = "";
+      ((TextBox)dvProfile.FindControl("profCustId")).Text = "";
+
+      ((CheckBox)dvProfile.FindControl("profEcommerce")).Checked = true;
+      ((TextBox)dvProfile.FindControl("profEmailFrom")).Text = "";
+      ((CheckBox)dvProfile.FindControl("profGuests")).Checked = true;
+      ((CheckBox)dvProfile.FindControl("profGuests_E")).Checked = true;
+      ((CheckBox)dvProfile.FindControl("profJit")).Checked = true;
+
+      DropDownList profLang = (DropDownList)dvProfile.FindControl("profLang");
+      profLang.Items.FindByValue("EN").Enabled = true;
+      profLang.Items.FindByValue("ES").Enabled = false;
+      profLang.Items.FindByValue("FR").Enabled = false;
+
+      ((CheckBox)dvProfile.FindControl("profLang_en")).Checked = true;
+      ((CheckBox)dvProfile.FindControl("profLang_es")).Checked = false;
+      ((CheckBox)dvProfile.FindControl("profLang_fr")).Checked = false;
+
+      ((TextBox)dvProfile.FindControl("profLogo")).Text = "";
+      ((CheckBox)dvProfile.FindControl("profMemb_E")).Checked = false;
+      ((CheckBox)dvProfile.FindControl("profPassword")).Checked = false;
+      ((CheckBox)dvProfile.FindControl("profPortal")).Checked = false;
+      ((TextBox)dvProfile.FindControl("profReturnUrl")).Text = "";
+      ((CheckBox)dvProfile.FindControl("profShowSoloPrograms")).Checked = false;
+      ((TextBox)dvProfile.FindControl("profSso")).Text = "";
+      ((TextBox)dvProfile.FindControl("profStoreId")).Text = "";
+      ((CheckBox)dvProfile.FindControl("profVideos")).Checked = false;
+      ((CheckBox)dvProfile.FindControl("profVukidz")).Checked = false;
+
+      ((Label)dvProfile.FindControl("profNo")).Text = "";
     }
 
-    protected void dvProfile_ItemCommand(object sender, DetailsViewCommandEventArgs e)
+    protected void dvProfile_DataBound(object sender, EventArgs e)
     {
-      //if (e.CommandName == "ReadOnly")
-      //{
-      //  panHideShow.ForeColor = System.Drawing.Color.White;
-      //}
-      //else
-      //{
-      //  panHideShow.ForeColor = System.Drawing.Color.Yellow;
-      //}
-    }
-
-    protected void dvProfile_PreRender(object sender, EventArgs e)
-    {
-      if (dvProfile.CurrentMode.ToString() == "ReadOnly")
+      if (dvProfile.CurrentMode.ToString() == "ReadOnly")  // display 
       {
-        //        panHideShow.ForeColor = System.Drawing.Color.White;
-        panHideShow.Visible = true; ;
+        panBotHeader.Text = "Profile Details";
+      }
+
+      if (dvProfile.CurrentMode.ToString() == "Edit")
+      {
+        panBotHeader.Text = "Edit this Profile's Details";
+      }
+    }
+
+    protected void dvProfile_ItemInserting(object sender, DetailsViewInsertEventArgs e)
+    {
+      // ensure all mandatory fields were entered
+      string missingFields = "";
+      if (e.Values["profName"] == null) missingFields += " Profile Name,";
+      if (e.Values["profCustId"] == null) missingFields += " Customer Id,";
+      //if (e.Values["membLastName"] == null) missingFields += " " + GetGlobalResourceObject("portal", "lastName").ToString() + ",";
+      //if (e.Values["membEmail"] == null) missingFields += " " + GetGlobalResourceObject("portal", "email").ToString() + ",";
+
+      if (missingFields.Length > 0)
+      {
+        //labError.Text = "You are missing mandatory field(s): " + missingFields.TrimEnd(',') + ".";
+        labError.Text = "You are missing mandatory field(s): " + missingFields.TrimEnd(',') + ".";
+        e.Cancel = true;
+      }
+
+    }
+
+    protected void dvProfile_ItemInserted(object sender, DetailsViewInsertedEventArgs e)
+    {
+      if (e.Exception != null)
+      {
+        string sqlNumber = ((System.Data.SqlClient.SqlException)e.Exception).Number.ToString();
+        if (sqlNumber == "2627")
+        {
+          labError.Text = "<p>" + GetGlobalResourceObject("portal", "sqlDuplicate").ToString() + "</p>";
+        }
+        else
+        {
+          labError.Text = "<p>" + GetGlobalResourceObject("portal", "sql").ToString() + "<br />[SQL error: " + sqlNumber + " - " + e.Exception.Message.ToString() + "]  Contact Support Services." + "</p>";
+        }
+        e.ExceptionHandled = true;
+        e.KeepInInsertMode = true;
       }
       else
       {
-        //      panHideShow.ForeColor = System.Drawing.Color.Yellow;
-        panHideShow.Visible = false;
+        Response.Redirect("/portal/v7/administrator/profiles.aspx");
       }
     }
+
+    protected void dvProfile_ItemUpdating(object sender, DetailsViewUpdateEventArgs e)
+    {
+      //string _membPwd = "", _membFirstName = "", _membLastName = "", _membEmail = "";
+
+      //// ensure all mandatory fields were entered
+      //if (usesPassword)
+      //{
+      //  TextBox txtMembPwd = (TextBox)dvProfile.FindControl("membPwd"); _membPwd = txtMembPwd.Text.Trim();
+      //}
+
+      //TextBox txtMembFirstName = (TextBox)dvProfile.FindControl("membFirstName"); _membFirstName = txtMembFirstName.Text.Trim();
+      //TextBox txtMembLastName = (TextBox)dvProfile.FindControl("membLastName"); _membLastName = txtMembLastName.Text.Trim();
+      //TextBox txtMembEmail = (TextBox)dvProfile.FindControl("membEmail"); _membEmail = txtMembEmail.Text.Trim();
+
+      //HiddenField hidMembLevel = (HiddenField)dvProfile.FindControl("hidMembLevel");
+      //int seMembLevel = int.Parse(Session["membLevel"].ToString());
+
+      //string missingFields = "";
+      //if (usesPassword)
+      //{
+      //  if (_membPwd.Length == 0) missingFields += " Password,";
+      //}
+      //if (_membFirstName.Length == 0) missingFields += " First Name,";
+      //if (_membLastName.Length == 0) missingFields += " Last Name,";
+      //if (_membEmail.Length == 0) missingFields += " Email,";
+      //if (missingFields.Length > 0)
+      //{
+      //  labError.Text = "<p />You are missing mandatory field(s): " + missingFields.TrimEnd(',') + ".</p>";
+      //  labError.Visible = true;
+      //  e.Cancel = true;
+      //}
+
+      //// for some reason I need to force this value into membLevel
+      //DropDownList ctrMembLevel = (DropDownList)dvProfile.FindControl("membLevel");
+      //e.NewValues["membLevel"] = ctrMembLevel.SelectedValue;
+
+      //// create single string for managerAccess display
+      //ListBox ctrMembManagerAccess = (ListBox)dvProfile.FindControl("membManagerAccess");
+      //string membManagerAccess = null;
+      //foreach (ListItem item in ctrMembManagerAccess.Items)
+      //{
+      //  if (item.Selected)
+      //  {
+      //    membManagerAccess += item.Value + ",";
+      //  }
+      //}
+
+      //if (membManagerAccess != null) membManagerAccess = membManagerAccess.TrimEnd(',');
+      //e.NewValues["membManagerAccess"] = membManagerAccess;
+
+      //// both the session memb (ie me) and the user memb (being analyzed) must be managers
+      //if ((hidMembLevel.Value == "4" || hidMembLevel.Value == "5") && seMembLevel > 3)
+      //{
+      //  managerAccessShow(usesPassword);
+      //}
+      //else
+      //{
+      //  managerAccessHide(usesPassword);
+      //}
+    }
+
+    protected void dvProfile_ItemUpdated(object sender, DetailsViewUpdatedEventArgs e)
+    {
+      if (e.Exception != null)
+      {
+        string sqlNumber = ((System.Data.SqlClient.SqlException)e.Exception).Number.ToString();
+        labError.Text = "<p />" + GetGlobalResourceObject("portal", "sql").ToString() + "<br />[SQL error: " + sqlNumber + " - " + e.Exception.Message.ToString() + "]  Contact Support Services.";
+
+        labError.Visible = true;
+        e.ExceptionHandled = true;
+      }
+      else
+      {
+        Response.Redirect("/portal/v7/administrator/profiles.aspx");
+      }
+    }
+
+    protected void dvProfile_ItemDeleted(object sender, DetailsViewDeletedEventArgs e)
+    {
+      Response.Redirect("/portal/v7/administrator/profiles.aspx");
+    }
+
   }
+
 }

@@ -319,7 +319,7 @@ span#MainContent_labDate {
 
 .labDate { display: block; padding-top: 10px; text-align: center; font-size: 1.04em; color: white; }
 
-.panAlert { color: white; position: absolute; top: 20px; left: 20%; right: 20%; height: 110px; border: 1px solid #cccccc; padding: 30px; background-color: #0178B9; text-align: center; box-shadow: 0px 0px 50px black; }
+.panAlert { color: white; position: absolute; top: 50%; left: 20%; right: 20%; height: 110px; border: 1px solid #cccccc; padding: 30px; background-color: #0178B9; text-align: center; box-shadow: 0px 0px 50px black; }
 
 .labAlert { font-size: larger; text-align: center; font-weight: bold; font-style: italic; }
 

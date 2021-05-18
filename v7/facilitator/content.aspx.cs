@@ -152,9 +152,15 @@ namespace portal.v7.facilitator
             }
 
             // show how many of program were assigned
-            progRow.Cells[6].Text = assignedCnt.ToString();
-            progRow.Cells[7].Text = (int.Parse(progRow.Cells[5].Text) - assignedCnt).ToString();
+            if(progRow.Cells.Count > 7)
+            {
+              progRow.Cells[6].Text = assignedCnt.ToString();
+            }
 
+            if (progRow.Cells.Count > 8)
+            {
+              progRow.Cells[7].Text = (int.Parse(progRow.Cells[5].Text) - assignedCnt).ToString();
+            }
           }
         }
       }
@@ -284,7 +290,7 @@ namespace portal.v7.facilitator
       if (e.Row.RowType.ToString() == "DataRow")
       {
         e.Row.Cells[4].Text = e.Row.Cells[4].Text.Replace("&nbsp;", "");
-        e.Row.Cells[5].Text = e.Row.Cells[5].Text.Replace("&nbsp;", "");
+        //e.Row.Cells[5].Text = e.Row.Cells[5].Text.Replace("&nbsp;", "");
 
         // if this row is false
         if (e.Row.Cells[5].Text == "False")
@@ -294,8 +300,8 @@ namespace portal.v7.facilitator
           e.Row.Cells[2].Style.Add("text-decoration", "line-through");
           e.Row.Cells[3].Style.Add("text-decoration", "line-through");
           e.Row.Cells[4].Style.Add("text-decoration", "line-through");
-          e.Row.Cells[5].Style.Add("text-decoration", "line-through");
-          e.Row.Cells[6].ForeColor = Color.Yellow; // highlight the False values
+          //e.Row.Cells[5].Style.Add("text-decoration", "line-through");
+          e.Row.Cells[5].ForeColor = Color.Yellow; // highlight the False values
         }
 
       }

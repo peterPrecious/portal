@@ -15,15 +15,6 @@ namespace portal.v7
   {
 
     /// <summary>
-    /// exit control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.ImageButton exit;
-
-    /// <summary>
     /// lab2 control.
     /// </summary>
     /// <remarks>

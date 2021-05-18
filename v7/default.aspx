@@ -14,6 +14,7 @@
   <link href="/portal/styles/css/notice.css" rel="stylesheet" />
 
   <script>
+
     function ___doPostBack(tileTargetType, tileTarget, tileName) {
       //SH - 07/10/20 - For some reason __doPostBack stopped being called, any other function name still gets called, 
       //prefixed an additional underscore and everything works as it did.
@@ -29,7 +30,12 @@
       $("#tileName").val(tileName);
       $("#frmMaster").submit();
     }
+
     $(function () {
+      //set copyright year
+      let d = new Date();
+      $(".footer-copyright-year").html(d.getFullYear());
+
       //set hotkey to show/hide testing tools/tips
       $(document).bind('keydown', 'alt+v', function() {
         if($(".testingBlock").is(":visible")) {
@@ -41,14 +47,20 @@
 
       // set fields to password
       $(".txtMembId, .txtMembPwd").attr("type", "password");
-      // essentially toggle by mouseUp and mouseDown
-      $(".eyeMembId, .eyeMembPwd")
-        .mouseup(function () {
-          $(this).prev().attr("type", "password");
-        }).mousedown(function () {
-          $(this).prev().attr("type", "text");
-        });
+
+      // toggle using a timeout
+      $(".eyeMembId").click(function (){
+        $(".txtMembId").attr("type", "text");
+        setTimeout(function () { $(".txtMembId").attr("type", "password"); }, 1000);
+      });
+
+      $(".eyeMembPwd").click(function () {
+        $(".txtMembPwd").attr("type", "text");
+        setTimeout(function () { $(".txtMembPwd").attr("type", "password"); }, 1000);
+      });
+
     });
+
   </script>
 
   <style>
@@ -88,95 +100,112 @@
   <input type="hidden" id="tileTarget" name="tileTarget" />
   <input type="hidden" id="tileName" name="tileName" />
 
-  <asp:Table ID="tabSignIn" CssClass="tabSignIn" runat="server" Visible="false">
 
-    <asp:TableRow>
-      <asp:TableCell ColumnSpan="3" HorizontalAlign="Center">
-        <h1 style="font-size: 1.2em; color: white;">
-          <asp:Literal ID="Literal1" runat="server" Text="<%$  Resources:portal, credentials%>" />
-        </h1>
-      </asp:TableCell>
-    </asp:TableRow>
-    <asp:TableRow>
-      <asp:TableHeaderCell ColumnSpan="3" HorizontalAlign="Right">
-        <asp:RadioButtonList CssClass="tabSignInLang" AutoPostBack="true" ID="radLang" runat="server" RepeatDirection="Horizontal" TextAlign="Right" BorderStyle="None">
-          <asp:ListItem Value="en-US" Text="English" Selected="True">English</asp:ListItem>
-          <asp:ListItem Value="fr-CA" Text="Français">Français</asp:ListItem>
-        </asp:RadioButtonList>
-      </asp:TableHeaderCell>
-    </asp:TableRow>
-    <asp:TableRow ID="rowMembId" CssClass="formRow">
-      <asp:TableHeaderCell CssClass="tabSignInLabel" Text="<%$  Resources:portal, membId%>">Username :</asp:TableHeaderCell><asp:TableCell HorizontalAlign="Left">
-        <asp:TextBox ID="txtMembId" CssClass="txtMembId upper" Width="250px" TextMode="SingleLine" Text="" runat="server"></asp:TextBox>
-        <asp:Image ID="eyeMembId" CssClass="eyeMembId" ImageUrl="~/styles/icons/eye.png" runat="server" ToolTip="Hide/Show UserName" />
-      </asp:TableCell>
-      <asp:TableCell>
-        <asp:LinkButton CssClass="newButton" OnClick="btnMembId_Click" ID="btnMembId" runat="server" Text="<%$  Resources:portal, next%>" />
-      </asp:TableCell>
-    </asp:TableRow>
-    <asp:TableRow ID="rowMembPwd" Visible="false">
+  <asp:Panel CssClass="panSignIn" ID="panSignIn" runat="server" Visible="false">
 
-      <asp:TableHeaderCell CssClass="tabSignInLabel" Text="<%$  Resources:portal, membPwd%>">Password :</asp:TableHeaderCell><asp:TableCell HorizontalAlign="Left">
-        <asp:TextBox ID="txtMembPwd" CssClass="txtMembPwd upper" Width="250px" TextMode="SingleLine" Text="" runat="server"></asp:TextBox>
-        <asp:Image ID="eyeMembPwd" CssClass="eyeMembPwd" ImageUrl="~/styles/icons/eye.png" runat="server" ToolTip="Hide/Show Password" />
-      </asp:TableCell><asp:TableCell>
-        <asp:LinkButton CssClass="newButton" OnClick="btnMembPwd_Click" ID="btnMembPwd" runat="server" Text="<%$  Resources:portal, next%>" />
-      </asp:TableCell>
-    </asp:TableRow>
-    <asp:TableRow ID="rowCustId" Visible="false">
-      <asp:TableHeaderCell CssClass="tabSignInLabel" Text="<%$  Resources:portal, custId%>">Customer Id :</asp:TableHeaderCell><asp:TableCell HorizontalAlign="Left">
-        <asp:TextBox ID="txtCustId" MaxLength="8" Width="250px" CssClass="input upper" Text="" runat="server"></asp:TextBox>
-      </asp:TableCell><asp:TableCell>
-        <asp:LinkButton CssClass="newButton" OnClick="btnCustId_Click" ID="btnCustId" runat="server" Text="<%$  Resources:portal, next%>" />
-      </asp:TableCell>
-    </asp:TableRow>
-    <asp:TableRow>
-      <asp:TableCell ColumnSpan="3" Style="padding: 20px;"><hr /></asp:TableCell>
-    </asp:TableRow>
+    <asp:Table ID="tabSignIn" CssClass="tabSignIn" runat="server">
 
+      <asp:TableRow>
+        <asp:TableCell ColumnSpan="3" HorizontalAlign="Center">
+          <h1 style="font-size: 1.2em; color: white;">
+            <asp:Literal ID="Literal1" runat="server" Text="<%$  Resources:portal, credentials%>" />
+          </h1>
+        </asp:TableCell>
+      </asp:TableRow>
+      <asp:TableRow>
+        <asp:TableHeaderCell ColumnSpan="3" HorizontalAlign="Right">
+          <asp:RadioButtonList CssClass="tabSignInLang" AutoPostBack="true" ID="radLang" runat="server" RepeatDirection="Horizontal" TextAlign="Right" BorderStyle="None">
+            <asp:ListItem Value="en-US" Text="English" Selected="True">English</asp:ListItem>
+            <asp:ListItem Value="fr-CA" Text="Français">Français</asp:ListItem>
+          </asp:RadioButtonList>
+        </asp:TableHeaderCell>
+      </asp:TableRow>
+      <asp:TableRow ID="rowMembId" CssClass="formRow">
+        <asp:TableHeaderCell CssClass="tabSignInLabel" Text="<%$  Resources:portal, membId%>">Username :</asp:TableHeaderCell><asp:TableCell HorizontalAlign="Left">
+          <asp:TextBox ID="txtMembId" CssClass="txtMembId upper" Width="80%" TextMode="SingleLine" Text="" runat="server"></asp:TextBox>
+          <asp:Image ID="eyeMembId" CssClass="eyeMembId" ImageUrl="~/styles/icons/eye.png" runat="server" ToolTip="Hide/Show UserName" />
+        </asp:TableCell>
+        <asp:TableCell>
+          <asp:LinkButton CssClass="newButton" OnClick="btnMembId_Click" ID="btnMembId" runat="server" Text="<%$  Resources:portal, next%>" />
+        </asp:TableCell>
+      </asp:TableRow>
 
-    <asp:TableRow>
-      <asp:TableCell ColumnSpan="3">
-        <asp:LinkButton CssClass="newButton" ID="butReturn" OnClick="butReturn_Click" runat="server" Text="<%$  Resources:portal, return%>" Visible="false" />
-        <asp:LinkButton CssClass="newButton" ID="butRestart" OnClick="butRestart_Click" runat="server" Text="<%$  Resources:portal, restart%>" />
-        <asp:LinkButton CssClass="newButton" ID="butBrowser" OnClick="butBrowser_Click" xOnClientClick="browserCheckerUrl()" runat="server" Text="<%$  Resources:portal, browserTest%>" />
-      </asp:TableCell>
-    </asp:TableRow>
-    <asp:TableRow>
-      <asp:TableCell ColumnSpan="3">
-        <br />
-        <br />
-        <asp:LinkButton CssClass="newButton" ID="btnRegister" OnClick="btnRegister_Click" runat="server" Text="<%$  Resources:portal, register%>" Visible="false" />
-        <asp:LinkButton CssClass="newButton" ID="btnForgot" OnClick="btnForgot_Click" runat="server" Text="<%$  Resources:portal, forgotCredentials%>" />
-      </asp:TableCell>
-    </asp:TableRow>
-    <asp:TableRow ID="forgotEmail" Visible="false">
-      <asp:TableCell ColumnSpan="3">
-        <h2>
-          <asp:Literal ID="Literal3" runat="server" Text="<%$  Resources:portal, forgot_1%>" />
-        </h2>
-        <div style="margin: 30px 0 20px;">
-          <asp:TextBox runat="server"
-            ID="txtEmail"
-            TextMode="Email"
-            Height="28px"
-            Width="250px">
-          </asp:TextBox>&nbsp;
-          <asp:LinkButton runat="server"
-            CssClass="newButton"
-            ID="btnEmail"
-            OnClick="btnEmail_Click"
-            Text="<%$  Resources:portal, retrieve%>" />
-        </div>
-        <asp:Label ID="labEmail" CssClass="labEmail" runat="server"></asp:Label>
-      </asp:TableCell>
-    </asp:TableRow>
-  </asp:Table>
+      <asp:TableRow ID="rowMembPwd" Visible="false">
+        <asp:TableHeaderCell CssClass="tabSignInLabel" Text="<%$  Resources:portal, membPwd%>">Password :</asp:TableHeaderCell><asp:TableCell HorizontalAlign="Left">
+          <asp:TextBox ID="txtMembPwd" CssClass="txtMembPwd upper" Width="80%" TextMode="SingleLine" Text="" runat="server"></asp:TextBox>
+          <asp:Image ID="eyeMembPwd" CssClass="eyeMembPwd" ImageUrl="~/styles/icons/eye.png" runat="server" ToolTip="Hide/Show Password" />
+        </asp:TableCell>
+        <asp:TableCell>
+          <asp:LinkButton CssClass="newButton" OnClick="btnMembPwd_Click" ID="btnMembPwd" runat="server" Text="<%$  Resources:portal, next%>" />
+        </asp:TableCell>
+      </asp:TableRow>
+
+      <asp:TableRow ID="rowCustId" Visible="false">
+        <asp:TableHeaderCell CssClass="tabSignInLabel" Text="<%$  Resources:portal, custId%>">Customer Id :</asp:TableHeaderCell><asp:TableCell HorizontalAlign="Left">
+          <asp:TextBox ID="txtCustId" MaxLength="8" Width="80%" CssClass="input upper" Text="" runat="server"></asp:TextBox>
+        </asp:TableCell><asp:TableCell>
+          <asp:LinkButton CssClass="newButton" OnClick="btnCustId_Click" ID="btnCustId" runat="server" Text="<%$  Resources:portal, next%>" />
+        </asp:TableCell>
+      </asp:TableRow>
+
+      <asp:TableRow>
+        <asp:TableCell ColumnSpan="3" Style="padding: 0px;">
+          <asp:Label ID="labWelcome" CssClass="labWelcome" runat="server" Text=""></asp:Label>
+        </asp:TableCell>
+      </asp:TableRow>
+
+      <asp:TableRow>
+        <asp:TableCell ColumnSpan="3">
+          <asp:LinkButton CssClass="newButton" ID="butReturn" OnClick="butReturn_Click" runat="server" Text="<%$  Resources:portal, return%>" Visible="false" />
+          <asp:LinkButton CssClass="newButton" ID="butRestart" OnClick="butRestart_Click" runat="server" Text="<%$  Resources:portal, restart%>" />
+          <asp:LinkButton CssClass="newButton" ID="butBrowser" OnClick="butBrowser_Click" xOnClientClick="browserCheckerUrl()" runat="server" Text="<%$  Resources:portal, browserTest%>" />
+        </asp:TableCell>
+      </asp:TableRow>
+
+      <asp:TableRow>
+        <asp:TableCell ColumnSpan="3">
+          <br />
+          <asp:LinkButton CssClass="newButton" ID="btnRegister" OnClick="btnRegister_Click" runat="server" Text="<%$  Resources:portal, register%>" Visible="false" />
+          <asp:LinkButton CssClass="newButton linkButton" ID="btnForgot" OnClick="btnForgot_Click" runat="server" Text="<%$  Resources:portal, forgotCredentials%>" />
+        </asp:TableCell>
+      </asp:TableRow>
+
+      <asp:TableRow ID="forgotEmail" Visible="false">
+        <asp:TableCell ColumnSpan="3">
+          <h2>
+            <asp:Literal ID="Literal3" runat="server" Text="<%$  Resources:portal, forgot_1%>" />
+          </h2>
+          <div style="margin: 30px 0 20px;">
+            <asp:TextBox runat="server"
+              ID="txtEmail"
+              TextMode="Email"
+              Height="28px"
+              Width="80%">
+            </asp:TextBox>&nbsp;
+            <asp:LinkButton runat="server"
+              CssClass="newButton"
+              ID="btnEmail"
+              OnClick="btnEmail_Click"
+              Text="<%$  Resources:portal, retrieve%>" />
+          </div>
+          <asp:Label ID="labEmail" CssClass="labEmail" runat="server"></asp:Label>
+        </asp:TableCell>
+      </asp:TableRow>
+    </asp:Table>
+
+    <div class="panSignIn_footer">
+			<div class="footer-powered">Powered by <img alt="Vubiz Logo" src="//www.vubiz.com/HOME/images/thumbs/0011289.png"></div>
+			<div class="footer-copyright">© Copyright <span class="footer-copyright-year">2021</span> Vubiz Inc. All Rights Reserved.</div>
+    </div>
+
+  </asp:Panel>
+
   <div>
-    <asp:Label ID="labWelcome" CssClass="labWelcome" runat="server" Text=""></asp:Label><br />
+    <br />
     <asp:Label ID="labManage" CssClass="labManage" runat="server" Text=""></asp:Label><br />
     <asp:Label ID="labContent" CssClass="labContent" runat="server" Text=""></asp:Label>
   </div>
+
   <div class="divPage" style="margin-top: 00px; background-color: inherit;">
 
     <asp:ListView runat="server"

@@ -1,25 +1,102 @@
-﻿.tabSignIn { text-align: center; width: 600px; margin: 75px auto 20px; border-collapse: collapse; background-color: #0178B9; border: 20px solid #0178B9; border-bottom: 40px solid #0178B9; }
-  .tabSignIn td { border: none; padding: 6px; }
-  .tabSignIn .tabSignInLabel:first-child:after { content: " : "; }
-  .tabSignIn th, .tabSignIn th label { border: none; padding: 6px; color: white; text-align: right; font-weight: 500; }
+﻿.panSignIn {
+  background-image: url('../vubizdefault.jpg');
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  width: 100%;
+  background-size: cover;
+}
 
-.tabSignInLang { margin: auto; }
+.tabSignIn {
+  text-align: center;
+  margin: auto;
+  border-collapse: collapse;
+}
 
-.formRow th { text-align: right; }
-.formRow td:last-child { text-align: left; }
+.tabSignIn td {
+  border: none;
+  padding: 6px;
+}
 
-.txtMembId, .txtMembPwd { display: inline-block; }
-.eyeMembId, .eyeMembPwd { margin-left: 5px; vertical-align: middle; cursor: pointer; }
+.tabSignIn .tabSignInLabel:first-child:after {
+  content: " : ";
+}
 
-h1, h2, .labEmail { color: white; }
+.tabSignIn th, .tabSignIn th label {
+  border: none;
+  padding: 6px;
+  color: white;
+  text-align: right;
+  font-weight: 500;
+}
 
-.labWelcome,
-.labManage,
-.labContent { color: red; text-decoration: none; font-size: 1.2em; font-weight: bold; }
+.tabSignInLang {
+  margin: auto;
+}
 
-.logo { margin-top: 60px; background-color: white; opacity: 0.3; }
+.formRow th {
+  text-align: right;
+}
+
+.formRow td:last-child {
+  text-align: left;
+}
+
+.txtMembId, .txtMembPwd {
+  display: inline-block;
+}
+
+.eyeMembId, .eyeMembPwd {
+  margin-left: 5px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+h1, h2, .labEmail {
+  color: white;
+}
+
+.labWelcome {
+  color: red;
+  text-decoration: none;
+  font-size: 1.2em;
+  line-height: 1.75em;
+}
+
+.labManage, .labContent {
+  color: red;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.logo {
+  margin-top: 60px;
+  background-color: white;
+  opacity: 0.3;
+}
 
 /* used for all testing helpers */
 .testingBlock {
   display: none;
+}
+
+@media only screen and (max-width: 750px) {
+
+  .tabSignIn {
+    width: 85%;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  h1 {
+    font-size: .875em !important;
+  }
+
+  .tabSignIn {
+    width: 96%;
+  }
+
 }

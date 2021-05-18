@@ -15,6 +15,15 @@ namespace portal
   {
 
     /// <summary>
+    /// panSignIn control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Panel panSignIn;
+
+    /// <summary>
     /// tabSignIn control.
     /// </summary>
     /// <remarks>
@@ -141,6 +150,15 @@ namespace portal
     protected global::System.Web.UI.WebControls.LinkButton btnCustId;
 
     /// <summary>
+    /// labWelcome control.
+    /// </summary>
+    /// <remarks>
+    /// Auto-generated field.
+    /// To modify move field declaration from designer file to code-behind file.
+    /// </remarks>
+    protected global::System.Web.UI.WebControls.Label labWelcome;
+
+    /// <summary>
     /// butReturn control.
     /// </summary>
     /// <remarks>
@@ -229,15 +247,6 @@ namespace portal
     /// To modify move field declaration from designer file to code-behind file.
     /// </remarks>
     protected global::System.Web.UI.WebControls.Label labEmail;
-
-    /// <summary>
-    /// labWelcome control.
-    /// </summary>
-    /// <remarks>
-    /// Auto-generated field.
-    /// To modify move field declaration from designer file to code-behind file.
-    /// </remarks>
-    protected global::System.Web.UI.WebControls.Label labWelcome;
 
     /// <summary>
     /// labManage control.

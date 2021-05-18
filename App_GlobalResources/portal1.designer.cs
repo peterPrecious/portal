@@ -142,6 +142,15 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Account Id.
+        /// </summary>
+        internal static string acctId {
+            get {
+                return ResourceManager.GetString("acctId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Active.
         /// </summary>
         internal static string active {
@@ -480,6 +489,15 @@ namespace Resources {
         internal static string custId {
             get {
                 return ResourceManager.GetString("custId", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are missing mandatory field(s):.
+        /// </summary>
+        internal static string customers_8 {
+            get {
+                return ResourceManager.GetString("customers_8", resourceCulture);
             }
         }
         
@@ -889,7 +907,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to There are currently no Learners in this Account. Use the Add icon above to Add learners..
+        ///   Looks up a localized string similar to There are currently no learners in this Account.&lt;br /&gt;Use the Add icon above to Add a Learner..
         /// </summary>
         internal static string learners_3 {
             get {
@@ -930,6 +948,24 @@ namespace Resources {
         internal static string learners_7 {
             get {
                 return ResourceManager.GetString("learners_7", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Add A Learner.
+        /// </summary>
+        internal static string learners_7a {
+            get {
+                return ResourceManager.GetString("learners_7a", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit This Learner.
+        /// </summary>
+        internal static string learners_7b {
+            get {
+                return ResourceManager.GetString("learners_7b", resourceCulture);
             }
         }
         
@@ -1735,15 +1771,6 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Programs Assigned.
-        /// </summary>
-        internal static string programsAssigned {
-            get {
-                return ResourceManager.GetString("programsAssigned", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Programs Before.
         /// </summary>
         internal static string programsBefore {
@@ -2185,11 +2212,20 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Click to hide/show description.
+        ///   Looks up a localized string similar to Learners.
         /// </summary>
         internal static string title {
             get {
                 return ResourceManager.GetString("title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Clicking the title shows/hides the description.].
+        /// </summary>
+        internal static string title1 {
+            get {
+                return ResourceManager.GetString("title1", resourceCulture);
             }
         }
         
