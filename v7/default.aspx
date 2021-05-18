@@ -193,11 +193,6 @@
       </asp:TableRow>
     </asp:Table>
 
-    <div class="panSignIn_footer">
-			<div class="footer-powered">Powered by <img alt="Vubiz Logo" src="//www.vubiz.com/HOME/images/thumbs/0011289.png"></div>
-			<div class="footer-copyright">© Copyright <span class="footer-copyright-year">2021</span> Vubiz Inc. All Rights Reserved.</div>
-    </div>
-
   </asp:Panel>
 
   <div>
@@ -206,7 +201,7 @@
     <asp:Label ID="labContent" CssClass="labContent" runat="server" Text=""></asp:Label>
   </div>
 
-  <div class="divPage" style="margin-top: 00px; background-color: inherit;">
+  <div class="divPage" style="margin-top: 70px; background-color: inherit;">
 
     <asp:ListView runat="server"
       ID="lvTiles"

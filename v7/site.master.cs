@@ -28,7 +28,7 @@ namespace portal
           panHeader.Visible = true;
         }
         
-        //panFooter.Visible = true; //TODO: wire up after revamp
+        panFooter.Visible = true;
 
         // create sessions link for debugging
         if (fn.host() == "localhost" || se.membLevel == 5)

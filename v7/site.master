@@ -179,7 +179,14 @@
         <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
       </div>
 
-      <asp:Panel CssClass="footer" ID="panFooter" runat="server" Visible="false">
+      <asp:Panel CssClass="footer" ID="panFooter" runat="server" Visible="true">
+
+        <div class="panFooter_footer">
+			    <div class="footer-powered">Powered by <img alt="Vubiz Logo" src="//www.vubiz.com/HOME/images/thumbs/0011289.png"></div>
+			    <div class="footer-copyright">© Copyright <span class="footer-copyright-year">2021</span> Vubiz Inc. All Rights Reserved.</div>
+        </div>
+
+
         <asp:HyperLink Target="_blank" ID="butPageName" CssClass="pageName" runat="server"></asp:HyperLink>
       </asp:Panel>
 
