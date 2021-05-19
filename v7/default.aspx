@@ -48,6 +48,24 @@
       // set fields to password
       $(".txtMembId, .txtMembPwd").attr("type", "password");
 
+      $(".txtMembId").on('keypress', function (e) {
+        if (e.which == 13) {
+          if ($(this).parent().next().find(".newButton").length > 0) {
+            $(this).parent().next().find(".newButton").get(0).click();
+            return false;
+          }
+        }
+      });
+
+      $(".txtMembPwd").on('keypress', function (e) {
+        if (e.which == 13) {
+          if ($(this).parent().next().find(".newButton").length > 0) {
+            $(this).parent().next().find(".newButton").get(0).click();
+            return false;
+          }
+        }
+      });
+
       // toggle using a timeout
       $(".eyeMembId").click(function (){
         $(".txtMembId").attr("type", "text");
