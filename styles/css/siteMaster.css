@@ -132,8 +132,8 @@ nav {
 .navbar-menu-button-account {
   color: var(--light-color);
   cursor: pointer;
-  font-size: 2em;
-  top: 12px;
+  font-size: 1.825em;
+  top: 10px;
   position: relative;
 }
 
@@ -168,8 +168,8 @@ nav {
 }
 
 .header-title img {
-  height: 80px;
-  margin-top: -5px;
+  height: 90px;
+  margin-top: -8px;
   cursor: pointer;
 }
 
