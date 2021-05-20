@@ -271,8 +271,8 @@ namespace portal
       // preset credentials for fast localhost testing ( mucks up signin to use anything else )
       if (fn.host() == "localhost")
       {
-        txtMembId.Attributes["value"] = "admin3jgp@vubiz.com";
-        txtMembPwd.Attributes["value"] = "vuv5_adm";
+        txtMembId.Attributes["value"] = "TESTFEB2021-FAC";
+        txtMembPwd.Attributes["value"] = "test";
       }
 
       // if secure, render tiles

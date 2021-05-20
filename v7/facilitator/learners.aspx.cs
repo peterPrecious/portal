@@ -74,7 +74,7 @@ namespace portal.v7.facilitator
         dv = (DataView)SqlDataSource1.Select(DataSourceSelectArguments.Empty);
       }
 
-      Session["userCount"] = dv.Count;
+      Session["userCount"] = (dv != null ? dv.Count : 0);
 
       if (dv.Count == 0)
       {
